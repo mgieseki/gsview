@@ -82,11 +82,11 @@ Page /Rotate pget not { 0 } if\n\
     if (!code)
 	code = gs_printf("/Page null def\n/Page# 0 def\n/PDFSave null def\n/DSCPageCount 0 def\n");
     /* open PDF support dictionaries */
-    if (!code)
-        code = gs_printf("GS_PDF_ProcSet begin\npdfdict begin\n");
+//    if (!code)
+//        code = gs_printf("GS_PDF_ProcSet begin\npdfdict begin\n");
     /* open PDF file */
     if (!code)
-	code = gs_printf("(%s) (r) file pdfopen begin\n", filename);
+	code = gs_printf("(%s) (r) file runpdfbegin\n", filename);
     if (!code)
 	code = gs_printf("/FirstPage where { pop FirstPage } { 1 } ifelse\n ");
     if (!code)
@@ -204,7 +204,7 @@ int
 pdf_trailer(void)
 {
     pdf_free_link();
-    return gs_printf("currentdict pdfclose\nend\nend\nend\n");
+    return gs_printf("runpdfend\n");
 }
 
 int
@@ -831,14 +831,12 @@ BOOL reverse = psfile.page_list.reverse;
   dup /Page# exch store\r\n\
   pdfgetpage pdfshowpage\r\n\
 } def\r\n\
-GS_PDF_ProcSet begin\r\n\
-pdfdict begin\r\n\
 ", f);
     fputs("%%EndProlog\r\n", f);
     fputs("%%BeginSetup\r\n", f);
     if (copies > 1)
 	add_copies(f, copies);
-    fprintf(f, "(%s) (r) file pdfopen begin\r\n", filename);
+    fprintf(f, "(%s) (r) file runpdfbegin\r\n", filename);
     if (option.safer)
 	fprintf(f, "systemdict /.setsafe known { .setsafe } if\n");
     fputs("%%EndSetup\r\n", f);
@@ -857,7 +855,7 @@ pdfdict begin\r\n\
 
     /* Send trailer */
     fputs("%%Trailer\r\n", f);
-    fputs("currentdict pdfclose\r\nend\r\nend\r\nend\r\n%%EOF\r\n", f);
+    fputs("runpdfend\r\n%%EOF\r\n", f);
     return TRUE;
 }
 #endif
