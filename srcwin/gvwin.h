@@ -24,7 +24,9 @@
 #include <commdlg.h>
 #include <shellapi.h>
 #include <mmsystem.h>
+#ifndef _WIN64
 #define USE_HTMLHELP /* FIX */
+#endif
 #ifdef USE_HTMLHELP
 #include <htmlhelp.h>
 #endif
