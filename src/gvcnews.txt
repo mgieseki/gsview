@@ -1,0 +1,2661 @@
+---------------------------
+Version 5.0 2012-01-17
+---------------------------
+All:
+  Non-beta release.
+
+X11:
+  This code is temporarily removed, because it is being converted
+  from gtk+-1.2 to gtk-+2.0 and is in a non-functioning state.
+
+
+---------------------------
+Version 4.91beta 2011-06-03
+---------------------------
+All:
+  Default include path only needs Resource for versions of GS between
+  8.10 and 8.63.  8.64 and later use compiled resources.
+
+OS/2:
+  Remove the nag screen from the OS/2 build, given that Ghostgum
+  Software has little interest in maintaining the OS/2 build.
+
+Win:
+  pstoedit now works with GSviewPortable.exe.
+
+  Uses compressed HTML help (.chm), instead of the older WinHelp,
+  which is not preinstalled on Windows 7 and Vista.
+  The translated help files have been edited, but may not be correct
+  and help topics may not open correctly.
+  Non ISO-Latin1 character set help files do not display the index
+  correctly.
+  Closing the help file or changing the language while the help file
+  is open will cause the GSview program to close.
+
+  On Win64, GS 9.01 and later use gsdll64.dll, while earlier versions
+  use gsdll32.dll.  When looking or ghostscript, use these assumptions.
+
+  On Windows Vista and XP, saving the registration number may 
+  fail on some computers due to security settings.
+  On other computers, the registration number will be saved to 
+  the registry VirtualStore for that user.
+  If GSview fails to write the registration number, it now runs
+  gsvwrg32.exe or gsvwrg64.exe, which will ask for Administator 
+  credentials.
+
+  Now finds other languages on Win64.
+
+  Installer adds Publisher and Help URL to the uninstall data.
+
+
+---------------------------
+Version 4.9 2007-11-18
+---------------------------
+All:
+  Prevent crash when incorrectly trying to convert PDF to EPS.
+  Prevent mangling of non-ASCII paths when creating temporary files.
+  When adding a %%BoundingBox line, use the same line ending as
+  the preceeding line.
+
+Win:
+  Win64 will now print to "Windows GDI printer".
+  Add StartPagePrinter/EndPagePrinter to raw printing routine
+  as per updated Microsoft documentation.
+  Change zlib DLL to version 1.2.3 due to security vulnerabilities in
+  earlier versions.
+  Change bzip2 DLL to version 1.0.4.
+  Can run as a portable application for Win32.  See online help
+  on "Portable Application".
+
+OS/2:
+  Remove the old zlib DLL.  Ghostgum Software no longer has easy
+  access to OS/2, and this may be the last OS/2 build of GSview.
+
+---------------------------
+Version 4.8 2006-02-25
+---------------------------
+
+All:
+  Save As dialog now defaults to using the currently open filename.
+
+Win:
+  Added -option to gsprint so that options can be forced to be
+  before filenames.  Unknown options that are not filenames
+  are placed before the "-c << >> setpagedevice -f".
+
+  Fix multi display code to use the current settings,
+  not the registry settings which are sometimes corrupted
+  on Windows 98.
+  If the saved window location isn't on a current display,
+  reset the window origin.
+
+  Make installer read filelist.txt from the installer directory, 
+  to avoid being confused with one in the current directory.
+
+  Win64 version will now print and convert.  It was trying execute
+  the wrong file, and the right file had incorrect structure packing.
+
+X11:
+  Add redisplay if document changed and GSview window gains focus.
+
+---------------------------
+Version 4.7 2005-03-26
+---------------------------
+Win:
+  Create 64-bit distribution.
+
+  Updated libbz2 and zlib DLLs to latest versions.
+
+  Increase stack space to avoid stack overflow caused by TortoiseSVN.
+
+---------------------------
+Version 4.62beta 2005-03-01
+---------------------------
+
+All:
+  Use %%ViewingOrientation if auto orientation is selected.
+  Allow language set in global gsview.ini to change the language.
+  Fix crash if length of filename near limit.
+
+Win:
+  Add gsprint -duplex_simplex option.  Don't set duplex field
+  unless specifically requested.
+
+  Allow 64-bit compilation with Microsoft Visual Studio .NET 2003
+  and Windows Server 2003 DDK, or Microsoft Visual Studio .NET 2005
+  beta.
+
+X11:
+  Fix some compiler warnings on 64-bit Linux, but it will only work 
+  with GS if pointers have top 32-bits zero.  DisplayHandle
+  needs to be changed from an integer to a string.
+
+  Fixed page offset for displaying EPS with different orientations.
+  This only works if using GS 8.15 or later.
+
+---------------------------
+Version 4.61beta 2004-11-27
+---------------------------
+Win:
+  Add gsprint option -port for specifying the output port name.
+  Change gsprint -duplex to -duplex_vertical and 
+  add -duplex_horizontal.
+  If printer name is unknown, give list of known printers.
+
+  Fix multiple monitor operation.
+  Make sure that main window is created on a current display.
+  Centre dialogs on the display with the main window.
+  Make full screen on the display with the main window.
+
+  Allow compilation with MSVC 8.
+
+X11:
+  If bzip2 library doesn't include bzopen(), also try BZ2_bzopen().
+
+All:
+  Add a save after opening the display device, to prevent
+  grestoreall from destroying the graphics state, leaving
+  a blank page.
+  This also prevents grestore without a preceeding gsave
+  from doing the same thing.
+  
+  Use language header file with the correct code page,
+  not the reference copy in the language directory.
+
+  Allow the maximum user defined page size (before warning)
+  to be changed with UserSizeWarn in the INI file.
+
+  Modify the "Fixed Page Size" and "Shrink to fit page"
+  code to work with recent versions of ghostscript,
+  which now populate the input attributes directory
+  with all known page sizes.  This is needed for 
+  GS 8.14 and later.
+
+  Remove the old epstool.  The later version 3 should be used instead.
+
+---------------------------
+Version 4.6 2004-01-11
+---------------------------
+All:
+  Fix "Text Extract" for PDF files.  Changes in 4.31 to avoid some 
+  local/global allocation problems in setpagedevice caused problems
+  with text extraction.
+
+  Allow '(' or ')' inside a filename, which was interfering with the
+  SAFER code.
+
+  Modified pstotext to recognise excessive space in ashow
+  as separate words.
+
+  Allow MacBinary files that don't have the resource fork
+  padded to 128 bytes.
+
+  If "%%BeginFeature: *PageSize name" is used and media was not specified 
+  in the header and we know it by name, add it to the media list.
+
+Win:
+  When printing and converting, Page Offset and device properties
+  are now saved again.  This was broken by the [] fix in 4.42 beta.
+
+  Recognise multiple monitor configuration.  Centre dialog boxes
+  on the first display.  Display full screen on the last display.
+
+---------------------------
+Version 4.5 2003-10-18
+---------------------------
+All:
+  When PostScript code runs another file with an absolute path,
+  permit ghostscript to read the file if it is in the same
+  directory as the main file.
+
+---------------------------
+Version 4.42beta 2003-09-19
+---------------------------
+All:
+  If adding an EPS preview and cancel is pressed at the "Save As" 
+  dialog, clean up correctly to avoid the "file is locked" error.
+
+  Ghostscript 8.11 can now be broken out of a tight interpreter
+  loop by using the poll function.  This required some changes
+  to GSview to ignore the error return when telling ghostscript
+  to abort.
+
+  Add the ghostscript Resource subdirectory to the ghostscript
+  library path.
+
+  Allow ghostscript to read files in the same directory as the
+  file being opened, when the filename uses an absolute path.
+
+Win:
+  Find pstoedit using the registry on Windows.
+
+  Use custom profile functions for reading printer details, 
+  to allow embedded [] in a printer name for PostScript printer.
+
+  Set the correct margins in gsprint, to allow EPSFitPage and
+  PDFFitPage to work properly.
+
+X11:
+  Remove CR characters from Show Messages window.
+  Add Ctrl+Q shortcut for File | Exit.
+
+  Use the more portable putenv instead of setenv.
+
+---------------------------
+Version 4.41beta 2003-08-06
+---------------------------
+All:
+  When printing, apply the user GS options before setting
+  the page offset.  This prevents a fault caused by interaction
+  with the security code in GS when the page offset was non-zero.
+
+  When adding an EPS preview, initialise the output filename
+  to empty before prompting the user.  Without this initialisation,
+  NT4 failed to display the open file dialog.
+
+Win:
+  Find "GPL Ghostscript" as well as "GNU Ghostscript".
+
+  When saving the registration number fails due to to
+  insufficient privileges, tell the user that Administrator
+  privileges are required.
+
+X11:
+  If the LANG environment variable is not set, don't crash.
+
+  Allow progressive updates to be disabled by editing the 
+  INI file value ProgressiveUpdate.  Disabled is 0, enabled for 
+  local displays is 1 and enabled for all displays is 2.
+  The default is 2 (enbabled).
+  
+  Modify image message queue handling to improve image updates
+  on slow displays.  Ignore SYNC if followed by another SYNC
+  or a PAGE in the queue.  Merge multiples update tiles together.  
+  Ignore update tiles if followed by SYNC or PAGE in the queue.
+  Allow SYNC and PAGE to lengthen the tile update time.
+
+----------------------
+Version 4.4 2003-04-04
+----------------------
+All:
+  Translation updates.  Russian help file now complete.
+
+  Avoid a crash when -mpapersize is unknown.
+  The only papersizes available to -mpapersize are those
+  defined in dscparse.h, not those defined by the GSview
+  INI file which has not yet been read when the command
+  line arguments are parsed.
+
+Win:
+  Added cygwin makefile.  gvwgs32, setup and uninstgs won't run
+  because --output-def produces corrupt executable.
+
+  Allow entry of long registration names.  If a registry error
+  of "access denied" when saving details, explain that Administrator
+  privileges are required.
+
+  Setup program now uses the localised path for "C:\Program Files".
+
+OS/2:
+  Add Catalan translation to distribution.
+
+----------------------------
+Version 4.32 beta 2003-03-08
+----------------------------
+All:
+  Added partial Russian translation from Oleg Bondar.
+
+X11:
+  Do not use UTF-8, which is not supported cleanly by gtk-+1.2 
+  and older X servers.  Instead leave menus and strings in the
+  local codepage.  If the LANG environment variable has .UTF-8
+  set, remove it.
+
+----------------------------
+Version 4.31 beta 2003-02-10
+----------------------------
+All:
+  Lines that were too long caused a crash when DSC Warnings set to All.
+
+  When displaying user defined paper size, use the current units.
+  Allow the unit type to be specified when entering the paper size.
+
+  Write the version specific configuration to [GSview-N.N] to 
+  allow multiple versions of GSview to co-exist.
+
+  Fix opening of gzip or bzip2 compressed PDF files.  
+  GSview wasn't passsing the correct temporary filename to
+  Ghostscript, so the security code was preventing it being
+  opened.
+
+  Prevent lockup when ghostscript writes a very long error
+  message without line breaks.
+
+  Added Slovak language translation (no help file yet) from
+  Juo Sitá.
+
+  When converting or printing a PDF file, open without -dSAFER,
+  then use .setsafe if needed.
+
+  Prevent overflow of buffer when getting PDF links from 
+  ghostscript.
+
+  Use global allocation mode when setting security or page
+  parameters, to avoid some local/global allocation problems
+  in GS 7.04, 7.05 and 8.00.
+
+Win:
+  When printing all pages, allow printing of more than 9999 pages.
+
+X11:
+  Add space after -o on compiler command line.
+
+  Now uses the "Reverse" check box when printing.
+  
+  Prevent lock up when adding a preview.
+
+  Convert all language resources to UTF-8, which is required on RH8.
+
+----------------------
+Version 4.3 2002-04-30
+----------------------
+All:
+  Rearrange source code to put common, Windows, OS/2 and Unix
+  code in separate directories.  Move epstool into the src
+  directory.  Rearrange source distribution to be in a 
+  gsview-N.NN directory.
+
+  If using GS 7.04 and SAFER, replace ViewerPreProcess which
+  gets removed by .locksafe due to a bug in GS 7.04 only.
+
+  Zoom correctly for PDF files with non-zero llx/lly in mediabox.
+  This involved simplifying map_pt_to_pixel and transform_cursorpos
+  to use the display offset, instead of looking for the bounding box.
+
+  DSC parser would return incorrect section boundaries if
+  the PJL header was more than two lines long.
+
+  Handle DCS 2.0 files with the separations in a single file.
+  This makes a DCS 2.0 file look like a multipage file instead
+  of an EPS file with incorrect DSC comments.
+
+  Skip over the DOS EPS preview correctly, without attempting to
+  parse the binary preview for document headers.
+
+  Added epstool command 'k' to create a bitmap from the EPS file,
+  cropped to the bounding box.
+
+  Avoiding showing negative percentage complete numbers when
+  processing files bigger than 22Mbytes.
+
+  Dutch updates.  The help file is now 62% complete.
+
+Win:
+  Keyboard entry in the goto page dialog now works when the page ordinal 
+  does not match the label.  This wasn't working because it was searching 
+  for an exact match in the list box, when it needed to find the first item 
+  to start with the specified string.
+
+  Compiles with Visual Studio .NET.
+
+  Default install directory is now C:\Program Files\Ghostgum\
+
+  Update zlib32.dll to version 1.1.4.
+
+  Don't show "Download GS" dialog if "Easy Configure" is cancelled.
+
+OS/2:
+  Now opens files when current drive is root, and filename given
+  on command line without drive or directory.
+
+  Update zlib2.dll to version 1.1.4.
+
+X11:
+  Now imediately opens file on command line, instead of waiting until 
+  you used any menu command.
+
+----------------------
+Version 4.2 2002-02-07
+----------------------
+All:
+  Allow GSview to work in unsafe mode with GS <= 7.03.  
+  This was broken by the security fixes of 4.12 beta.
+
+  Language updates.
+
+  Run ghostscript within a stopped context so that correct
+  error handler is used.  If error is /VMerror, resend
+  error outside the stopped so that GSview gets the return
+  code, to allow it to recognise when the page size/resolution
+  is set to large.  For all other errors, quit ghostscript.
+
+  Need to set PermitFileWriting and PermitFileControl in
+  addition to PermitFileReading, as a result of a last minute
+  change to GS 7.04.
+
+  If using GS 7.04, use "true setglobal" before setuserparams
+  and .locksafe to avoid a bug.
+
+  Allow custom page sizes that do not match the dsc known media
+  or media menu to select "User Defined".  Broken in 4.03 beta.
+
+OS/2:
+  When at top/bottom of page, make PageUp/PageDown move to
+  previous/next page.
+
+---------------------------
+Version 4.12beta 2002-01-24
+---------------------------
+All:
+  The pdfmark prolog now accepts /Action /Goto.  Broken in 4.1.
+
+  Printing or converting a PostScript file with Macintosh line
+  endings caused GSview to spin.
+
+  Some additions for proposed security fixes to Ghostscript.
+
+  Added "/.LockSafetyParms true" when opening the display device.
+  To allow the GSview to change from -dNODISPLAY to the display
+  device, add -dNOSAFER to the initialisation options and
+  call .locksafe immediately after the display device is selected.
+  This allows the display device to be selected and prevents
+  it being changed to another device that isn't safe.
+
+  Add the document filename and temporary uncompressed filename
+  to the files Ghostscript is permitted to read, to allow them
+  to be accessed in safe mode.
+
+  Allow SAFER to be used for pstotext.
+
+  Removed old pdf2ps code which was removed in GS 5.50.
+
+  Fixed page size and resolution reset when insufficient memory.
+  This was broken when we changed to the display device, which
+  returns e_VMerror not e_limitcheck for insufficient memory.
+
+  Remove pstoedit from the GSview distribution.
+  Originally pstoedit contained code only by Wolfgang Glunz
+  who had given permission to include a binary version of 
+  pstoedit in the GSview distribution.  pstoedit now includes
+  a number of third party drivers which makes licensing difficult.
+  GSview documentation has been updated to refer people to
+  the URL where they can obtain pstoedit.
+
+  Unload pstoedit on the same thread which loads it.  
+  This generally means that pstoedit is not unloaded until
+  GSview exits.  This is needed to avoid a problem with
+  incompatible run time libraries between GSview and pstoedit
+  on Linux.
+
+  Allow DSC parser to cope with EOF before %%BeginData section ends.
+
+  Added Swedish translation.
+
+Win:
+  Fixed "gsview /E filename".
+
+  Installer no longer fails if installing for all users
+  when Ghostscript is not already installed.
+
+  Redisplay a modified file immediately when you activate GSview
+  from the taskbar, instead of waiting until the next message to
+  processed by the queue.
+
+X11:
+  When using the German language, some Spanish text would appear.
+
+  Delete event handlers were passing the event by value not pointer.
+
+  Unload pstoedit on main thread, to avoid crash in pthread exit code.
+
+OS/2:
+  Using Fit Window to Page with PDF files now resizes correctly,
+  instead of shrinking to a midget window.
+
+---------------------------
+Version 4.1 2001-11-22
+---------------------------
+All:
+  PDF links didn't work when EPS Clip, because crop box
+  was stored in page bounding box, not document bounding box.
+
+  When using "Fit Window" and PDF, use crop box not media box.
+
+  PDF without CropBox but with EPS Clip should use PDF MediaBox,
+  not the default media.
+
+  PDF /GoBack now uses history, instead of always going to page-1;
+  However Ghostscript 7.03 and earlier do not give us /GoBack, 
+  so it still doesn't work.  This involved adding code to output 
+  named destinations as "/Action << /Subtype /Named /N /GoBack >>" 
+  and then having GSview remember the action "GoBack".
+  We have submitted a patch for Ghostscript which will allow this
+  to work.
+
+  Added the ability to recognise URI links, but we don't take
+  action on them yet.  Need to resolve security problems first.
+
+  Don't clear last used files when upgrading.
+
+  When adding or adjusting the bounding box in the header, 
+  remove it from the trailer.
+
+  When scanning a DOS EPS file, ignore all after end of PostScript
+  section.  Previously it would read and mostly ignore the data, 
+  but it would complain if a line was longer than 256 characters.
+
+Windows:
+  When printing, using "selection" then clicking on the ghostscript 
+  device selection button would unselect all pages.  
+  When selecting the Ghostscript device, do not call the page
+  dialog procedure if the page list control does not exist.
+
+  When fullscreen, use black for the uncovered area.
+
+  Handle PDF links when fullscreen.
+
+  When using GDI printing, use the offset from the GDI section
+  of the INI file, not the bmp16m section.
+
+OS/2:
+  When fullscreen, use black for the uncovered area.
+
+  Handle PDF links when fullscreen.
+
+  Updated version of pstoedit.
+
+X11:
+  Allow the image window to be "pushed" with the cursor.
+
+  Prevent button bar from taking the focus.
+  Added keyboard scrolling of image window.
+  Added missing keyboard accelerators.
+
+---------------------------
+Version 4.05beta 2001-10-20
+---------------------------
+All:
+  DSC parser didn't initialise orientation field when adding a new page.
+  Make sure DSC parser resets everything needed in CDSC structure.
+
+  Add %%PageCropBox to DSC parser.  This is referenced in
+  Adobe Technical Note #5644 which says it is in DSC 3.0,
+  but it isn't.  It could be useful to Ghostscript for
+  setting the PDF CropBox.  Recognise this in a page and
+  also in the defaults section.  The latter shouldn't happen 
+  because %%CropBox should be used instead.
+
+  In page list box, use '1' if label matches ordinal, 
+  or '1 "i"' if they don't.  This is to cope with documents
+  that reuse the label or set every label to the same string.
+
+  Changed description of "Properties" to refer to devices rather
+  than printers, because it applies to both Convert and Print.
+
+  Adjusted progressive drawing so that if the drawing to the
+  screen is taking too much time, in addition to lengthening
+  the time between updates, also increase the area required
+  before an update occurs.  This provides a noticeable 
+  improvement on old slow computers (486's still have a use
+  in testing).
+
+  Open icon changed to folder, not a document.
+
+Windows:
+  Windows 95 was still putting the INI file in the wrong place.
+
+  Setup includes an empty gsview32.ini, to overwrite any 
+  already in the gsview destination directory.
+  This was created incorrectly, and instead of being empty
+  contained "1 file(s) copied".  Harmless, but not correct.
+
+OS/2:
+  Show Messages dialog was not showing the text.
+  When importing text to the MLE, the buffer size must be set 
+  to the data length and not the actual buffer size.
+
+X11:
+  Print dialog crashed in 4.03 and 4.04.
+
+  Can be built multithreaded on SGI IRIX 6.5, but not 6.2.
+  When built multithreaded on IRIX, gdb can't debug it.
+
+  The X11 INI file is .gsview.ini, not .gsviewrc.  Updated the
+  documentation.
+
+  Add tooltips to button bar.
+
+  Fit to window now gets the correct size, but only because
+  the scroll bar width and window border widths are hard
+  coded into the calculation.
+
+---------------------------
+Version 4.04beta 2001-10-14
+---------------------------
+All:
+  Printing and converting working again.  
+  This was broken for DSC files when file method changed in 4.03 beta.
+
+  Renamed C files from .cpp to .c to make it compile on 
+  non C++ Unix compilers.
+
+Windows:
+  On Windows 95, read the initialisation file from the Windows
+  directory, not the current directory.  Broken in 4.03 beta
+  when platform independent code used for INI files.
+
+  gsprint now allows spaces in filenames.
+
+  gswgs32 does not destroy window if an error occurs.
+  Probably broken since 3.61 beta.
+
+X11:
+  Set and remember the window position.
+  Works on Linux, but will not accurately set/restore the position
+  on other systems.
+  -geometry now uses xoffset and yoffset.  
+
+  Added support for pstoedit, now we need a libpstoedit.so.
+  Initial build of libpstoedit.so will cause a segfault as GSview exits.
+
+  Remove dependence on X11 include files.
+
+  Don't poll during display_update if on single thread
+  and image is locked, to avoid drawing from the image
+  while it is being resized.
+
+  Install now creates parent directories as needed.
+
+  Updated spec file which also copies gsview.desktop and gsview.png.
+
+---------------------------
+Version 4.03beta 2001-10-06
+---------------------------
+All:
+  Use language specific "All" in page list when page
+  numbering not available.
+
+  Rewrote command line argument parser.
+  Added command line argument for
+   /ma4   (page size)
+   /oauto, /oportrait, /olandscape (orientation)
+   /f[DEVICE] (convert to file, optional device)
+   -geometry WIDTHxHEIGHT+XOFFSET+YOFFSET (initial window size and position)
+
+  Add progressive drawing to window as Ghostscript renders, by
+  dividing the image into tiles and keeping track of which tiles
+  have been dirtied.  Update the window when sufficient tiles
+  have been dirtied, or when one tile dirtied a lot and sufficient
+  time (usually 100ms) has passed.  If drawing to the window is
+  slow, increase the time between updates.
+
+  Reading of document now uses GFile structure.  There are three 
+  implementations, C files, Windows files and memory.
+
+  Added conditionals to remove all methods to copy, save or print
+  documents.
+
+  Added %%HiResBoundingBox: and %%CropBox: to DSC parser.
+
+  All files needed for Unix can now compile as plain C.
+  This is necessary because the X11 include files on Solaris
+  didn't contain valid function prototypes and so wouldn't
+  compile with a C++ compiler, even inside extern "C" { }.
+
+  When configuration changed, unload Ghostscript DLL.
+
+  Handle the file being changed or deleted in the 
+  redisplay command code.  Don't complain if the GS thread
+  finds that the file has been deleted.
+
+  Changed A0, A1, A2 sizes to be dynamically loaded from
+  the INI file.  Additional sizes can be added by editing
+  the UserMedia section of the INI file.  Eventually a user
+  interface will be added for adding or removing custom sizes.
+
+  Greek language updates.
+
+OS/2:
+  Fixes to Dutch setup resources.
+
+Win:
+  Redraw scroll bars when image size changes.
+
+  Use platform independent code for writing INI files,
+  because the Win32 version runs very slow on Win2k. 
+
+X11:
+  Add separate configuration for "Ghostscript Program" (gs) and
+  "Ghostscript Shared Object" (libgs.so).  Printing now works.
+  If you have used GSview before, you will need to update your
+  configuration.
+
+  -geometry ignores xoffset and yoffset.  
+  How do you set these with Gtk+?
+
+  Added Dutch translation of menus.
+
+  Will compile on Solaris with a few changes to the makefile.
+
+  Added 8 bit/pixel display using 96 colour palette.
+  Removed 1 bit/pixel display because I can't find a gdk_draw_*()
+  function to do it.
+
+  Fixed ViewerPreProcess code to handle inverted PageOffset.
+  Although PageOffset uses the same units as default user
+  coordinates, the direction is according to device coordinates.  
+  This was needed to fix zoom and epsf clip.
+
+  Works single threaded.  Tested on SGI IRIX 6.2 and SunOS 5.7.
+
+  Use getimeofday instead of ftime because it seems to be more
+  portable.  SGI IRIX doesn't have ftime.
+
+---------------------------
+Version 4.02beta 2001-09-13
+---------------------------
+All:
+  Correctly give DSC long line warning.
+  Correctly handle DSC early trailer warning.
+
+  Added new common problem.  GSview will take a long time to
+  display a file at 700dpi.
+
+  Added Dutch translation.  Help file not yet translated.
+
+  Added A0, A1 and A2 paper sizes.
+
+Win:
+  Compile Greek setup resources using correct code page.
+
+OS/2:
+  Changed code page resources (except Greek) to 850.
+  Change process and PM code page to match language
+  resources, usually 850.
+  Allow language to be selected if the code page is
+  in the PM code page list.
+
+---------------------------
+Version 4.01beta 2001-08-04
+---------------------------
+All:
+  Added Greek translation.
+
+  Changed doc2html to write tags in lower case, convert
+  non-ascii characters in links to &#nnn;
+  Replace isspace() and allow a charset to be specified for Greek.
+
+  Print all pages when "gsview /Ffile.pdf" is used and don't crash.
+
+  When adding TIFF preview to make a DOS EPS file, use the correct
+  size for the PostScript section.  Fix in previous version
+  introduced this bug.
+
+  Added doc2xml.cpp, htmsplit.cpp, xmlwin.xsl, xml2htm.xsl, xml2ipf.xsl,
+  xml2rtf.xsl, xml2htmh.xsl, xml2hhc.xsl, xml2hhk.xsl, gsxml.dtd, test.hhp.  
+  These files aren't finished.
+  This is the first stage in converting the documentation into xml which 
+  will then be used to generate HTML, RTF, IPF and Windows HTML Help.
+  These are for use with XT by James Clark.
+   http://www.jclark.com/xml/xt.html
+
+  doc2html no longer crashes if given a link with a long name.
+
+Win:
+  Changed language loading code to search for DLLs named
+  gsvw32??.dll in the GSview EXE directory.  Each DLL
+  provides a bitmap of its name which is placed on the
+  languages menu.  New languages can be now be added
+  without having to modify the GSview executable.
+  Code will only need to be added if a different
+  character set is needed (e.g. Cyrillic).
+
+  Changed code to allow compilation as UNICODE.
+  It should be possible to link GSview with the Microsoft Layer 
+  for Unicode to allow this to run on Windows 95.
+
+  When using Windows NT and the code page of the resource
+  doesn't match the code page of the system, load resources
+  as Unicode and use the wide version of some APIs to make
+  languages such as Greek display correctly, even if the
+  system has never installed the Greek locale.
+
+  Select Language dialog now uses bitmaps for the names
+  of each language, so they appear correct without the
+  language specific fonts.
+
+  Language menu uses bitmaps if the name can't be drawn
+  in the GSview language.  When the menu has the focus,
+  the colours are drawn reversed for the bitmap.  This
+  appears to be a bug in Windows 95 and NT.  Windows 3.1
+  can do it correctly!  Reversing the black and white
+  palette entries doesn't help - this make the selected
+  menu item display correctly, but unselected it displays
+  in reverse colours, that is the palette is being ignored.
+
+  Changed doc2rtf to only ignore leading spaces for key names
+  not white space.  White space included Greek accented characters.
+
+  Changed uninstall to have silent option -q.
+
+  Changed setup to allow registration details to be set.
+
+  Disabled look up of system sounds, since they haven't been
+  stored in win.ini since before Windows 95.
+
+  Changed 'F' accelerator to "File | Convert".
+
+  Change print page selection dialog for DSC files to use
+  previous dialog with a list box which allows selecting 
+  disjoint ranges of pages.
+
+  Change GSview Print to display the contents of the
+  options file when in debug mode.
+
+OS/2:
+  Changed 'F' accelerator to "File | Convert".
+
+  Change GSview Print to display the contents of the
+  options file when in debug mode.
+
+  Greek language untested.  It will only be enabled if the
+  system code page is set to 869.
+
+X11:
+  Greek language untested.
+
+----------------------
+Version 4.0 2001-06-02
+----------------------
+Win:
+  Unload Ghostscript DLL before calling pstoedit.
+
+  EPS previews fixed.  They were broken when we changed to 
+  using the display device instead of mswindll.
+
+OS/2:
+  Text extraction with pstotext crashed when the extracted
+  character was a null, because GSview did not pass the complete
+  to pstotext.  Scan for EOL in the entire buffer, not just until
+  a null character.
+
+  Don't reset scroll bars when image closed, needed for zoom
+  to work correctly.  Reset scroll bars when image closed 
+  and no file selected.
+
+X11:
+  Help script prints usage info and can be called without tag.
+  Added -help, -version and -geometry.
+
+  Changed default install path to /usr/bin/gsview.
+
+All:
+  Ghostscript plus GSview takes 20 - 30Mbytes of disk space, not 10M.
+
+  Text extracted using pstotext could use ^Z as a valid character
+  (math formula from TeX).  Open files in binary not text mode.
+
+  Fixed crash when PDF file without crop box, EPS Clip enabled and Fit Page
+  used together.
+
+  Fixed TIFF StripByteCount when image data < 8kbytes, and for multiple
+  strip images fixed StripByteCount of last strip.
+
+---------------------------
+Version 3.62beta 2001-04-12
+---------------------------
+All:
+  Use common code for loading DLL and display device.
+
+  Fix printing/convert using GS 7.00.
+
+  "Rescale to fit page" is now called "Shrink to fit page" since
+  this is how it behaves.
+
+X11:
+  Use new Ghostscript shared object libgs.so.
+
+---------------------------
+Version 3.61beta 2001-04-07
+---------------------------
+All:
+  Avoid trying to send trailer after document is deleted.
+
+  Changed ftp locations to ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/
+
+  Removed "Options | Quick Open".  This isn't needed on modern
+  fast computers, was not the default, and caused problems with
+  many PostScript files.
+
+  Fixed progress message "Drawing 50%".
+
+  Remove quotes from Ghostscript Options when initialising DLL.
+
+  Allow epstool to ignore DSC warnings with command line option -e.
+  A comment will be added to the EPS file about the reckless user
+  who ignored the DSC warning.
+
+  Enabled anti-aliasing as the default. TextAlphaBits=4, 
+  GraphicsAlphaBits=4.
+ 
+Win32:
+  If installing for "All User", write gsview32.ini file to
+  gsview directory so GSview is auto-configured for any user.
+
+  When first use after install contains filename on the command line,
+  don't ignore it.
+
+  Fixed page selection for File | Convert.
+
+  Use new Ghostcript API.
+
+  Change user messages to start at WM_USER+100, not WM_USER
+  which caused problems on Japanese Windows.  
+  Didn't change WM_GSV16SPL which is only used on Win32s
+  and is used for interprocess communication.
+
+OS/2:
+  Use new Ghostscript API.
+
+X11:
+  Probably won't compile.  Need to use new Ghostscript API.
+
+---------------------------
+Version 3.6 2000-12-29
+---------------------------
+All:
+  Skip over DOSEPS header correctly.
+
+  When adding EPS preview, handle files without a trailer.
+
+  Use correct orientation for last page of a PDF document.
+
+  Tell Readme.htm that pstoedit.htm is in the current directory
+  so it works when Readme.htm is placed on the web site.
+  Place a refresh pstoedit.htm to redirect to ../pstoedit/pstoedit.htm
+  for the GSview Win32 installation.  
+
+  Added some of the more common distiller parameters to the
+  pdfwrite properties in printer.ini.
+
+  If using GS 6.50 or later and pdfwrite, use -c .setpdfwrite -f
+  not -c save pop -f.
+
+  pdfmark is broken in GS 6.50.  Unless you are writing to pdfwrite,
+  Ghostscript won't process links.  Add -dWRITEPDFMARKS if GS >= 6.50.
+  A patch is needed to GS 6.50 pdf_main.ps to add
+   systemdict /WRITEPDFMARKS or
+  as the last line of .writepdfmarks (line 35).
+
+  Don't highlight links in PDF files if GS >= 6.50.  Ghostscript
+  now does this itself.
+
+Win32:
+  Widened listboxes in property dialog.
+
+  Zoom now centres correctly if scroll position not top left.
+
+X11:
+  Added AAGSMESSX11 message to resources.
+
+  Made makefile less dependant on gnu make.
+
+  Use putenv not setenv because it is more widely supported.
+
+  Allow the help program to be configured using the INI file,
+  but not from the user interface.  Default help command is 
+  "gsview-help".  See the script gvxhelp.txt for implementation.
+
+OS/2:
+  Fixed position of "Fixed Media" listbox in Convert and
+  Print dialogs.
+
+---------------------------
+Version 3.5 2000-12-16
+---------------------------
+All:
+  German language updates from Tobias Burnus.
+
+  PDF page orientation for page n was using the orientation of page n+1.
+
+  Fixed initialisation problem with page[].viewing_orientation.
+
+Win32:
+  Prolog and Epilog fields didn't scroll.
+
+  Don't give a registry error message if GSview registry key exists
+  without GSview being registered.
+
+  Added *.psz as an alternative to *.ps.gz as the default file extension.
+
+OS/2:
+  Change default path to c:\gs\gsview\gvpm.exe
+
+  Added *.psz as an alternative to *.ps.gz as the default file extension.
+
+X11:
+  Change default draw method back to pixmap and added note in Readme.htm
+  about bug #124957 in GSview 6.50.
+
+---------------------------
+Version 3.42beta 2000-12-08
+---------------------------
+
+All:
+  DSC parser handles %%ViewerOrientation.
+  DSC parser doesn't flag an error if %%Pages absent but on %%Page is found.
+  DSC parser frees memory if initialisation fails.
+  Added const qualifier to string constants.
+  When updating the bounding box, correctly handle auto bounding box
+  in conjunction with EPSF clip.
+  
+Win32:
+  When printing, make the Pages range show the number of pages.
+
+  Increase the printer output port name length from 32 bytes
+  to 256 bytes.  It is the printer queue name that is limited
+  to 32 bytes, not the output port name.
+
+X11:
+  Set the numeric locale to "C" so that floating point
+  numbers writen to Ghostscript and the configuration 
+  file use a period not a comma.
+
+  Added dynamic loading of libz.so and libbz2.so for automatic
+  decompression of gzip and bzip2 files.
+
+  When printing, page selection was ignored and all pages were printed.
+  When extracting pages, page 1 was always extracted.
+
+  Now handles Ghostscript include directory correctly.
+
+  Makefile now builds epstool and pstotext.
+
+  get_filename() now changes directory to that of the selected file.
+
+  Change initialisation file name to .gsview.ini
+  Changed documentation location to /usr/local/doc/gsview-3.5/
+  Change printer.ini location to /usr/local/etc/gsview/printer.ini
+  Global initialisation file now /usr/local/etc/gsview/gsview.ini
+
+  Change default draw method to backing pixmap, since pixmap method 
+  is broken in GSview 6.50.
+
+---------------------------
+Version 3.41beta 2000-11-06
+---------------------------
+All:
+  This is based on 3.32 with a few bug fixes.
+
+  DSC parser didn't allow %%BeginData type or bytesorlines to
+  be omitted.
+
+  DSC parser updated to be compatible with Ghostscript.
+
+  Fixed parsing of Ghostscript options which didn't process
+  quotes correctly.
+
+  When printing, "Fixed Media" has been replaced by a choice of
+    Variable Page Size (don't restrict page size)
+    Fixed Page Size (PageSize policy 5)
+    Rescale to fit Page Size (PageSize policy 3)
+  This doesn't work with Aladdin Ghostscript 6.01 and AFPL 
+  Ghostscript 6.30 which do not adjust the page as required
+  by policy 3.
+  
+Win32:
+  Reverse page order was ignored for printing.
+
+  If reading or writing registration info fails,
+  display error message.
+
+  If you try to install GSview in the same directory
+  as a previous version, the setup program now launches 
+  uninstaller for the previous version.
+
+  When using pstoedit with a multipage document and a backend
+  that does not support multiple pages, process the selected
+  page instead of the currently displayed page.
+
+  Updated pstoedit to v3.21.
+
+  Easy Configure should always show a dialog, even if only
+  one version of Ghostscript installed.
+
+OS/2:
+  Added pstoedit code from Thomas Hoffmann.
+  This doesn't work yet - pstoedit DLL needs to be recompiled
+  with different link options.
+  
+  Enabled Edit | Measure.
+
+----------------------
+Version 3.4 2000-07-29
+----------------------
+All:
+  This is based on 3.3 with some bug fixes which were in 3.31 alpha.
+
+  "gsview /F filename" didn't print any pages.
+
+  The pdfmark fix for user space coordinates was broken if
+  link had dashed border.
+
+Win32:
+  Advanced PS print options were not saved correctly.
+
+  Fixed incorrect use of memset in gsprint.cpp main().
+
+  When configuring GSview, don't ask which version of Ghostscript
+  to use if only one version of Ghostscript installed.
+  Don't forget to open file on command line.
+
+----------------------------
+Version 3.32alpha 2000-07-18
+----------------------------
+X11:
+  Added window for showing GS stdout while printing.
+  Added text extract and find.
+  Added Measure CTM.
+  Now supports all 5 languages.
+  Added Advanced PS Print dialog.
+
+----------------------------
+Version 3.31alpha 2000-07-08
+----------------------------
+All:
+  This is based on 3.21 alpha with the 3.3 fixes.
+
+  "gsview /F filename" didn't print any pages.
+
+  The pdfmark fix for user space coordinates was broken if
+  link had dashed border.
+
+Win32:
+  Pressing F4 when in fullscreen mode brought up overlapped
+  window and left it in front.
+
+  Fixed incorrect use of memset in gsprint.cpp main().
+  
+  Advanced PS print options were not saved correctly.
+
+  Removed Win16 code.
+
+  When configuring GSview, don't ask which version of Ghostscript
+  to use if only one version of Ghostscript installed.
+  Don't forget to open file on command line.
+
+X11:
+  Doesn't die if Ghostscript can't be found.
+
+  GS command can be set.
+
+  Changes to support multiple languages.
+
+  Set locale correctly.
+
+----------------------
+Version 3.3 2000-07-01
+----------------------
+All:
+  This is an out of sequence release to fix two bugs.
+  This is based on the GSview 3.1 sources and ignores any
+  changes introduced in 3.21 alpha.
+
+  "gsview /F filename" now uses "File | Convert".
+
+Win32:
+  Fixed yet another bug in Windows GDI printing, introduced
+  in 3.2.  This bug caused the output to be horizontally
+  shifted if black & white or colour rendering was used.
+
+----------------------------
+Version 3.21alpha 2000-06-30
+----------------------------
+All:
+  There should be no change to function.
+
+Win32:
+  Button bar moved from left to top, status bar from top to bottom.
+
+X11:
+  Alpha test of new port to X11/Unix using Gtk toolkit.
+  Many features not yet working.
+
+----------------------
+Version 3.2 2000-06-30
+----------------------
+All:
+  If document did not contain a trailer, some EPS and printing
+  operations would fail.
+
+----------------------
+Version 3.1 2000-06-27
+----------------------
+All:
+  pdfmark uses user space coordinates, not default user space.
+
+  Fixed gvcdll.cpp to keep quotes around Ghostscript options.
+
+  Windows incorrectly removes the quotes around profile values,
+  which meant that uniprint filenames containing spaces were
+  not enclosed in quotes and gvwgs didn't work.  
+  If first character of printer option is @, put quotes around 
+  the whole option.
+
+Win32:
+  Added DDE command [FullScreen()].
+
+  Fixed drawing of bitmaps on Windows 95, which followed the Win16
+  CreatePatternBrush documentation, not the Win32 documentation.
+
+  Fixed Print dialog for Windows NT4 & 2000 with non-English support
+  which sometimes uses a different dialog structure.
+
+  Select uniprint options correctly after uniprint dialog used
+  for first time.
+
+  Fixed trashed memory heap when printing using GDI and converting 
+  palette from 24-bit colour to monochrome to save space.
+
+  Windows GDI printing didn't work on some computers because some
+  new DOCINFO structure fields were not being initialised.
+
+----------------------
+Version 3.0 2000-06-15
+----------------------
+All:
+  Updated Italian translation.
+
+  Updated Spanish translation.
+
+  German translation still needs updating for the Printing and
+  Conversion topics.
+
+  French translation still needs updating.
+
+---------------------------
+Version 2.94beta 2000-06-01
+---------------------------
+All:
+  Debug flag /d8 appends Ghostscript messages to the file
+  c:\gsview.txt.  Useful for post-mortem debugging.
+
+  If %%DocumentMedia describes only one media, and default %%PageMedia 
+  is missing, assume that media is the default.
+
+  Fixed GPF caused by GSview closing an already closed file when a
+  PostScript error occurred while extracting text.
+
+  Fixed GPF when DSC scanner found %%BeginData: 
+  without any parameters.  Generate warning message instead.
+
+  Updated Italian translation.
+
+  Updated German translation.  Still needs a bit more work on
+  the help file.
+
+  Added Spanish translation.
+
+Win32:
+  Fixed printing for Win32s.  Win32s comdlg32.dll did not contain
+  the print dialog template and we can't load the template from
+  the 16-bit commdlg.dll.  For Win32s, keep a local copy of the 
+  Windows 3.1 print dialog template (English only).
+
+  Added DDE commands [ShowWindow(nCmdShow)].  The integer value nCmdShow 
+  is the same as for the Windows API ShowWindow(hWnd, nCmdShow).
+  If SW_SHOW or SW_SHOWMAXIMISED or SW_SHOWNORMAL are used, 
+  GSview will be made the foreground window.
+  "gsview32 /E" now brings window to the front using [ShowWindow(1)].
+
+  gsview32 /S"printer name" now works.  GSview exits after file
+  has been spooled.
+
+  GSview now follows the system colours.  If the window background
+  colour is white, an alternative is chosen to allow the edge of 
+  a white page to be seen.
+
+  Updated libbz2.dll to bzip2 1.0.0.
+
+---------------------------
+Version 2.93beta 2000-04-18
+---------------------------
+All:
+  Any line that starts with %%Begin now terminates the comments
+  section.
+
+  "gsview32 /p filename" now prints without prompting, then exits.
+  This uses the printer and print method most recently used by GSview.
+  If print to file is used, you will still get the "Save as" dialog.
+  
+Win32:
+  When uninstalling, don't delete non empty registry keys
+  so the registration information is not deleted when someone
+  uninstalls GSview prior to installing a new version.
+
+  Use GetFileTime() to avoid VC++ 5.0 multithreaded bug in fstat()
+  which caused GSview to continually reopen files.
+
+  Fix word padding of Print common dialog template structure.
+  By chance it was correct for English, but wrong for German.
+
+  Setup program writes "App Paths" key and values so GSview
+  can be run from the start menu or the command line as 
+  "start gsview32".
+
+  When using "Windows GDI printer", an attempt to close GSview
+  before printing has finished results in a warning dialog.
+
+OS/2:
+  IDR_EPSFWARN was always being sent, because IDR_VIEWER didn't
+  have a terminating null.
+
+---------------------------
+Version 2.92beta 2000-04-01
+---------------------------
+All:
+  Fixed %%PaperSize: null pointer access.
+
+  Don't pause when showpage executed in trailer.
+
+  Ignore a few more common DSC comments that don't concern
+  GSview.
+
+Win32:
+  Fixed /t command line option.
+ 
+
+---------------------------
+Version 2.91beta 2000-03-12
+---------------------------
+Win32:
+  Don't start gvwgs32.exe with pipe method when converting.
+
+All:
+  Fixed memory leaks and allocation problems in new DSC code.
+  Memory allocation debugging using /d4.
+  Fixed displaying of PDF files.
+
+----------------------
+Version 2.9 2000-03-19
+----------------------
+All:
+  This is an out of sequence bug fix release to handle an 
+  installation problem with using Ghostscript #.01 - #.09.
+  This is based on the GSview 2.8 sources and ignores nearly all
+  changes in GSview 2.81 beta.
+
+  Italian translation updates.
+
+  Fixed version numbers in help files.
+
+  When using the pdfwrite device, add "-c save pop -f" to avoid 
+  a font bug in Ghostscript 6.0.
+
+Win32:
+  When compiling gvceps.h with MSVC++, you must use #pragma pack(1).
+  epstool would crash because this was not used.
+
+---------------------------
+Version 2.81beta 2000-03-17
+---------------------------
+Win32:
+  When compiling gvceps.h with MSVC++, you must use #pragma pack(1).
+  epstool would crash because this was not used.
+
+  Change print dialog to use a modified version of the common
+  print dialog.  Options added to this for printing GDI, GS device
+  or PostScript printer.  Select page button added.
+  Printing of even/odd is possible for non DSC files.
+  Printing with GDI tells Ghostscript to render the pages to bitmaps,
+  and then sends the bitmaps to the GDI.  It is more optimised
+  than mswinpr2.  
+
+  Fixed BC++ 4.5 makefile.  This can't build the setup program
+  since BC++ 4.5 predates the shell explorer interface.
+
+  VC++ makefile now calls BC++ 4.5 makefile to compile the
+  16-bit gsv16spl.exe.
+
+  Distribute gsprint with GSview.  Added -twoup to gsprint.
+
+All:
+  Tim Theisen's ps.c module has been replaced by a new
+  DSC parser written in C++.
+  This new code attempts to recognise incorrectly embedded
+  EPS files (i.e. missing %%BeginDocument: / %%EndDocument).
+
+  Compile all sources as C++.
+
+  Changed gvceps.cpp so it works if byte packing of structures
+  is not used.  It might now work with big endian architectures.
+
+  Italian translation updates.
+  
+  Modified gvceps.cpp so that it should work with big-endian
+  architecture and non byte packing.
+  
+  When opening a file from the command line, or dropping a file
+  on GSview, change the current directory to match the file.
+  Needed to display \aladdin\gs6.0\examples\chess.ps.
+
+  Added registration nag dialog.
+
+  Debug /d now supports some bitfield qualifiers.
+  /d1 is default
+  /d2 is debug Windows GDI printing.
+
+  Accept PDF files with UNC names, by duplicating backslashes
+  instead of converting them to forward slashes.
+
+  Rearranged printing topics to separate printing and conversion.
+  Hopefully this makes things a little clearer.
+
+  When using the pdfwrite device, add "-c save pop -f" to avoid 
+  a font bug in Ghostscript 6.0.
+
+----------------------
+Version 2.8 2000-02-17
+----------------------
+All:
+  French translation updates.
+
+Win32:
+  Allow GSview to use new pstoedit DLL version 301, which 
+  includes a function to release the driver info memory.
+  The old version 300 is still supported (and is included with
+  GSview 2.8), but it will leak memory.
+  
+OS/2:
+  When printing to "PostScript Printer", the queue name is now
+  correctly selected based on the previous use.
+
+---------------------------
+Version 2.76beta 2000-02-08
+---------------------------
+All:
+  Added Italian translation of help file and updated resources.
+
+  Modified pstotext to work with GS 6.0.
+
+  Added 'View | Fit Window' which changes the resolution to make 
+  the page fit in the current window.  Repeated use changes 
+  between fitting width or height to window.
+  Helpful when displaying full screen.
+
+  When displaying full screen, redraw only on showpage, not on 
+  erasepage (i.e. ignore GSDLL_SYNC).  This is to stop the screen 
+  flashing when using GSview for a slide show.
+
+  Stopped "EPS Warn" from causing errors when an attempt to change
+  the page size was used.
+
+Win32:
+  When the page is smaller than the window, centre it.  
+  Previously it was displayed in the top left corner of the window.
+  Helpful when displaying full screen.
+
+  Bug fixes to batch setup.
+
+  Setup now creates file associations.
+
+  GSview was crashing when trying to free memory allocated by
+  the pstoedit DLL.  This code has been disabled (causing a
+  memory leak) until changes have been made to pstoedit to 
+  provide a way for pstoedit to free this memory.
+
+  Updates for the DEC Alpha.
+
+OS/2:
+  Setup will try to guess the version number of Ghostscript
+  by looking in the current directory for a file named gsNNNos2.zip
+  where NNN is between GS_REVISION and GS_REVISION_MAX.
+
+  Add "View | Full Screen"
+
+  "Edit | Measure" is not available due to a mysterious crash
+  probably due to bad code generated by the compiler.
+
+---------------------------
+Version 2.75beta 2000-01-24
+---------------------------
+All:
+  Added "Rotate Media" to Media menu.  This provides an easy
+  way to get A4 landscape, without having to use the User Size.
+  This is cleared whenever a DSC document sets the page size.
+
+  Added "Fixed Media" option to print dialog.
+  When selected (the default), page size is fixed by the Media menu.  
+  Ghostscript will rotate landscape pages to fit on this fixed size.
+  This allows Ghostscript to print landscape [842 595] pages on
+  portrait [595 842] paper automatically.
+
+  Fixed ps.c with MSC and made it more tolerant of \r.
+
+  Added DSC dump for debug.
+
+  For setpagedevice, policies are in /Policies not /Policy.
+
+  Italian is using the English help file.
+
+  Even if Save Settings is disabled, the most recently used 
+  file names are now saved to INI file.
+
+  Default is now to use anti-aliasing (alpha=4)
+
+Win32:
+  Setup program now updates autoexec.bat with SET TEMP=c:\
+  and creates autoexec.bat if needed.
+
+  Language resource files compiled with MSVC++ no longer 
+  contain code, halving their size.
+
+OS/2:
+  Resource fixes for Italian translation.
+
+---------------------------
+Version 2.74beta 2000-01-14
+---------------------------
+All:
+  Added Italian translation of menus and dialogs.  Help file 
+  not yet translated.
+  README.TXT converted to HTML (Readme.htm).
+
+Win32:
+  Adding folder to start menu for All Users incorrectly 
+  did it for current user.
+  Setup program can skip creating Start Menu folder and items.
+  Added View Readme and View Help buttons to setup program.
+
+---------------------------
+Version 2.73beta 2000-01-11
+---------------------------
+All:
+  pdf_check_tag overflowed a buffer and trashed the stack if a
+  pdfmark was too long.
+
+Win32:
+  Added bzip2 DLL, to uncompress bz2 files similar to gz files.
+  Much more advanced setup program.
+  Change configure into "Easy Configure" and "Advanced Configure".
+
+---------------------------
+Version 2.72beta 1999-09-15
+---------------------------
+All:
+  Find and links didn't set page history; go back page didn't work.
+  When GSview added EPS header to PS file, it was incorrectly
+  adding %BeginDocument instead of %%BeginDocument
+
+  Works with Aladdin Ghostscript 5.93 beta.
+
+  Valid GS version now 4.03 -> 6.99
+
+  German and French translations still need to be updated.
+
+  Ghostscript files are now in subdirectories bin, lib, doc, 
+  fonts, examples (same as Unix arrangement).
+
+Win:
+  DDE code wasn't disabled properly before initialisation.
+
+OS/2:
+  No testing yet.
+
+Win16:
+  Not distributed.  Please use GSview 2.7.
+
+-----------------------
+Version 2.71 1999-01-11
+-----------------------
+Win32:
+  Updated to work with pstoedit 3.0.  Released only in self
+  extracting archive which installs gsview32.exe and pstoedit 3.01.
+
+----------------------
+Version 2.7 1998-12-23
+----------------------
+All:
+  Changed email address to gsview@ghostgum.com.au.
+  GSview is now owned by Ghostgum Software Pty Ltd,
+  ACN 085 392 632.
+  Text extraction can now cope with pstotext incorrectly
+  returning more than one word at a time.
+  Updated to pstotext 1.8.
+
+  Items missing from this release due to lack of time are:
+  - Translations (some English words appear in the French and
+    German versions).
+  - Edit | Measure in OS/2.
+  - Convert to vector format doesn't work because the pstoedit
+    DLL isn't included.
+Win:
+  Edit | Measure dialog box allows distances to be measured,
+  and custom coordinates to be displayed.
+  View | Full Screen displays the image full screen.  
+  Shortcut is F4, Escape returns to normal display.
+
+Win32:
+  Registry entries for file associations now handle spaces in
+  GSview path.
+
+---------------------------
+Version 2.61beta 1998-11-03
+---------------------------
+All:
+  Put quotes around the uniprint configuration file name.
+  Updated to pstotext 1.7, needed for GS 5.50.
+  Add -dFIXEDMEDIA when using pstotext to prevent the 
+  page size of the nullpage device from being changed.
+  Fixed pstotext bug with Dvips Cork Encoding.
+  Added .prn to default file filter.
+  Increase stack space to 65536 for gs thread.
+  PDF displaying now honours orientation menu.
+  PDF displaying will use CropBox if EPSF Clip is enabled.
+  Added "Go Back" and "Go Forward" menu items which remember
+  the order of previously viewed pages.  These will eventually
+  be used by the PDF Annotation /Page /GoBack.
+  When printing an EPS file, make sure it contains one
+  and only one showpage.  If an EPS file doesn't fit on
+  the page, rescale it.
+  When extracting pages from a PDF file, instruct user to
+  use Print to File using pdfwrite or pswrite.
+  Cursor units can be displayed in finer resolution.
+  Added Advanced PostScript Options to printer setup to
+  add Ctrl+D and prolog/epilog files.
+  Widened fields on status bar.
+  When filename given on command line, don't use it until
+  after the configure wizard has finished.
+  
+Win:
+  Filenames on command line are converted to fully qualified
+  names.
+  Added /E command line option to open file in existing GSview.
+  Added /X command line option to close existing GSview.
+  Added DDE server, service="GSview", topic="GSview", which
+  understands the commands 
+    [FileOpen("filename")]
+    [FileExit()]
+    [NextPage()]
+    [PrevPage()]
+    [GoBack()]
+    [GotoPage(5)]
+    [Command("command line")]
+  The last one only understands "filename" or "/P filename".
+  Don't sent multiple commands together.  GSview won't complain,
+  but the multithreaded asynchrononous execution within GSview
+  means that the first command won't have been completed before
+  the second command is received.  If you need to send multiple
+  commands, send them separately and with pauses inbetween.
+
+Win32:
+  Convert all path names to the short form before calling the
+  ProgMan DDE interface.  This should make the GS start menu
+  item work correctly when using long path names.
+  Fixed pstotext makefile for MS VC++.
+  Fixed GS_DLL yet again - it was inserting an extra backslash.
+  Added interface to Wolfgang Glunz's pstoedit.
+
+OS/2:
+  Turn off hard error reporting when changing directory.
+  This is to avoid getting an error popup when starting GSview
+  when the last directory is inaccessible (e.g. removable media).
+  gvpgs.exe was crashing due to insufficient stack space in
+  the gs thread.
+
+----------------------
+Version 2.6 1998-09-17
+----------------------
+All:
+  Fixed some Unix compilation problems with epstool.
+  Fixed several bugs in reopening changed document on activation.
+  Updated Ghostscript icons to new Artifex Ghostscript logo.
+  When installing non default GS version, the setup program
+  wrote the GS version to the INI file, but GSview ignored this.
+
+Win32:
+  Reversed mouse wheel horizontal scroll using left mouse button.
+  When too much text was added to the Ghostscript message window,
+  it couldn't be displayed.
+  Fixed GS_DLL written by setup program.
+  Fixed start menu item for Ghostscript README which is now Readme.htm.
+
+----------------------------
+Version 2.51 beta 1998-08-23
+----------------------------
+All:
+  Updated epstool.  Page calculation for descending page order was 
+  wrong;  If a multipage non-EPS file was used as input, the 
+  output didn't contain the correct single page (or copied garbage).
+  Removed DOS EOL characters and ^Z from epstool tar file.
+  Made Select Page dialog box wider.
+  If within %%Begin/EndDocument, ignore %MSEPS Preamble. 
+  (John DiBiasi, 10 April 1998).
+  When GSview is activated, check if open document has been changed -  
+  if so and "Option | Auto Redisplay", reload and redisplay it.
+Win:
+  Borland C++ getenv("USERPROFILE") returns filenames in OEM character 
+  set, but the Windows API for reading INI files needed the filename in 
+  the ANSI character set.  This stopped user profile INI files working 
+  if non ASCII characters were used. (Ruediger Ullrich, 31 March 1998).
+  If USERPROFILE used, but it did not point to a directory, GSview
+  failed to write the INI file.  Under this fault condition it now 
+  writes it in the default location, the windows directory. 
+
+Win32:
+  Fixed Ghostscript registry keys GS_LIB and GS_DLL written by
+  setup program.
+
+OS/2:
+  Fixed problem with parts of the frame window being omitted in
+  foreign language (far eastern) versions of OS/2.
+  (Steffen Klupsch, 6 April 1998).
+
+----------------------
+Version 2.5 1998-02-20
+----------------------
+Win:
+  Added support for mouse wheel.  
+    No modifier = vertical scroll.
+    Left button = horizontal scroll.
+    Shift = change page,
+    Ctrl = change resolution by a factor of 1.2.
+
+----------------------------------
+Version 2.44 beta 1998-01-14
+----------------------------------
+All:
+  Put sources for each language in a separate directory.
+  Added partial provision for Italian language.
+  Look for zlib DLL on search path as well as GSview directory.
+  Fixed Goto Page dialog problem with duplicate page labels.
+  When extracting pages from a PostScript file, omit leading ^D
+  or PJL commands.
+  Made print "Reverse Pages" sticky.  It is not sticky for
+  extracting pages.
+  Added -dCompatibilityLevel=1.1 to pdfwrite properties.
+Win32:
+  If ProfileDirectory named value in registry doesn't contain
+  a directory name, ignore it.
+  Added explanation "DLL not found" for error 1157 when loading 
+  GS DLL.
+
+----------------------------------
+Version 2.43 beta 1997-12-19
+----------------------------------
+All:
+  Removed a few small memory leaks.
+  uniprint device was being given an incorrect size because
+  the resolution is unknown.  Use -dDEVICEWIDTHPOINTS instead
+  of -dDEVICEWIDTH for this device.
+  Goto Page dialog box now has an edit field so you can type
+  a page number directly.
+Win:
+  Changed setup/configure logs.  Registry changes are now saved
+  as two ordinary REGEDIT4 files, containing before and after state.  
+  Program Manager settings are saved as a set of DDE commands.
+  Added an uninstall program.  Like all install programs, this 
+  works best if you uninstall in the opposite order of installing.
+  If you install GSview twice, the uninstall won't be as clean.
+
+----------------------------------
+Version 2.42 beta 1997-12-13
+----------------------------------
+All:
+  When calculating bounding box from non-white pixels, round the 
+  area outwards by 1 pixel in each direction.
+  "GSview Print" (gvpgs/gvwgs) displays % complete in title bar.
+  Added uniprint button to Print dialog box.  This brings up a
+  list of available uniprint configuration files.
+  Added Reverse page option for print and extract.
+  If a single contiguous block of pages is selected, Odd and Even buttons
+  will select pages within that range.
+  Advance to next page when "Page Down" at end of page.
+  Go back to previous page when "Page Up" at top of page.
+Win:
+  GSview starts "GSview Print" minimized.
+  Fixed /S"printer queue".
+  Complain if no file for /S.
+  Exit after successful /S, /P or /F.
+
+----------------------------------
+Version 2.4 (rerelease) 1997-11-30
+----------------------------------
+All:
+ doc2html will now write out <IMG SRC="file.gif"> if it finds
+ {bml* file.bmp}.
+Win:
+ Changed dialog font to "MS Sans Serif".  These were originally
+ all "Helv" to allow operation on Windows 3.0, but the Borland
+ Resource Workshop changed one of these to "MS Sans Serif".
+ The result was that on a system without "Helv", the configure
+ dialog windows were too large for their parent dialog.
+Win16:
+ Stopped gsview16.exe attempting to unload itself while still
+ running.
+ Increased the stack size of gsview16.exe to stop it crashing
+ Windows on exit.
+
+----------------------
+Version 2.4 1997-11-25
+----------------------
+All:
+ When writing TIFF 6 previews with packbits compression,
+ some input sequences caused excessive expansion of the
+ data which trashed the heap.  Fixed the relevant part
+ of the packbit code.
+ Moved English language resources to main EXE, so they
+ are always available.
+ Corrected EPS Warn message for /statusdict.
+ Drawing percentage went negative when file was longer 
+ than (2^31 / 100) = 22 Mbytes.
+ Added GS_OPTIONS/-dFIXEDMEDIA to Common Problems in help file.
+ Added note on converting PS to PDF using GSview in help file.
+Win:
+ Recent versions wrote a logfile when configuring GSview.
+ This caused GSview configuration to fail if the GSview
+ directory was read only.  Carry on normally if logfile
+ can't be created.
+ When reading printer resolutions, the wrong INI file was
+ read, resulting in the resolution listbox being disabled.
+Win32:
+ Added MS Visual C++ 5.0 makefile and changes to sources.
+ Changes for DEC Alpha Windows NT.  Associated DLLs (pstotext,
+ unzip, zlib) not yet compiled for the DEC Alpha.
+ Recompiled zlib32.dll to be MULTIPLE SHARED so it can be
+ used by multiple copies of GSview.
+ 
+----------------------
+Version 2.3 1997-09-16
+----------------------
+All:
+ File name filters now include .gz extension for PS/EPS/PDF files.
+ Fixed cursor coordinates for landscape and seascape (broken when
+ %%PageOrientation added).
+ Fixed pstotext text extraction when landscape or seascape.
+ Accept negative angles in PDF /Rotate.
+ Update to pstotext to handle landscape documents correctly.
+ Assume that an invalidexit when opening display device is really
+ a limitcheck from no memory, so reduce page size and resolution.
+PM:
+ Increase text limit for configure wizard edit fields.
+
+----------------------------
+Version 2.21 beta 1997-08-02
+----------------------------
+All:
+ Added French translation.
+ Added epswrite, pswrite, pxlmono and pxlcolor to the list of
+ devices known by GSview.
+ INI file in GSview directory will override user INI file
+ when upgrading or running first time.  This allows network
+ admin to avoid users seeing config wizard.
+ Config wizard changed to that "Look for additional Type 1 fonts"
+ is now "Search for ...". The directory specified is now used
+ as -sFONTPATH="..." rather than just appending it to the GS LIB path.
+ Config wizard now adds -dNOPLATFONTS.
+ Added recent 4 files to File menu.
+ Updated licence to Aladdin Free Public Licence version 6.
+Win:
+ Allow per user INI file for Windows.  Use registry entry for
+ Windows 4, or environment variable USERPROFILE if no registry entry.
+PM:
+ Fixed doc2ipf.c to allow apostrophes within topic names, as 
+ required by French.
+
+----------------------
+Version 2.2 1997-06-27
+----------------------
+All:
+ Allow user to enter 5.0 as the GS version number instead of
+ requiring 5.00.
+ Added "Options" edit field to Printer Setup dialog.  This is to allow
+ adding "gamma.ps" or "@printer.upp" to the print command line.  This 
+ is stored on a per printer basis in the INI file.
+ Changed where PageOffset is stored in INI file.
+ Avoid bug in GS 5.0 and 5.01 by patching /.runstringbegin
+ German language help file isn't up to date.  The Ghostscript
+ installation section needs updating.
+Win:
+ Fixed bug restricting magnitude of page offset.
+Win16:
+ Don't put quotes around EXE name in exec_pgm().  This stopped
+ gvwgs16.exe from running under Windows 3.1, but not Windows 95.
+
+----------------------------
+Version 2.12 beta 1997-06-16
+----------------------------
+All:
+ Works with Aladdin Ghostscript 4.03 - 5.99.
+ GS 5.0 doesn't run well with GSview because gsdll.execute_cont()
+ does not return error codes (i.e. it always returns zero).
+ When extracting DOS EPS PostScript or preview, don't get stuck in
+ an infinite loop when DOS EPS header has bad lengths.
+ Display error message if DOS EPS header has bad lengths.
+ Fixed bug (reversed triples) in TIFF 4 preview when depth 
+ was 24 bits/pixel.
+ Don't change orientation menu selection when displaying PDF, 
+ just disable the menu.
+ Changed the behaviour of "Fit Window to Page" so that window can
+ now enlarge as well as reduce in size.
+ Fixed wildcard matching so *.pdf will now match both a.pdf and 
+ a.b.pdf.  This affected the file type filter used in OS/2.
+
+----------------------------
+Version 2.11 beta 1997-05-26
+----------------------------
+All:
+ Ignore reversed bounding box values when using EPSF Clip.
+ Fixed memory leak when displaying PDF files which contain links.
+ Use zlib DLL to uncompress gzipped files.
+ Handle Latin-1 accented characters.
+ Major change to setup program - now looks like install wizard.
+ Added configure wizard to GSview.
+ Added "Orientation | Auto".  The remaining items on the orientation
+ menu are no longer changed by DSC documents.
+ Auto orientation now supports %%PageOrientation.
+PM:
+ Changed the Frame window formatting to work correctly under Far East
+ versions of OS/2 (which have extra child windows).
+Win16:
+ Is available again.  Hopefully it won't get much use.
+Win32:
+ Language DLLs were marked as MULTIPLE SHARED.  This didn't allow
+ them to be loaded multiple times under Win32s.  Tried changing them
+ to SINGLE SHARED.  This should allow them to be loaded multiple times 
+ under Win32s, but it doesn't.  SINGLE SHARED also prevented two copies
+ of GSview running under WinNT.  Changed back to MULTIPLE SHARED.
+ When a second copy of GSview started under Win32s, give command
+ line to first copy and then exit.
+
+----------------------
+Version 2.1 1996-11-04
+----------------------
+All:
+ German translation updates.
+PM:
+ When first run, ask "Select Language" if GSview language doesn't match
+ OS/2 language.
+
+----------------------------
+Version 2.04 beta 1996-10-25
+----------------------------
+All:
+ Remember printer queue names and print to file names separately
+ to prevent Open File dialog box from trying to display a printer.
+ Crashed when quick text search attempted on PDF file.
+ German translation updates.
+ Don't get stuck in "Wait..." state when attempting, but failing,
+ to load pstotext a second time.
+PM:
+ Help buttons were broken when language resources moved to DLL.
+ Palette for old bitmap was wrong.
+
+----------------------------
+Version 2.03 beta 1996-10-17
+----------------------------
+All:
+ Added pstotext dvips Cork Encoding option.
+ Options | Quick Text is now Options | PStoText | Disabled.
+ Still needs a few documentation fixes for German.
+ Changed doc2xxx programs to get title from first line of file.
+PM:
+ Printing was broken when language resources moved to DLL.
+ Don't list printers that are connected to FILE, because
+ printing to them from a non-PM thread locks up PM.
+Win32:
+ Fixed scroll bar redraw bug in WinNT 4.0.
+
+----------------------------
+Version 2.02 beta 1996-10-10
+----------------------------
+All:
+ Split the language specific resources into a separate DLL,
+ so a single GSview EXE now dynamically loads the selected 
+ language resources.
+ Bug with Zoom was causing GSview to jump to first page.
+ Full German translation.
+
+----------------------------
+Version 2.01 beta 1996-09-20
+----------------------------
+All:
+ German translation by Thomas Pfeiffer.
+ Added pdfmark code for /LNK links
+ Fixed handling of PDF files with non zero /Rotate.
+ Ignore Orientation menu for PDF files.
+ Allow resolution to be set for pdfwrite device.
+ When using File | Extract on PDF file, extract PS instead of
+ just writing a wrapper.
+ If limitcheck when opening display device, reset page size and resolution. 
+ Fixed LF only problem in pstotext.txt
+ Added OS/2 and Win32 command line pstotext EXEs which use pstotext DLL.
+ Force Text/GraphicsAlpha=1 if depth<8, to avoid setpagedevice error.
+ Changed large page size warning to 2m x 2m.
+ Fixed "User Defined" page size on startup.
+ Ignore SYNC after GSview generated setpagedevice, to avoid 
+ unnecessary redraw.
+ Previously the EPSF Clip was needed when writing a preview.  Now the
+ clipping will happen automatically.
+ Orientation must be portrait when adding an EPS preview.
+ Automatically calculate bbox from non white pixels.  Old method of 
+ manually clicking at left, bottom, right and top is still available.
+ Made "Print to File" sticky.
+ Can now create WMF previews bigger than 64k, by segmenting
+ into a number of bitmaps each < 64k.
+ WMF preview is written directly, without using GDI APIs.
+ TIFF 6 preview supports colour, uncompressed or compressed with packbits.
+ File | Print has checkbox "PostScript Printer" which is similar
+ to Extract followed by Print File.
+ Recover when current file deleted and new file opened.
+ Don't lock up or use 100% CPU when File | Close and already closed.
+Win:
+ Reduce the number of redraws when displaying found text.
+ Allow Print to File, even when no Windows printers installed.
+ Remember if window is maximized.
+Win16:
+ Compiles and runs.  It is not intended to make this available precompiled.
+PM:
+ Put gvpm.ico in the same directory as gvpm.exe, to help WPS find
+ the correct icon.
+ Changed file dialog box behaviour.  "Type of file" now controls a 
+ file extension filter instead of an EA filter.
+ Now supports os2prn driver for printing (slowly) using any OS/2
+ printer driver that supports bitmaps.
+ Can now add WMF preview.
+
+----------------------
+Version 2.0 1996-08-11
+----------------------
+All:
+ First non-beta release to use the new Ghostscript DLL.
+ Allow zoom and auto-redisplay of single page EPS files.
+ When closing a non-DSC file, abort without displaying too many 
+ of the remaining pages.
+ When displaying DSC files with Special page order, warn the user
+ if they attempt to reorder pages.
+ Redisplay of DSC file with special page order now moves to first page.
+ Skip over PJL (HP LaserJet) prologue.
+ Change Info dialog box to display 'Ctrl-D followed by' or
+ 'PJL followed by'
+ Allow 'PS to EPS' for 0 page DSC files.
+ Disable zoom button while using 'PS to EPS'.
+ Disabled painting when GSview being closed.
+
+-----------------------------
+Version 1.63 beta  1996-08-06
+-----------------------------
+All:
+ Installation program replaces Ghostscript gs_init.ps with 
+ a copy that has the -dSAFER/-dDELAYBIND bug fixed.
+ Text find using pstotext has implied wildcard before and after
+ search string.
+ Prompt for search string or page range before creating text 
+ index file.
+ Abort text extract if pending operation.
+ ps.c was not skipping over trailing ) of (text) in gettext()
+Win32:
+ Only show wait cursor over image window.  Use normal cursor over
+ menu, status and button bars.  User can now see that GSview is
+ not totally unresponsive and can now cause more chaos.
+ Don't close GSview window until after Ghostscript is unloaded.
+PM:
+ Copy marked text to clipboard now works.
+ Scrolling redraws correctly, but only for non palette manager
+ displays.  For palette manager displays, keyboard scrolling works 
+ correctly, but mouse scrolling causes WM_REALIZEPALETTE which causes 
+ complete repaint.
+ Reset page count when redisplaying non DSC document.
+
+
+-----------------------------
+Version 1.62 beta  1996-08-02
+-----------------------------
+All:
+ PDF text search/extract using pstotext.
+ Added hotkeys Ctrl+F and F3 for searching.
+ Improved pstotext searching to use wildcards '*' and '?' in
+ and sensible combination.  Default search range is all pages.
+ PDF zoom now works provided /Rotate is 0.
+ PDF files with nonzero /Rotate display correctly (except for zoom).
+ Fixed bug with 'Open' not working after some files.
+ Blocked a number of operations if %%PageOrder: Special.  These 
+ include 'Goto Page' and 'Find'.
+ If text index has been created, can mark text and copy to clipboard.
+Win32:
+ Disable printer queue/port list box when mswinpr2 device selected.
+ Configuration can now add PDF file type to registry.
+PM:
+ Scrolling of window is currently incorrect.  More than the exposed
+ area is being redrawn.  
+ Copy marked text to clipboard doesn't work.
+
+-----------------------------
+Version 1.61 beta  1996-07-29
+-----------------------------
+All:
+ This is a wide beta release, which will cease to work on 1996-09-01
+ Fixed /P printing from command line.
+ Support for pstotext text extraction.
+ Option "Quick Text" selects between the quick and dirty text
+ extraction and the better, but slower pstotext.
+ pstotext is not included in this version of GSview.
+ Added hotkeys >/< for increase/decrease resolution by 1.2.
+ Can install to a UNC name under Win95, but not Win3.1.
+ Fixed PageOffset.
+ Can do manual configuration to other than ../gs4.01
+ mswinpr2 must be used with windows printer set to Portrait.
+ Added space key -> next page and home.
+ Added backspace key -> previous page and home.
+ Fixed program manager group under WinNT 3.5 (act like 16-bit).
+ Compiles with Windows 4.0 header files.
+ Added percent complete to status line for drawing and extracting text.
+ Disabled arbitrary page display if page order is Special.
+PM:
+ Split GVPM.EXE extended attributes, then rejoin during installation.
+ Fixed window resize bug when device closed.
+
+
+----------------------------
+Version 1.6 beta  1996-06-27
+----------------------------
+All:
+ This is a wide beta release, which will cease to work on 1996-09-01
+Win32:
+ Fixed parsing of gvwgs.exe command line with embedded spaces.
+ Fixed Win32s "Print File"
+ When checking if file datetime has changed, ignore time if getftime()
+ returns datetime=0.  This appears to be a C RTL or Win32s bug.
+ Disabled button help when GSview is not the active window.
+
+-----------------------------
+Version 1.45 beta  1996-06-25
+-----------------------------
+All:
+ Removed 16bit/pixel option for display.  Use 24bit/pixel instead.
+ Added expiry date for betas.
+ Fixed code for opening display device.
+Win32:
+ Added "Fit Window to Page"
+ Fixed zoom when bitmap smaller than window.
+
+-----------------------------
+Version 1.44 beta  1996-06-19
+-----------------------------
+All:
+ Read printer list from ini file instead of resources, to help
+ network installation.
+ Move most of configuration from setup program to GSview, to allow
+ network installation and running directly from a CD-ROM.
+
+-----------------------------
+Version 1.43 beta  1996-06-15
+-----------------------------
+All:
+ Fixed Text Find bug.
+ PDF now sets page size correctly.  Zoom only works if GSview page size
+ matches the PDF page size.
+Win32:
+ Fixed ATM Fontmap install bug.
+ Fixed lockup on single threaded Ghostscript error.
+ Button help now works, but interferes with F1 accelerator.
+PM:
+ Now available again.
+
+-----------------------------
+Version 1.42 beta  1996-05-23
+-----------------------------
+All:
+ Combined Display Resolution, Zoom Resolution, Depth, TextAlphaBits
+ and GraphicsAlphaBits into a single dialog box.
+ Reads INI file from GSview directory if INI file in system
+ directory isn't found or has a version number mismatch.
+ PDF viewing now works.
+Win32:
+ Setup program now supports non-interactive operation.
+
+
+-----------------------------
+Version 1.41 beta  1996-05-18
+-----------------------------
+All:
+ Major rewrite.  GSview now loads Ghostscript as a DLL.
+ Printing uses the gvpgs or gvwgs program to load the GS DLL.
+ Removed redundant "File | Print To File".
+ Multithreading support common to Win and PM.
+ /T option to enable/disable multithreading.
+Win16:
+ Win16 is no longer supported - use Win32s instead, or preferably Win95.
+Win32:
+ One EXE runs multithreaded under Win95 and WinNT, singlethreaded 
+ under Win32s.
+ Added Options TextAlphaBits and GraphicsAlphaBits for anti-aliasing.
+PM:
+ Not yet available.
+
+----------------------
+Version 1.4 1996-01-10
+----------------------
+All:
+ File was being opened twice if file was changed.
+ Should be used with Aladdin Ghostscript 3.53.
+Win16:
+ Prevented GPF when running out of memory.
+ Reduced stack size and pipe buffer size to allow larger documents
+ to be displayed.  If only numeric page labels are used, 500 page
+ documents should be OK.
+PM:
+ Requires emx 0.9b or later.
+ PDF viewing was broken when "Configure Ghostscript" was added.
+
+----------------------------
+Version 1.33 beta 1995-11-30
+----------------------------
+All:
+ Added PageOffset for printers.  See the Properties dialog box.
+ Add 'Edit Properties' dialog box to allow user to add, edit or delete
+ properties for a printer without having to hand edit the INI file.
+Win:
+ Installation program now creates "GS Tools" program group and
+ adds File Manager associations for .ps and .eps to the registry.
+ 
+
+----------------------------
+Version 1.32 beta 1995-11-23
+----------------------------
+All:
+ Installation programs added.
+Win32s:
+ Uses new gsv16spl.exe to write to the 16-bit spooler from Win32s.
+PM:
+ Fixed printing of non DSC documents (was broken when printer
+ dialog boxes were combined).
+
+----------------------------
+Version 1.31 beta 1995-11-03
+----------------------------
+This is an interim release, intended to fix some known problems
+and add a few new features, but does not include the full DLL
+implementation needed to work reliably under Windows 95/NT,
+or paper size handling using level 2 setpagedevice.
+It is intended for use with Aladdin Ghostscript 3.51.
+All:
+ Still doesn't work with landscape PostScript that sets the
+ clipping path.
+ Combined printer dialog boxes.
+ Allow user supplied preview file in creation of DOS EPS file for both 
+ GSview "Edit | Add EPS Preview | User Supplied Preview" and EPSTOOL.
+ Added warning if EPS BoundingBox was entirely off the page.
+ Replace label of "%%Pages: () 1" with page number.
+ Changed "Ghostscript Command" into "Configure Ghostscript" which
+ has separate "Ghostscript EXE" and "Ghostscript Include Path".
+ Changed TIFF code to work on big-endian architectures, to allow
+ EPSTOOL to run under Solaris.
+ Directories src, gsgrab and epstool are now in ZIP files, since
+ most people won't want them unzipped.
+PM:
+ Uses print queues instead of writing to ports.
+ It is now possible to use a Ghostscript path with embedded spaces.
+ Allow user to specify drawing method GpiDrawBits or WinDrawBitmap
+ to dodge display driver bugs.
+ Recover when last directory is invalid (usually no floppy in drive).
+Win:
+ Added Ghostscript 3.51 to "Options | Ghostscript Version".  Selecting
+ GS 3.51 puts quotes around filenames in response files to allow embedded
+ spaces.  This won't work with GS 3.33.
+Win32:
+ Uses print queues under Win95 and WinNT.
+
+
+----------------------------
+Version 1.3       1995-05-23
+----------------------------
+Win:
+ Default extension was .ps. Now .ps or .eps or .epi.
+ Added mswinpr2 to default device list.
+Win32:
+ gvcbugs.doc notes that patched version of Ghostscript 3.33 needed to 
+ avoid lockups under Windows 95.
+ Fixed drag-drop under Win32.
+ Allowed long filenames in quotes on command line.
+ Win95 "Print File" opens port directly and does not attempt to spool file.
+
+----------------------------
+Version 1.23 beta 1995-05-16
+----------------------------
+All:
+ Location of GSview on ftp://ftp.cs.wisc.edu/ghost/rjl/ has changed slightly.
+Win:
+ Changed open command dialog box filter strings so that List Files of
+ type list box doesn't confuse users.  Some users think that if the 
+ extension of a PostScript file is BMP, it can be read by Microsoft Word.
+ Changed dialogs to match Windows 95 style.  This involved changed
+ default font to Helv 8 pt, and adding 0x0004L flag to all dialogs.
+Win32:
+ Increased maximum string length from 80 to 256 characters.
+ Added flag to indicate Windows 95.
+ Corrected error message under Windows 95 when Ghostscript can't be found.
+ Noted that Windows 95 can be used.
+
+----------------------------
+Version 1.22 beta 1995-05-09
+----------------------------
+All:
+ Updated device list to match updated gs 3.33 makefiles.
+ Added note about gs @filename to GSgrab documentation.
+ Added FILE_ID.DIZ for BBS operators.
+ Added suggested Windows PostScript printer drivers to help file.
+PM:
+ Requires emx 0.9a or later.
+Win:
+ Store bitmaps and icon in binary files instead of embedded in resource 
+ script, to allow compilation with Microsoft compilers.
+
+----------------------------
+Version 1.21 beta 1995-04-26
+----------------------------
+PM:
+ Can now handle PDF files using GS 3.33 with PDF interpreter.  Zoom
+ doesn't work with PDF files.  Takes a long time to open PDF file.  Doesn't
+ sense if PDF file is modified.
+ 
+Win32:
+ Filename on command line was ignored.  Removed BC++ 4.0 bug avoidance 
+ since no longer needed in BC++ 4.5.
+
+----------------------------
+Version 1.2 1995-04-18
+----------------------------
+All:
+ Changed email address to rjl@aladdin.com.  This is an alias provided
+ by Aladdin Enterprises.  Russell Lang is not an employee or agent
+ of Aladdin Enterprises.
+ Aladdin Ghostscript 3.33 is now the preferred version for use with GSview.
+ Disabled changing HWResolution via setpagedevice.
+ Fixed bug in handling %%BeginBinary or %%BeginData with lines > 255
+ characters (which is incorrect DSC).
+ Now deals with incorrect DSC usage whereby code is included
+ after %%EndSetup and before %%Page:  (Microsoft Windows).
+ Added warning if User Defined Media dimensions exceed 1 metre.
+ Updated documentation to suit GS 3.33.
+ Updated printer devices list to suit GS 3.33.
+PM:
+ Removed double mutex request which may have been causing mutex timeout.
+ Show Bounding Box now works in orientations other than portrait
+ and when zoomed.
+ Sound files with spaces in filename will now play.  Required quotes
+ around filename for MciPlayFile().
+Win:
+ Now compiled using BC++ 4.5.
+Win16:
+ Add "Options | Ghostscript Version" to allow GNU Ghostscript 2.6.1 
+ to be used by GSview.  Support for this is likely to be dropped
+ in the future.
+Win32:
+ Modified get_filename() to deal with buggy Win32 GetOpenFileName
+ which didn't change current directory.
+
+----------------------------
+Version 1.13 beta 1995-01-09
+----------------------------
+All:
+ Fixed bug which caused looping in ps.c when reading DOS EPS file.
+ Added reference to WWW home page.
+ Add ghostscript installation instructions to help file.
+PM:
+ Added small black and white icons for OS/2 Warp.
+ Fixed check marks on Orientation menu.
+ Added Ctrl+PgDn and Ctrl+PgUp to page left and right as per IBM CUA.
+Win32:
+ Fixed bug which stopped gsview32.exe working as a NCSA Mosaic viewer.
+ This bug was caused by a buggy BC4 setdisk() function which was incorrectly 
+ changing the directory on selected disk.
+ Changed INI filename to GSVIEW32.INI
+
+----------------------------
+Version 1.12 beta 1994-12-08
+----------------------------
+All:
+ Prevent user entering 0 for width or height of user defined media.
+ Created doc2html for making GSview on-line help available via the
+ World Wide Web.
+ Fixed printing with User Defined page size.
+ Reverted to using Tim Theisen's ps.c module, but with a non GNU licence.
+ Modified ps.c to support %%BeginData lines > 254 char, atend instead
+ of (atend), %!PS-Adobe instead of %!PS-Adobe-, DOS EPS files.
+Win:
+ If ghostscript window in existence, don't erase background of
+ GSview.  This is to avoid an NT bug which resulted in GSview
+ being told to erase the background after Ghostscript had drawn 
+ the child window.
+ Treat Windows 95 (version > 4.0) as being like Windows NT.
+ When creating default Ghostscript Command, use gswin32.exe for 32bit
+ version, not gswin.
+PM:
+ Added new option "Show Bounding Box" which draws a dashed rectangle 
+ over the image to show the bounding box.  Only works in portrait
+ orientation.
+
+----------------------------
+Version 1.11 beta 1994-10-27
+----------------------------
+All:
+ Changed "Save Settings" to "Save Settings Now" for consistency with 
+ WinNT program manager.
+ Changed DSC recognition string from "%!PS-Adobe-" to "%!PS-Adobe"
+ to allow it to recognise OS/2 2.99 (Warp Beta) PostScript driver files.
+ Allow "%%Pages: atend" and "%%BoundingBox: atend" which are both
+ incorrect because they should be "(atend)" not "atend".  Still
+ gives warning message about these lines, but accepts them anyway.
+ Allow documents that claim DSC conformance to incorrectly include
+ a setup section without using %%Begin/EndSetup.  Warning given.
+ Allow documents that claim DSC conformance to incorrectly include
+ code between %%EndSetup and the first %%Page.
+ Add debug messages "%GSview sectionname".
+ Moved Page selection menu items to new View menu.
+ Added "File | Save As" to save the current document when GSview
+ is used as a WWW viewer.
+Win:
+ Under WinNT, registry entry for [sounds] includes "Enable=1" which caused
+ Options|Sounds to crash.  Added code to ignore this entry.
+Win32:
+ Fixed sounds. Was looking for MMSYSTEM.DLL instead of WINMM.DLL.
+ Imitation pipe code changed to use memory mapped files instead
+ of shared memory under WinNT.
+ WinNT cannot mix 16 and 32 bit versions of Ghostscript and GSview.
+ Under WinNT, scroll bars are not redrawn properly, and cursor over
+ child window is not correct.
+ This problem may be an artifact of the image window
+ not being owned by the same process as the parent window.
+
+----------------------------
+Version 1.1 1994-08-03
+----------------------------
+All:
+ Change licence from GNU to GSview specific licence.  Commercial
+ distribution of this version now prohibited.
+ Added Zoom by right mouse button.
+ Added Keys Help topic.
+ Added pt, mm and inch units to cursor position on status line.
+ Cursor position is now w.r.t. lower left of page, not lower left
+ of bitmap (relevant when page rotated).
+ Force installation help to be displayed when user can't run ghostscript.
+ Handle files that claim DSC conformance, yet have lines > 254 characters
+ in %%BeginData section (MS-Windows PostScript driver yet again).
+PM: When restoring window location on startup, maximize window if 
+ needed, remembering restored position.
+ Added scrolling bug avoidance kludge for OS/2 2.11, 1bit/pixel bitmap 
+ with 1bit/pixel display.
+ When GSview started from the command line, ignore any non-existent
+ file given as an argument.  Putting GSview on the Desktop menu
+ causes d:\Desktop to be given as an argument to GSview.
+ Added Options | Fit Window to Page.
+ Added new messages GS_BEGIN and GS_END from gsos2.
+ These are caused by "-1 false .outputpage" and "-2 false .outputpage"
+ respectively.  These commands are placed before and after every page.
+ These are used by GSview to tell when gsos2 starts processing input
+ and when it finishes processing input.
+ This reduces the number of incorrect status messages that get briefly 
+ displayed.  Should also make it harder to advance to next page while
+ Ghostscript busy.
+Win: Draw cursor position on status line directly instead of using
+ paint message.  Looks better when cursor in motion.
+
+----------------------------
+Version 1.08 beta 1994-05-10
+----------------------------
+Win16:
+ Again loads files from the command line.
+
+Win32: 
+ Now loads files from the command line (far pointer in WM_COMMAND 
+ lParam was being truncated by Win32s.  Use handle instead).
+ Fixed EPS Add Preview | Windows Metafile (BC4 can't tell the
+ difference between hwrite and _hwrite!).
+
+PM:
+ buttons now in correct place when user tries to resize window
+ larger than bitmap.
+
+Wider distribution (ftp.cs.wisc.edu, ftp.cdrom.com).
+
+----------------------------
+Version 1.07 beta 1994-04-28
+----------------------------
+
+Fixed "gvpm [drive:][path]file" to stay in current directory and to
+  pass full pathname to Ghostscript.
+
+Made Auto Redisplay the default.
+
+Changed "Wait" message to be more descriptive.
+
+Fixed redisplay when displayed file is changed.
+
+Shortened gs printer command line by putting filename inside options file.
+
+Merged more of the Windows and PM print code together.
+
+Fixed Windows Select Device dialog box.
+
+Remember port for Open | Print File.
+
+Print all pages when document doesn't contain DSC page comments.
+
+PM Fixes:
+ Buttons now drawn correctly when window is maximized.
+ In input dialog box, select entry field during dialog box creation.
+ Fixed DOS EPS header created by EMX (needed pack(1))
+ Fixed Open | Print File.
+ Made PM filename box on status line wider.
+ Added button descriptions on status bar.
+
+----------------------------
+Version 1.06 beta 1994-03-03
+----------------------------
+
+Changed name back to GSview (original name used in pre 0.6 alpha) 
+to avoid confusion with Tim Theisen's X11 Ghostview.
+
+Ported to OS/2 Presentation Manager.  This involved a major reorganisation 
+to allow common code between MS-Windows and OS/2.
+MS-Windows version is expected to have more bugs than version 1.0.
+
+PM GSview supports all the relevant features from GSview for Windows
+except for "Edit | Add EPS Preview | Windows Metafile".
+
+Added Microsoft Win32s version.  
+16 bit GSview for Windows will work with 32 bit Ghostscript using
+Win32s and vice versa.
+GSview for Windows now requires Ghostscript 3.0.
+Not tested under Windows NT.
+
+Added Media | Depth option.  Needs Ghostscript version 3.0.
+
+Added Options | Ignore DSC.  Useful for documents that incorrectly
+claim to follow DSC.
+
+Rewrote DSC scanning code.  Now handles DOSEPS files without creating
+a temporary file.
+
+Added magnify buttons.
+
+Added text extract and search.
+
+----------------------------
+Version 1.0a  1993-11-10
+----------------------------
+
+Fixed EPSF Warn bug.
+
+Fixed INI file bug for Printer entry.
+
+----------------------------
+Version 1.0  1993-08-05
+----------------------------
+
+Saved media name in an array so it is available in write_profile().
+Previously, closing gsview from the system menu would cause 
+write_profile() to be called twice, the second time after the
+window and menu had been destroyed.  Consequently the media
+name could not be obtained from the non-existent menu.
+
+Added command line option /S[port] to spool file (File | Print File).
+This allows files dropped on the Print Manager to be sent
+direct to a PostScript printer.
+
+Changed default timeout to 5 minutes per page.  This timeout 
+only affects printing.  Timeout for displaying was dropped
+in version 0.8 beta (when pipe code was changed).
+Timeout for opening or closing Ghostscript is still 20 seconds.
+
+Added "Safer" option to select Ghostscript -dSAFER flag which
+disables the deletefile and renamefile operators, and the
+ability to open files in any mode other than read-only.
+The default is now "Safer".
+
+Added %%EndImage before %%EndPreview of EPSI preview.
+
+Changed default file extensions so that .ps indicates an ASCII
+postscript file and .eps indicates a DOS EPS file with a 
+binary header and preview.
+
+----------------------------
+Version 0.8 beta  1993-07-07
+----------------------------
+
+DSC file is now closed after each page is displayed.  
+The file is reopened just before the next page is displayed and 
+if the file length or date stamp have changed, gswin is killed 
+and the file rescanned.  Version 0.7 kept DSC files open which 
+caused problems if another program changed the file.
+
+Documented that gsview produces TIFF 5.0 Class B images.
+Added a menu option for creating a TIFF 4.0 preview for 
+Word Perfect 5.1 which requires a narrow minded interpretation
+of the TIFF 4.0 specification.
+
+Moved imitation pipe code to a separate module.
+Changed implementation of imitation pipe.  Instead of creating
+many temporary files, gsview now keeps a single read/write file open.
+When gsview writes to the imitation pipe the data is written to this file.  
+When the pipe is flushed gsview reads the file and passes it to gswin 
+in global memory blocks.  When gswin asks for data and there is no more 
+to give, gsview resets the file.
+
+If a file is specified on the gsview command line do not use the
+saved directory.  If a path to the file is given, use it as the 
+current directory, otherwise use the gsview working directory.
+
+To stop documents that change the paper size from interfering with
+gsview's orientation commands, gsview now adds paper size commands 
+(e.g. letter, a4) to the userdict to replace those in the systemdict.
+
+Generate error if user attempts to overwrite open document file.
+
+----------------------------
+Version 0.7 beta  1993-05-10
+----------------------------
+
+First general release of Ghostview for Windows.
+

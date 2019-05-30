@@ -1,0 +1,4 @@
+LIBRARY GVPMFR
+DESCRIPTION	'GSview French Language Resources'
+DATA SINGLE SHARED
+EXPORTS  main

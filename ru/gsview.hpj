@@ -1,0 +1,9 @@
+[OPTIONS]
+TITLE=Справка GSview
+BMROOT=../binary
+LCID=0x419 0x0 0x0 ; Russian
+CHARSET=204
+[FILES]
+gsview.rtf
+[CONFIG]
+BrowseButtons()

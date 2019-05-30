@@ -1,0 +1,295 @@
+/* Copyright (C) 1993-1998, Ghostgum Software Pty Ltd.  All rights reserved.
+
+  This file is part of GSview.
+
+  This program is distributed with NO WARRANTY OF ANY KIND.  No author
+  or distributor accepts any responsibility for the consequences of using it,
+  or for whether it serves any particular purpose or works at all, unless he
+  or she says so in writing.  Refer to the GSview Free Public Licence
+  (the "Licence") for full details.
+
+  Every copy of GSview must include a copy of the Licence, normally in a
+  plain ASCII text file named LICENCE.  The Licence grants you the right
+  to copy, modify and redistribute GSview, but only under certain conditions
+  described in the Licence.  Among other things, the Licence requires that
+  the copyright notice and this notice be preserved on all copies.
+*/
+
+/* nl\gvplang.rc */
+/* OS/2 PM Dutch language resources */
+
+CODEPAGE 850
+
+MENU ID_GSVIEW
+BEGIN
+/*
+        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+*/
+        SUBMENU "~Bestand", IDM_FILEMENU
+        BEGIN
+                MENUITEM "~Openen...\tO", IDM_OPEN
+                MENUITEM "~Bestand selecteren...\tB", IDM_SELECT
+                MENUITEM "Ops~laan Als...\tl", IDM_SAVEAS
+                MENUITEM "~Sluiten\SC", IDM_CLOSE
+                MENUITEM "~Info...\tI", IDM_INFO
+                MENUITEM SEPARATOR
+                MENUITEM "Om~zetten...\tz", IDM_CONVERTFILE
+                MENUITEM "E~xporteren...\tx", IDM_EXTRACT
+                MENUITEM "PS ~naar EPS", IDM_PSTOEPS
+                MENUITEM SEPARATOR
+                MENUITEM "Af~drukken...\td", IDM_PRINT
+                MENUITEM "Bestand Afd~rukken...", IDM_SPOOL
+                MENUITEM SEPARATOR
+                MENUITEM "Berichten ~Tonen\tT", IDM_GSMESS
+                MENUITEM SEPARATOR
+                MENUITEM SEPARATOR
+                MENUITEM "~Einde", IDM_EXIT
+        END
+
+        SUBMENU "Be~werken", IDM_EDITMENU
+        BEGIN
+                MENUITEM "~Kopiëren\tCtrl+C", IDM_COPYCLIP
+                MENUITEM SEPARATOR
+                MENUITEM "~Plakken...", IDM_PASTETO
+/*
+                MENUITEM "~Bitmap omzetten", IDM_CONVERT
+*/
+                MENUITEM SEPARATOR
+                SUBMENU "~EPS Voorbeeld toevoegen", IDM_ADDEPSMENU
+                BEGIN
+                        MENUITEM "~Interchange", IDM_MAKEEPSI
+                        MENUITEM "TI~FF 4", IDM_MAKEEPST4
+                        MENUITEM "~TIFF 6, niet gecomprimeerd", IDM_MAKEEPST6U
+                        MENUITEM "TIFF 6 ~packbits", IDM_MAKEEPST6P
+                        MENUITEM "~Windows Meta File", IDM_MAKEEPSW
+                        MENUITEM "~Voorbeeld door gebruiker geleverd", IDM_MAKEEPSU
+                END
+
+                SUBMENU "EPS Afs~cheiden", IDM_EXTEPSMENU
+                BEGIN
+                        MENUITEM "~PostScript", IDM_EXTRACTPS
+                        MENUITEM "~Voorbeeld", IDM_EXTRACTPRE
+                END
+                MENUITEM SEPARATOR
+                MENUITEM "Omzetten naar ~vektorindeling...", IDM_PSTOEDIT
+                MENUITEM "~Meten", IDM_MEASURE
+                MENUITEM "~Tekst exporteren...", IDM_TEXTEXTRACT
+                MENUITEM "~Zoeken...\tCtrl+F", IDM_TEXTFIND
+                MENUITEM "~Volgende Zoeken\tF3", IDM_TEXTFINDNEXT
+        END
+
+        SUBMENU "O~pties", IDM_OPTIONMENU
+        BEGIN
+                MENUITEM "Eenvoudige Configuratie...", IDM_CFG
+                MENUITEM "Aangepaste Configuratie...", IDM_GSCOMMAND
+                MENUITEM "Geluid...", IDM_SOUNDS
+                SUBMENU "~Eenheid", IDM_UNITMENU
+                BEGIN
+                        MENUITEM "~pt", IDM_UNITPT
+                        MENUITEM "~mm", IDM_UNITMM
+                        MENUITEM "~inch", IDM_UNITINCH
+                        MENUITEM SEPARATOR
+                        MENUITEM "~Fijne Resolutie", IDM_UNITFINE
+                END
+                SUBMENU "~Taal", IDM_LANGMENU
+                BEGIN
+                        MENUITEM "~English", IDM_LANGEN
+                        /* Remaining languages are added at run time */
+                END
+                SUBMENU "PStoText", IDM_PSTOTEXTMENU
+                BEGIN
+                        MENUITEM "~Uitgeschakeld", IDM_PSTOTEXTDIS
+                        MENUITEM "~Normaal", IDM_PSTOTEXTNORM
+                        MENUITEM "~Dvips Cork Codering", IDM_PSTOTEXTCORK
+                END
+                SUBMENU "DSC Waaschuwingen", IDM_DSCMENU
+                BEGIN
+                        MENUITEM "~Uit", IDM_DSC_OFF
+                        MENUITEM "~Fouten", IDM_DSC_ERROR
+                        MENUITEM "~Waarschuwingen", IDM_DSC_WARN
+                        MENUITEM "~Alle", IDM_DSC_INFO
+                END
+                MENUITEM "Instellingen ~Nu Bewaren", IDM_SETTINGS
+                MENUITEM SEPARATOR
+                MENUITEM "Instell~ingen bewaren bij afsluiten", IDM_SAVESETTINGS
+                MENUITEM "Be~standen Beveiligen", IDM_SAFER
+                MENUITEM "Laatste ~Directory Bewaren", IDM_SAVEDIR
+                MENUITEM "~Knoppenbalk", IDM_BUTTONSHOW
+                MENUITEM "~Venster aan pagina aanpassen", IDM_FITPAGE
+                MENUITEM "Automatisch Ve~rversen", IDM_AUTOREDISPLAY
+                MENUITEM "EPS K~nippen", IDM_EPSFCLIP
+                MENUITEM "EPS ~Waarschuwing", IDM_EPSFWARN
+                MENUITEM "~DSC Overslaan", IDM_IGNOREDSC
+                MENUITEM "Inbinden ~Tonen", IDM_SHOWBBOX
+        END
+
+        SUBMENU "Be~kijken", IDM_VIEWMENU
+        BEGIN
+                MENUITEM "~Volgende bladzijde\t+", IDM_NEXT
+                MENUITEM "Vorige blad~zijde\t-", IDM_PREV
+                MENUITEM "~Ga naar bladzijde...\tG", IDM_GOTO
+                MENUITEM "Ter~ug\tu", IDM_GOBACK
+                MENUITEM "V~erder", IDM_GOFWD
+                MENUITEM "~Opnieuw Tonen\tO", IDM_REDISPLAY
+                MENUITEM SEPARATOR
+                MENUITEM "Volgende Pagina Bovenaan\tSpace", IDM_NEXTHOME
+                MENUITEM "Vorige Pagina Bovenaan\tBkSp", IDM_PREVHOME
+                MENUITEM SEPARATOR
+                MENUITEM "Volledig ~Scherm\tF4", IDM_FULLSCREEN
+                MENUITEM "~In Venster aanpassen\tF6", IDM_FITWIN
+        END
+
+        SUBMENU "~Orientatie", IDM_ORIENTMENU
+        BEGIN
+                MENUITEM "~Automatisch", IDM_AUTOORIENT
+                MENUITEM SEPARATOR
+                MENUITEM "~Staand", IDM_PORTRAIT
+                MENUITEM "~Liggend", IDM_LANDSCAPE
+                MENUITEM "~Ondersteboven", IDM_UPSIDEDOWN
+                MENUITEM "~90 graden naar rechts draaien", IDM_SEASCAPE
+                MENUITEM SEPARATOR
+                MENUITEM "L~iggende positie omdraaien", IDM_SWAPLANDSCAPE
+        END
+
+        SUBMENU "~Papierformaat", IDM_MEDIAMENU
+        BEGIN
+                MENUITEM "~Schermresolutie wijzigen", IDM_DISPLAYSETTINGS
+                MENUITEM SEPARATOR
+                MENUITEM "Omgekee~rd formaat", IDM_MEDIAROTATE
+                MENUITEM SEPARATOR
+                MENUITEM "11x17", IDM_11x17
+                MENUITEM "A3", IDM_A3
+                MENUITEM "A4", IDM_A4
+                MENUITEM "A5", IDM_A5
+                MENUITEM "B4", IDM_B4
+                MENUITEM "B5", IDM_B5
+                MENUITEM "Letter", IDM_LETTER
+                MENUITEM "Ledger", IDM_LEDGER
+                MENUITEM "Legal", IDM_LEGAL
+                MENUITEM "Notaatje", IDM_LETTER
+                MENUITEM "Door de gebruiker ingesteld...", IDM_USERSIZE
+        END
+
+        SUBMENU "~Help", IDM_HELPMENU
+        BEGIN
+                MENUITEM "~Inhoud", IDM_HELPCONTENT
+                MENUITEM "~Hulp zoeken over", IDM_HELPSEARCH
+                MENUITEM "~Toetsen", IDM_HELPKEYS
+                MENUITEM SEPARATOR
+                MENUITEM "GSview ~Registreren...", IDM_REGISTER
+                MENUITEM "~Over GSview...", IDM_ABOUT
+        END
+
+END
+
+ACCELTABLE ID_GSVIEW
+BEGIN
+        "O", IDM_OPEN
+        "O", IDM_OPEN, SHIFT
+        "o", IDM_OPEN
+        "o", IDM_OPEN, SHIFT
+        "C", IDM_CLOSE
+        "C", IDM_CLOSE, SHIFT
+        "c", IDM_CLOSE
+        "c", IDM_CLOSE, SHIFT
+        "N", IDM_NEXT
+        "N", IDM_NEXT, SHIFT
+        "n", IDM_NEXT
+        "n", IDM_NEXT, SHIFT
+        " ", IDM_NEXTHOME
+        " ", IDM_NEXTHOME, SHIFT
+        VK_SPACE, IDM_NEXTHOME, VIRTUALKEY
+        "+", IDM_NEXT
+        "+", IDM_NEXT, SHIFT
+        "V", IDM_PREV
+        "V", IDM_PREV, SHIFT
+        "v", IDM_PREV
+        "v", IDM_PREV, SHIFT
+        "-", IDM_PREV
+        VK_BACKSPACE, IDM_PREVHOME, VIRTUALKEY
+        VK_BACKSPACE, IDM_PREVHOME, VIRTUALKEY, SHIFT
+        "G", IDM_GOTO
+        "G", IDM_GOTO, SHIFT
+        "g", IDM_GOTO
+        "g", IDM_GOTO, SHIFT
+        "B", IDM_GOBACK
+        "B", IDM_GOBACK, SHIFT
+        "b", IDM_GOBACK
+        "b", IDM_GOBACK, SHIFT
+        "I", IDM_INFO
+        "I", IDM_INFO, SHIFT
+        "i", IDM_INFO
+        "i", IDM_INFO, SHIFT
+        "R", IDM_REDISPLAY
+        "R", IDM_REDISPLAY, SHIFT
+        "r", IDM_REDISPLAY
+        "r", IDM_REDISPLAY, SHIFT
+        "S", IDM_SELECT
+        "S", IDM_SELECT, SHIFT
+        "s", IDM_SELECT
+        "s", IDM_SELECT, SHIFT
+        "A", IDM_SAVEAS
+        "A", IDM_SAVEAS, SHIFT
+        "a", IDM_SAVEAS
+        "a", IDM_SAVEAS, SHIFT
+        "P", IDM_PRINT
+        "P", IDM_PRINT, SHIFT
+        "p", IDM_PRINT
+        "p", IDM_PRINT, SHIFT
+        "F", IDM_CONVERTFILE
+        "F", IDM_CONVERTFILE, SHIFT
+        "f", IDM_CONVERTFILE
+        "f", IDM_CONVERTFILE, SHIFT
+        "E", IDM_EXTRACT
+        "E", IDM_EXTRACT, SHIFT
+        "e", IDM_EXTRACT
+        "e", IDM_EXTRACT, SHIFT
+        "M", IDM_GSMESS
+        "M", IDM_GSMESS, SHIFT
+        "m", IDM_GSMESS
+        "m", IDM_GSMESS, SHIFT
+        VK_F1, IDM_HELPCONTENT, VIRTUALKEY
+        "C", IDM_COPYCLIP, CONTROL
+        VK_INSERT, IDM_COPYCLIP, VIRTUALKEY, CONTROL
+        "F", IDM_TEXTFIND, CONTROL
+        "f", IDM_TEXTFIND, CONTROL
+        VK_F3, IDM_TEXTFINDNEXT, VIRTUALKEY
+        "<", IDM_MAGMINUS
+        "<", IDM_MAGMINUS, SHIFT
+        ",", IDM_MAGMINUS
+        ",", IDM_MAGMINUS, SHIFT
+        ">", IDM_MAGPLUS
+        ">", IDM_MAGPLUS, SHIFT
+        ".", IDM_MAGPLUS
+        ".", IDM_MAGPLUS, SHIFT
+        VK_F4, IDM_FULLSCREEN, VIRTUALKEY
+        VK_F5, IDM_REDISPLAY, VIRTUALKEY
+        VK_F6, IDM_FITWIN, VIRTUALKEY
+END
+
+STRINGTABLE
+BEGIN
+        /* general strings */
+        IDS_SLANGUAGE, "27,31,32,597,599 " /* Countries that speak Dutch */
+        IDS_CODEPAGE, "850"	/* IBM Western Europe */
+        IDS_HELPFILE, "gvpmnl.hlp"
+        IDS_HELPTITLE, "GSview Help"
+        IDS_SIGSEGV "Fatale Fout\015GSview nu afsluiten!"
+        IDS_FILENOTFOUND, "Bestand niet beschikbaar."
+END
+
+STRINGTABLE
+BEGIN
+        /* default is first */
+        IDS_FILTER_PSALL "*.ps;*.eps;*.epi;*.pdf;*.prn;*.ps.gz;*.psz;*.eps.gz;*.epi.gz;*.pdf.gz|*.eps|*.epi|*.pdf|*.prn|*.ps|*.ps;*.eps;*.epi;*.pdf;*.prn;*.ps.gz;*.eps.gz;*.epi.gz;*.pdf.gz"
+        IDS_FILTER_PS   "*.ps|*.eps|*.epi|*.pdf|*.ps|*.ps;*.eps;*.epi;*.pdf"
+        IDS_FILTER_EPS  "*.eps|*.eps|*.epi|*.pdf|*.ps|*.ps;*.eps;*.epi;*.pdf"
+        IDS_FILTER_EPI  "*.epi|*.eps|*.epi|*.pdf|*.ps|*.ps;*.eps;*.epi;*.pdf"
+        IDS_FILTER_PDF  "*.pdf|*.eps|*.epi|*.pdf|*.ps|*.ps;*.eps;*.epi;*.pdf"
+        IDS_FILTER_ALL  "*"
+        IDS_FILTER_BMP  "*.bmp"
+        IDS_FILTER_TIFF "*.tif"
+        IDS_FILTER_WMF  "*.wmf"
+        IDS_FILTER_TXT  "*.txt"
+END
+

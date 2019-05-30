@@ -1,0 +1,4 @@
+LIBRARY SETUP2NL
+DESCRIPTION	'GSview Setup Dutch Language Resources'
+DATA SINGLE SHARED
+EXPORTS  main

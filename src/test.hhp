@@ -1,0 +1,87 @@
+[OPTIONS]
+Compatibility=1.1
+Compiled file=test.chm
+Contents file=test.hhc
+Default Window=GSview
+Default topic=html/Overview.htm
+Display compile progress=No
+Full-text search=Yes
+Index file=test.hhk
+Language=0xc09 English (Australia)
+
+[WINDOWS]
+GSview="GSview Help","test.hhc","test.hhk","html/Overview.htm",,,,,,0x2520,,0x304e,,,,,0,,,
+
+[FILES]
+html/Overview.htm
+html/Installation.htm
+html/Obtaining_Ghostscript.htm
+html/Ghostscript_Installation.htm
+html/Uninstalling_GSview.htm
+html/Manual_uninstallation.htm
+html/Manual_Installation.htm
+html/Advanced_Manual_Installation.htm
+html/Network_Installation.htm
+html/Running_GSview_from_the_File_Manager_or_Windows_Explorer.htm
+html/Registration.htm
+html/Document_Structuring_Conventions.htm
+html/Portable_Document_Format.htm
+html/Opening_a_Document.htm
+html/Page_Selection.htm
+html/Document_Information.htm
+html/Printing.htm
+html/Select_Pages.htm
+html/Windows_GDI_printer.htm
+html/Ghostscript_device.htm
+html/PostScript_printer.htm
+html/Print_File.htm
+html/Properties.htm
+html/Edit_Properties.htm
+html/Page_Size_Matching.htm
+html/Conversions.htm
+html/File_conversions_and_tricks.htm
+html/Convert.htm
+html/Extract.htm
+html/PS_to_EPS.htm
+html/EPS_Preview.htm
+html/User_Supplied_Preview.htm
+html/Convert_to_vector_format.htm
+html/Text_Extract_and_Find.htm
+html/Quick_Text_Extract_and_Find.htm
+html/PStoText_Text_Extract_and_Find.htm
+html/Clipboard.htm
+html/Measure.htm
+html/Options.htm
+html/Easy_Configure.htm
+html/Advanced_Configure.htm
+html/Sounds.htm
+html/Units.htm
+html/Language.htm
+html/PStoText.htm
+html/DSC_Warnings.htm
+html/Save_Settings.htm
+html/Safer.htm
+html/Save_Last_Directory.htm
+html/Button_Bar.htm
+html/Fit_Window_To_Page.htm
+html/Auto_Redisplay.htm
+html/EPS_Clip.htm
+html/EPS_Warn.htm
+html/Ignore_DSC.htm
+html/Show_Bounding_Box.htm
+html/Page_Orientation.htm
+html/Display_Settings.htm
+html/Zoom.htm
+html/Page_Size.htm
+html/Keys.htm
+html/Command_line_options.htm
+html/Dynamic_Data_Exchange.htm
+html/World_Wide_Web.htm
+html/Copyright.htm
+html/Common_Problems.htm
+html/Other_Useful_Programs.htm
+html/Other_Help_Topics.htm
+html/Show_Messages.htm
+html/bzip2.htm
+html/zlib.htm
+html/Internals.htm

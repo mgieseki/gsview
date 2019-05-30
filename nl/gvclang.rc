@@ -1,0 +1,352 @@
+/* Copyright (C) 1993-2001, Ghostgum Software Pty Ltd.  All rights reserved.
+
+  This file is part of GSview.
+
+  This program is distributed with NO WARRANTY OF ANY KIND.  No author
+  or distributor accepts any responsibility for the consequences of using it,
+  or for whether it serves any particular purpose or works at all, unless he
+  or she says so in writing.  Refer to the GSview Free Public Licence
+  (the "Licence") for full details.
+
+  Every copy of GSview must include a copy of the Licence, normally in a
+  plain ASCII text file named LICENCE.  The Licence grants you the right
+  to copy, modify and redistribute GSview, but only under certain conditions
+  described in the Licence.  Among other things, the Licence requires that
+  the copyright notice and this notice be preserved on all copies.
+*/
+
+
+/* nl\gvclang.rc */
+/* Common Dutch language resources */
+
+#ifndef GSVS
+#define GSVS(x,y) x,y
+#endif
+
+/* button help */
+STRINGTABLE
+BEGIN
+        /* these must be in ascending ID order */
+        GSVS(IDM_OPEN, "Openen...")
+        GSVS(IDM_INFO, "Info...")
+        GSVS(IDM_PRINT, "Afdrukken...")
+        GSVS(IDM_TEXTFIND, "Zoeken...")
+        GSVS(IDM_TEXTFINDNEXT, "Volgende zoeken")
+        GSVS(IDM_NEXT, "Volgende zoeken")
+        GSVS(IDM_NEXTSKIP, "5 pagina's verder gaan")
+        GSVS(IDM_PREV, "Vorige pagina")
+        GSVS(IDM_PREVSKIP, "5 pagina's terug")
+        GSVS(IDM_GOTO, "Ga naar pagina...")
+        GSVS(IDM_GOBACK, "Terug")
+        GSVS(IDM_GOFWD, "Verder")
+        GSVS(IDM_MAGPLUS, "Resolutie vergroten")
+        GSVS(IDM_MAGMINUS, "Resolutie verminderen")
+        GSVS(IDM_HELPCONTENT, "Hulp")
+END
+
+
+STRINGTABLE
+BEGIN
+        GSVS(IDS_LANGUAGE, AANEDERLANDS)
+        GSVS(IDS_ELANGUAGE, "Dutch")
+        GSVS(IDS_FILE, "Bestand: ")
+        GSVS(IDS_NOFILE, "Bestand niet beschikbaar")
+        GSVS(IDS_PAGE, "Pagina: ")
+        GSVS(IDS_NOPAGE, "Paginanummering niet beschikbaar")
+        GSVS(IDS_PAGESPECIAL, "Paginavolgorde is speciaal.  Betrouwbare herschikking is niet mogelijk.  Zie hiervoor help over 'Vaak voorkomende problemen'.  Verder gaan?")
+        GSVS(IDS_LANDSCAPE, "Liggend")
+        GSVS(IDS_PORTRAIT, "Staand")
+        GSVS(IDS_ASCEND, "Oplopend")
+        GSVS(IDS_DESCEND, "Aflopend")
+        GSVS(IDS_SPECIAL, "Speciaal")
+        GSVS(IDS_PAGEINFO, "Pagina: \042%s\042  %d of %d")
+        GSVS(IDS_LINKPAGE, "Koppeling naar pagina %d")
+        GSVS(IDS_DEFAULT, "Standaard")
+        GSVS(IDS_NOTDEFTAG, "[Niet bepaald]")
+        GSVS(IDS_EPSF, "EPS")
+        GSVS(IDS_EPSI, "EPS Interchange Voorbeeld")
+        GSVS(IDS_EPST, "EPS met TIFF Voorbeeld")
+        GSVS(IDS_EPSW, "EPS met Meta file Voorbeeld")
+        GSVS(IDS_DSC, "DSC")
+        GSVS(IDS_NOTDSC, "Geen DSC commentaar")
+        GSVS(IDS_PDF, "Portable Document Format 'PDF'")
+        GSVS(IDS_IGNOREDSC, "DSC commentaar negeren")
+        GSVS(IDS_CTRLD, "Ctrl-D gevolgd door ")
+        GSVS(IDS_PJL, "PJL gevolgd door ")
+        GSVS(IDS_ZOOMED, " In/uitgezoomd")
+END
+
+STRINGTABLE
+BEGIN
+        GSVS(IDS_OUTPUTFILE, "Nieuwe Bestandsnaam ")
+        GSVS(IDS_PRINTINGALL, "Geen DSC commentaar\nAlles afdrukken")
+        GSVS(IDS_PRINTFILE, "Bestand afdrukken")
+        GSVS(IDS_SELECTPAGE, "Pagina selecteren")
+        GSVS(IDS_SELECTPAGES, "Meerdere pagina's selecteren")
+        GSVS(IDS_NOTOPEN, "Geen enkel document werd geopend")
+        GSVS(IDS_CANNOTRUN, "Opdracht niet uit te voeren ")
+        GSVS(IDS_TOOLONG, "Opdrachtregel te lang: ")
+        GSVS(IDS_NOMORE, "Geen pagina's meer voorhanden")
+/* OLD
+        GSVS(IDS_GSCOMMAND, "Ghostscript opdracht ?")
+*/
+        GSVS(IDS_NOZOOM, "Kan alleen zoomen met een pagina op het scherm")
+        GSVS(IDS_USERWIDTH, "Breedte in 1/72 inch eenheden?")
+        GSVS(IDS_USERHEIGHT, "Hoogte in 1/72 inch eenheden?")
+        GSVS(IDS_BADEPS, "Probleem bij het aanmaken van het EPS bestand")
+        GSVS(IDS_NOPREVIEW, "Dit is geen DOS EPS bestand of\ngeen binair voorbeeld")
+        GSVS(IDS_NOTDFNAME, "Kan niet dezelfde naam gebruiken als geopend document")
+        GSVS(IDS_NOTEMP, "Tijdelijk bestand kon niet worden geopend.\nDirectory heeft misschien het 'alleen-lezen' kenmerk.\nTEMP omgevingsvariabele werd misschien niet ingesteld.")
+        GSVS(IDS_CANCELDONE, "%d%% geannuleerd")
+        GSVS(IDS_BADCLI, "Onjuiste opdracht: ")
+        GSVS(IDS_DUPOPT, "Alleen een van de /F /P /S opties is beschikbaar.  Fout op: %s")
+        GSVS(IDS_TEXTFIND, "Welke tekst zoeken?")
+        GSVS(IDS_TEXTNOTFIND, "Tekst niet gevonden")
+        GSVS(IDS_PRINTPDFPS, "Kan PDF bestand niet naar een PostScript printer versturen.  Gebruik  Bestand | Exporteren")
+        GSVS(IDS_NOPDFQUICKTEXT, "De tekst kan niet worden opgezocht in het PDF bestand.  Gebruik  Opties | PS naar Tekst")
+        GSVS(IDS_BAD_DOSEPS_HEADER, "Onbruikbare DOS EPS header. DSC commentaar wordt genegeerd.")
+        GSVS(IDS_PROBABLY_PCL, "Dit is waarschijnlijk PCL, bedoeld voor HP LaserJet of DeskJet printers.  Weet u zeker dat het om PostScript gaat?")
+        GSVS(IDS_BUSYPRINTING, "GSview is aan het afdrukken.  Druk op Annuleren en wacht tot GSview gereed is.")
+END
+
+STRINGTABLE
+BEGIN
+        /* sound type types*/
+        GSVS(IDS_SOUNDNAME, "Geluidsbestand")
+        GSVS(IDS_SNDPAGE, "Pagina uitvoeren")
+        GSVS(IDS_SNDNOPAGE, "Geen pagina")
+        GSVS(IDS_SNDNONUMBER, "Geen paginanummering")
+        GSVS(IDS_SNDNOTOPEN, "Niet geopend")
+        GSVS(IDS_SNDERROR, "Fout")
+        GSVS(IDS_SNDTIMEOUT,    "Timeout")
+        GSVS(IDS_SNDSTART, "Start")
+        GSVS(IDS_SNDEXIT, "Afsluiten")
+        GSVS(IDS_SNDBUSY, "Bezig")
+        GSVS(IDS_NONE, "<Geen>")
+        GSVS(IDS_SPKR, "<Pieptoon>")
+END
+
+STRINGTABLE
+BEGIN
+        /* help topics - these need to match keywords in XX\gvclang.txt */
+        GSVS(IDS_TOPICROOT,  "Overzicht")
+        GSVS(IDS_TOPICOPEN,  "Openen")
+        GSVS(IDS_TOPICPRINT, "Afdrukken")
+        GSVS(IDS_TOPICPROP, "Instellingen")
+        GSVS(IDS_TOPICEDITPROP, "Instellingen aanpassen")
+        GSVS(IDS_TOPICCONVERT, "Omzetten")
+        GSVS(IDS_TOPICCLIP, "Klembord")
+        GSVS(IDS_TOPICPREVIEW, "EPS voorbeeld")
+        GSVS(IDS_TOPICSOUND, "Geluid")
+        GSVS(IDS_TOPICDSET, "Schermresolutie")
+        GSVS(IDS_TOPICMEDIA, "Papierformaat")
+        GSVS(IDS_TOPICPSTOEPS, "PS naar EPS")
+        GSVS(IDS_TOPICGOTO, "Paginaselectie")
+        GSVS(IDS_TOPICINSTALL, "Installatie")
+        GSVS(IDS_TOPICTEXT, "Tekst zoeken en uitscheiden")
+        GSVS(IDS_TOPICKEYS, "Toetsen")
+        GSVS(IDS_TOPICMESS, "Berichten tonen")
+        GSVS(IDS_TOPICSPOOL, "Spooler")
+        GSVS(IDS_TOPICZLIB, "zlib")
+        GSVS(IDS_TOPICBZIP2, "bzip2")
+        GSVS(IDS_TOPICPSTOEDIT, "PStoEdit")
+        GSVS(IDS_TOPICMEASURE, "Meten")
+        GSVS(IDS_TOPICEASYCFG, "Eenvoudige Configuratie")
+        GSVS(IDS_TOPICADVANCEDCFG, "Aangepaste Configuratie")
+        GSVS(IDS_TOPICDOWNLOAD, "Ghostscript aanschaffen")
+        GSVS(IDS_TOPICDSCWARN, "DSC Waarschuwingen")
+        GSVS(IDS_TOPICREG, "Registratie")
+END
+
+STRINGTABLE
+BEGIN
+        GSVS(IDS_BBPROMPT,  "Links klikken")
+        GSVS(IDS_BBPROMPT1, "Onderaan klikken")
+        GSVS(IDS_BBPROMPT2, "Rechts klikken")
+        GSVS(IDS_BBPROMPT3, "Bovenaan klikken")
+        GSVS(IDS_EPSONEPAGE, "Een EPS bestand moet uit een pagina bestaan. \nZie help over 'PS naar PS'")
+        GSVS(IDS_EPSQPAGES, "Bestaat dit document uit een pagina?")
+        GSVS(IDS_EPSNOBBOX, "Bounding Box niet gevonden")
+        GSVS(IDS_EPSUSERINVALID, "Het voorbeeld is geen TIFF bestand of Windows Meta file")
+        GSVS(IDS_EPSUSERTITLE, "Het voorbeeldbestand openen")
+        GSVS(IDS_EPS_OFF_PAGE, "EPS valt geheel buiten de pagina.  Probeer 'Opties | EPS Knippen'")
+        GSVS(IDS_MUSTUSEPORTRAIT, "U moet de orientatie 'Staand' selecteren.")
+END
+
+STRINGTABLE
+BEGIN
+        /* wait messages */
+        GSVS(IDS_WAIT, "Even wachten...")
+        GSVS(IDS_WAITREAD,  "Bezig met het inlezen...")
+        GSVS(IDS_WAITWRITE,  "Bezig met het schrijven...")
+        GSVS(IDS_WAITDRAW, "Bezig met schermopbouw...")
+        GSVS(IDS_WAITDRAW_PC, "Bezig met het tekenen van %d%%")
+        GSVS(IDS_WAITGSOPEN, "Ghostscript wordt geopend...")
+        GSVS(IDS_WAITGSCLOSE,  "Ghostscript wordt gesloten...")
+        GSVS(IDS_WAITPRINT,  "Bezig met het afdrukken...")
+        GSVS(IDS_WAITSEARCH,  "Bezig met zoeken...")
+        GSVS(IDS_WAITTEXT, "Bezig tekst %d%% af te scheiden")
+END
+
+
+STRINGTABLE
+BEGIN
+        /* debug messages */
+        GSVS(IDS_DEBUG_DFISLOCKED, "dfreopen: bestand vergrendeld")
+        GSVS(IDS_DEBUG_DFISOPEN, "dfreopen: bestand is al geopend")
+        GSVS(IDS_DEBUG_DFISMISSING, "dfreopen: bestand bestaat niet")
+        GSVS(IDS_DEBUG_DFCHANGED, "dfreopen: bestand gewijzigd")
+        GSVS(IDS_DEBUG_DFISCLOSED, "dfclose: bestand reeds afgesloten")
+END
+
+STRINGTABLE
+BEGIN
+        GSVS(IDS_PROCESS_GSLOAD_FAIL, "Ghostscript DLL kan niet in geheugen worden geladen")
+        GSVS(IDS_PROCESS_INIT_FAIL, "gs_process: gsdll.init mislukt")
+        GSVS(IDS_PROCESS_VIEWER_FAIL, "gs_process: '(viewer.ps) run' mislukt")
+        GSVS(IDS_PROCESS_EXECUTE_FAIL, "gs_process: gsdll.execute_cont mislukt")
+END
+
+STRINGTABLE
+BEGIN
+        /* PDF messages */
+        GSVS(IDS_PDFNOPAGE, "Aantal pagina's in het PDF bestand onbekend.\nU moet eerst het bestand weergeven" )
+        GSVS(IDS_PDFEXTRACTALL, "Aantal pagina's in PDF bestand onbekend.\nAlle pagina's zullen worden afgedrukt of afgescheiden.")
+        GSVS(IDS_USEPDFWRITE, "Gebruik pdfwrite of pswrite uitvoer in 'Bestand | Omzetten' om pagina's uit een PDF bestand af te scheiden.")
+END
+
+STRINGTABLE
+BEGIN
+        GSVS(IDS_LARGEMEDIA, "Opgelet: het papierformaat is breder en/of hoger dan 2 meter.  Controleer dit via 'Papier formaat | Door gebruiker ingesteld'")
+        GSVS(IDS_NOTIMPLEMENTED, "Niet ingebouwd")
+        GSVS(IDS_NOLINKTARGET, "Onbekende bestemming voor koppeling")
+        GSVS(IDS_PARSEERROR, "Fout bij lezen van opdrachtregel")
+        GSVS(IDS_ZLIB_FAIL, "Kon zlib DLL niet laden.  Klik op OK voor hulp.")
+        GSVS(IDS_BZIP2_FAIL, "Kon bzlib2 DLL niet laden.  Klik op OK voor hulp.")
+END
+
+STRINGTABLE
+BEGIN
+        GSVS(IDS_BETAEXPIRED, "Geldigheidsduur van deze BETA testuitgave is voorbij. Bezoek de locatie http://www.cs.wisc.edu/~ghost/ om een geldige versie van GSView te verkrijgen")
+        GSVS(IDS_BETAWARN, AABETAWARN)
+        GSVS(IDS_NOPRINTERINI, "printer.ini kan niet worden geopend")
+        GSVS(IDS_NOINI, "INI bestand kan niet worden geopend")
+        GSVS(IDS_NEEDTEMP, "Omgevingsvariabele TEMP moet verwijzen naar een geldige directory met schrijfrechten.  Zonder dit kan GSview niets afdrukken.")
+        GSVS(IDS_GSNOTINSTALLED, "Ghostscript niet geïnstalleerd.  Zie hiervoor het bestand readme.htm.")
+        GSVS(IDS_GSLIBNOTINSTALLED, "De Ghostscript DLL bestanden werden niet geïnstalleerd. Zie hiervoor het bestand readme.htm.")
+        GSVS(IDS_NOPROGMAN, AANODDEPROGMAN)
+        GSVS(IDS_PROGRAMOBJECTFAILED, AAPROGRAMOBJECTFAILED)
+        GSVS(IDS_INVALIDREG, "Ongeldige Registratie Naam of Nummer!")
+        GSVS(IDS_UNREGISTERED, "Niet geregistreerd.")
+        GSVS(IDS_WRONGEMX, "Op uw systeem werd emx %s geïnstalleerd.\rU hebt emx %s of jonger nodig.\rPM GSview zal niet goed kunnen werken.")
+        GSVS(IDS_GSVIEWVERSION, GSVIEW_DOT_VERSION)
+        GSVS(IDS_PROGMANGROUP4, AAPROGMANGROUP4)
+        GSVS(IDS_CFG73, AACFG73)
+        GSVS(IDS_CFG74, AACFG74)
+END
+
+STRINGTABLE
+BEGIN
+        GSVS(IDS_PRN_PRINTMETHOD, "Afdrukmethode")
+        GSVS(IDS_PRN_WINDOWSGDI, "Windows GDI printer")
+        GSVS(IDS_PRN_GSDEVICE, "Ghostscript apparaat")
+        GSVS(IDS_PRN_PSPRINTER, AAPSPRINTER)            // "PostScript Printer"
+        GSVS(IDS_PRN_SETTINGS, "Instellingen")
+        GSVS(IDS_PRN_HELP, AAHELP)                      // "Hulp"
+        GSVS(IDS_PRN_SELECTPAGES, "Pagina's selecteren")
+	GSVS(IDS_ALL, AAALL)
+        // PageSize policies
+        GSVS(IDS_PAGESIZE_VARIABLE, "Veranderlijke paginaformaat")
+        GSVS(IDS_PAGESIZE_FIXED, "Vast paginaformaat")
+        GSVS(IDS_PAGESIZE_SHRINK, "Automatisch inpassen in paginaformaat")
+END
+
+STRINGTABLE
+BEGIN
+        GSVS(IDS_INVALIDNUMBER, "Ongeldige waarde")
+        GSVS(IDS_CANTINVERT, "Matrix kan niet worden bewerkt")
+        GSVS(IDS_UNITPT, AAPT)
+        GSVS(IDS_UNITMM, AAMM)
+        GSVS(IDS_UNITINCH, AAINCH)
+        GSVS(IDS_UNITCUSTOM, AACUSTOM)
+END
+
+
+STRINGTABLE
+BEGIN
+        GSVS(IDS_DSC_INFO, "DSC Informatie")
+        GSVS(IDS_DSC_WARN, "DSC Waarschuwing")
+        GSVS(IDS_DSC_ERROR, "DSC Fout")
+        GSVS(IDS_DSC_LINEFMT, "%.40s op regel %d:")
+END
+
+
+/* Split strings if longer than 256 bytes */
+
+STRINGTABLE
+BEGIN
+        GSVS(CDSC_RESOURCE_BBOX, "Deze regel is niet goed.\012De bounding box moet integer coordinaten bevatten,\012geen floating point. Een floating point bounding box moet\012worden gespecificeerd met %%HiResBoundingBox:\012A %%BoundingBox: moet gehele getallen bevatten.\012")
+        GSVS(CDSC_RESOURCE_BBOX2, "\012'OK' zal de waarden omzetten tot gehele getallen,\012met afronding naar boven.\012Bij 'Annuleren' zal deze regel worden overgeslagen.\012")
+	GSVS(CDSC_RESOURCE_BBOX3, "")
+
+        GSVS(CDSC_RESOURCE_EARLY_TRAILER, "De 'einde document code' bevindt zich normaliter aan het einde van het document.\012Deze regel bevindt zich op meer dan 32 kB van het einde\012van het bestand. 'Einde documentcodes' hebben gewoonlijk niet dergelijke afmetingen.\012")
+        GSVS(CDSC_RESOURCE_EARLY_TRAILER2, "Waarschijnlijk werd een ander PostScriptbestand ingevoegd.\012zonder toe voegen aan %%BeginDocument / %%EndDocument.\012\012Met 'OK' wordt verondersteld dat dit een deel is van een toegevoegd bestand.\012")
+        GSVS(CDSC_RESOURCE_EARLY_TRAILER3, "Met 'Annuleren' wordt verondersteld dat dit een \042einde document code\042 is.\012")
+
+        GSVS(CDSC_RESOURCE_EARLY_EOF, "Deze regel komt normaliter alleen voor op het einde van een document.\012Deze regel echter bevindt zich op meer dan 100 bytes van het einde\012van het bestand.\012Zeer waarschijnlijk werd hier een ander PostScript bestand ingevoegd.")
+        GSVS(CDSC_RESOURCE_EARLY_EOF2, "\012zonder toe voegen aan %%BeginDocument / %%EndDocument.\012\012Met 'OK' wordt verondersteld dat dit een deel is van een toegevoegd bestand.\012Met 'Annuleren' wordt verondersteld dat dit de \042einde document code\042 is.\012")
+	GSVS(CDSC_RESOURCE_EARLY_EOF3, "")
+
+        GSVS(CDSC_RESOURCE_PAGE_IN_TRAILER, "Deze %%Page: regel bevindt zich in de 'einde document code', wat niet mag.\012EPS bestanden moeten worden ingebed bij %%BeginDocument / %%EndDocument.\012Mogelijk werd een ander EPS bestand verkeerd ingebed,")
+        GSVS(CDSC_RESOURCE_PAGE_IN_TRAILER2, "\012en werd verward met de %%Trailer document code in het EPS bestand.\012\012'OK' zal verder de pagina's afwerken.\012Bij 'Annuleren' wordt het commentaar op deze pagina genegeerd.\012")
+	GSVS(CDSC_RESOURCE_PAGE_IN_TRAILER3, "")
+
+        GSVS(CDSC_RESOURCE_PAGE_ORDINAL, "Deze regel is niet goed.\012De twee argumenten moeten  zijn: een label en een rangtelwoord.\012Het rangtelwoord moet 1 zijn voor de eerste pagina en moet ook \012toenemen met 1 voor elke volgende pagina.\012")
+        GSVS(CDSC_RESOURCE_PAGE_ORDINAL2, "Het rangtelwoord van deze pagina ontbreekt of volgt niet de reeks.\012\012Hoogstwaarschijnlijk een van deze twee.  Deze regel maakt deel uit van een ingevoegd bestand dat\012dat niet werd toegevoegd aan %%BeginDocument / %%EndDocument.\012\012")
+        GSVS(CDSC_RESOURCE_PAGE_ORDINAL3, "Met 'OK' wordt deze pagina overgeslagen, aannemend dat het een deel is van\012een op onjuiste manier ingebed EPS bestand.\012Met 'Annuleren' wordt dit voor een correcte pagina aangezien\012")
+
+        GSVS(CDSC_RESOURCE_PAGES_WRONG, "%%Pages: komt niet overeen met %%Page.\012\012Met 'OK' wordt de teller aangepast tot %%Page:\012commentaren gevonden.\012Met 'Annuleren' wordt de teller aangepast vanaf %%Pages:\012")
+        GSVS(CDSC_RESOURCE_PAGES_WRONG2,"")
+	GSVS(CDSC_RESOURCE_PAGES_WRONG3,"")
+
+        GSVS(CDSC_RESOURCE_EPS_NO_BBOX, "Bij dit EPS bestand onbreekt de vereiste %%BoundingBox:\012Zie in de GSview help hoe het \012bounding box probleem kan worden verholpen. \012\012Met 'OK' wordt verondersteld dat dit een EPS betsand is.\012")
+        GSVS(CDSC_RESOURCE_EPS_NO_BBOX2, "Met 'Annuleren' wordt verondersteld dat dit geen EPS bestand is.\012")
+	GSVS(CDSC_RESOURCE_EPS_NO_BBOX3, "")
+
+        GSVS(CDSC_RESOURCE_EPS_PAGES, "EPS bestanden kunnen bestaan uit 0 of 1 pagina ('s).  Dit 'EPS' bestand\012heeft er meer en is dus GEEN EPS bestand.\012`Afdrukken naar` `Encapsulated PostScript File` kan\012niet worden gebruikt bij het afdrukken van meerdere bestanden.")
+        GSVS(CDSC_RESOURCE_EPS_PAGES2, "  Configureer de printerdriver voor afdrukken naar de poort \012 FILE:, of kies voor 'Naar Bestand Afdrukken'.\012\012Met 'OK' wordt verondersteld dat het een EPS bestand betreft.\012Met 'Annuleren' wordt er van uitgegaan dat dit geen EPS is.\012")
+	GSVS(CDSC_RESOURCE_EPS_PAGES3, "")
+
+        GSVS(CDSC_RESOURCE_NO_MEDIA, "Papierformaat werd opgegeven door %%DocumentMedia:, echter zonder standaardwaarde.\012Papierformaat werd  gespecifieerd door %%PageMedia:.\012\012Met 'OK' wordt het eerst beschikbare formaat in de lijst aangenomen.\012")
+        GSVS(CDSC_RESOURCE_NO_MEDIA2, "Met 'Annuleren' wordt geen papierformaat ingesteld.\012")
+	GSVS(CDSC_RESOURCE_NO_MEDIA3, "")
+
+        GSVS(CDSC_RESOURCE_ATEND, "Deze regel is niet goed.\012Om de waarde te verschuiven moet u '(atend)'gebruiken en niet 'atend'\012\012Met 'OK' wordt (atend) verondersteld.\012Met 'Annuleren' wordt deze regel genegeerd.\012")
+        GSVS(CDSC_RESOURCE_ATEND2, "")
+	GSVS(CDSC_RESOURCE_ATEND3, "")
+
+        GSVS(CDSC_RESOURCE_DUP_COMMENT, "Dit commentaar komt onnodig dubbel voor in de header.\012De eerst voorkomende regel heeft steeds voorrang.\012\012Met 'OK' of 'Annuleren' wordt de extra regel genegeerd.\012")
+        GSVS(CDSC_RESOURCE_DUP_COMMENT2, "")
+	GSVS(CDSC_RESOURCE_DUP_COMMENT3, "")
+
+        GSVS(CDSC_RESOURCE_DUP_TRAILER, "Dit commentaar bevindt zich al in de \042einde document code\042 en is dus overbodig.\012De laatste van een \042einde document code\042 regel heeft steeds voorrang.\012\012Met 'OK' of 'Annuleren' wordt het dubbel genegeerd.\012")
+        GSVS(CDSC_RESOURCE_DUP_TRAILER2, "")
+	GSVS(CDSC_RESOURCE_DUP_TRAILER3, "")
+
+        GSVS(CDSC_RESOURCE_BEGIN_END, "Begin en Einde nummering van de commentaren stemt niet overeen.\012\012Met 'OK' of 'annuleren' wordt de fout genegeerd.\012")
+        GSVS(CDSC_RESOURCE_BEGIN_END2, "")
+	GSVS(CDSC_RESOURCE_BEGIN_END3, "")
+
+        GSVS(CDSC_RESOURCE_BAD_SECTION, "Deze regel is niet goed omdat hij niet binnen een pagina \012mag voorkomen.  Waarschijnlijk werd een EPS bestand\012op onjuiste manier ingebed.  Deze regel zal worden genegeerd.\012\012Met 'OK' of 'Annuleren' wordt deze regel ook genegeerd.\012")
+        GSVS(CDSC_RESOURCE_BAD_SECTION2, "")
+	GSVS(CDSC_RESOURCE_BAD_SECTION3, "")
+
+        GSVS(CDSC_RESOURCE_LONG_LINE, "\012\012De regels in DSC documenten mogen maximaal 254 tekens bevatten.\012")
+        GSVS(CDSC_RESOURCE_LONG_LINE2, "")
+	GSVS(CDSC_RESOURCE_LONG_LINE3, "")
+
+        GSVS(CDSC_RESOURCE_INCORRECT_USAGE, "Dit DSC commentaar is onjuist.\012Bekijkt u a.u.b. de DSC specificaties.\012\012Met 'OK' of 'Annuleren' wordt deze tekst genegeerd.\012")
+        GSVS(CDSC_RESOURCE_INCORRECT_USAGE2, "")
+	GSVS(CDSC_RESOURCE_INCORRECT_USAGE3, "")
+
+END

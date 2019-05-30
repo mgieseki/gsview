@@ -1,0 +1,294 @@
+/* Copyright (C) 1993-2005, Ghostgum Software Pty Ltd.  All rights reserved.
+
+  This file is part of GSview.
+
+  This program is distributed with NO WARRANTY OF ANY KIND.  No author
+  or distributor accepts any responsibility for the consequences of using it,
+  or for whether it serves any particular purpose or works at all, unless he
+  or she says so in writing.  Refer to the GSview Free Public Licence
+  (the "Licence") for full details.
+
+  Every copy of GSview must include a copy of the Licence, normally in a
+  plain ASCII text file named LICENCE.  The Licence grants you the right
+  to copy, modify and redistribute GSview, but only under certain conditions
+  described in the Licence.  Among other things, the Licence requires that
+  the copyright notice and this notice be preserved on all copies.
+*/
+
+/* se\gvplang.rc */
+/* OS/2 PM Swedish language resources */
+
+CODEPAGE 850
+
+MENU ID_GSVIEW
+BEGIN
+/*
+        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+*/
+	SUBMENU "~Arkiv", IDM_FILEMENU
+	BEGIN
+		MENUITEM "~Öppna...\tÖ", IDM_OPEN
+		MENUITEM "Välj ~fil...\tF", IDM_SELECT
+		MENUITEM "S~para som...\tp", IDM_SAVEAS
+		MENUITEM "S~täng\tt", IDM_CLOSE
+		MENUITEM "~Info...\tI", IDM_INFO
+		MENUITEM SEPARATOR
+		MENUITEM "Konvertera...\tK", IDM_CONVERTFILE
+		MENUITEM "~Extrahera...\tE", IDM_EXTRACT
+		MENUITEM "PS till EPS", IDM_PSTOEPS
+		MENUITEM SEPARATOR
+		MENUITEM "~Skriv ut...\tS", IDM_PRINT
+		MENUITEM "Skriv ut fil...", IDM_SPOOL
+		MENUITEM SEPARATOR
+		MENUITEM "Visa meddelanden\tM", IDM_GSMESS
+		MENUITEM SEPARATOR
+		MENUITEM SEPARATOR
+		MENUITEM "A~vsluta", IDM_EXIT
+	END
+
+	SUBMENU "~Redigera", IDM_EDITMENU
+	BEGIN
+		MENUITEM "~Kopiera\tCtrl+C", IDM_COPYCLIP
+		MENUITEM SEPARATOR
+		MENUITEM "K~listra in ...", IDM_PASTETO
+/*
+		MENUITEM "Konvertera bitmapp", IDM_CONVERT
+*/
+		MENUITEM SEPARATOR
+		SUBMENU "~Lägg till EPS förhandsvisning", IDM_ADDEPSMENU
+		BEGIN
+			MENUITEM "~Interchange", IDM_MAKEEPSI
+			MENUITEM "TIFF 4", IDM_MAKEEPST4
+			MENUITEM "~TIFF 6 okomprimerad", IDM_MAKEEPST6U
+			MENUITEM "TIFF 6 ~packbitar", IDM_MAKEEPST6P
+			MENUITEM "~Windows Metafil", IDM_MAKEEPSW
+			MENUITEM "~Användardefinierad förhandsvisning", IDM_MAKEEPSU
+		END
+
+		SUBMENU "~Extrahera EPS", IDM_EXTEPSMENU
+		BEGIN
+			MENUITEM "~PostScript", IDM_EXTRACTPS
+			MENUITEM "Förhands~visa", IDM_EXTRACTPRE
+		END
+		MENUITEM SEPARATOR
+		MENUITEM "Konvertera till ~vektorformat...", IDM_PSTOEDIT
+		MENUITEM "Mät", IDM_MEASURE
+		MENUITEM "~Text extrahera...", IDM_TEXTEXTRACT
+		MENUITEM "~Finn...\tCtrl+F", IDM_TEXTFIND
+		MENUITEM "Finn ~nästa\tF3", IDM_TEXTFINDNEXT
+	END
+
+	SUBMENU "A~lternativ", IDM_OPTIONMENU
+	BEGIN
+		MENUITEM "Enkel konfiguration...", IDM_CFG
+		MENUITEM "Avancerad konfiguration...", IDM_GSCOMMAND
+		MENUITEM "Ljud...", IDM_SOUNDS
+		SUBMENU "~Enheter", IDM_UNITMENU
+		BEGIN
+			MENUITEM "~pt", IDM_UNITPT
+			MENUITEM "~mm", IDM_UNITMM
+			MENUITEM "~inch", IDM_UNITINCH
+			MENUITEM SEPARATOR
+			MENUITEM "~Hög upplösning", IDM_UNITFINE
+		END
+		SUBMENU "~Språk", IDM_LANGMENU
+		BEGIN
+			MENUITEM "~English", IDM_LANGEN
+			/* Remaining languages are added at run time */
+		END
+		SUBMENU "PStillText", IDM_PSTOTEXTMENU
+		BEGIN
+			MENUITEM "Avaktiverad", IDM_PSTOTEXTDIS
+			MENUITEM "Normal", IDM_PSTOTEXTNORM
+			MENUITEM "Dvips Cork Encoding", IDM_PSTOTEXTCORK
+		END
+		SUBMENU "DSC varningar", IDM_DSCMENU
+		BEGIN
+			MENUITEM "Av", IDM_DSC_OFF
+			MENUITEM "Fel", IDM_DSC_ERROR
+			MENUITEM "Varningar", IDM_DSC_WARN
+			MENUITEM "Alla", IDM_DSC_INFO
+		END
+		MENUITEM "Spara inställningar ~nu", IDM_SETTINGS
+		MENUITEM SEPARATOR
+		MENUITEM "~Spara inställningar vid avslutning", IDM_SAVESETTINGS
+		MENUITEM "Sä~krare", IDM_SAFER
+		MENUITEM "Spara senaste ~katalogen", IDM_SAVEDIR
+		MENUITEM "~Knapprad", IDM_BUTTONSHOW
+		MENUITEM "~Anpassa fönster till sida", IDM_FITPAGE
+		MENUITEM "Automatisk ~uppdatering", IDM_AUTOREDISPLAY
+		MENUITEM "EPS ~klipp", IDM_EPSFCLIP
+		MENUITEM "EPS ~varning", IDM_EPSFWARN
+		MENUITEM "~Ignorera DSC", IDM_IGNOREDSC
+		MENUITEM "Visa Bounding Bo~x", IDM_SHOWBBOX
+	END
+
+	SUBMENU "~Visa", IDM_VIEWMENU
+	BEGIN
+		MENUITEM "~Nästa sida\t+", IDM_NEXT
+		MENUITEM "Före~gående sida\t-", IDM_PREV
+		MENUITEM "~Gå till sida...\tG", IDM_GOTO
+		MENUITEM "Gå ~tillbaka\tT", IDM_GOBACK
+		MENUITEM "Gå ~framåt", IDM_GOFWD
+		MENUITEM "~Uppdatera\tU", IDM_REDISPLAY
+		MENUITEM SEPARATOR
+		MENUITEM "Nästa sida och hem\tSpace", IDM_NEXTHOME
+		MENUITEM "Föregående sida och hem\tBkSp", IDM_PREVHOME
+		MENUITEM SEPARATOR
+		MENUITEM "Full~skärm\tF4", IDM_FULLSCREEN
+		MENUITEM "Anpassa ~fönster\tF6", IDM_FITWIN
+	END
+
+	SUBMENU "~Orientering", IDM_ORIENTMENU
+	BEGIN
+		MENUITEM "~Auto", IDM_AUTOORIENT
+		MENUITEM SEPARATOR
+		MENUITEM "~Porträtt", IDM_PORTRAIT
+		MENUITEM "~Landskap", IDM_LANDSCAPE
+		MENUITEM "~Upp-och-ner", IDM_UPSIDEDOWN
+		MENUITEM "~Omvänt landskap", IDM_SEASCAPE
+		MENUITEM SEPARATOR
+		MENUITEM "Ski~fta landskap", IDM_SWAPLANDSCAPE
+	END
+
+	SUBMENU "~Media", IDM_MEDIAMENU
+	BEGIN
+		MENUITEM "~Display inställningar...", IDM_DISPLAYSETTINGS
+		MENUITEM SEPARATOR
+		MENUITEM "~Rotera media", IDM_MEDIAROTATE
+		MENUITEM SEPARATOR
+		MENUITEM "11x17", IDM_11x17
+		MENUITEM "A3", IDM_A3
+		MENUITEM "A4", IDM_A4
+		MENUITEM "A5", IDM_A5
+		MENUITEM "B4", IDM_B4
+		MENUITEM "B5", IDM_B5
+		MENUITEM "Letter", IDM_LETTER
+		MENUITEM "Ledger", IDM_LEDGER
+		MENUITEM "Legal", IDM_LEGAL
+		MENUITEM "Note", IDM_LETTER
+		MENUITEM "Användardefinierad...", IDM_USERSIZE
+	END
+
+	SUBMENU "~Hjälp", IDM_HELPMENU
+	BEGIN
+		MENUITEM "~Innehåll", IDM_HELPCONTENT
+		MENUITEM "Hjälp ~index", IDM_HELPSEARCH
+		MENUITEM "~Tangenter hjälp", IDM_HELPKEYS
+		MENUITEM SEPARATOR
+		MENUITEM "~Registrera...", IDM_REGISTER
+		MENUITEM "~Om...", IDM_ABOUT
+	END
+
+END
+
+ACCELTABLE ID_GSVIEW
+BEGIN
+	"Ö", IDM_OPEN
+	"Ö", IDM_OPEN, SHIFT
+	"ö", IDM_OPEN
+	"ö", IDM_OPEN, SHIFT
+	"T", IDM_CLOSE
+	"T", IDM_CLOSE, SHIFT
+	"t", IDM_CLOSE
+	"t", IDM_CLOSE, SHIFT
+	"N", IDM_NEXT
+	"N", IDM_NEXT, SHIFT
+	"n", IDM_NEXT
+	"n", IDM_NEXT, SHIFT
+	" ", IDM_NEXTHOME
+	" ", IDM_NEXTHOME, SHIFT
+	VK_SPACE, IDM_NEXTHOME, VIRTUALKEY
+	"+", IDM_NEXT
+	"+", IDM_NEXT, SHIFT
+	"V", IDM_PREV
+	"V", IDM_PREV, SHIFT
+	"v", IDM_PREV
+	"v", IDM_PREV, SHIFT
+	"-", IDM_PREV
+	VK_BACKSPACE, IDM_PREVHOME, VIRTUALKEY
+	VK_BACKSPACE, IDM_PREVHOME, VIRTUALKEY, SHIFT
+	"G", IDM_GOTO
+	"G", IDM_GOTO, SHIFT
+	"g", IDM_GOTO
+	"g", IDM_GOTO, SHIFT
+	"T", IDM_GOBACK
+	"T", IDM_GOBACK, SHIFT
+	"t", IDM_GOBACK
+	"t", IDM_GOBACK, SHIFT
+	"I", IDM_INFO
+	"I", IDM_INFO, SHIFT
+	"i", IDM_INFO
+	"i", IDM_INFO, SHIFT
+	"U", IDM_REDISPLAY
+	"U", IDM_REDISPLAY, SHIFT
+	"u", IDM_REDISPLAY
+	"u", IDM_REDISPLAY, SHIFT
+	"F", IDM_SELECT
+	"F", IDM_SELECT, SHIFT
+	"f", IDM_SELECT
+	"f", IDM_SELECT, SHIFT
+	"P", IDM_SAVEAS
+	"P", IDM_SAVEAS, SHIFT
+	"p", IDM_SAVEAS
+	"p", IDM_SAVEAS, SHIFT
+	"S", IDM_PRINT
+	"S", IDM_PRINT, SHIFT
+	"s", IDM_PRINT
+	"s", IDM_PRINT, SHIFT
+	"K", IDM_CONVERTFILE
+	"K", IDM_CONVERTFILE, SHIFT
+	"k", IDM_CONVERTFILE
+	"k", IDM_CONVERTFILE, SHIFT
+	"E", IDM_EXTRACT
+	"E", IDM_EXTRACT, SHIFT
+	"e", IDM_EXTRACT
+	"e", IDM_EXTRACT, SHIFT
+	"M", IDM_GSMESS
+	"M", IDM_GSMESS, SHIFT
+	"m", IDM_GSMESS
+	"m", IDM_GSMESS, SHIFT
+	VK_F1, IDM_HELPCONTENT, VIRTUALKEY
+	"C", IDM_COPYCLIP, CONTROL
+	VK_INSERT, IDM_COPYCLIP, VIRTUALKEY, CONTROL
+	"F", IDM_TEXTFIND, CONTROL
+	"f", IDM_TEXTFIND, CONTROL
+	VK_F3, IDM_TEXTFINDNEXT, VIRTUALKEY
+	"<", IDM_MAGMINUS
+	"<", IDM_MAGMINUS, SHIFT
+	",", IDM_MAGMINUS
+	",", IDM_MAGMINUS, SHIFT
+	">", IDM_MAGPLUS
+	">", IDM_MAGPLUS, SHIFT
+	".", IDM_MAGPLUS
+	".", IDM_MAGPLUS, SHIFT
+	VK_F4, IDM_FULLSCREEN, VIRTUALKEY
+	VK_F5, IDM_REDISPLAY, VIRTUALKEY
+	VK_F6, IDM_FITWIN, VIRTUALKEY
+END
+
+STRINGTABLE
+BEGIN
+	/* general strings */
+	IDS_SLANGUAGE, "46" /* Swedish language countries */
+	IDS_CODEPAGE, "850"	/* IBM Western Europe */
+	IDS_HELPFILE, "gvpmse.hlp"
+	IDS_HELPTITLE, "GSview hjälp"
+	IDS_SIGSEGV "Segmentöverträdelse eller flyttals punkt undantag i Ghostscript eller andra GSview tråd\015Var vänlig avsluta GSview"
+	IDS_FILENOTFOUND, "Filen hittades inte"
+END
+
+STRINGTABLE
+BEGIN
+	/* default is first */
+	IDS_FILTER_PSALL "*.ps;*.eps;*.epi;*.pdf;*.prn;*.ps.gz;*.psz;*.eps.gz;*.epi.gz;*.pdf.gz|*.eps|*.epi|*.pdf|*.prn|*.ps|*.ps;*.eps;*.epi;*.pdf;*.prn;*.ps.gz;*.eps.gz;*.epi.gz;*.pdf.gz"
+	IDS_FILTER_PS	"*.ps|*.eps|*.epi|*.pdf|*.ps|*.ps;*.eps;*.epi;*.pdf"
+	IDS_FILTER_EPS	"*.eps|*.eps|*.epi|*.pdf|*.ps|*.ps;*.eps;*.epi;*.pdf"
+	IDS_FILTER_EPI	"*.epi|*.eps|*.epi|*.pdf|*.ps|*.ps;*.eps;*.epi;*.pdf"
+	IDS_FILTER_PDF  "*.pdf|*.eps|*.epi|*.pdf|*.ps|*.ps;*.eps;*.epi;*.pdf"
+	IDS_FILTER_ALL	"*"
+	IDS_FILTER_BMP	"*.bmp"
+	IDS_FILTER_TIFF	"*.tif"
+	IDS_FILTER_WMF	"*.wmf"
+	IDS_FILTER_TXT	"*.txt"
+END

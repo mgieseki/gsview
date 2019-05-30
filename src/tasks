@@ -1,0 +1,100 @@
+Jobs to do and suggestions
+==========================
+
+Update interval
+
+Win32 accelerators (VK_F1, VK_F3, VK_BACK) don't work 
+while button has mouse capture.
+Backspace and space don't work when cursor is over button bar.
+
+View bitmap files with viewjpg/viewbmp/viewpcx
+
+Fix /Orientation landscape/seascape values to be more consistent. 
+
+Remember extracted text between uses.
+
+Write to network printer without connection.
+
+Provide some means for clearing all pages in OS/2 multiple 
+selection list box.
+
+OS/2 beeps madly when opening second gzipped file.
+
+Change message "File '' does not exist" to something more meaningful,
+and don't display it on shutdown.
+
+Adobe PS 5.0.1 driver for NT 4.0 produces incorrect DSC comments 
+(BeginResource without EndResource). This is fixed in Adobe PS 5.1
+(GSview 2.9x should now handle this).
+
+Some PDF 1.3 files give incorrect links.  Check GS 5.91.
+  http://www.pragma-ade.nl/itdemos/internal/gw/gw-s.pdf
+
+Display 2 pages side by side (useful on 21" monitors).
+
+Advanced Configure should allow you to specify the Ghostscript
+version.
+
+Stop print dialog from enabling collate.
+Handle printers that don't support USEDEVMODECOPIES - may need
+to open the printer HDC ourselves.
+
+gsprint -twoup doesn't work for PDF, which calls setpagedevice
+for every page.  Need to redefine pdf_showpage.
+
+Ghostscript mswinpr2 always shows dialog when called from RedMon.
+(see muir.htm - printer settings not available to system user).
+
+X11 uniprint settings.
+
+Add "current page" option to new print dialog.
+
+Remember different printer names for different print methods.
+
+Test pstoedit for OS/2.
+Loads OK, but doesn't find gvpm.ini correctly.
+
+With X11 a modal dialog can end up behind the main window.
+Since the dialog is modal, you can't move the main window
+to reveal the dialog.  Find a way to keep the dialog in front,
+or bring it to the front when the parent is selected.
+
+X11 PDF links not implemented.
+
+"currentfile fileposition ==" gives an error in GSview.
+When an error occurs, display page rendered at time of error.
+
+gsprint with 8-bit colour.
+
+Make GSview Print display the contents of the response file.
+
+Disable the collate control if it becomes enabled.
+
+Move less use media sizes to a sub menu "Other".
+Leave A4, A3 and Letter on the main menu.
+
+Windows 2000 indexing service.
+
+X11 ideas from Jack.  Fit to window width, separate menu command/button.
+Hand interface for dragging page instead of using scroll bars.
+
+External PDF links.
+
+Auto resize using %%PageMedia.  This should be added to gs_page_skip,
+and probably only operate if Auto Orientation is enabled.
+
+Redisplay after pstoedit.
+
+Linux: WM_GSTEXTINDEX.
+
+Hand tool for all platforms for pushing page around.
+
+Ghostscript include files use AFPL.  Need to have dual GNU/AFPL. 
+
+dscparse: add dsc_ref, dsc_unref, %%Copyright, %%Version, %%Extensions.
+
+Unix "PS to EPS" fails if bounding box is not automatically calculated.
+
+gsprint uses full page rather than printable area.  Using -dPDFFitPage
+gives a result that is clipped at the margins.  It may be better to 
+set the margsins using setpagedevice.

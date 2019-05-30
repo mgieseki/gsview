@@ -1,0 +1,4 @@
+LIBRARY GVPMCT
+DESCRIPTION	'GSview Catalan Language Resources'
+DATA SINGLE SHARED
+EXPORTS  main

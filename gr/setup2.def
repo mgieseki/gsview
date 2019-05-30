@@ -1,0 +1,4 @@
+LIBRARY SETUP2GR
+DESCRIPTION	'GSview Setup Greek Language Resources'
+DATA SINGLE SHARED
+EXPORTS  main

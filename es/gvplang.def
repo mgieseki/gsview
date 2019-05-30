@@ -1,0 +1,4 @@
+LIBRARY GVPMES
+DESCRIPTION	'GSview Spanish Language Resources'
+DATA SINGLE SHARED
+EXPORTS  main

@@ -1,0 +1,353 @@
+/* Copyright (C) 1993-2000, Ghostgum Software Pty Ltd.  All rights reserved.
+
+  This file is part of GSview.
+
+  This program is distributed with NO WARRANTY OF ANY KIND.  No author
+  or distributor accepts any responsibility for the consequences of using it,
+  or for whether it serves any particular purpose or works at all, unless he
+  or she says so in writing.  Refer to the GSview Free Public Licence
+  (the "Licence") for full details.
+
+  Every copy of GSview must include a copy of the Licence, normally in a
+  plain ASCII text file named LICENCE.  The Licence grants you the right
+  to copy, modify and redistribute GSview, but only under certain conditions
+  described in the Licence.  Among other things, the Licence requires that
+  the copyright notice and this notice be preserved on all copies.
+*/
+
+/* ru\gvclang.rc */
+/* Common English language resources */
+
+#ifndef GSVS
+#define GSVS(x,y) x,y
+#endif
+
+/* button help */
+STRINGTABLE
+BEGIN
+	/* these must be in ascending ID order */
+    GSVS(IDM_OPEN, "Открыть...")
+    GSVS(IDM_INFO, "Информация...")
+    GSVS(IDM_PRINT, "Печать...")
+    GSVS(IDM_TEXTFIND, "Найти...")
+    GSVS(IDM_TEXTFINDNEXT, "Найти далее")
+    GSVS(IDM_NEXT, "Следующая страница")
+    GSVS(IDM_NEXTSKIP, "Вперёд на 5 страниц")
+    GSVS(IDM_PREV, "Предыдущая страница")
+    GSVS(IDM_PREVSKIP, "Назад на 5 страниц")
+    GSVS(IDM_GOTO, "Перейти к странице...")
+    GSVS(IDM_GOBACK, "Назад")
+    GSVS(IDM_GOFWD, "Вперёд")
+    GSVS(IDM_MAGPLUS, "Увеличить разрешение в 1,2 раза")
+    GSVS(IDM_MAGMINUS, "Уменьшить разрешение в 1,2 раза")
+    GSVS(IDM_HELPCONTENT, "Справка")
+END
+
+
+STRINGTABLE
+BEGIN
+    GSVS(IDS_LANGUAGE, AARUSSIAN)
+    /* след. строку не переводить! */
+    GSVS(IDS_ELANGUAGE, "Russian")
+    GSVS(IDS_FILE, "Файл: ")
+    GSVS(IDS_NOFILE, "Нет файла")
+    GSVS(IDS_PAGE, "Страница: ")
+    GSVS(IDS_NOPAGE, "Нумерация страниц недоступна")
+    GSVS(IDS_PAGESPECIAL, "Порядок страниц - специальный. Нельзя точно перейти к произвольной. Смотри топик 'Общие проблемы'. Продолжить?")
+    GSVS(IDS_LANDSCAPE, "Альбомная")
+    GSVS(IDS_PORTRAIT, "Книжная")
+    GSVS(IDS_ASCEND, "По возрастанию")
+    GSVS(IDS_DESCEND, "По убыванию")
+    GSVS(IDS_SPECIAL, "Специальный")
+    GSVS(IDS_PAGEINFO, "Страница: \042%s\042, %d из %d")
+    GSVS(IDS_LINKPAGE, "Переход к странице %d")
+    GSVS(IDS_DEFAULT, "По умолчанию")
+    GSVS(IDS_NOTDEFTAG, "[Не определено]")
+	GSVS(IDS_EPSF, "EPS")
+    GSVS(IDS_EPSI, "EPS с превью в формате Interchange")
+    GSVS(IDS_EPST, "EPS с превью в формате TIFF")
+    GSVS(IDS_EPSW, "EPS с превью в формате метафайл")
+	GSVS(IDS_DSC, "DSC")
+	GSVS(IDS_NOTDSC, "Без комментариев DSC ")
+	GSVS(IDS_PDF, "Portable Document Format")
+    GSVS(IDS_IGNOREDSC, "Комментарии DSC игнорируются")
+    GSVS(IDS_CTRLD, "За Ctrl-D следует ")
+    GSVS(IDS_PJL, "За PJL следует ")
+    GSVS(IDS_ZOOMED, " Крупно")
+END
+
+STRINGTABLE
+BEGIN
+    GSVS(IDS_OUTPUTFILE, "Имя выходного файла")
+    GSVS(IDS_PRINTINGALL, "Без DSC\nПечать всех страниц")
+    GSVS(IDS_PRINTFILE, "Печатать файл")
+    GSVS(IDS_SELECTPAGE, "Страница")
+    GSVS(IDS_SELECTPAGES, "Страницы")
+    GSVS(IDS_NOTOPEN, "Документ не открыт")
+    GSVS(IDS_CANNOTRUN, "Не могу запустить ")
+    GSVS(IDS_TOOLONG, "Командная строка слишком длинная: ")
+    GSVS(IDS_NOMORE, "Больше нет страниц")
+/* OLD
+	GSVS(IDS_GSCOMMAND, "Команда Ghostscript?")
+*/
+    GSVS(IDS_NOZOOM, "Перед увеличением нужно показать страницу")
+    GSVS(IDS_USERWIDTH, "Ширина в ед. = 1/72 дюйма?")
+    GSVS(IDS_USERHEIGHT, "Высота в ед. = 1/72 дюйма?")
+    GSVS(IDS_BADEPS, "Проблема при создании файла EPS")
+    GSVS(IDS_NOPREVIEW, "EPS файл не DOS`овский\nили превью не двоичное")
+    GSVS(IDS_NOTDFNAME, "Нельзя использовать одинаковое имя с открытым документом")
+    GSVS(IDS_NOTEMP, "Не могу открыть временный файл.\nВозможно каталог только для чтения.\nили не установлена переменная окружения TEMP.")
+    GSVS(IDS_CANCELDONE, "%d%% готово")
+    GSVS(IDS_BADCLI, "Неверная опция командной строки: ")
+    GSVS(IDS_DUPOPT, "Можно указывать только одну опцию из /F /P /S. Ошибка в: %s")
+    GSVS(IDS_TEXTFIND, "Найти текст?")
+    GSVS(IDS_TEXTNOTFIND, "Текст не найден")
+    GSVS(IDS_PRINTPDFPS, "Не могу печатать файл PDF на PostScript принтере. Используйте Файл | Извлечь")
+    GSVS(IDS_NOPDFQUICKTEXT, "Не могу произвести быстрое извлечение текста или найти файл PDF. Используйте Настройка | PStoText")
+    GSVS(IDS_BAD_DOSEPS_HEADER, "Неверный DOS`овский заголовок EPS. Игнорирую комментарии DSC.")
+    GSVS(IDS_PROBABLY_PCL, "Это похоже на PCL, предназначенный для принтеров HP LaserJet или DeskJet. Вы уверены, что это PostScript?")
+    GSVS(IDS_BUSYPRINTING, "GSview занят печатью. Нажмите Отмена, чтобы дождаться пока он закончит.")
+END
+
+STRINGTABLE
+BEGIN
+	/* sound type types*/
+    GSVS(IDS_SOUNDNAME, "Звуковой файл")
+    GSVS(IDS_SNDPAGE, "Вывод страницы")
+    GSVS(IDS_SNDNOPAGE, "Нет страницы")
+    GSVS(IDS_SNDNONUMBER, "Нет нумерации")
+    GSVS(IDS_SNDNOTOPEN, "Не открыто")
+    GSVS(IDS_SNDERROR, "Ошибка")
+    GSVS(IDS_SNDTIMEOUT,    "Задержка")
+    GSVS(IDS_SNDSTART, "Запуск")
+    GSVS(IDS_SNDEXIT, "Выход")
+    GSVS(IDS_SNDBUSY, "Занят")
+    GSVS(IDS_NONE, "<Нет>")
+    GSVS(IDS_SPKR, "<Гудок динамика>")
+END
+
+STRINGTABLE
+BEGIN
+	/* help topics - these need to match keywords in XX\gvclang.txt */
+    GSVS(IDS_TOPICROOT,  "Введение")
+    GSVS(IDS_TOPICOPEN,  "Открытие документа")
+    GSVS(IDS_TOPICPRINT, "Печать")
+    GSVS(IDS_TOPICPROP, "Свойства")
+    GSVS(IDS_TOPICEDITPROP, "Редактировать свойства")
+    GSVS(IDS_TOPICCONVERT, "Конвертировать")
+    GSVS(IDS_TOPICCLIP, "Буфер обмена")
+    GSVS(IDS_TOPICPREVIEW, "EPS превью")
+    GSVS(IDS_TOPICSOUND, "Звуки")
+    GSVS(IDS_TOPICDSET, "Настройка экрана")
+    GSVS(IDS_TOPICMEDIA, "Бумага")
+	GSVS(IDS_TOPICPSTOEPS, "PS to EPS")
+    GSVS(IDS_TOPICGOTO, "Выбор страницы")
+    GSVS(IDS_TOPICINSTALL, "Установка")
+    GSVS(IDS_TOPICTEXT, "Извлечение и поиск текста")
+    GSVS(IDS_TOPICKEYS, "Клавиатура")
+    GSVS(IDS_TOPICMESS, "Сообщения Ghostscript")
+    GSVS(IDS_TOPICSPOOL, "Спулер")
+	GSVS(IDS_TOPICZLIB, "zlib")
+	GSVS(IDS_TOPICBZIP2, "bzip2")
+	GSVS(IDS_TOPICPSTOEDIT, "PStoEdit")
+    GSVS(IDS_TOPICMEASURE, "Измерения")
+    GSVS(IDS_TOPICEASYCFG, "Простая настройка")
+    GSVS(IDS_TOPICADVANCEDCFG, "Расширенная настройка")
+    GSVS(IDS_TOPICDOWNLOAD, "Получение Ghostscript")
+    GSVS(IDS_TOPICDSCWARN, "Предупреждения DSC")
+    GSVS(IDS_TOPICREG, "Регистрация")
+END
+
+STRINGTABLE
+BEGIN
+    GSVS(IDS_BBPROMPT,  "Щёлкните слева")
+    GSVS(IDS_BBPROMPT1, "Щёлкните внизу")
+    GSVS(IDS_BBPROMPT2, "Щёлкните справа")
+    GSVS(IDS_BBPROMPT3, "Щёлкните вверху")
+    GSVS(IDS_EPSONEPAGE, "Файл EPS должен быть одностраничным.\nСм. справку по 'PS в EPS'")
+    GSVS(IDS_EPSQPAGES, "Этот документ одностраничный?")
+    GSVS(IDS_EPSNOBBOX, "Не могу получить габариты")
+    GSVS(IDS_EPSUSERINVALID, "Превью не в формате TIFF или метафайл Windows")
+    GSVS(IDS_EPSUSERTITLE, "Открыть файл с превью")
+    GSVS(IDS_EPS_OFF_PAGE, "Габариты EPS полностью за пределами страницы. Используйте 'Настройка | Обрезка EPS'")
+    GSVS(IDS_MUSTUSEPORTRAIT, "Необходимо использовать книжную ориентацию.")
+END
+
+STRINGTABLE
+BEGIN
+	/* wait messages */
+    GSVS(IDS_WAIT, "Подождите")
+    GSVS(IDS_WAITREAD,  "Чтение...")
+    GSVS(IDS_WAITWRITE,  "Запись...")
+    GSVS(IDS_WAITDRAW, "Рисование...")
+    GSVS(IDS_WAITDRAW_PC, "Рисование %d%%")
+    GSVS(IDS_WAITGSOPEN, "Открытие Ghostscript...")
+    GSVS(IDS_WAITGSCLOSE,  "Закрытие Ghostscript...")
+    GSVS(IDS_WAITPRINT,  "Печать...")
+    GSVS(IDS_WAITSEARCH,  "Поиск...")
+    GSVS(IDS_WAITTEXT, "Извлечение текста %d%%")
+END
+
+
+STRINGTABLE
+BEGIN
+	/* debug messages */
+    GSVS(IDS_DEBUG_DFISLOCKED, "dfreopen: файл заперт")
+    GSVS(IDS_DEBUG_DFISOPEN, "dfreopen: файл уже открыт")
+    GSVS(IDS_DEBUG_DFISMISSING, "dfreopen: файл отсутствует")
+    GSVS(IDS_DEBUG_DFCHANGED, "dfreopen: файл изменён")
+    GSVS(IDS_DEBUG_DFISCLOSED, "dfclose: файл уже закрыт")
+END
+
+STRINGTABLE
+BEGIN
+    GSVS(IDS_PROCESS_GSLOAD_FAIL, "Не могу загрузить Ghostscript DLL")
+    GSVS(IDS_PROCESS_INIT_FAIL, "gs_process: ошибка gsdll.init")
+    GSVS(IDS_PROCESS_VIEWER_FAIL, "gs_process: ошибка '(viewer.ps) run'")
+    GSVS(IDS_PROCESS_EXECUTE_FAIL, "gs_process: ошибка gsdll.execute_cont")
+END
+
+STRINGTABLE
+BEGIN
+	/* PDF messages */
+    GSVS(IDS_PDFNOPAGE, "Неизвестное количество страниц в PDF файле.\nСначала нужно показать его" )
+    GSVS(IDS_PDFEXTRACTALL, "Неизвестное количество страниц в PDF файле.\nИзвлечение или печать всех страниц")
+    GSVS(IDS_USEPDFWRITE, "Для извлечения страниц из файла PDF используйте команду Файл | Конвертировать с устройством pdfwrite или pswrite.")
+END
+
+STRINGTABLE
+BEGIN
+    GSVS(IDS_LARGEMEDIA, "Внимание: размер бумаги шире, чем 2 метра или выше, чем 2 метра. Пожалуйста, проверьте  'Бумага | Другая'")
+    GSVS(IDS_NOTIMPLEMENTED, "Не реализовано")
+    GSVS(IDS_NOLINKTARGET, "Неизвестно, куда переходить")
+    GSVS(IDS_PARSEERROR, "Ошибка при разборе командной строки")
+    GSVS(IDS_ZLIB_FAIL, "Не могу загрузить zlib DLL. Нажмите OK для получения справки.")
+    GSVS(IDS_BZIP2_FAIL, "Не могу загрузить bzip2 DLL. Нажмите OK для получения справки.")
+END
+
+STRINGTABLE
+BEGIN
+    GSVS(IDS_BETAEXPIRED, "Срок этой копии BETA-версии GSview истёк.  Подробности о том, как загрузить текущую версию GSView см. http://www.cs.wisc.edu/~ghost/")
+	GSVS(IDS_BETAWARN, AABETAWARN)
+    GSVS(IDS_NOPRINTERINI, "Не могу открыть printer.ini")
+    GSVS(IDS_NOINI, "Не могу открыть INI файл")
+    GSVS(IDS_NEEDTEMP, "Вам необходимо установить переменную окружения TEMP так, чтобы она указывала на существующий и доступный для записи каталог. Иначе GSview не сможет печатать")
+    GSVS(IDS_GSNOTINSTALLED, "У Вас не установлен Ghostscript. Пожалуйста, прочитайте файл Readme.htm GSview.")
+    GSVS(IDS_GSLIBNOTINSTALLED, "У Вас не установлены библиотечные файлы Ghostscript. Пожалуйста, прочитайте файл Readme.htm GSview.")
+	GSVS(IDS_NOPROGMAN, AANODDEPROGMAN)
+	GSVS(IDS_PROGRAMOBJECTFAILED, AAPROGRAMOBJECTFAILED)
+    GSVS(IDS_INVALIDREG, "Неверное имя или номер регистрации")
+    GSVS(IDS_UNREGISTERED, "Не зарегистрировано")
+    GSVS(IDS_WRONGEMX, "У Вас emx %s.\rВам нужен emx %s или более поздний.\rGSview для PM будет работать некорректно.")
+	GSVS(IDS_GSVIEWVERSION, GSVIEW_DOT_VERSION)
+	GSVS(IDS_PROGMANGROUP4, AAPROGMANGROUP4)
+	GSVS(IDS_CFG73, AACFG73)
+	GSVS(IDS_CFG74, AACFG74)
+END
+
+STRINGTABLE
+BEGIN
+    GSVS(IDS_PRN_PRINTMETHOD, "Способ печати")
+    GSVS(IDS_PRN_WINDOWSGDI, "Принтер Windows GDI")
+    GSVS(IDS_PRN_GSDEVICE, "Устройство Ghostscript")
+    GSVS(IDS_PRN_PSPRINTER, AAPSPRINTER)        /* "PostScript Printer" */
+    GSVS(IDS_PRN_SETTINGS, "Установка")
+    GSVS(IDS_PRN_HELP, AAHELP)          /* "Help" */
+    GSVS(IDS_PRN_SELECTPAGES, "Выбор страниц")
+	GSVS(IDS_ALL, AAALL)
+    /* PageSize policies */
+    GSVS(IDS_PAGESIZE_VARIABLE, "Переменный размер страницы")
+    GSVS(IDS_PAGESIZE_FIXED, "Фиксированный размер страницы")
+    GSVS(IDS_PAGESIZE_SHRINK, "Уменьшить до размера страницы")
+END
+
+STRINGTABLE
+BEGIN
+    GSVS(IDS_INVALIDNUMBER, "Неверное число")
+    GSVS(IDS_CANTINVERT, "Не могу инвертировать матрицу")
+	GSVS(IDS_UNITPT, AAPT)
+	GSVS(IDS_UNITMM, AAMM)
+	GSVS(IDS_UNITINCH, AAINCH)
+	GSVS(IDS_UNITCUSTOM, AACUSTOM)
+END
+
+
+STRINGTABLE
+BEGIN
+    GSVS(IDS_DSC_INFO, "Информация DSC")
+    GSVS(IDS_DSC_WARN, "Предупреждение DSC")
+    GSVS(IDS_DSC_ERROR, "Ошибка DSC")
+    GSVS(IDS_DSC_LINEFMT, "%.40s в строке %d:")
+END
+
+
+/* Split strings if longer than 256 bytes */
+
+STRINGTABLE
+BEGIN
+    GSVS(CDSC_RESOURCE_BBOX, "Эта строка некорректна.\012Bounding box должен иметь целочисленные координаты, а не вещественные.\012Габариты в вещественных координатах должны быть\012указаны при помощи %%HiResBoundingBox:\012")
+    GSVS(CDSC_RESOURCE_BBOX2, "Но %%BoundingBox: по-прежнему должен иметь целые значения.\012\012'OK' конвертирует координаты в целые,\012округляя наружу.\012'Отмена' проигнорирует эту строку.\012")
+	GSVS(CDSC_RESOURCE_BBOX3, "")
+
+
+    GSVS(CDSC_RESOURCE_EARLY_TRAILER, "Трейлер обычно находится в конце документа.\012Эта строка обнаружена менее, чем в 32k байтах от конца\012файла. Трейлеры обычно не так длинны.\012Это больше похоже на PostScript файл, который был включён")
+    GSVS(CDSC_RESOURCE_EARLY_TRAILER2, "\012без ограничивания при помощи %%BeginDocument / %%EndDocument.\012\012'OK' примет эту включенную часть файла.\012'Отмена' примет этот трейлер её как трейлер.\012")
+	GSVS(CDSC_RESOURCE_EARLY_TRAILER3, "")
+
+    GSVS(CDSC_RESOURCE_EARLY_EOF, "Эта строка обычно встречается в конце документа.\012Эта строка встретилась далее, чем в 100 байтах от конца файла.\012Это более похоже на то, что был включен ещё один PostScript файл")
+    GSVS(CDSC_RESOURCE_EARLY_EOF2, "\012без ограничивания при помощи %%BeginDocument / %%EndDocument.\012\012'OK' примет эту включенную часть файла.\012'Отмена' примет эту часть как трейлер.\012")
+	GSVS(CDSC_RESOURCE_EARLY_EOF3, "")
+
+    GSVS(CDSC_RESOURCE_PAGE_IN_TRAILER, "Эта строка %%Page: встретилась в трейлере, что недопустимо.\012Файлы EPS должны быть заключены в  %%BeginDocument / %%EndDocument.\012Возможно, файл EPS был некорректно инкапсулирован,")
+    GSVS(CDSC_RESOURCE_PAGE_IN_TRAILER2, "\012и наличие %%Trailer в файле EPS странно.\012\012'OK' обработает остальные страницы.\012'Отмена' проигнорирует комментарий этой страницы.\012")
+	GSVS(CDSC_RESOURCE_PAGE_IN_TRAILER3, "")
+
+    GSVS(CDSC_RESOURCE_PAGE_ORDINAL, "Эта строка некорректна.\012Два аргумента должны быть меткой и порядковым числительным.\012Числительное должно равняться 1 для первой страницы и\012увеличиваться на 1 для каждой последующей.")
+    GSVS(CDSC_RESOURCE_PAGE_ORDINAL2, "\012Номер страницы отсутствует или выпадает из последовательности.\012\012Похоже, что эта строка является частью включенного файла, который\012не был заключен в %%BeginDocument / %%EndDocument.")
+    GSVS(CDSC_RESOURCE_PAGE_ORDINAL3, "\012\012'OK' проигнорирует эту страницу, считая её частью\012некорректно инкапсулированного EPS файла.\012'Отмена' будет считать, что это правильная страница.\012")
+
+    GSVS(CDSC_RESOURCE_PAGES_WRONG, "%%Pages: не соответствует числу в %%Page:\012\012'OK' подстроит число страниц для соответствия числу в найденном комментарии %%Page:.\012'Отмена' установит количество страниц из %%Pages:\012")
+	GSVS(CDSC_RESOURCE_PAGES_WRONG2,"")
+	GSVS(CDSC_RESOURCE_PAGES_WRONG3,"")
+
+    GSVS(CDSC_RESOURCE_EPS_NO_BBOX, "В этом EPS файле отсутствует обязательная часть %%BoundingBox:\012Подробности о том, как добавить/установить bounding box см. справку GSview.\012\012'OK' допустит, что это EPS файл.")
+    GSVS(CDSC_RESOURCE_EPS_NO_BBOX2, "\012'Отмена' будет считать, что НЕ EPS файл.\012")
+	GSVS(CDSC_RESOURCE_EPS_NO_BBOX3, "")
+
+    GSVS(CDSC_RESOURCE_EPS_PAGES, "EPS файлы могут иметь 0 или 1 страницу. Это 'EPS' файл имеет\012более этого, и поэтому не является EPS файлом.\012Вы не можете использовать `Печатать в` `Encapsulated PostScript файл` для")
+    GSVS(CDSC_RESOURCE_EPS_PAGES2, "\012печати многостраничных файлов. Правильным будет соединить\012принтер с портом FILE: или выбрать 'Печатать в файл'.\012\012'OK' примет это как EPS файл.\012'Отмена' примет как НЕ EPS файл.\012")
+	GSVS(CDSC_RESOURCE_EPS_PAGES3, "")
+
+    GSVS(CDSC_RESOURCE_NO_MEDIA, "Бумага была указана при помощи %%DocumentMedia:, но не была указана по умолчанию при помощи\012 %%PageMedia:.\012\012'OK' установит первую в списке бумагу по умолчанию.")
+    GSVS(CDSC_RESOURCE_NO_MEDIA2, "\012'Отмена' не будет устанавливать бумагу по умолчанию.\012")
+	GSVS(CDSC_RESOURCE_NO_MEDIA3, "")
+
+    GSVS(CDSC_RESOURCE_ATEND, "Эта строка некорректна.\012Чтобы отложить установку значения нужно использовать '(atend)', а не 'atend'\012\012'OK' примет, что подразумевалось (atend).\012'Отмена' проигнорирует эту строку.\012")
+	GSVS(CDSC_RESOURCE_ATEND2, "")
+	GSVS(CDSC_RESOURCE_ATEND3, "")
+
+    GSVS(CDSC_RESOURCE_DUP_COMMENT, "Этот комментарий дублируется в заголовке, что необязательно.\012Первая строка в заголовке в заголовке имеет преимущество.\012\012'OK' или 'Отмена' проигнорирует повторение строки.\012")
+	GSVS(CDSC_RESOURCE_DUP_COMMENT2, "")
+	GSVS(CDSC_RESOURCE_DUP_COMMENT3, "")
+
+    GSVS(CDSC_RESOURCE_DUP_TRAILER, "Этот комментарий дублируется в трейлере, что необязательно.\012Последняя строка в трейлере имеет преимущество.\012\012'OK' или 'Отмена' будет использовать дубликат.\012")
+	GSVS(CDSC_RESOURCE_DUP_TRAILER2, "")
+	GSVS(CDSC_RESOURCE_DUP_TRAILER3, "")
+
+    GSVS(CDSC_RESOURCE_BEGIN_END, "Количество комментариев Begin и End не соответствуют друг другу.\012\012'OK' или 'Отмена' проигнорируют это.\012")
+	GSVS(CDSC_RESOURCE_BEGIN_END2, "")
+	GSVS(CDSC_RESOURCE_BEGIN_END3, "")
+
+    GSVS(CDSC_RESOURCE_BAD_SECTION, "Эта строка некорректна потому, что не должна быть \012внутри страницы. Возможно EPS файл был некорректно\012 инкапсулирован. Строка будет проигнрирована.\012\012'OK' или 'Отмена' проигнорируют эту строку.\012")
+	GSVS(CDSC_RESOURCE_BAD_SECTION2, "")
+	GSVS(CDSC_RESOURCE_BAD_SECTION3, "")
+
+    GSVS(CDSC_RESOURCE_LONG_LINE, "\012\012Строки в документах, соответствующих DSC, должны быть короче, чем 255 символов.\012")
+	GSVS(CDSC_RESOURCE_LONG_LINE2, "")
+	GSVS(CDSC_RESOURCE_LONG_LINE3, "")
+
+    GSVS(CDSC_RESOURCE_INCORRECT_USAGE, "Эта строка комментария DSC некорректна.\012Обратитесь к спецификации DSC.\012\012'OK' или 'Отмена' проигнорируют это несоответствие.\012")
+	GSVS(CDSC_RESOURCE_INCORRECT_USAGE2, "")
+	GSVS(CDSC_RESOURCE_INCORRECT_USAGE3, "")
+
+END

@@ -1,0 +1,90 @@
+/* Copyright (C) 1993-1998, Ghostgum Software Pty Ltd.  All rights reserved.
+  
+  This file is part of GSview.
+  
+  This program is distributed with NO WARRANTY OF ANY KIND.  No author
+  or distributor accepts any responsibility for the consequences of using it,
+  or for whether it serves any particular purpose or works at all, unless he
+  or she says so in writing.  Refer to the GSview Free Public Licence 
+  (the "Licence") for full details.
+  
+  Every copy of GSview must include a copy of the Licence, normally in a 
+  plain ASCII text file named LICENCE.  The Licence grants you the right 
+  to copy, modify and redistribute GSview, but only under certain conditions 
+  described in the Licence.  Among other things, the Licence requires that 
+  the copyright notice and this notice be preserved on all copies.
+*/
+
+/* gvwgs.rc */
+#include "gvwgs.h"
+#ifndef _Windows
+#define _Windows
+#endif
+#include "gvclang.h"
+
+#ifndef DS_3DLOOK
+#define DS_3DLOOK 0x0004L	/* for Windows 95 look */
+#endif
+
+ID_GSVIEW ICON "binary/gvwgs.ico"
+
+AboutDlgBox DIALOG 20, 32, 256, 164
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_3DLOOK
+CAPTION AAABOUTGSVIEWPRINT
+FONT 8, "Helv"
+BEGIN
+	CONTROL AAOK, IDOK, "button", BS_DEFPUSHBUTTON | WS_GROUP | WS_TABSTOP | WS_CHILD, 218, 5, 32, 14
+#ifdef __WIN32__
+	LTEXT "GVWGS32.EXE", -1, 32, 8, 64, 8
+#else
+	LTEXT "GVWGS16.EXE", -1, 32, 8, 64, 8
+#endif
+	RTEXT AACOPY1, -1, 86, 8, 32, 8
+	LTEXT " ", ABOUT_VERSION, 120, 8, 96, 8
+	LTEXT AACOPY20, -1, 32, 16, 128, 8
+	LTEXT GSVIEW_COPYRIGHT1, -1, 8, 28, 142, 8
+	LTEXT GSVIEW_COPYRIGHT2, -1, 158, 28, 78, 8
+	LTEXT AACOPY21, -1, 7, 40, 240, 8
+	LTEXT AACOPY4, -1, 7, 48, 240, 8
+	LTEXT AACOPY5, -1, 7, 56, 240, 8
+	LTEXT AACOPY6, -1, 7, 64, 240, 8
+	LTEXT AACOPY7, -1, 7, 72, 240, 8
+	LTEXT AACOPY8, -1, 7, 80, 240, 8
+	LTEXT AACOPY9, -1, 7, 92, 240, 8
+	LTEXT AACOPY10, -1, 7, 100, 240, 8
+	LTEXT AACOPY11, -1, 7, 108, 240, 8
+	LTEXT AACOPY12, -1, 7, 116, 240, 8
+	LTEXT AACOPY13, -1, 7, 124, 240, 8
+	LTEXT AACOPY14, -1, 7, 132, 240, 8
+	LTEXT AACOPY19, -1, 8, 146, 240, 8
+	ICON ID_GSVIEW, ABOUT_ICON, 8, 8, 0, 0
+END
+
+
+
+ID_GSVIEW MENU 
+{
+ POPUP AAMFILE
+ {
+  MENUITEM AAMSAVEAS, IDM_SAVEAS
+  MENUITEM AAMEXIT, IDM_EXIT
+ }
+
+ POPUP AAMEDIT
+ {
+  MENUITEM AAMCOPY, IDM_COPYCLIP
+ }
+
+ POPUP AAMHELP
+ {
+  MENUITEM AAMABOUT, IDM_ABOUT
+ }
+
+}
+
+STRINGTABLE
+BEGIN
+	ID_GSVIEW, AAGSVIEWPRINT
+	ID_GSVIEW+1, AAGSVIEWPRINTUSAGE
+END
+

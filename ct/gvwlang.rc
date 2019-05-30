@@ -1,0 +1,268 @@
+/* Copyright (C) 1993-2002, Ghostgum Software Pty Ltd.  All rights reserved.
+
+  This file is part of GSview.
+  
+  This program is distributed with NO WARRANTY OF ANY KIND.  No author
+  or distributor accepts any responsibility for the consequences of using it,
+  or for whether it serves any particular purpose or works at all, unless he
+  or she says so in writing.  Refer to the GSview Free Public Licence 
+  (the "Licence") for full details.
+  
+  Every copy of GSview must include a copy of the Licence, normally in a 
+  plain ASCII text file named LICENCE.  The Licence grants you the right 
+  to copy, modify and redistribute GSview, but only under certain conditions 
+  described in the Licence.  Among other things, the Licence requires that 
+  the copyright notice and this notice be preserved on all copies.
+*/
+
+/* ct\gvwlang.rc */
+
+/* Windows Catalan language resources */
+LANGUAGE LANG_CATALAN, SUBLANG_DEFAULT
+
+ID_LANG BITMAP "binary/catalan.bmp"
+
+gsview_menu MENU
+BEGIN
+	POPUP "&Fitxer"
+	BEGIN
+#ifndef MEMORYFILE
+		MENUITEM "&Obre...\tO", IDM_OPEN
+		MENUITEM "&Selecciona un fitxer...\tS", IDM_SELECT
+#ifndef VIEWONLY
+		MENUITEM "&Anomena i desa...\tA", IDM_SAVEAS
+#endif
+		MENUITEM "&Tanca\tC", IDM_CLOSE
+		MENUITEM "&Informació...\tI", IDM_INFO
+		MENUITEM SEPARATOR
+#ifndef VIEWONLY
+		MENUITEM "Converteix...\tF", IDM_CONVERTFILE
+		MENUITEM "&Extreu...\tE", IDM_EXTRACT
+		MENUITEM "De PS a EPS", IDM_PSTOEPS
+		MENUITEM SEPARATOR
+		MENUITEM "&Imprimeix...\tP", IDM_PRINT
+		MENUITEM "Imprimeix un fitxer...", IDM_SPOOL
+		MENUITEM SEPARATOR
+#endif
+		MENUITEM "Mostra els missatges\tM", IDM_GSMESS 
+		MENUITEM SEPARATOR
+		MENUITEM SEPARATOR
+#endif /* !MEMORYFILE */
+		MENUITEM "S&urt", IDM_EXIT
+	END
+#ifndef VIEWONLY
+	POPUP "&Edita"
+	BEGIN
+		MENUITEM "&Copia\tCtrl+C", IDM_COPYCLIP
+		MENUITEM SEPARATOR
+		MENUITEM "&Enganxa a...", IDM_PASTETO
+		MENUITEM "Converteix el mapa de &bits", IDM_CONVERT
+		MENUITEM SEPARATOR
+		POPUP "&Afegeix la visualització prèvia EPS"
+		BEGIN
+		    MENUITEM "&Intercanvia", IDM_MAKEEPSI
+		    MENUITEM "TIFF 4", IDM_MAKEEPST4
+		    MENUITEM "&TIFF 6 sense comprimir", IDM_MAKEEPST6U
+		    MENUITEM "TIFF 6 amb compressió de &bits", IDM_MAKEEPST6P
+		    MENUITEM "Metafitxer del &Windows", IDM_MAKEEPSW
+		    MENUITEM "&Visualització prèvia proveïda per l'usuari", IDM_MAKEEPSU
+		END
+		POPUP "&Extreu l'EPS"
+		BEGIN
+		    MENUITEM "&PostScript", IDM_EXTRACTPS
+		    MENUITEM "&Visualització prèvia", IDM_EXTRACTPRE
+		END
+		MENUITEM SEPARATOR
+		MENUITEM "Mida", IDM_MEASURE
+		MENUITEM "Converteix al format de vector...", IDM_PSTOEDIT
+		MENUITEM "Extreu el &text...", IDM_TEXTEXTRACT
+		MENUITEM "&Cerca...\tCtrl+F", IDM_TEXTFIND
+		MENUITEM "Cerca el &següent\tF3", IDM_TEXTFINDNEXT
+	END
+#endif
+	POPUP "O&pcions"
+	BEGIN
+		MENUITEM "Configuració fàcil...", IDM_CFG
+		MENUITEM "Configuració avançada...", IDM_GSCOMMAND
+		MENUITEM "Sons...", IDM_SOUNDS
+		POPUP "&Unitats"
+		BEGIN
+			MENUITEM "&pt", IDM_UNITPT
+			MENUITEM "&mm", IDM_UNITMM
+			MENUITEM "p&olzada", IDM_UNITINCH
+			MENUITEM SEPARATOR
+			MENUITEM "Resolució &fina", IDM_UNITFINE
+		END
+		POPUP "&Idioma"
+		BEGIN
+			MENUITEM "&English", IDM_LANGEN
+			/* Remaining languages are added at run time */
+		END
+#ifndef VIEWONLY
+		POPUP "De PS a Text"
+		BEGIN
+			MENUITEM "Inhabilitat", IDM_PSTOTEXTDIS
+			MENUITEM "Normal", IDM_PSTOTEXTNORM
+			MENUITEM "Codificació Dvips Cork", IDM_PSTOTEXTCORK
+		END
+#endif
+		POPUP "Avisos DSC"
+		BEGIN
+			MENUITEM "Inactius", IDM_DSC_OFF
+			MENUITEM "Errors", IDM_DSC_ERROR
+			MENUITEM "Avisos", IDM_DSC_WARN
+			MENUITEM "Tots", IDM_DSC_INFO
+		END
+		MENUITEM "Desa les preferències &ara", IDM_SETTINGS
+		MENUITEM SEPARATOR
+		MENUITEM "&Desa les preferències en sortir", IDM_SAVESETTINGS
+		MENUITEM "&Més seguretat", IDM_SAFER
+		MENUITEM "Desa l'últim &directori", IDM_SAVEDIR
+		MENUITEM "&Barra de botons", IDM_BUTTONSHOW
+		MENUITEM "&Ajusta la finestra a la pàgina", IDM_FITPAGE
+		MENUITEM "&Torna a dibuixar automàticament", IDM_AUTOREDISPLAY
+		MENUITEM "&Retalla els EPS", IDM_EPSFCLIP
+		MENUITEM "A&visos EPS", IDM_EPSFWARN
+		MENUITEM "&Ignora els DSC", IDM_IGNOREDSC
+		MENUITEM "M&ostra el requadre del límit", IDM_SHOWBBOX
+	END
+	POPUP "&Visualitza"
+	BEGIN
+		MENUITEM "Pàgina &següent\t+", IDM_NEXT
+		MENUITEM "Pàgina &anterior\t-", IDM_PREV
+		MENUITEM "&Vés a la pàgina...\tG", IDM_GOTO
+		MENUITEM "Vés &endarrera\tB", IDM_GOBACK
+		MENUITEM "Vés e&ndavant", IDM_GOFWD
+		MENUITEM "&Torna a dibuixar\tR", IDM_REDISPLAY
+		MENUITEM SEPARATOR
+		MENUITEM "Pàgina següent i inicial\tSpace", IDM_NEXTHOME
+		MENUITEM "Pàgina anterior i inicial\tBkSp", IDM_PREVHOME
+		MENUITEM SEPARATOR
+		MENUITEM "&Pantalla completa\tF4", IDM_FULLSCREEN
+		MENUITEM "Ajusta a la &finestra\tF6", IDM_FITWIN
+	END
+	POPUP "&Orientació"
+	BEGIN
+		MENUITEM "&Automàtica", IDM_AUTOORIENT
+		MENUITEM SEPARATOR
+		MENUITEM "&Vertical", IDM_PORTRAIT
+		MENUITEM "&Horitzontal", IDM_LANDSCAPE
+		MENUITEM "V&ertical cap per avall", IDM_UPSIDEDOWN
+		MENUITEM "H&oritzontal al revés", IDM_SEASCAPE
+		MENUITEM SEPARATOR
+		MENUITEM "&Intercanvia la posició horitzontal", IDM_SWAPLANDSCAPE
+	END
+	POPUP "&Suport"
+	BEGIN
+		MENUITEM "&Paràmetres de visualització...", IDM_DISPLAYSETTINGS
+		MENUITEM SEPARATOR
+		MENUITEM "&Gira el suport", IDM_MEDIAROTATE
+		MENUITEM SEPARATOR
+		MENUITEM "11x17", IDM_11x17
+		MENUITEM "A3", IDM_A3
+		MENUITEM "A4", IDM_A4
+		MENUITEM "A5", IDM_A5
+		MENUITEM "B4", IDM_B4
+		MENUITEM "B5", IDM_B5
+		MENUITEM "Llibre major (Ledger)", IDM_LEDGER
+		MENUITEM "Legal", IDM_LEGAL
+		MENUITEM "Carta (Letter)", IDM_LETTER
+		MENUITEM "Nota (Note)", IDM_NOTE
+		MENUITEM "Definit per l'usuari...", IDM_USERSIZE
+	END
+	POPUP "&Ajuda"
+	BEGIN
+		MENUITEM "&Continguts", IDM_HELPCONTENT
+		MENUITEM "&Cerca ajuda sobre...", IDM_HELPSEARCH
+		MENUITEM "&Tecles d'ajuda", IDM_HELPKEYS
+		MENUITEM SEPARATOR
+		MENUITEM "&Registre...", IDM_REGISTER
+		MENUITEM "&Quant al...", IDM_ABOUT
+	END
+END
+
+gsview_accel ACCELERATORS
+BEGIN
+	"O", IDM_OPEN
+	"o", IDM_OPEN
+	"C", IDM_CLOSE
+	"c", IDM_CLOSE
+	"N", IDM_NEXT
+	"n", IDM_NEXT
+	"+", IDM_NEXT
+	" ", IDM_NEXTHOME
+	VK_SPACE, IDM_NEXTHOME, VIRTKEY
+	"V", IDM_PREV
+	"v", IDM_PREV
+	"-", IDM_PREV
+	VK_BACK, IDM_PREVHOME, VIRTKEY
+	VK_BACK, IDM_PREVHOME, VIRTKEY, SHIFT
+	"G", IDM_GOTO
+	"g", IDM_GOTO
+	"B", IDM_GOBACK
+	"b", IDM_GOBACK
+	"I", IDM_INFO
+	"i", IDM_INFO
+	"R", IDM_REDISPLAY
+	"r", IDM_REDISPLAY
+	"S", IDM_SELECT
+	"s", IDM_SELECT
+	"A", IDM_SAVEAS
+	"a", IDM_SAVEAS
+	"P", IDM_PRINT
+	"p", IDM_PRINT
+	"F", IDM_CONVERTFILE
+	"f", IDM_CONVERTFILE
+#ifdef OLD
+	VK_F, IDM_TEXTFIND, VIRTKEY, CONTROL
+#else
+	"^F", IDM_TEXTFIND
+#endif
+	VK_F3, IDM_TEXTFINDNEXT, VIRTKEY
+	"E", IDM_EXTRACT
+	"e", IDM_EXTRACT
+	"M", IDM_GSMESS
+	"m", IDM_GSMESS
+	"<", IDM_MAGMINUS
+	">", IDM_MAGPLUS
+	",", IDM_MAGMINUS
+	".", IDM_MAGPLUS
+	VK_F1, IDM_HELPCONTENT, VIRTKEY
+	"^C", IDM_COPYCLIP
+	VK_INSERT, IDM_COPYCLIP, VIRTKEY, CONTROL
+	VK_F4, IDM_FULLSCREEN, VIRTKEY
+	VK_F5, IDM_REDISPLAY, VIRTKEY
+	VK_F6, IDM_FITWIN, VIRTKEY
+END
+
+
+
+STRINGTABLE
+BEGIN
+	/* general strings */
+	IDS_SLANGUAGE, "CAT,3"
+	IDS_CODEPAGE, "1252"	/* ISO-Latin-1 */
+	IDS_HELPFILE, WINHELPFILE
+	IDS_SOUNDNOMM, "No es pot carregar el WINMM.DLL\nEls sons no estaran disponibles"
+END
+
+STRINGTABLE
+BEGIN
+	/* filter strings */
+#ifdef __WIN32__
+	IDS_FILTER_PSALL, "Predeterminats (*.ps;*.eps;*.epi;*.pdf;*.prn)|*.ps;*.eps;*.epi;*.pdf;*.prn;*.ps.gz;*.eps.gz;*.epi.gz;*.pdf.gz;*.ps.bz2;*.eps.bz2;*.pdf.bz2|Fitxers PS (*.ps)|*.ps;*.ps.gz;*.ps.bz2;*.psz|Fitxers EPS (*.eps)|*.eps;*.eps.gz;*.eps.bz2|Fitxers EPI (*.epi)|*.epi;*.epi.gz;*.epi.bz2|Fitxers PDF (*.pdf)|*.pdf;*.pdf.gz;*.pdf.bz2|Fitxers PRN (*.prn)|*.prn|Tots els fitxers (*.*)|*.*|"
+#else
+	IDS_FILTER_PSALL, "Predeterminats (*.ps;*.eps;*.epi;*.pdf;*.prn)|*.ps;*.eps;*.epi;*.pdf;*.prn;*.psz|Fitxers PS (*.ps)|*.ps|Fitxers EPS (*.eps)|*.eps|Fitxers EPI (*.epi)|*.epi|Fitxers PDF (*.pdf)|*.pdf|Fitxers PRN (*.prn)|*.prn|Tots els fitxers (*.*)|*.*|"
+#endif
+	IDS_FILTER_PS, "Predeterminats (*.ps)|*.ps|Fitxers EPS (*.eps)|*.eps|Fitxers EPI (*.epi)|*.epi|Tots els fitxers (*.*)|*.*|"
+	IDS_FILTER_EPS, "Fitxers EPS (*.eps)|*.eps|Fitxers EPI (*.epi)|*.epi|Fitxers PS (*.ps)|*.ps|Tots els fitxers (*.*)|*.*|"
+	IDS_FILTER_EPI, "Fitxers EPI (*.epi)|*.epi|Fitxers EPS (*.eps)|*.eps|Fitxers PS (*.ps)|*.ps|Tots els fitxers (*.*)|*.*|"
+	IDS_FILTER_PDF, "Fitxers PDF (*.pdf)|*.pdf|Tots els fitxers (*.*)|*.*|"
+	IDS_FILTER_ALL, "Tots els fitxers (*.*)|*.*|"
+	IDS_FILTER_BMP, "Fitxers de mapa de bits (*.bmp)|*.bmp|Tots els fitxers (*.*)|*.*|"
+	IDS_FILTER_TIFF, "Fitxers TIFF (*.tif)|*.tif|Tots els fitxers (*.*)|*.*|"
+	IDS_FILTER_WMF, "Metafitxers del Windows (*.wmf)|*.wmf|Tots els fitxers (*.*)|*.*|"
+	IDS_FILTER_TXT, "Fitxers de text (*.txt)|*.txt|Tots els fitxers (*.*)|*.*|"
+END
+
+

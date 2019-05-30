@@ -1,0 +1,4 @@
+LIBRARY SETUP2SK
+DESCRIPTION	'GSview Setup Slovak Language Resources'
+DATA SINGLE SHARED
+EXPORTS  main

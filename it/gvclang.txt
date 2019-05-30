@@ -1,0 +1,2430 @@
+ Guida di GSview
+1Panoramica Generale
+-Overview
+?Panoramica Generale
+ `GSview` è una interfaccia grafica per Ghostscript sotto MS-Windows
+ o OS/2.
+ Ghostscript è un interprete per il linguaggio di rappresentazione della pagina
+ Postscript usato dalle stampanti laser.
+ Per i documenti che si attengono all'Adobe Postscript Document Structiring
+ Conventions, GSview permette alle pagine selezionate di essere viste o
+ stampate.
+ GSview 4.8 necessita di Ghostscript 7.04 - 9.19.
+2Installazione
+-Installation
+?Installazione
+ E' consigliabile usare lo specifico programma di installazione per
+ installare GSview. Il programma di installazione si chiama `setup.exe`
+ sotto MS-Windows e `os2setup.exe` sotto OS/2.
+ GSview per MS-Windows è distribuito in un archivio auto estraente
+ avviando il quale sarà avviato il programma di installazione.
+ Ghostscript dovrà invece essere installato separatamente.
+
+ Se si desidera installare manualmente GSview, vedere il paragrafo
+ `Installazione Manuale`
+
+ La Configurazione parte automaticamente la prima volta che GSview viene avviato.
+ Se si desidera cambiare la configurazione successivamente, usare
+ `Opzioni` | `Configurazione Facile` oppure
+ `Opzioni` | `Configurazione Avanzata`.
+
+
+ Vedere anche `Opzioni` | `Lingua`.
+3Come ottenere Ghostscript
+-Obtaining_Ghostscript
+?Come ottenere Ghostscript
+?Ottenere Ghostscript
+?Download di Ghostscript
+?Download Ghostscript
+ GSview necessita di Aladdin Ghostscript.  GSview e Aladdin
+ Ghostscript sono disponibili separatamente presso il sito
+  http://www.cs.wisc.edu/~ghost/
+ Per configurare GSview, è necessario ottenere e installare sia Aladdin
+ Ghostscript che GSview e quindi avviare GSview.
+3Installazione di Ghostscript
+?Installazione di Ghostscript
+W
+ Aladdin Ghostscript per Win32 è disponibile come archivio auto estraente
+ che esegue l'installazione automaticamente.
+P
+ Aladdin Ghostscript per OS/2 è disponibile in un file zip che deve essere
+ installato manualmente.
+E
+ Per maggiori dettagli su come installare manualmente Ghostscript si prega di
+ leggere i files di documentazione di Ghostscript Install.htm e Use.htm
+3Disinstallazione di GSview
+?Disinstallazione di GSview
+W
+ Per disinstallare GSview da Windows 95 o NT 4.0,
+ usare `Aggiungi/Rimuovi Programma` dal `Panello di Controllo` di Windows.
+4Disinstallazione Manuale
+?Disinstallazione Manuale
+E
+ Per disinstallare GSview, eliminare i files nella cartella `gsview`.
+
+ Rimuovere inoltre:
+P
+  c:\os2\gvpm.ini
+W
+  c:\windows\gsview32.ini
+E
+
+ dall'appropriata cartella di sistema.
+W
+ Per Windows NT può essere anche necessario rimuovere gsview32.ini
+ dalle cartelle del profilo utente.
+E
+
+P
+ Rimuovi dal desktop i collegamenti a `GSview`.
+W
+ Rimuovi il gruppo `Ghostgum` dal Program Manager oppure dal menu Start
+
+ Se si conosce come modificare il registro, rimuovere le seguenti chiavi:
+  HKEY_CLASSES_ROOT\psfile
+  HKEY_CLASSES_ROOT\.eps
+  HKEY_CLASSES_ROOT\.ps
+  HKEY_CLASSES_ROOT\MIME\Database\Content Type\application/postscript
+ Se i file PDF sono stati associati con GSview sarà necessario rimuovere anche:
+  HKEY_CLASSES_ROOT\pdffile
+  HKEY_CLASSES_ROOT\.pdf
+  HKEY_CLASSES_ROOT\MIME\Database\Content Type\application/pdf
+E
+
+W
+ Il metodo preferibile per disinstallare Ghostscript è
+ usare `Aggiungi/Rimuovi Programmi` dal `Pannello di Controllo` di Windows.
+E
+ Per disinstallare manualmente Ghostscript, rimuovere i files dalla cartella
+ `gsN.NN` dove N.NN è il numero di versione di Ghostscript.
+3Installazione Manuale
+?Installazione Manuale
+ E' raccomandato usare il programma di installazione per installare
+ GSview.  Le seguenti istruzioni descrivono come installare GSview
+ senza usare il programma di installazione.
+
+ Impostare la variabile di ambiente TEMP in modo che punti ad una cartella per
+ i files temporanei.  Per esempio:
+   SET TEMP=c:\temp
+ La cartella deve esistere e deve avere il permesso di scrittura.
+
+ Per prima cosa è necessario installare Ghostscript con i suoi files
+ di libreria e caratteri.
+ E' necessaria la versione di Ghostscript elencata in `Panoramica Generale`.
+ Questa versione di GSview non funzionerà con altre versioni di Ghostscript.
+ Installare Ghostscript in una cartella c:\gs\gsN.NN
+ (sostituisci N.NN con il numero di versione di Ghostscript.)
+
+ Crea una directory c:\ghostgum\gsview
+
+ Successivamente installare
+P
+ PM GSview copiando gvpm.exe, gvpgs.exe,
+ gvpmde.dll, gvpmes.dll, gvpmfr.dll, gvpmit.dll,
+ gvpmen.hlp, gvpmde.hlp, gvpmes.hlp, gvpmfr.hlp, gvpmit.hlp 
+ e printer.ini
+W
+ GSview per Windows copiando gsview32.exe, gsv16spl.exe, gvwgs32.exe,
+ gsvw32de.dll, gsvw32es.dll, gsvw32fr.dll, gsvw32it.dll,
+ gsviewen.hlp, gsviewde.hlp, gsviewes.hlp, gsviewfr.hlp, gsviewit.hlp 
+ e printer.ini
+E
+ nella cartella `c:\ghostgum\gsview`
+
+P
+ Avviare GSview e seguire quindi le istruzioni che vengono date dal
+ wizard di configurazione.  Questo configurerà automaticamente
+ `Opzioni` | `Configurazione Avanzata`, copierà un elenco delle stampanti
+ conosciute nel file INI,
+ e creerà un collegamento a GSview sul desktop.
+
+ Se si vorrà avviare il wizard di configurazione successivamente, usare
+ `Opzioni` | `Configurazione Facile`.
+W
+ Avviare GSview e selezionare l'appropriata versione di Ghostscript
+ (normalmente l'ultima).  Per cambiarla successivamente, usare
+ `Opzioni` | `Configurazione Facile`.
+E
+
+ Per un maggior controllo sulla configurazione, vedere
+ `Installazione Manuale Avanzata`.
+3Installazione Manuale Avanzata
+?Installazione Manuale Avanzata
+ Al posto di usare `Opzioni` | `Configurazione Facile`, usare
+ `Opzioni` | `Configurazione Avanzata`.
+
+ Per prima cosa impostare correttamente i tre campi di testo (vedere
+ `Configurazione Avanzata`).
+
+P
+ Uscire da GSview e aggiungere il contenuto del file printer.ini al file
+ INI di GSview (c:\windows\gsview32.ini oppure c:\os2\gvpm.ini)
+
+ Creare un collegamento a GSview sul desktop, associandolo con
+ le estensioni dei files .ps, .eps e .pdf.
+W
+ Sulla finestra di dialogo di `Configurazione Avanzata`, selezionare le
+ caselle di controllo `Copia Stampanti Predefinite`, `Associa files .ps` e
+ `Crea collegamenti nel Menu Start`. In alternativa effettuare i tre seguenti passaggi:
+
+ 1. Uscire da GSview e aggiungere printer.ini al file INI di GSview
+ (c:\windows\gsview32.ini oppure c:\os2\gvpm.ini)
+
+ 2. Aggiungere al `Registro` i tipi di file .ps e .eps (ed
+ eventualmente i .pdf)
+
+ 3. Creare un collegamento a GSview su Program Manager o sul Menù Start
+E
+
+ Se sul sistema ci sono dei caratteri Type 1, è possibile fare in modo che
+ siano usati da Ghostscript. Per esempi in merito vedere `Fontmap.os2` e
+ `Fontmap.atm` forniti con Ghostscript.  Vedere anche l'argomento `Caratteri`.
+
+ Se si riscontrano dei problemi, provare a leggere la sezione
+ `Problemi Comuni`.
+3Installazione di Rete
+?Installazione di Rete
+?Profili dell'Utente
+ Installazione di GSview in una cartella di rete.
+
+ Quando un utente avvia GSview per la prima volta oppure lo avvia
+ dopo che il numero di versione è cambiato, GSview configurerà
+ automaticamente il computer locale.
+
+ Usando un percorso di rete UNC (\\NomePC\...) nell'installazione GSview non funzionerà sotto
+ Windows 3.1. Funzionerà invece sotto Windows 95.
+
+W
+ GSview tenta di mantenere un file di configurazione per ogni utente.
+ Se esistono dei profili utente sotto Windows 95 o NT,
+ GSview memorizzerà il file INI nella cartella del profilo utente,
+ come specificato nel registro.  Se questa cartella non viene trovata,
+ e la variabile di ambiente USERPROFILE è definita ed essa è
+ una cartella, GSview memorizzerà il file INI in questa cartella.
+ Se anche questo fallirà, GSview memorizzerà il file INI nel
+ percorso predefinito, la cartella di Windows.
+ Se la cartella del profilo utente è protetta in scrittura,
+ GSview causerà dei problemi.
+
+E
+ Se si vuole evitare che venga automaticamente visualizzata la
+ `Configurazione Facile` quando GSview viene avviato per la prima
+ volta oppure ogni volta che viene aggiornato, mettere un file
+ INI nella cartella di GSview.
+ `In futuro ricordarsi di rimuovere questo file prima di aggiornare GSview.`
+ Questo dovrebbe contenere solo quelle registrazioni che possono essere
+ sovrascritte alla configurazione degli utenti.
+ La tecnica suggerita è di installare GSview e di configurarlo successivamente.
+ Copiare gsview32.ini oppure gvpm.ini dalla cartella di sistema oppure dalla
+ cartella del profilo utente alla cartella di GSview, quindi modificarlo
+ togliendo tutte le registrazioni, ad eccezione di:
+  [GSview-4.8]
+  Version=4.8
+  GSversion=853
+  Configured=1
+  GhostscriptDLL=e:\gs\gs8.53\bin\gsdll32.dll
+  GhostscriptInclude=e:\gs\gs8.53\lib;e:\gs\fonts
+  GhostscriptOther=-dNOPLATFONTS -sFONTPATH="c:\psfonts"
+ Quando un utente avvia GSview, il suo file INI sarà usato normalmente.
+ La prima volta che GSview viene avviato, o quando la versione di GSview non
+ corrisponde con quella del file INI, verranno resi i seguenti errori:
+
+ 1. Il file INI file nella cartella di GSview sarà letto, non tenendo in nessun
+ conto il file INI degli utenti.
+
+ 2. L'elenco delle stampanti sarà aggiornato dal printer.ini della
+ cartella di GSview .
+
+ 3. Le associazioni dei file (.ps, .eps, .pdf) NON saranno generate o cambiate.
+ Se si desidererà cambiarle dovrà essere usato `Opzioni` | `Configurazione Avanzata`.
+
+ 4. I Gruppi di Program Manager/ Le Cartelle del Menu Start / I Collegamenti al
+ programma NON sono stati modificati.
+ Se si desidererà cambiarli dovrà essere usato `Opzioni` | `Configurazione Avanzata`.
+W
+
+ Se un utente tenterà di usare il programma di disinstallazione di GSview egli
+ tenterà anche di cancellare i files di GSview e Ghostscript presenti sulla rete.
+ Assicurarsi quindi che gli utenti non abbiano il permesso di scrittura sulle
+ cartelle di GSview e Ghostscript.
+ Per avere una maggiore sicurezza, potrebbe essere rimosso il file `uninstal.txt`
+ dalla cartella di GSview.
+E
+3Avvio di GSview da File Manager oppure da Windows Explorer
+?Editor Informazioni di Registrazione
+?File Manager
+?Windows Explorer
+?Registro
+ Se si usa il programma di GSview setup.exe e si risponde `SI` a
+ tutte le domande, la seguente configurazione è già stata stata fatta.
+ Se non si vuole aggiornare il registro durante l'installazione di GSview
+ le seguenti informazioni spiegano come farlo manualmente.
+
+ Per avviare GSview quando si fa doppio click su un file PostScript nel
+ File Manager deve essere fatto quanto segue:
+
+ Dal `Program Manager`, avviare l'Editor Informazioni di Registrazione usando
+ `File `| `Esegui...` e quindi digitare `regedit`.
+ Dall'`Editor Informazioni di Registrazione` selezionare `Modifica `| `Aggiungi Tipo File ...`
+ e quindi impostare i seguenti campi:
+  Identificatore = psfile
+  Tipo File = PostScript
+  Azione = Open
+  Comando = c:\ghostgum\gsview\gsview32 %1
+  Usa DDE = disattivato
+  Azione = Print
+  Comando = c:\ghostgum\gsview\gsview32 /p %1
+  Usa DDE = disattivato
+ Premere quindi `OK`.
+
+ Dal `File Manager`, selezionare `File `| `Associa`  e quindi
+ impostare i seguenti campi:
+  Files con Estensione = ps
+  Associa con = PostScript (gsview)
+ Premere quindi `OK`.
+
+ Ci siamo!  Ora facendo doppio click su un file PostScript
+ il `File Manager` avvierà GSview.  Quando si trascinerà il file PostScript
+ sul `Print Manager` GSview stamperà il file.
+ Se si possiede una stampante PostScript questo può non essere utile.
+ In questo caso sarà necessario rimuovere l'azione 'Print' dal
+ registro.
+
+ Per Windows 95, la configurazione è fatta invece usando l'Explorer di Windows
+ (Gestione Risorse).
+
+ Avviare `Windows Explorer`.  Selezionare `Visualizza `| `Opzioni `.  Selezionare la cartella
+ `Tipi di File`.  Selezionare il pulsante `Nuovo Tipo`.
+ Immettere i seguenti campi:
+  Descrizione del Tipo = PostScript
+  Estensione associata = PS EPS
+ Premere il pulsante `Nuovo` e quindi immettere
+  Azione = open
+  Applicazione usata per eseguire l'azione = c:\ghostgum\gsview\gsview32.exe
+ Premere il pulsante `OK`
+
+ Premere il pulsante `Nuovo` e quindi immettere
+  Azione = print
+  Applicazione usata per eseguire l'azione = c:\ghostgum\gsview\gsview32.exe /p
+ Premere il pulsante `OK`
+
+ Premere il pulsante` Chiudi`.
+
+ Premere il pulsante` Chiudi`.
+E
+2Registrazione
+-Registration
+?Registrazione
+ Se si vuole sostenere lo sviluppo di GSview oppure si vuole
+ disabilitare la schermata di disturbo di GSview, si prega di considerare la
+ registrazione di GSview.  Non ci sono requisiti richiesti per registrare GSview.
+ GSview è disponibile con la Aladdin Free Public Licence,
+ contenuta nel file `LICENCE`.
+ Questo abilita al libero uso, ma limita la distribuzione commerciale.
+
+ La quota di registrazione è attualmente di AUD$40.
+ GSview può essere registrato online presso
+  http://www.ghostgum.com.au/
+ oppure inviando tramite fax o email il form di
+ registrazione che è contenuto nel file `regorder.txt`,
+ reperibile presso la cartella di GSview.
+ L'uso della registrazione online è comunque preferibible per la Ghostgum Software.
+2Convenzioni sulla struttura del Documento
+-DSC
+?Convenzioni sulla struttura del Documento
+?DSC
+?Encapsulated PostScript
+?EPSF
+?EPS
+ Adobe ha definito un elenco di commenti convenzionali estesi che forniscono
+ ulteriori informazioni in riferimento alla struttura della pagina e alle risorse
+ richieste dal file PostScript.
+ Se il file contiene questi commenti (DSC),  GSview può visualizzare
+ le pagine in qualsiasi ordine usando `Vai a Pagina` e visualizzare le pagine
+ in ordine inverso usando `Pagina Precedente`.  Le pagine selezionate possono essere estratte in
+ un altro file o stampate.
+
+ Se il file non contiene commenti DSC, GSview può solo
+ visualizzare le pagine nell'ordine originale.
+
+ I files conformi al DSC iniziano con la linea di commento:
+  %!PS-Adobe-3.0
+ dove il numero 3.0 può cambiare ed è il numero della versione DSC.
+ Alcuni programmi scrivono i files PostScript con un control-D come
+ primo carattere del file, seguito dalla linea di commento sopraccitata.
+ GSview riporterà correttamente che questi files non sono conformi al DSC,
+ ma manterrà comunque disponibili le possibilità estese di selezione delle pagine.
+ Fare un reclamo all'autore del programma che ha prodotto il file PostScript.
+ Per rendere il file conforme al DSC, modificarlo rimuovendo il carattere control-D.
+
+ I files conformi al DSC contengono linee come le seguenti:
+  %%Pages: 24
+  %%Page: 1 1
+ Queste linee informano GSview su quante pagine è composto il documento e
+ dove esse iniziano.  GSview usa queste informazioni per selezionare
+ le singole pagine.
+
+ Encapsulated PostScript Files (EPSF) sono documenti di una singola pagina
+ che contiene un sottosistema dei commenti `DSC` e dei comandi PostScript.
+ I files EPS iniziano con la linea di commento:
+  %!PS-Adobe-3.0 EPSF-3.0
+ I files EPS sono comunemente usati per l'inserimento in altri documenti e
+ per questa ragione richiedono un commento con i limiti del box:
+   %%BoundingBox: llx lly urx ury
+ dove llx, lly, urx e ury sono numeri interi che danno le coordinate x e y
+ degli angoli in basso a sinistra e in alto a destra del Box che include
+ tutti i punti della pagina.
+
+ Alcuni files EPS contengono una anteprima del documento PostScript.
+ Questa anteprima può essere un Windows Metafile, un file TIFF, oppure una anteprima
+ Interchange (EPSI format).
+ Per i files di anteprima Windows Metafile o TIFF, il file EPS sotto DOS
+ contiene una testata binaria che specifica la posizione e le dimensioni
+ dell'anteprima e le sezioni del linguaggio PostScript del file EPS.
+ Per il formato Interchange, l'anteprima è contenuta in un commento DSC
+ che inizia con
+  %%BeginPreview: width height depth lines
+ Un file EPS con l'anteprima può essere creato da un file EPS senza
+ anteprima usando `Aggiungi Anteprima EPS`.
+
+ GSview può dare degli avvisi quando i documenti contengono dei commenti DSC
+ scorretti.  Questo può essere cambiato con `Opzioni` | `Avvisi DSC`.
+2Files in formato PDF
+-PDF
+?Files in formato PDF
+?PDF
+?pdf2ps
+?ps2pdf
+ GSview può visualizzare e stampare i files PDF, anche se con il metodo corrente
+ ci sono delle limitazioni.
+
+ Mentre visualizza GSview ignora le dimensioni di pagina del menu Carta e al suo posto usa
+ i /MediaBox del file PDF.  Se `Opzioni` | `Ritaglia EPS` è
+ abilitato, GSview userà i /CropBox del file PDF.
+
+ GSview ha bisogno di aprire (`Apri`) un file PDF per contare le pagine.
+ Se il file viene selezionato (`Seleziona`), GSview non sarà in grado di effettuare `Estrai Testo`,
+ `Cerca`, `Vai a Pagina` o di fare qualsiasi altra operazione che richieda di conoscere
+ quante pagine ci sono nel documento.
+
+ Il supporto al collegamento pdfmark non è affinato.
+
+ Per convertire un file PostScript in un file PDF, usare `File` | `Converti`,
+ quindi selezionare la periferica `pdfwrite`.
+
+ Per convertire un file PDF in un file PostScript, usare `File` | `Converti`,
+ quindi selezionare la periferica `pswrite`.
+
+ `File` | `Estrai` non funziona per i files PDF.
+ L'estrazione di pagine PDF estrae PostScript al posto di PDF.
+
+ Per automatizzare la conversione di più files, vedere ps2pdf.bat e pdf2ps.bat
+ nella cartella di Ghostscript.
+ Sarà necessario usare
+P
+ gvpm.exe
+W
+ gswin32c.exe
+E
+ al posto di gs.exe.  Sarà necessario anche impostare il path incluso in Ghostscript
+ usando `-I` oppure la variabile di ambiente `GS_LIB`.
+2Apertura di un documento
+-Open
+?File
+?Apri
+?Aprire
+?Seleziona File
+?Salva con Nome
+?Chiudi
+?Chiudere
+ Il comando `Apri` nel menu `File` apre un file e visualizza
+ la prima pagina.
+
+ Se il file contiene commenti `DSC`, le pagine possono essere selezionate usando
+ `Pagina Successiva`, `Pagina Precedente` e `Vai a Pagina`.
+
+ Se il file non contiene commenti `DSC`, `Pagina Precedente` e `Vai a Pagina`
+ non funzioneranno.  Finché l'ultima pagina non è stata visualizzata non dovrebbe
+ essere selezionato un altro file.
+
+ Quando un file è aperto GSview visualizzerà il nome del documento,
+ la pagina corrente (se disponibile) e, mentre il cursore è sopra
+ all'immagine, la posizione del cursore specificata in coordinate
+ da `Opzioni` | `Unità di Misura`.  Le coordinate possono essere in punti PostScript
+ (1/72"), millimetri o pollici.
+ La posizione del cursore è utile per calcolare i limiti dei box.
+
+ Il comando `Seleziona File` è simile ad `Apri` ma non visualizza
+ il documento.
+ Questo comando è utile per aprire un documento prima di stamparlo.
+
+ Il comando `Salva con Nome` salva una copia del documento corrente.
+ Questo è utile se GSview viene usato come un visualizzatore PostScript da
+ un'altra applicazione e si vuole salvare il file correntemente visualizzato.
+
+ Il comando `Chiudi` chiude il documento corrente.
+ Questo dovrebbe essere usato prima che il file corrente sia cambiato da un
+ altro programma.
+ Se questo non viene fatto e GSview trova che la lunghezza o la data del file
+ sono cambiate verrà chiuso Ghostscript e il documento verrà riscansionato .
+
+ Vedere anche `Stampa`.
+2Selezione della Pagina
+-Page_Selection
+?Selezione della Pagina
+?Pagina Successiva
+?Pagina Precedente
+?Rivisualizza
+?Vai a Pagina
+?Visualizza
+?Adatta Finestra
+?A tutto Schermo
+ `Visualizza` | `Pagina Successiva` oppure il pulsante `+` fa spostare alla pagina successiva
+ del documento.
+ Questo funziona anche se il documento non contiene i commenti `DSC`.
+
+ `Visualizza` | `Pagina Precedente` oppure il pulsante `-` fa spostare alla pagina precedente.
+
+ `Visualizza` | `Rivisualizza` oppure il tasto 'F5' rivisualizza la pagina corrente.
+
+ `Visualizza` | `Vai a Pagina` oppure il `tasto di scelta rapida` della lingua corrente mostra una finestra di dialogo
+ che permette la selezione del prossimo numero di pagina da visualizzare.
+ La finestra di dialogo `Seleziona Pagina` mostra le etichette di pagina poiché esse sono
+ probabilmente più utili dei numeri di pagina sequenziali.
+
+ `Visualizza` | `Pagina Successiva in Alto` oppure la barra spaziatrice fa spostare alla parte in
+ alto della pagina successiva del documento.
+
+ `Visualizza` | `Pagina Precedente in Alto` oppure il tasto BackSpace fa spostare alla parte in
+ alto della pagina precedente.
+
+ I comandi `Pagina Precedente`, `Rivisualizza` e `Vai a Pagina` funzionano solo se
+ il documento contiene comandi `DSC`.
+
+ `Visualizza` | `Adatta Finestra` oppure il tasto`F6` cambiano la
+ risoluzione della visualizzazione in modo che l'intera pagina sia
+ adattata alla finestra corrente.
+ L'uso ripetuto fa in modo che sia la larghezza che l'altezza della
+ pagina siano adattate alla finestra corrente.
+
+ `Visualizza` | `A tutto Schermo` oppure il tasto `F4` visualizza la pagina a tutto schermo
+ (senza barra del titolo, barre di scorrimento ecc.).
+ Per ritornare alla visualizzazione normale premere il tasto di Escape (Esc).
+
+2Informazioni sul documento
+-Document_Information
+?Informazioni
+ Una piccola area di informazione nella parte alta della finestra è usata da
+ GSview per visualizzare il nome del file del documento, il numero di pagina corrente,
+ l'etichetta (se disponibile) e, mentre il cursore è sopra l'immagine, la
+ posizione del cursore (relativa all'angolo in basso a sinistra della carta) in coordinate
+ specificate da `Opzioni` | `Unità di Misura`.
+ La posizione del cursore è utile per calcolare i limiti dei box.
+
+ Il comando `Informazioni` sul menu `File `mostra una finestra di dialogo con le
+ seguenti informazioni riguardanti i commenti `DSC` nel documento corrente:
+
+ `File `è il percorso completo del documento.
+
+ `Tipo` può essere `DSC`,`EPS`, `Nessun commento DSC` oppure `Ignora Commenti DSC`.
+ `EPS` è un "Encapsulated PostScript File", un documento di una sola pagina
+ che contiene un sottoinsieme dei commenti `DSC` e dei comandi PostScript.
+ I files `EPS `sono comunemente usati per l'inclusione in altri documenti.
+ `Ignora Commenti DSC` è visualizzato se `Opzioni` | `Ignora DSC` è selezionato.
+ I commenti potrebbero essere preceduti da `Ctrl-D seguito da` oppure `PJL seguito da`.
+ Entrambi indicano che il documento non è conforme al
+ DSC perché ci sono alcune sporcizie all'inizio del
+ documento.  Per risolvere il primo caso vedere `Problemi Comuni`.
+ Per risolvere il secondo, non usare il driver HP LaserJet nella creazione di
+ documenti PostScript per la distribuzione ad altri.
+
+ `Titolo` è un testo che può essere usato nella stampa delle insegne delle pagine
+ e nell'instradamento o la ricognizione dei documenti.
+
+ `Data` è la data di creazione del documento.
+
+ `Limiti del Box` specifica il box che include tutti i punti disegnati sulla
+ pagina. I quattro valori interi sono le coordinate degli angoli
+ in basso a sinistra e in alto a destra dei limiti del box nelle coordinate
+ predefinite dell'utente (1/72 pollici).
+
+ `Orientamento ` è l'orientamento predefinito della pagina e può essere
+ `Verticale `o `Orizzontale `.  Vedere il menu `Orientamento`.
+
+ `Ordinamento di Pagina` può essere `Ascendente`, `Discendente` o `Speciale`.
+ Se `Ordinamento di Pagina` è `Discendente`, GSview inverte automaticamente
+ le pagine nella visualizzazione o la stampa rispetto a come appaiono nell'ordine
+ ascendente.  Nell'estrazione o la stampa, GSview può essere
+ istruito a stampare le pagine in ordine discendente (contrario).
+ `Speciale` significa che le pagine non dovrebbero essere riordinate. 
+
+ `Carta Predefinita` è il nome del formato della carta seguito dalla larghezza e
+ dall'altezza espresse nelle coordinate predefinite dell'utente (1/72 di pollice).
+
+ `Pagine` è il numero totale delle pagine nel documento.
+
+ `Pagina` è l'etichetta ed il numero della pagina.
+
+ `Bitmap `è la dimensione in pixels del bitmap visualizzato che può essere
+ utile se si sta copiando l'immagine visualizzata.
+W
+2Stampa
+-Print
+?Stampa
+ Il comando `Stampa` sul menu `File `permette la stampa del documento
+ usando Ghostscript. Ci sono tre metodi usati da GSview per
+ la stampa: `Stampante GDI di Windows`, `Device di Ghostscript`
+ oppure `Stampante PostScript`.
+
+ `Stampante GDI di Windows` usa Ghostscript per creare dei bitmaps per
+ ogni pagina, e quindi stampa questi usando i driver standard di Windows.
+ Questo è il metodo di stampa più lento, ma dovrebbe funzionare con
+ la maggior parte delle stampanti.
+
+ `Device di Ghostscript` usa i driver di stampa di Ghostscript.
+ Questo è più veloce, ma è necessario che Ghostscript abbia i driver per
+ la propria stampante ed è necessario conoscere come viene chiamata.
+ Per esempio, la stampante HP LaserJet 4 usa il driver ljet4.
+ Vedere la documentazione di Ghostscript per maggiori dettagli.
+
+ `Stampante PostScript` non usa Ghostscript per la stampa dei file
+ PostScript.  Il file viene semplicemente spedito direttamente alla stampante.
+
+ Ci un significativo ammontare di interazioni tra i settagi e la
+ la finestra di stampa.  Per esempio, la selezione di `Device di Ghostscript`
+ disabilita il pulsante `Proprietà `perchè esso non è più rilevante.
+ Maggiori dettagli sono negli argomenti successivi.
+
+ Vedere anche `Conversioni` e `Converti`.
+3Seleziona Pagine
+?Select Pages
+ Quando si stampa è possibile selezionare un intervallo di pagine.
+ All'interno di questo intervallo è possibile selezionare tutte le pagine,
+ le pagine pari oppure le pagine dispari.
+ Se vengono selezionate le pagine dispari nell'intervallo da 10 a 20,
+ la prima pagina stampata sarà la 11.
+
+ Il pulsante `Seleziona Pagine` può essere disabilitato se non è supportato
+ dal metodo di stampa.
+
+ La casella di controllo `Ordine inverso` fa in modo che le pagine siano stampate
+ in ordine discendente.  Questa è abilitata solo per i documenti
+ che contengono commenti `DSC`.
+
+ Se si vogliono stampare delle pagine selezionate da un documento `DSC`
+ che ha l'ordinamento di pagina speciale (p.e. le pagine non possono essere riordinate),
+ selezionare `Stampante GDI di Windows` e `Ignora DSC`.
+3Stampante GDI di Windows
+?Stampante GDI di Windows
+ Questo metodo usa Ghostscript per creare un bitmap per ogni pagina, e
+ questi vengono stampati usando i driver di stampa standard di Windows.
+ Esso dovrebbe funzionare su tutte le stampanti che supportano la grafica raster. 
+
+ Viene usato In modo predefinito un bitmap monocromatico per ottenere la massima velocità.
+ Se si vuole la stampa a colori sarà necessario abilitarlo usando il pulsante
+ the `Impostazioni` button.       
+
+ Se `Carta Fissa` è attivato (come predefinito), GSview userà le
+ dimensioni di pagina del menu Carta e ignorerà i tentativi dei documenti PostScript
+ o PDF di cambiare le dimensioni stesse.
+ Questo è utile per i files PDF che contengono un misto di pagine verticali e orizzontali.
+ Se `Carta Fissa` è disattivato, GSview imposterà le dimensioni predefinite della pagina
+ impostate nel menu Carta ma permetterà alle dimensioni della pagina di essere cambiate.
+
+ `Opzioni ` è normalmente vuoto, ma può contenere dei comandi per le opzioni
+ della linea di comando di Ghostscript.  Da usare con attenzione!
+
+ Questo metodo di stampa permette alle pagine selezionate di essere stampate anche se
+ un documento PostScript non contiene commenti `DSC`.  Esso è in grado di fare questo
+ trasformando tutte le pagine, ma inviando alla stampante solo le pagine richieste.
+ Può essere molto lento.
+3Device di Ghostscript
+?Device di Ghostscript
+?uniprint
+ La finestra di dialogo `Seleziona Device di Ghostscript` permette la selezione dei
+ device di stampa di Ghostscript e della loro risoluzione.
+ L'elenco predefinito dei devices disponibili e delle risoluzioni è memorizzato
+ nella sezione [Devices] del file gsview32.ini ed è ripreso dalla distribuzione
+ della versione standard di Ghostscript 6.0.
+ E' possibile usare anche altri devices o risoluzioni.
+
+ Alcune opzioni di Ghostscript possono essere aggiunte tramite il campo ` Optioni`
+ field oppure con il pusante `Proprietà`.      
+
+ Il pulsante `uniprint` seleziona la periferica uniprint e visualizza una lista
+ dei file di configurazione disponibili (*.upp) per la periferica uniprint.
+ Se viene selezionato uno di questi file, il suo nome verrà posto
+ nel campo `Opzioni `di Impostazioni Stampante.
+ Vedere il file Ghostscript `Devices.htm` per maggiori dettagli su come
+ configurare la periferica stessa.
+
+3Stampante PostScript
+?Stampante PostScript
+ Se viene selezionate `Stampante PostScript`, le pagine selezionate saranno
+ inviate direttamente alla coda di stampa della stampante, senza usare Ghostscript.
+ Questa operazione è simile a `File `| `Stampa File`, ad eccezione del fatto che è
+ possibile selezionare quali pagine stampare.  
+
+ Quando una stampante PostScript è connessa per mezzo di una porta seriale
+ è a volte richiesto l'invio un carattere Ctrl+D prima del file PostScript
+ e, in funzione del corretto funzionamento di altri programmi, a volte anche dopo.
+ Questo fa parte del protocollo di comunicazione seriale usato dalla
+ stampante e non fa parte del PostScript.
+ La finestra di dialogo `Impostazioni ` permette di poter scegliere se spedire
+ spedire un Ctrl+D prima e/o dopo il file PostScript.
+
+ Alcune stampanti PostScript riconoscono diversi linguaggi e
+ richiedono un prologo per abilitare la modalità PostScript.
+ Per esempio, le stampanti HP LaserJet (con l'opzione PostScript)
+ richiedono il seguente prologo
+  ^[%-12345X@PJL JOB
+  @PJL ENTER LANGUAGE = POSTSCRIPT
+ e il seguente epilogo
+  ^[%-12345X@PJL EOJ
+  ^[%12345X
+ I files di prologo e di epilogo permettono di spedire un file alla stampante
+ prima e dopo il file PostScript.
+
+ Un altro uso del prologo potrebbe essere di invocare la stampa duplex
+  << /Duplex true /Tumble false >> setpagedevice
+
+ Se il documento è un `PDF`, Ghostscript sarà usato per convertire
+ il docuemnto in un file PostScript che sarà inviato alla stampante.
+3Stampa File
+?Stampa File
+ `File | Stampa File` invia un file alla porta locale, saltando i
+ drivers di stampa di Windows.
+ E' utile per l'invio di documenti a stampanti PostScript,
+ oppure per inviare alla stampante un file di output prodotto da GhostScript.
+E
+P
+2Stampa
+?Stampa
+?Stampa su File
+?Stampa File
+?uniprint
+ Il comando `Stampa` nel menu `File` permette la stampa di documenti
+ usando Ghostscript.
+ Il comando `Stampa` è usato anche per la creazione di files bitmap e
+ `PDF`.
+ La finestra di dialogo `Impostazione Stampante` permette la selezione del
+ driver di stampa Ghostscript e della risoluzione, di selezionare le pagine da stampare
+ e lo `Spooler` da utilizzare.
+
+ Si può scegliere di stampare tutte le pagine, una singola pagina oppure qualsiasi
+ combinazione di pagine.
+ I pulsanti `Tutte`, `Dispari` e `Pari` permettono una selezione veloce delle pagine.
+ Se viene selezionato un blocco contiguo di pagine, i pulsanti `Dispari` e `Pari`
+ selezioneranno le pagine dispari o pari all'interno di questo blocco.
+ La casella di controllo `Inverso` fa in modo che le pagine siano stampate in
+ ordine discendente.
+
+ Il driver di stampa `os2prn` usa i driver di stampa di OS/2
+ e dovrebbe funzionare con qualsiasi stampante  con funzionalità raster.
+ La risoluzione della Stampante non può essere selezionata da GSview. Per fare questo
+ usare il Printer Object.  Le impostazioni predefinite della stampante
+ devono corrispondere a quelle previste da Ghostscript; l'orientamento di pagina
+ della stampante deve essere Verticale, le dimensioni della pagina devono essere uguali
+ a quelle di Ghostscript.  Impostando la proprietà -dBitsPerPixel=1 la velocità della
+ stampa dovrebbe leggermente aumentare.
+
+ Con tutti gli altri driver di stampa Ghostscript invia l'output direttamente
+ alla stampante.
+ Se si incontrano dei problemi stampando si può usare `Stampa su File`
+ e quindi `Stampa File` oppure usare il comando DOS `COPY /B FILENAME PRN`.
+
+ Se `Stampante PostScript` è attivato le pagine selezionate saranno
+ saranno inviate direttamente alla stampante senza usare Ghostscript.
+ Questo è simile a `File | Stampa File`, ad eccezione che in questo modo è possibile
+ precisare quali pagine stampare.  Il pulsante `Avanzate` permette che i files
+ di prologo ed epilogo siano posti attorno al PostScript che sta per essere
+ spedito alla stampante PostScript.
+
+ La lista delle periferiche disponibili e delle risoluzioni è memorizzata nella
+ sezione [Devices] del file
+
+ La lista predefinita delle periferiche e delle risoluzioni è presa dalla
+ distribuzione standard della versione 5.50 di Ghostscript e può essere
+ incompleta.
+
+ Per stampare un documento senza visualizzarlo aprire il documento stesso
+ usando `Seleziona File`.
+
+ Se si vuole produrre un bitmap alcuni driver utili sono
+ `bmpmono`, `bmp16`, `bmp16m` e `bmp256`.
+
+ `File | Stampa File` invia un file alla porta locale, saltando i
+ drivers di stampa di Presentation Manager.
+ Questo è utile per l'invio di documenti ad una stampante PostScript,
+ oppure per l'invio alla stampante di un file di ouptut prodotto da Ghostscript.
+
+ If `Carta Fissa` è selezionato (come predefinito), GSview userà le dimensioni
+ di pagina impostate nel menu Carta e ignorerà i tentativi di cambiarle all'interno del PostScript
+ o dei documenti PDF.
+ Questo è utile per i files PDF che contengono un mix di pagine verticali ed
+ orizzontali.
+ Se `Carta Fissa` è deselezionato, GSview imposterà le dimensioni della pagina predefinita
+ prendendole dalle impostazioni del menu Carta, ma permetterà che le stesse vengano cambiate.
+
+ Il campo `Opzioni` contiene una opzione per la linea di comando di Ghostscript
+ per il device selezionato.
+
+ Il pulsante `uniprint` seleziona il device uniprint e visualizza una lista
+ dei file di configurazione disponibili (*.upp) per il device uniprint.
+ Se viene selezionato uno di questi file di configurazione, il nome stesso del file
+ sarà posto nel campo `Opzioni` di Impostazioni Stampante.
+ Vedere il file di Ghostscript `Devices.htm` per dettagli su come configurare il
+ device uniprint.
+
+ La finestra di dialogo `Impostazioni Stampante` richiede l'inserimento del nome
+ della coda di stampa verso la quale deve essere inviato l'output.
+ 
+ Essa sarà salvata e sarà la selezione predefinita per la prossima occorrenza.
+
+ Alcune informazioni per la compatibilità delle stampanti sono disponibili presso
+  http://www.cs.wisc.edu/~ghost/doc/printer.htm
+3Stampante PostScript
+?Stampante PostScript
+?Avanzate
+ Quando una stampante PostScript è connessa per mezzo di una porta seriale
+ è a volte richiesto l'invio un carattere Ctrl+D prima del file PostScript
+ e, in funzione del corretto funzionamento di altri programmi, a volte anche dopo.
+ Questo fa parte del protocollo di comunicazione seriale usato dalla
+ stampante e non fa parte del PostScript.
+ Quando si usa l'opzione `Stampante PostScript`, si può scegliere
+ se spedire un Ctrl+D prima e/o dopo il file PostScript.
+
+ Alcune stampanti PostScript riconoscono diversi linguaggi e
+ richiedono un prologo per abilitare la modalità PostScript.
+ Per esempio, le stampanti HP LaserJet (con l'opzione PostScript)
+ richiedono il seguente prologo
+  ^[%-12345X@PJL JOB
+  @PJL ENTER LANGUAGE = POSTSCRIPT
+ e il seguente epilogo
+  ^[%-12345X@PJL EOJ
+  ^[%12345X
+ I files di prologo e di epilogo permettono di spedire un file alla stampante
+ prima e dopo il file PostScript.
+E
+3Proprietà
+-Properties
+?Proprietà
+ Il pulsante `Proprietà` permette ad alcuni devices di Ghostcript devices di configurare
+ ulteriori proprietà e di specificare l'offset di pagina.  
+
+ L'offset della pagina può essere impostato per ogni stampante.
+ Esso è utile per correggere le differenze tra la pagina
+ di origine della periferica di stampa di Ghostscript e una particolare stampante.
+ Incrementando il valore di X l'immagine sarà spostata verso destra.
+ Incrementando il valore di Y l'immagine sarà spostata verso il basso.
+
+ Le `Proprietà` sono comunemente usate per impostare i BitsPerPixel per una stampante
+ a colori, per impostare altri tipi di colori oppure per la correzione della densità.
+
+ Le `Proprietà` sono specifiche di una particolare stampante.  Cambiando il
+ valore della proprietà `BitsPerPixel` in una stampante questa non verrà
+ cambiata nelle altre stampanti.
+
+ Quando viene premuto il pulsante `OK` nella finestra di dialogo `Proprietà`,
+ le impostazioni correnti vengono scritte sul file
+W
+ gsview32.ini
+P
+ gvpm.ini
+E
+
+ Alcune `Proprietà` sono predefinite in GSview, ma esse non devono essere
+ necessariamente uguali a quelle disponibili in Ghostscript.  I pulsanti `Modifica ` e `Nuovo`
+ permettono di modificare le `Proprietà` disponibili per la stampante in oggetto.
+ Vedere il paragrafo `Modifica Proprietà` per maggiori dettagli.
+4Modifica Proprietà
+-Edit_Properties
+?Modifica Proprietà
+ Non tutte le stampanti supportano l'uso di `Proprietà` opzionali.  Per sapere
+ quali stampanti supportano `Proprietà` e quali `Proprietà` sono
+ riconosciute da ogni stampante leggere il file di Ghostscript
+ Devices.htm oppure vedere nel codice sorgente di Ghostscript.
+
+ Ci sono due modi per aggiungere o modificare le `Proprietà`.
+
+ Il primo metodo usa i pulsanti `Modifica ` oppure `Nuovo` nella finestra di dialogo
+ `Proprietà`.
+
+ Ogni proprietà deve essere un numero oppure una stringa.  Le proprietà numeriche
+ equivalgono all'opzione della linea di comando di Ghostscript `-d`.  Le proprietà
+ stringa equivalgono alla opzione della linea di comando di Ghostscript `-s`.
+ Ogni proprietà è composta da `Nome` e `Valore`.  Esse sono usate come
+ `-dNAME=VALUE` oppure `-sNAME=VALUE`.
+ Il `Valore` è scelto tra una lista di `Valori` separata da una virgola
+ inserita nella finestra di dialogo `Modifica Proprietà`.  Gli spazi non devono
+ essere inclusi nel `Nome` o nei `Valori`.
+
+ Per eliminare una proprietà, selezionarla nella finestra di dialogo `Proprietà`,
+ premere ` Modifica` e quindi premere il pulsante `Elimina` sulla finestra di dialogo
+ `Modifica Proprietà`.
+
+ Il secondo metodo è di modificare manualmente il file INI di GSview.
+
+ Per ogni stampante, devono essere aggiunte due sezioni sul file
+W
+ gsview32.ini
+P
+ gvpm.ini
+E
+ L'esempio seguente mostra come aggiungere una proprietà per il
+ driver cdjcolor.
+ Per prima cosa aggiungere una sezione che assegna i valori correnti.
+ Questa sezione, dopo che il primo carattere sarà rimosso, assegnerà le opzioni
+ che appariranno nell'elenco `Proprietà`.
+ Il primo carattere è `s` per le stringhe oppure `d` per i numeri.
+  [cdjcolor]
+  dBitsPerPixel=24
+  dDepletion=1
+  dShingling=2
+  dBlackCorrect=4
+
+ Successivamente aggiungere una sezione che assegna i valori da visualizzare nell'
+ elenco `Valore`.
+  [cdjcolor values]
+  dBitsPerPixel=1,3,8,16,24
+  dDepletion=1,2,3
+  dShingling=0,1,2
+  dBlackCorrect=0,1,2,3,4,5,6,7,8,9
+ GSview aggiungerà anche il valore `[Not defined]` alla lista.
+
+ Quando GSview stamperà un file comunicherà a Ghostscript il contenuto
+ della sezione [cdjcolor] del file
+W
+ gsview32.ini
+P
+ gvpm.ini
+E
+ nel modo seguente:
+  -dBitsPerPixel=24 -dDepletion=1 -dShingling=2 -dBlackCorrect=4
+ Se il valore della proprietà sarà `[Not defined]` la proprietà stessa non
+ sarà inviata a Ghostscript.
+2Conversioni
+-Conversions
+?Conversioni
+ Ci sono molti metodi per convertire i files PostScript e PDF.
+
+ `File `| `Converti` usa Ghostscript per convertire PostScript o
+ PDF in bitmaps, PostScript oppure PDF.
+
+ `File `| `Estrai` permette ad un intervallo di pagine di essere copiate da
+ un documento PostScript.
+
+ `File `| `Converti PS in EPS` permette ai limiti del box di essere aggiornati e
+ permette che la testata sia cambiata da PO a EPS.
+ Leggere tutta la documentazione prima di usarlo.
+
+ `Modifica`| `Aggiungi Anteprima EPS` aggiunge un bitmap di anteprima ad un file
+ EPS.
+
+ `Modifica`| `Estrai EPS` estrae il Postscript oppure l'anteprima
+ da un file DOS EPS.
+
+W
+ `Modifica`| `Converti in formato vettoriale` usa pstoedit per convertire
+ PostScript o PDF in un formato vettoriale modificabile.
+
+E
+ `Modifica`| `Estrai testo` usa pstotext per estrarre del testo da un
+ documento PostScript o PDF.
+
+ `Modifica`| `Copia` copia negli Appunti il bitmap visualizzato.
+ `Modifica`| `Incolla su` copia un bitmap DIB dagli Appunti ad un file.
+ `Modifica`| `Converti Bitmap` converte negli Appunti un bitmpap DIB 
+ in un bitmap Device Dependent Bitmap.
+3Conversione di File e Trucchi
+-File_conversions_and_tricks
+?Conversione di File
+?Trucchi
+ Alcune comuni conversioni tra file possono essere effettuate
+ usando GSview e Ghostscript:
+
+ Conversione di PostScript in PDF.
+ File | `Converti`, seleziona pdfwrite, 300dpi,
+ Con Ghostscript 5.50 i caratteri con una codifica non standard
+ saranno inclusi come bitmaps.  Se si sceglie 72dpi il contorno dei
+ caratteri non sarà visto in modo perfetto.
+ Ghostscript 6.0 includerà i caratteri.
+
+ Conversione di PDF in PostScript.
+ File | `Converti`, seleziona pswrite, 300dpi.
+
+ Conversione di PostScript Livello 2 in PostScript Livello 1.
+ File | `Converti`, seleziona psmono, 300dpi,
+ Al posto di 300dpi si può usare la risoluzione della propria
+ stampante.
+
+ Conversione in bitmap.
+ File | `Converti`, seleziona bmp16m, 72dpi
+
+W  
+ Conversione in formato vettoriale modificabile (pstoedit).
+ Modifica | `Converti in formato vettoriale` oppure converti in PDF
+ usando il metodo sopraccitato.
+
+E
+ Estrazione testo (PStoText).
+ Modifica | `Estrai testo`
+
+ Aggiungere un'anteprima ad un file EPS.
+ Modifica | `Aggiungi Anteprima EPS`.  Vedere `Aggiungi Anteprima EPS` per
+ ulteriori dettagli.
+
+ Rimuovere l'anteprima da un file EPS.
+ Modifica | `Estrai EPS` | PostScript
+
+ Visualizzare con i contorni definiti.
+ Carta | `Impostazioni di Visualizzazione`.  Impostare `Text Alpha` e
+ `Graphics Alpha` a 4.  E' necessario un video con almeno
+ 8 bits per pixel.
+
+ Salvare il bitmap visualizzato.
+ Modifica | `Copia` per copiare sugli Appunti.
+ Per salvare in un file BMP, usare Modifica | `Copia` e quindi `Incolla su`...
+
+ Creare un bitmap con i contorni definiti (anti-aliasing).
+ 1. Visualizzare con i contorni definiti e salvare il bitmap visualizzato
+ oppure
+ 2. `Converti` usando un device bitmap ed imposta quanto segue
+ nelle proprietà.
+    -dTextAlphaBits=4 -dGraphicsAlphaBits=4
+3Converti
+-Convert
+?Converti
+ `File `| `Converti` usa Ghostscript per convertire PostScript o PDF
+ in bitmaps, PostScript oppure PDF.
+
+ E' necessario selezionare un device e una risoluzione di output di Ghostscript.
+ L'elenco predefinito dei devices disponibili e delle risoluzioni è memorizzato
+ nella sezione [Convert] del file gsview32.ini ed è ripreso dalla distribuzione
+ della versione standard di Ghostscript 6.0.
+ E' possibile usare anche altri devices o risoluzioni.
+
+ Alcune opzioni di Ghostscript possono essere aggiunte tramite il campo
+ `Opzioni `o tramite il pulsante `Proprietà`.
+
+ Si può scegliere di stampare tutte le pagine, una singola pagina oppure qualsiasi
+ combinazione di pagine.
+ I pulsanti `Tutte`, `Dispari` e `Pari` permettono una selezione veloce delle pagine.
+ Se viene selezionato un blocco contiguo di pagine, i pulsanti `Dispari` e `Pari`
+ selezioneranno le pagine dispari o pari all'interno di questo blocco.
+ La casella di controllo `Inverso` fa in modo che le pagine siano stampate in
+ ordine discendente.
+
+ Se `Carta Fissa` è attivato (come predefinito), GSview userà le
+ dimensioni di pagina del menu Carta e ignorerà i tentativi dei documenti PostScript
+ o PDF di cambiare le dimensioni stesse.
+ Questo è utile per i files PDF che contengono un misto di pagine verticali e orizzontali.
+ Se `Carta Fissa` è disattivato, GSview imposterà le dimensioni predefinite della pagina
+ impostate nel menu Carta ma permetterà alle dimensioni della pagina di essere cambiate.
+
+ Vedere anche `Conversioni`.
+3Estrai
+-Extract
+?Estrai
+ `Estrai` abilita un insieme di pagine ad essere copiate dal documento
+ corrente in un nuovo documento.  Ad esempio, dieci pagine possono essere estratte
+ dal centro del documento corrente e scritte in un altro file
+ che sarà successivamente spedito ad una stampante.
+ Se viene selezionato `Inverti`, le pagine saranno estratte in ordine
+ discendente.
+
+ Vedere anche `Conversioni`.
+3Converti PS in EPS
+PS_to_EPS
+?Converti PS in EPS
+?Limiti del Box
+ In generale, non è possibile convertire un file PostScript in un file `EPS`.
+ Nonostante ciò, molte pagine singole dei files PostScript possono essere convertite in `EPS`
+ cambiando la prima linea del file in
+  %!PS-Adobe-3.0 EPSF-3.0
+ e quindi aggiungendo il commento `%%BoundingBox`.
+
+ I files EPS sono comunemente usati per l'inclusione in altri documenti e
+ per questa ragione richiedono il commento con i limiti del box (BoundingBox):
+   %%BoundingBox: llx lly urx ury
+ Dove llx, lly, urx e ury sono numeri interi che danno le coordinate x e y
+ degli angoli in basso a sinistra e in alto a destra del 'bounding box' che include
+ tutti i punti fatti sulla pagina.
+
+ `Quando usato in modo scorretto, il comando 'Converti da PS a EPS' può produrre file
+ PostScript con commenti DSC scorretti.  In questo modo un documento causerà problemi
+ quando si proverà ad includerlo in un altro documento.`
+
+ Per convertire un file PostScript in `EPS`, il file originale `deve` essere
+ un documento di una `pagina singola`.  Se il documento contiene commenti `DSC`
+ ed è multi pagina, estrarre la pagina desiderata con `File` | `Estrai`.
+ Se il documento non contiene commenti `DSC`, sarà necessario
+ modificare il file estraendo manualmente la pagina desiderata.
+
+ I documenti `EPS` `non devono` usare nessuno dei seguenti operatori:
+  banddevice   clear         cleardictstack  copypage
+  erasepage    exitserver    framedevice     grestoreall
+  initclip     initgraphics  initmatrix      quit
+  renderbands  setglobal     setpagedevice   setpageparams
+  setshared    startjob      letter          note
+  legal        a3            a4              a5
+
+ Gli operatori seguenti dovrebbero essere utilizzati con attenzione:
+  nulldevice   setgstate     sethalftone    setmatrix
+  setscreen    settransfer   setcolortransfer
+
+ E' `vostra` responsabilità accertare che i requisiti sopraccitati
+ siano raggiunti.
+
+ Per testare se un documento contiene qualcuno degli operatori sopraccitati, selezionare
+ `Opzioni` | `Avvisi EPS` e quindi `Aprire` il documento desiderato.
+ Dopo che la pagina è stata visualizzata, `Chiudere` il documento e
+ quindi visualizzare i messaggi di Ghostscript con `File` | `Mostra Messaggi`.
+ Se qualcuno dei sopraccitati operati è stato usato dovrebbero apparire delle linee come:
+  Attenzione: I file EPS non devono usare ...
+ Se vengono trovati questi avvisi `non` usare `Converti PS in EPS`.
+ In seguito ricordarsi di chiudere `Avvisi EPS`.
+
+ Un documento deve essere visualizzato prima che `Converti PS in EPS` sia usato.
+
+ Per documenti senza commenti `DSC`, `Converti PS in EPS` abilita a specificare
+ i limiti del box, quindi crea un file `EPS` consistente in
+ un involucro `EPS` attorno al documento originale.
+
+ Per documenti con commenti `DSC`, `Converti PS in EPS` cambierà la
+ la prima linea del file in
+  %!PS-Adobe-3.0 EPSF-3.0
+ quindi abiliterà i commenti `%%BoundingBox` ad essere cambiati o aggiunti.
+
+ Per i documenti `EPS`, `Converti PS in EPS` abilita i commenti `%%BoundingBox`
+ ad essere cambiati.
+
+ `Converti PS in EPS` non ritaglia il documento dentro un `%%BoundingBox`.
+ Per fare questo è necessario cambiare il codice PostScript stesso.
+ `Converti PS in EPS` cambia solo i commenti `DSC`.
+
+ Se `Calcola automaticamente i limiti del Box` è attivato, GSview
+ calcolerà i limiti del box dai pixels non bianchi.
+ Se è disattivato, saranno impostati i limiti del box cliccando a
+ sinistra, sotto, a destra e sopra.
+
+ `Converti PS in EPS` non aggiunge un'anteprima al documento.
+ Se si vuole un'anteprima si può aggiungerla successivamente con `Modifica `| `Aggiungi Anteprima EPS`
+ creando prima un file `EPS` con un `%%BoundingBox` corretto.
+
+ Vedere anche `Aggiungi Anteprima EPS`, `Estrai`, `Avvisi EPS` e `Conversioni`.
+3Anteprima EPS
+EPS_Preview
+?Anteprima EPS
+?Aggiungi Anteprima EPS
+?Estrai EPS
+?Anteprima
+ `Aggiungi Anteprima EPS` prende il bitmap della visualizzazione
+ e lo usa per aggiungere un'anteprima ad un file EPS.
+ `Aggiungi Anteprima EPS` può creare un EPS file DOS con una
+ anteprima Windows Metafile o TIFF, oppure un file EPSI con un'anteprima Interchange.
+ Per usare il comando `Aggiungi Anteprima EPS` devono essere seguiti i seguenti passi:
+
+ 1. Deselezionare `Opzioni | Ignora DSC`
+
+ 2. Assicurarsi che il documento abbia i limiti del box corretti.
+ `Opzioni` | `Mostra Limiti del Box` è utile per verificare i
+ limiti del box.
+ I limiti del box possono essere aggiunti o cambiati usando `File` | `Converti PS in EPS`.
+
+ 3. Selezionare `Orientamento` | `Verticale`.
+
+ 4. Selezionare `Carta `| `Impostazioni di Visualizzazione` e impostare una risoluzione appropriata
+ per l'anteprima.  Se la risoluzione è troppo alta
+ verrà generato un file EPS troppo grosso.
+
+ 5. `Aprire` un file EPS che non contiene un'anteprima.
+
+ 6.  Selezionare `Modifica `| `Aggiungi Anteprima EPS`, quindi il formato dell'anteprima
+ e il nuovo nome del file EPS.  GSview scriverà il nuovo file contenente
+ il file PostScript EPS originale e l'anteprima creata dal bitmap visualizzato.
+ I formati di anteprima disponibili sono `Interchange`,
+ `TIFF 4`, `TIFF 6 non compresso`, `TIFF 6 packbits` e `Windows Metafile`.
+ Se viene aggiunta una anteprima Interchange, il documento deve avere una linea
+ di commento `%%EndComments` altrimenti GSview potrebbe porre l'anteprima nel posto sbagliato.
+ Una anteprima Interchange è sempre monocromatica.
+ Una anteprima TIFF 4 è una 'Baseline Bilevel Image' (1 bit/pixel) senza
+ nessuna compressione come descritto nel promemoria di TIFF 6.0, ma senza le
+ etichette che non sono descritte nella specifica TIFF 4.
+ WordPerfect 5.1 richiede una anteprima TIFF 4.
+ Una anteprima TIFF 6 è una 'Baseline Bilevel Image',
+ oppure una 'Baseline Palette-colour Image' (4 o 8 bits/pixel)
+ oppure ancora una 'Baseline RGB Full Colour Image' (24 bits/pixel)
+ secondo le specifiche TIFF 6.0.
+ Le anteprime TIFF 6 possono essere sia non compresse che compresse con packbits.
+ Una anteprima Windows Metafile contiene un bitmap non compresso.
+
+ 7.
+ Riportare `Orientamento` | `Verticale`, e
+ `Carta `| `Impostazioni di Visualizzazione` ai loro valori precedenti.
+
+ Per estrarre la sezione PostScript o Anteprima da un file EPS DOS
+ usare `File` | `Seleziona File` seguito da `Modifica `| `Estrai EPS`
+ e quindi `PostScript` oppure `Anteprima`.
+
+ Vedere anche `Converti PS in EPS`.
+3Anteprima fornita dall'Utente
+-User_Supplied_Preview
+?Anteprima fornita dall'Utente
+ Il comando `Modifica `| `Aggiungi Anteprima EPS` | `Anteprima fornita dall'Utente`
+ permette ad un file esistente TIFF o WMF di essere aggiunto ad un file EPS per
+ creare un file EPS DOS.
+ Questo può essere utile per quelle applicazioni che possono esportare un file EPS o
+ un file WMF ma non possono creare un file EPS DOS con anteprima WMF.
+ Il file EPS `deve` contenere i limiti del box che corrispondono con
+ i file di anteprima TIFF o WMF.
+ Non è necessario visualizzare il file EPS perché `Anteprima fornita dall'Utente`
+ può essere usata dopo che il file EPS è stato aperto con `Seleziona File`.
+
+ E' possibile aggiungere una anteprima che non ha nessuna somiglianza all'immagine del PostScript
+ ma in genere questo non è gradito.
+W
+3Conversione in un formato vettoriale
+-PStoEdit
+?Converti in formato vettoriale
+?PStoEdit
+ E' possibile convertire un file PostScript o PDF in formato vettoriale modificabile
+ usando `pstoedit` di Wolfgang Glunz.
+ `pstoedit` è licenziato con la 'GNU Public Licence'.
+ I dati binari sono inclusi in GSview con il permesso di Wolfgang Glunz.
+ La versione a linea di comando `pstoedit.exe` e il manuale `pstoedit.htm`
+ sono inclusi nella cartella pstoedit.
+ La home page di pstoedit è
+  http://www.geocities.com/SiliconValley/Network/1958/pstoedit/
+
+ Per aggiornamenti di pstoedit vedere presso la home page di pstoedit oppure presso
+  http://www.cs.wisc.edu/~ghost/gsview/pstoedit.htm
+
+ Per usare `pstoedit` da GSview, usare
+ `Modifica | Converti in formato vettoriale`.
+ Saranno mostrate tre finestre di dialogo.
+
+ La prima finestra di dialogo è per le impostazioni di pstoedit.
+
+ Selezionare un `Formato` di output.
+
+ `Disegna testo come poligoni` dovrebbe essere selezionato se il file PostScript
+ contiene testo e il formato di output non lo supporta, es. gnuplot.
+ Questo può produrre un grosso file di output.
+
+ Quando è selezionato `Mappa in ISO-Latin1`, pstoedit mappa tutti i codice di carattere
+ in uno corrispondente definito dalla codifica ISO-Latin1 che è usata da
+ HTML e MS-Windows.  Questa casella di controllo è attivata in modo predefinito.
+ Se viene disattivata la codifica verrà passata senza cambiamenti dal file
+ di input PostScript al file di output.
+
+ Se il formato di output non supporta le curve che il file PostScript
+ invece genera, tutte le curve verranno approssimate con linee. L'opzione `Uniformità`
+ è usata per controllare questa approssimazione. Questo parametro è direttamente
+ convertito in un comando PostScript. Valori bassi producono una approssimazione più
+ precisa ma anche molti segmenti di linea.
+
+ A volte i caratteri inclusi in un programma PostScript non hanno
+ il nome del carattere. Questo succede per esempio in files PostScript generati
+ da dvips. In tal caso pstoedit usa un carattere sostitutivo.
+ Il carattere predefinito per questo è il Courier ma altri possono essere
+ impostati usando l'opzione `Carattere Predefinito`.
+ Alcuni caratteri alternativi possono essere il Courier, l'Helvetica e il Times-Roman.
+
+ Alcuni dei formati di output supportano opzioni ulteriori. Per esempio, l'output in
+ formato Java usa `Opzioni del Driver` per specificare il nome della classe Java.
+ Vedere il manuale di pstoedit per maggiori dettagli.
+
+ La seconda finestra di dialogo (omessa se non c'è la numerazione di pagina disponibile)
+ stabilisce la pagina da convertire oppure, se supportato dal formato di
+ output, l'insieme di pagine da convertire.
+
+ La terza finestra di dialogo specifica il nome del file di output.
+
+ Non tutti i formati `pstoedit` supportano la grafica bitmap.
+ Se si necessita di un output bitmap vedere `Conversione di File e Trucchi`.
+
+ Per maggiori dettagli si prega di leggere il manuale di pstoedit.
+
+ Vedere anche `Conversioni`.
+E
+3Estrai e Trova Testo
+-Text_Extract_and_Find
+?Estrai e Trova Testo
+?Testo
+?Estrai testo
+?Cerca
+?Trova
+?Cerca Successivo
+ In linea generale l'estrazione di testo da un documento PostScript non è
+ una operazione banale.  Le parole possono essere frazionate.  Il testo può essere codificato.
+ Possono essere stati usati dei vincoli (es. sostituire 'fi' con un singolo carattere).
+ Può non esserci una relazione tra la posizione di una parola nel file
+ PostScript e la sua posizione nella pagina.
+ Il successo nell'estrazione di testo da un documento PostScript dipende
+ in gran parte dal documento stesso.
+
+ GSview ha due metodi di estrazione del testo da un file PostScript.
+
+ Il metodo più veloce estrae tutto il testo dalle stringhe di PostScript.
+
+ Il secondo metodo usa pstotext e Ghostscript per estrarre più accuratamente
+ il testo da un documento PostScript.
+
+ Il metodo usato è selezionato da `Opzioni` | `PStoText`.
+ Vedere l'argomento appropriato sotto elencato:
+
+ Vedere anche `Conversioni`.
+4Estrazione e Ricerca veloce del Testo
+?Estrazione e Ricerca veloce del Testo
+ Di solito i documenti PostScript contengono il testo nello stesso
+ ordine in cui esso appare nella pagina, includendo tra parentesi
+ quello che viene assegnato alle stringhe PostScript.  Possono essere
+ assegnate linee complete ad una stringa oppure una parola per stringa.  Per questo tipo
+ di documenti l'estrazione del testo dovrebbe avere un buon margine di successo.
+
+ `Modifica `| `Estrai Testo` estrarrà il testo contenuto nelle stringhe delle
+ pagine specificate e lo scriverà in un file di testo.
+ Le interruzioni di linea del file di testo corrisponderanno alle linee del documento PostScript.
+ Gli spazi del file di testo corrisponderanno agli spazi all'interno delle stringhe oppure
+ alla separazione tra le stringhe.  Un metodo più efficace per estrarre testo è di
+ usare ps2ascii.ps fornito con Ghostscript, oppure usare il programma `PStoText`
+ disponibile presso la pagina `WWW` di Ghostscript.  `PStoText` può essere
+ usato anche da GSview tramite `Opzioni` | `PStoText`.
+
+ `Modifica `| `Trova` cercherà del testo e visualizzerà la prima pagina
+ che ne contiene.  `Trova` richiede un testo da ricercare e
+ un insieme di pagine sulle quali effettuare la ricerca.
+ Si prega di prendere buona nota dei commenti precedenti riguardanti
+ l'estrazione di testo da un documento PostScript.  `Trova` prima estrae il testo dal
+ documento e quindi lo cerca ignorando tutti gli spazi sia nel
+ documento che nel testo di ricerca.  Maiuscole e minuscole sono ignorate nella ricerca.
+ Conseguentemente la ricerca del testo `Larice` troverà sia `Larice`
+ che `La ricerca`.  Nessuna informazione viene resa in riferimento a dove la parola
+ è localizzata in una data pagina perché questa informazione non è disponibile
+ senza un completo interprete del PostScript.
+ `Trova` non funziona per i documenti non conformi al DSC oppure per documenti DSC con
+ ordinamento di pagina speciale.
+
+ `Modifica `| `Cerca Successivo` continuerà la ricerca dalla pagina successiva.
+4Ricerca ed Estrazione con PStoText
+?Ricerca ed Estrazione con PStoText
+ Questo metodo usa pstotext e Ghostscript per estrarre del testo da
+ un documento PostScript.  Prima di fare qualsiasi estrazione o ricerca
+ di testo l'intero documento deve essere processato da Ghostscript
+ e pstotext per produrre un file con l'indice del testo.
+ Per questa operazione può essere necessario diverso tempo.  Quando questa operazione
+ è terminata l'estrazione e la ricerca del testo dovrebbe essere veloce.
+
+ pstotext usa il set di caratteri ISO-Latin1.  Per maggiori dettagli
+ vedere la documentazione di pstotext:
+  http://www.research.digital.com/SRC/virtualpaper/pstotext.html
+
+ L'`Orientamento` deve essere impostato allo stesso modo in cui il testo è direzionato
+ nel documento.
+
+ `Modifica `| `Estrai Testo` estrarrà del testo dalle pagine specificate
+ e lo scriverà in un file di testo.
+
+ Le parole possono essere copiate in sugli appunti usando ` Modifica` | `Copia`.
+
+ `Modifica `| `Trova` cercherà del testo e visualizzerà la prima pagina
+ che lo contiene.  `Trova` chiede all'utente il testo da cercare
+ e le pagine su cui effettuare la ricerca.
+ Il testo di ricerca viene prima diviso in parole.  Per ogni parola
+ viene fatta una ricerca per trovarne una uguale in qualsiasi parte del documento.
+ La ricerca di `ala` dovrebbe trovare `ala`, `alato` e `mali`.
+ I caratteri jolly '*' (zero o più caratteri) e '?' (qualsiasi carattere)
+ sono supportati, ma non ha senso usarli all'inizio oppure alla
+ fine di una parola.
+ Essi non hanno effetto oltre la parola nella quale sono inseriti,
+ pertanto il testo di ricerca `ab*c` troverà `abXXXc` ma non `ab XXXc`.
+ E' possibile inoltre immettere come testo di ricerca anche parti di frasi, es.  `GSview è un`.
+ Se il testo di ricerca viene trovato, la pagina contenente il testo viene visualizzata
+ e la prima parola viene evidenziata.
+ `Trova` non funzionerà con documenti non conformi al DSC o con documenti DSC con un
+ ordinamento di pagina speciale.
+
+ `Modifica `| `Cerca Successivo` continuerà la ricerca.
+
+ Per la maggior parte dei files PostScript si deve usare
+ `Opzioni` | `PStoText` | `Normale`.
+
+ `Opzioni` | `PStoText` | `Codifica Dvips Cork`
+ è attinente solo ai files PostScript prodotti da
+ dvips partendo da documenti TeX o LaTeX;  `pstotext` riceverà quindi l'istruzione di usare
+ la codifica Cork piuttosto che la vecchia codifica di testo di TeX. Sfortunatamente
+ i files prodotti da dvips non distinguono quale codifica di carattere deve essere
+ usata.
+3Appunti
+-Clipboard
+?Appunti
+?Copia
+?Incolla su
+?Converti Bitmap
+?Bitmap
+ La finestra di GSview può essere copiata negli Appunti come bitmap
+ selezionando `Copia` dal menu `Modifica`.
+ Il Bitmap sarà un 'Device Independent Bitmap' (formato DIB/BMP).
+
+ Una alternativa per avere in output un bitmap da Ghostscript è
+ di usare uno dei drivers BMP.  Vedere `Stampa`.
+
+W
+ `Incolla su` copia un 'Device Independent Bitmap' dagli Appunti
+ (se disponibile) in un file BMP.
+
+ `Converti Bitmap` effettua una conversione tra un 'Device Independent Bitmap' e
+ un 'Device Dependent Bitmap'.
+ Se gli Appunti contengono un 'Device Independent Bitmap' (formato BMP),
+ esso viene convertito in un 'Device Dependent Bitmap' e aggiunto agli Appunti.
+ Se gli Appunti non contengono una tavola di colori, essa viene creata
+ dal 'Device Independent Bitmap' e aggiunta agli Appunti.
+ Questa opzione è presente perché altrimenti alcune applicazioni (in particolare Windows
+ Paintbrush) non troverebbero il 'Device Independent Bitmap' negli appunti.
+P
+ `Incolla su` copia la immagine correntemente visualizzata (se disponibile)
+ in un file BMP.
+E
+
+ Se `Estrai Testo` oppure `Trova` sono usati in un documento con `PStoText` abilitato,
+ GSview crea un indice delle parole nel documento.  Se qualche parola viene
+ contrassegnata con il mouse, `Copia` copierà queste parole negli Appunti al posto di
+ di copiare il bitmap.  Il testo non deve essere contrassegnato quando `Estrai testo`
+ oppure `Trova` vengono usati con `Opzioni` | `PStoText` abilitati.
+2Misure
+-Measure
+?Misure
+?Calcolare Unità di Misura Trasformate
+ Le distanze possono essere misurate usando la posizione del cursore visualizzata sulla
+ barra di stato oppure con la finestra di dialogo `Modifica |` `Misure`.
+
+ Questa finestra di dialogo mostra la posizione di partenza, la posizione finale,
+ la differenza tra le due, la lunghezza e l'angolo tra le due.
+ La posizione di partenza è impostata cliccando il pulsante sinistro del mouse.
+ La posizione predefinita di partenza è l'angolo in basso a sinistra della pagina.
+ Le unità di misura possono essere pt, mm, pollici, oppure personalizzate.
+
+ Le unità di misura personalizzate permettono di visualizzare le coordinate come appaiono in
+ un file PostScript.
+ Le unità di misura personalizzate sono di solito specificate iniziando con una matrice di identità
+ ed eseguono quindi una serie di trasformazioni.
+ Se un file PostScript invoca l'orientamento orizzontale usando
+  90 rotate
+  0 -595 translate
+ allora per visualizzare le coordinate dell'utente si dovranno effettuare
+ le seguenti operazioni nella finestra di dialogo Calcola Trasformazione:
+  Personalizzate
+  Inizializza Matrice
+  90 Ruota
+  0 -595 Traduci
+  Inverti Matrice
+  Ok
+ La Matrice di trasformazione corrente (CTM) è visibile nella
+ parte alta della finestra di dialogo.  E' possibile digitare direttamente la CTM
+ se si ha confidenza con la matematica.
+ E' facile immettere i valori nei campi di modifica del gruppo 'Personalizzate' (sotto
+ al gruppo CTM) ma essi non avranno nessun effetto finché uno dei pulsanti di trasformazione
+ (Traduci, Ruota, Scala) non viene premuto.
+
+ Vedere anche `Unità di Misura`.
+E
+2Opzioni
+-Options
+?Opzioni
+ Il menu `Opzioni` ha le seguenti selezioni:
+3Configurazione Facile
+-Easy_Configure
+?Configurazione Facile
+W
+ Configurazione Facile permette di selezionare quale versione di
+ Ghostscript usare.  E' dato per scontato che si sia già installato
+ Aladdin Ghostscript 5.50 o successivo.
+ Se non è già stato installato Ghostscript, vedere l'argomento
+ `Ottenere Ghostscript`.
+ Per un maggior controllo sulla configurazione di GSview, vedere
+ `Configurazione Avanzata`.
+
+ La Configurazione Veloce imposterà i percorsi corretti Ghostscript
+ e copierà alcune stampanti predefinite nel INI.
+ Essa non modificherà il registro o il Menu Start.
+P
+ La Configurazione Facile avvia un wizard di configurazione per selezionare
+ la versione di Ghostscript e le associazioni dei files.
+E
+3Configurazione Avanzata
+-Advanced_Configure
+?Configurazione Avanzata
+?DLL di Ghostscript
+?Includi Path di Ghostscript
+?Opzioni di Ghostscript
+ `DLL di Ghostcript` fa sapere a GSview dove trovare Ghostscript.
+W
+ Il percorso predefinito per Win32 è
+  c:\gs\gsN.NN\bin\gsdll32.dll
+P
+ Il percorso predefinito per OS/2 è
+  c:\gs\gsN.NN\bin\gsdll2.dll
+E
+
+ Immettere il Path di Ghostscript nel campo
+ `Includi Path` di Ghostscript .
+ Questo path deve includere le cartelle dove sono situati i files di libreria di Ghostscript
+ (gs_*.ps e Fontmap) e i font di Ghostscript (*.pfb).
+ Per esempio:
+P
+   c:\gs\gsN.NN\lib;c:\gs\fonts;c:\psfonts
+W
+   c:\gs\gsN.NN\lib;c:\gs\fonts
+E
+ Non mettere un `-I` dopo il path incluso.
+
+ Il campo `Opzioni Ghostscript` può essere vuoto.
+ Se si vuole togliere la disponibilità dei `Caratteri Installati` sotto
+ MS-Windows, mettere `-dNOPLATFONTS` nel campo `Opzioni Ghostscript`.
+ Se si vogliono cercare dei caratteri non elencati in Fontmap,
+ aggiungere -sFONTPATH in questo campo.  Per esempio
+   -dNOPLATFONTS -sFONTPATH="c:\psfonts"
+
+ Se non viene immesso il percorso esatto nel campo `DLL di Ghostscript`, GSview non
+ sarà in grado di caricare Ghostscript.
+ Se non viene immessa una stringa corretta nel campo `Includi Path di Ghostscript`, Ghostscript
+ non effettuerà l'inizializzazione e sarà quindi chiuso.
+W
+
+ La selezione di `Copia Stampanti predefinite` aggiornerà gsview32.ini dal
+ file printer.ini.
+
+ La selezione di `Associa files .ps` aggiornerà il registro associando i files
+ PostScript con GSview.
+
+ La selezione di `Associa files .pdf` aggiornerà il registro associando i files
+ 'Portable Document Format' con GSview.
+
+ La selezione di `Crea Collegamenti nel Menu Start` aggiungerà GSview al menu Start.
+
+ GSView non fornisce delle utilità per il ripristino di quanto creato da queste quattro caselle di controllo.
+ Le azioni 'Associa...' e 'Crea Collegamenti...' sono normalmente eseguite
+ (con utilità di ripristino) dal programma di installazione di GSview.
+E
+
+ Vedere l'argomento `Installazione`.
+3Suoni
+-Sounds
+?Suoni
+ L'opzione `Suoni` assegna dei suoni a vari eventi.
+ Per ogni vento il suono può essere impostato a `Nessuno`, `Beep Altoparlante` oppure
+ ad un file `Wave`.
+
+ E' necessario avere un driver per i suoni caricato prima di usare files Wave.
+ I files di suono Wave non sono disponibili sotto MS-Windows 3.0.
+
+ Gli eventi sono:
+
+ `Pagina di Output`: l'operatore PostScript 'showpage' è stato eseguito.
+
+ `Nessuna Pagina`: è stata selezionata una pagina non valida.
+ Per esempio, premendo `Pagina Precedente` mentre la pagina visualizzata è la prima pagina
+ di un documento con commenti `DSC`.
+
+ `Nessun Numero`: un comando richiede la numerazione di pagina e il documento non la ha.
+ Per esempio, premendo `Vai a Pagina` mentre si visualizza un documento
+ senza commenti `DSC`.
+
+ `Non Aperto`:  un comando ha richiesto che un documento fosse aperto e non lo era.
+ Per esempio, premendo `Vai a Pagina` quando nessun documento è aperto.
+
+ `Errore`: diversi tipi di errori.
+
+ `Avvio`: GSview si sta aprendo.
+
+ `Uscita`: GSview si sta chiudendo.
+
+ `Occupato`: per il momento occupato, non è possibile fare quanto richiesto.
+
+ I suoni predefiniti per `Nessuna Pagina`, `Errore` e `Occupato` sono
+ `Beep Altoparlante`. Per tutti gli altri eventi è `Nessuno`.
+3Unità di Misura
+-Units
+?Unità di Misura
+ L'opzione `Unità di Misura` imposta le unità di misura usate per visualizzare la posizione del cursore
+ nella barra di stato.  Le unità di misura disponibili sono punti PostScript (`pt` = 1/72"),
+ millimetri (`mm`) e pollici (`in`).
+ La predefinita è `pt`.
+
+ La risoluzione delle unità di misura può essere aumentata attivando
+ `Unità di Misura`| `Risoluzione Fine`.
+
+ Vedere anche `Misure`.
+3Lingua
+-Language
+?Lingua
+?Internazionale
+ GSview è disponibile in Inglese, Francese, Tedesco, Italiano e Spagnolo.  Per cambiare la
+ lingua usare `Opzioni` | `Lingua`.
+3PStoText
+-PStoText
+?PStoText
+ GSview ha due metodi per l'estrazione e la ricerca di testo.
+
+ Il metodo `Estrazione e Ricerca veloce del Testo` fa una semplice estrazione
+ delle stringhe PostScript.  Questo metodo può essere facilmente confuso nella ricerca.
+ Esso viene selezionato con `PStoText` | `Disabilitato`.
+
+ Il metodo `Ricerca ed Estrazione con PStoText` usa il programma esterno pstotext
+ e Ghostscript per estrarre le parole e le loro coordinate.
+ Questo metodo è più accurato, ma può essere necessario diverso tempo di attesa mentre
+ pstotext e Ghostscript eseguono il processo iniziale.
+ Dopo questo, l'estrazione e la ricerca del testo dovrebbe essere veloce.
+ Ci sono due modi di operare.  `Normale` dovrebbe essere usato
+ per la maggior parte dei files PostScript.  `Codifica Dvips Cork` dovrebbe essere
+ usato con un file PostScript prodotto da dvips che usa la codifica Cork.
+
+ Il settaggio predefinito è `Normale`.
+3Avvisi DSC
+-DSC_Warnings
+?Avvisi DSC
+ Alcuni documenti contengono errori nelle Document Structuring Conventions (DSC).
+ Il livello di avvertimento fornito da GSview può essere impostato usando
+ `Opzioni` | `Avvisi DSC`.
+ Se impostato su `Disabilitato`, GSview considererà i commenti DSC come corretti.
+ `Errori` notificherà gli errori nei commenti DSC.
+ `Avvisi` notificherà avvertimenti ed errori nei commenti DSC.
+ `Tutti` notifichera irregolarità, avvertimenti ed errori nei commenti DSC. Il predefinito è `Avvisi`.
+
+ Se si chiede a GSview di notificare errori ed avvertimenti, la finestra di dialogo Avvisi DSC
+ permette di fare le seguenti scelte:
+ `OK` istruisce GSview a prendere la scelta appropriata che è stata probabilmente proposta
+ (al posto di quanto il commento DSC attualmente volesse intendere),
+ `Cancella` istruisce GSview a considerare il commento DSC come corretto,
+ `Ignora DSC ` istruisce GSview ad ignorare tutti i commenti DSC.
+
+ Se `Avvisi DSC` è `Disabilitato`, GSview riterrà `Cancella` la scelta da prendere.
+ I documenti con commenti DSC non corretti will causeranno molto probabilmente dei problemi.
+3Salva Impostazioni
+?Salva Impostazioni
+?Salva Impostazioni Adesso
+?Salva Impostazioni all'uscita
+?Impostazioni
+?File INI
+ l'opzione `Salva Impostazioni Adesso` salva la posizione della finestra di GSview,
+ la dimensione della finestra, l'ultima stampante usata, l'ultima cartella,
+ tutte le impostazioni del menu `Opzioni` e tutte le impostazioni del menu `Carta`
+ nel file di inizializzazione
+W
+ gsview32.ini nella cartella di sistema di Windows (oppure nella cartella del profilo utente in Windows
+ 95 o NT 4, se i profili utenti sono usati).
+P
+ gvpm.ini nella cartella di sistema di OS/2.
+E
+ GSview legge questo file durante l'avvio.
+
+ Quando l'opzione `Salva Impostazioni all'uscita` è attivata, GSview salverà
+ automaticamente le impostazioni sopraccitate quando sarà chiuso.
+3Sicurezza
+?Sicurezza
+ Quando l'opzione `Sicurezza` è `attivata`, GSview assegna a Ghostscript
+ l'opzione `-dSAFER`, che disabilita gli operatori deletefile e renamefile,
+ e abilita ad aprire files in qualsiasi modo all'infuori di 'sola lettura'.
+ Questo è predefinito.
+
+ Quando l'opzione `Sicurezza` è `disattivata` Ghostscript può cambiare
+ i files.
+3Salva Ultima Cartella
+?Salva Ultima Cartella
+ Quando l'opzione `Salva Ultima Cartella` è `attivata`, GSview salverà
+ la cartella corrente quando sarà chiuso.  Quando GSview
+ sarà nuovamente avviato questa sarà la cartella corrente.
+ Questo è predefinito.
+
+ Quando l'opzione `Salva Ultima Cartella` è `disattivata`, quando GSview
+ sarà nuovamente avviato la cartella corrente sarà la cartella corrente del
+ programma che ha avviato GSview.
+3Barra Pulsanti
+-Button_Bar
+?Barra Pulsanti
+?Ingrandimento
+ Quando l'opzione `Barra Pulsanti` è `attivata`, GSview visualizzerà in modo predefinito
+ la Barra Pulsanti lungo la parte sinistra della finestra.
+ La Barra Pulsanti contiene i seguenti pulsanti (in ordine da sopra a
+ sotto):
+
+W
+ {bmlwd gvwopen.bmp}
+E
+ `File` | `Apri`
+
+W
+ {bmlwd gvwprint.bmp}
+E
+ `File` | `Stampa`
+
+W
+ {bmlwd gvwinfo.bmp}
+E
+ `File` | `Informazioni`
+
+W
+ {bmlwd gvwhelp.bmp}
+E
+ `?` | `Panoramica Generale`
+
+W
+ {bmlwd gvwgoto.bmp}
+E
+ `Visualizza` | `Vai a Pagina`
+
+W
+ {bmlwd gvwnext.bmp}
+E
+ `Visualizza` | `Pagina Successiva`
+
+W
+ {bmlwd gvwprev.bmp}
+E
+ `Visualizza` | `Pagina Precedente`
+
+W
+ {bmlwd gvwnexts.bmp}
+E
+ `Salta avanti di 5 pagine`
+
+W
+ {bmlwd gvwprevs.bmp}
+E
+ `Salta indietro di 5 pagine`
+
+W
+ {bmlwd gvwmagp.bmp}
+E
+ `Aumenta la risoluzione di 1.2`
+
+W
+ {bmlwd gvwmagm.bmp}
+E
+ `Diminuisci la risoluzione di 1/1.2`
+
+W
+ {bmlwd gvwfind.bmp}
+E
+ `Modifica `| `Trova`
+
+W
+ {bmlwd gvwfindn.bmp}
+E
+ `Modifica `| `Cerca Successivo`
+
+ Se si usano i pulsanti Aumenta/Diminuisci risoluzione deve essere attivato
+ `Rivisualizza Automaticamente`.  Al posto di usare questi pulsanti può essere
+ usato il comando `Carta `| `Impostazioni di Visualizzazione`.
+ Quando l'opzione `Barra Pulsanti` è `disattivata` GSview non la
+ visualizzerà.
+3Adatta la Finestra alla Pagina
+?Adatta la Finestra alla Pagina
+ Quando l'opzione `Adatta la finestra alla Pagina` è `attivata` i cambiamenti alle
+ dimensioni e all'orientamento della pagina faranno si che le dimensioni della
+ finestra siano allargate o ridotte in modo che si adattino a quelle della pagina.
+ Ogni volta che la finestra viene ridimensionata GSview farà in modo che essa non sia
+ più grande della pagina che si sta visualizzando.
+
+ I cambiamenti alle dimensioni della finestra avranno luogo solo quando la finestra sarà
+ ridimensionata oppure le dimensioni della pagina saranno cambiate;  questo potrebbe non
+ succedere immediatamente dopo che l'opzione è stata cambiata.
+ Adatta la Finestra alla Pagina viene ignorato per la finestra ingrandita al massimo.
+
+ Se `Adatta la Finestra alla Pagina` è `disattivato`, GSview non ridimensionerà la
+ finestra e le aree esterne alla pagina saranno disegnate in grigio chiaro.
+ Questo è utile se non si vuole che la finestra si restringa quando si guardano le
+ pagine con una bassa risoluzione. Questa è l'impostazione predefinita.
+
+ Vedere anche `Visualizza` | `Adatta Finestra`.
+3Rivisualizza Automaticamente
+?Rivisualizza Automaticamente
+ Quando l'opzione `Rivisualizza Automaticamente` è `attivata`, GSview
+ rivisualizzerà i documenti `DSC` ogni volta che `Orientamento`, `Risoluzione`,
+ `Profondità` oppure `Carta` verranno cambiati.
+ Questa è l'impostazione predefinita.
+
+ Per i `documenti non DSC`, se `Rivisualizza Automaticamente` è `attivato`
+ GSview `ripartirà dalla prima pagina`.
+
+ Se `Rivisualizza Automaticamente` è `disattivato`, deve essere usato il comando `Visualizza` | `Rivisualizza`
+ per rivisualizzare un documento dopo aver cambiato
+ `Orientamento`, `Risoluzione`, `Profondità` oppure `Carta`.
+3Ritaglia EPS
+?Ritaglia EPS
+?Ritaglia PDF (Crop Box)
+ Quando l'opzione `Ritaglia EPS` è `attivata` GSview, al posto di usare le
+ dimensioni della pagina impostate nel menu `Carta`, ritaglierà il
+ bitmap visualizzato ai limiti del box di un file EPS.  Questo risulta utile quando
+ si aggiunge una anteprima bitmap ad un file EPS.
+ Se è stato visualizzato un file PDF `Ritaglia EPS` farà in modo che la
+ visualizzazione sia ritagliata al 'crop box' del file PDF.
+
+ Se `Ritaglia EPS` è `disattivato`, per i files EPS GSview userà le dimensioni
+ della pagina impostata nel menu `Carta`.  Questa impostazione è predefinita.
+
+ `Ritaglia EPS` non modifica il documento originale me influisce solamente
+ su quanto documento deve essere visualizzato da GSview.
+ Pertanto non ha nessuna influenza sulla stampa.
+
+
+ Vedere anche `Modifica `| `Aggiungi Anteprima EPS`
+3Avvisi EPS
+?Avvisi EPS
+ Quando l'opzione `Avvisi EPS` è `attivata`, GSview invierà un
+ prologo a Ghostscript ogni volta che un file viene aperto.  Questo prologo
+ produrrà dei messaggi di avviso nella finestra `File `| `Mostra Messaggi`
+ se verrà usato uno degli operatori PostScript che non avrebbe dovuto essere usato
+ con i files `EPS`.  Un esempio di Messaggio di Avviso è il seguente:
+  Warning: EPS files must not use /initgraphics
+ `Avvisi EPS` non è infallibile.  E' possibile accedere a degli operatori ristretti
+ senza che `Avvisi EPS` produca un avviso.
+ Se si vuole ricevere un avviso, NON usare `Converti PS in EPS`.
+
+ L'impostazione predefinita di `Avvisi EPS` è di `disattivato`.
+
+ Vedere anche `Converti PS in EPS`.
+3Ignora DSC
+-Ignore_DSC
+?Ignora DSC
+ Alcuni documenti dichiarano scorrettamente di essere conformi all'Adobe
+ Document Structuring Conventions.  Cercando di visualizzare uno di questi
+ documenti molto probabilmente GSview sarà impossibilitato a farlo.
+ Se `Ignora DSC` è `attivato`, GSview tratterà il documento
+ come se non contenesse dei commenti DSC
+ e le pagine saranno visualizzate solo nell'ordine originale.
+
+ L'impostazione predefinita di `Ignora DSC` è di `disattivato`.
+3Mostra Limiti del Box
+-Show_Bounding_Box
+?Mostra Limiti del Box
+ La selezione di questa opzione fa visualizzare un rettangolo tratteggiato attorno
+ all'immagine che mostra la posizione dei limiti del box.
+ Esso viene disegnato solo per la visualizzazione e non avrà nessun effetto
+ sull'output di stampa.
+ I limiti del box sono visualizzati solo per i documenti `DSC` ( i documenti non
+ conformi non hanno i limiti del box).
+
+ L'impostazione predefinita per `Mostra Limiti del Box` è di `disattivato`.
+2Orientamento di Pagina
+-Page_Orientation
+?Orientamento Automatico
+?Orientamento
+?Verticale
+?Orizzontale
+?Verticale capovolto
+?Orizzontale capovolto
+?Inverti Orizzontale
+ I comandi di `Verticale`, `Orizzontale`, `Verticale capovolto` e `Orizzontale capovolto`
+ nel Menu `Orientamento` selezionano
+ l'orientamento di pagina usato per la visualizzazione.
+ `Orizzontale` comporta una rotazione della carta in senso orario di 90 gradi.
+ `Orizzontale capovolto` comporta una rotazione della carta in senso antiorario di 90 gradi.
+ Queste opzioni hanno effetto solo sulla visualizzazione
+ e sono ininfluenti per i comandi di stampa.
+
+ Se il comando `Automatico`  sul menu Orientamento è attivato e
+ viene trovato un commento di orientamento di pagina `DSC` l bitmap della pagina, senza migliorarne la visualizzazione.
+
+ Il campo `Testo Alpha` imposta l'antideformazione per i caratteri.  L'impostazione predefinita
+ (nessuna antideformazione) è 1 bit.  Per abilitare l'antideformazione dei caratteri,
+ usare 2 bits oppure 4 bits.
+W
+
+ `IMPORTANTE`: Se viene usato `Testo Alpha`, GSview disabiliterà
+ `Platform Fonts` come equivalente dell'aggiunta di
+   -dNOPLATFONTS
+ nel campo `Opzioni di Ghostscript `della finestra di dialogo `Opzioni `| `Configurazione Avanzata.`
+E
+
+ Il campo `Grafica Alpha` imposta l'antideformazione per i grafici e per il testo
+ che è troppo grande per poter stare nella memoria cache riservata ai caratteri.
+
+ L'uso dei filtri antideformazione rallenterà il disegno della pagina.
+ Testo e Grafica Alpha possono essere usati solo se la profondità del display è
+ impostata a 8bits/pixel o superiori.
+P
+
+ Esiste un certo numero di drivers per display difettosi che sono stati scritti per OS/2.
+ Molti di essi hanno una API GpiDrawBits() non funzionale.
+ Il `Metodo di Disegno` predefinito è di usare GpiDrawBits() per molti
+ display e un metodo più lento di doppio buffering che usa
+ WinDrawBitmap per display VGA (4bit/pixel).
+
+ Se il proprio display ha problemi nel disegnare i bitmap (si vede
+ normalmente durante lo scorrimento) oppure si incorre in un errore SYS3175
+ (memory access violation)nel driver del display, provare ad usare esplicitamente
+ il metodo GpiDrawBits oppure WinDrawBitmap.
+
+ Se ci sono degli errori nel driver del proprio display si prega di effettuare
+ un reclamo alla ditta che l'ha scritto.
+E
+3Zoom
+-Zoom
+?Zoom
+ Per ingrandire una parte della visualizzazione posizionare la croce del puntatore del
+ mouse sopra di essa e premere quindi il pulsante destro del mouse stesso.
+ La finestra cambierà dalla visualizzazione con risoluzione normale a quella di zoom
+ e la barra di stato riporterà in aggiunta la parola `Zoomato`.
+ Il punto della visualizzazione sopra il quale si è premuto il mouse sarà al centro della finestra.
+ Per cancellare lo `Zoom` premere ancora il pulsante destro del mouse oppure selezionare
+ qualsiasi comando che ridisegni la pagina (es. `Rivisualizza`, `Pagina Successiva`).
+ La risoluzione predefinita dello zoom è di 300 punti per pollice ma essa può essere
+ cambiata con la finestra di dialogo `Carta` | `Impostazioni di Visualizzazione`.
+
+ `Zoom` funzionerà solo con i documenti conformi al `DSC`.
+
+ Per ingrandire o restringere l'intera pagina, impostare `Risoluzione` nella finestra di
+ dialogo `Carta` | `Impostazioni di Visualizzazione`, oppure usare i pulsanti di
+ ingrandimento a lente presenti nella barra dei pulsanti.
+2Dimensioni della Pagina
+-Media
+?Dimensioni della Pagina
+?Carta
+?Definite dall'Utente
+?Ruota Carta
+ Il menu `Carta` permette anche la selezione delle dimensioni della pagina.
+ Le pagine disponibili sono:
+  11x17          11   x 17   inch
+  A3              297 x 420  mm
+  A4              210 x 297  mm
+  A5              148 x 210  mm
+  B4              257 x 364  mm
+  B5              182 x 257  mm
+  Ledger         17   x 11   inch
+  Letter          8.5 x 11   inch
+  Legal           8.5 x 14   inch
+  Note            8.5 x 11   inch
+
+ E' possibile impostare una dimensione dell'Utente in punti PostScript (1/72 di pollice)
+ con il comando `Definite dall'Utente`.  Una dimensione di 480x360 punti a 96 dpi
+ renderà una immagine di 640x480 pixels.
+
+ Se viene trovato un commento `DSC` riguardante la carta, come ad esempio
+  %%DocumentPaperSizes: a4
+  %%DocumentMedia: a4 595 842 80 white ( )
+ le impostazioni di pagina saranno impostate automaticamente.
+ Se le impostazioni di pagina non sono una di quelle già previste
+ saranno impostate in `Definite dall'Utente`.
+
+ Se `Ruota Carta` è attivato, la larghezza e l'altezza della pagina
+ vengono scambiate.  L'immagine disegnata sulla pagina non viene ruotata.
+ Questo influisce sia la visualizzazione che la stampa.
+ La selezione di `A4` e `Ruota Carta` è equivalente a selezionare
+ `Definite dall'Utente` con le dimensioni di 842 x 595 punti.
+ E' più comune l'uso delle impostazioni nel menu `Orientamento`
+ che non `Ruota Carta`.
+2Tasti
+-Keys
+?Tasti
+ Qui di seguito vengono riportati i tasti assegnati per GSview.
+
+ `A`, `a`  Apre e visualizza un file.  (`File` | `Apri`)
+
+ `C`, `c`  Chiudi file.  (`File` | `Chiudi`)
+
+ `S`, `s`, `+`  Pagina Successiva.  (`Visualizza` | `Pagina Successiva`)
+
+ `Space`     Pagina successiva in alto.  (`Visualizza` | `Pagina successiva in alto`)
+
+ `D`, `d`, `-`  Pagina Precedente.  (`Visualizza` | `Pagina Precedente`)
+
+ `BackSpace`  Pagina Precedente in alto.  (`Visualizza` | `Pagina Precedente in alto`)
+
+ `V`, `v`  Vai a Pagina.  (`Visualizza` | `Vai a Pagina`)
+
+ `I`, `i`  Informazioni sul file.  (`File` | `Informazioni`)
+
+ `R`, `r`, `F5`  Rivisualizza la pagina.  (`Visualizza` | `Rivisualizza`)
+
+ `Z`, `z`  Seleziona il file (lo apre ma non lo visualizza).  (`File` | `Seleziona File`)
+
+ `N`, `n`  Salva con Nome. (`File` | `Salva con Nome`)
+
+ `P`, `p`  Stampa tutte o alcune delle pagine in una stampante.  (`File` | `Stampa`)
+
+ `F`, `f`  Stampa tutte o alcune delle pagine in un File.  (`File` | `Stampa`) con
+ `Stampa su File` attivato.
+
+ `T`, `t`  Estrae alcune pagine in un altro File.  (`File` | `Estrai`)
+
+ `M`, `m`  Mostra Messaggi Ghostscript.  (`File` | `Mostra Messaggi`)
+
+ `<` Diminuisci la risoluzione di 1/1.2
+
+ `>` Aumenta la risoluzione di 1.2
+
+ `F1`  Guida in linea.  (`?` | `Sommario`)
+
+ `Ctrl+C`, `Ctrl+Ins`  Copia il bitmap visualizzato negli Appunti.  (`Modifica` | `Copia`)
+
+ `E`, Cerca Testo. (`Modifica` | `Cerca`)
+
+ `F3`,  Successivo. (`Modifica` | `Cerca Successivo`)
+
+ `F4`  A tutto Schermo.  (`Visualizza` | `A tutto Schermo`)
+
+ `F6`  Adatta Finestra.  (`Visualizza` | `Adatta Finestra`)
+
+ `Frecce`  Scorrono di 1/16 di schermo.
+
+ `Ctrl + Freccia`  Scorre di una schermata.
+P
+
+ `Ctrl+Pagina Su`  Scorre a sinistra di una schermata.
+
+ `Ctrl+Pagina Giù`  Scorre a destra di una schermata.
+E
+
+ `Page Up`  Scorre in su di una schermata (l'altezza della finestra).
+
+ `Page Down`  Scorre in giù di una schermata.
+
+ `Home`  Scorre fino al punto più in alto della pagina.
+
+ `End`  Scorre fino al punto più in basso della pagina.
+W
+2Opzioni della linea di comando
+?Opzioni della linea di comando
+ Uso:
+W
+  gsview32 [/D] [/Tn] nomefile
+  gsview32 [/D] [/Tn] /F nomefile
+  gsview32 [/D] [/Tn] /P nomefile
+  gsview32 [/D] [/Tn] /S[porta] nomefile
+  gsview32 [/D] [/Tn] /S["coda di stampa"] nomefile
+P
+  gvpm [/D] [/Tn] nomefile
+  gvpm [/D] [/Tn] /F nomefile
+  gvpm [/D] [/Tn] /P nomefile
+E
+
+ Per avviare GSview e visualizzare nomefile.ps usare:
+W
+  gsview32 nomefile.ps
+P
+  gvpm nomefile.ps
+E
+ Per avviare GSview e stampare nomefile.ps usando Ghostscript.
+ Questo è simile a `File` | `Stampa`, ad eccezione che
+ non sarà richiesta la stampante (sarà usata l'ultima stampante
+ usata da GSview) e GSview
+ si chiuderà dopo che la stampa sarà conclusa.   
+W
+  gsview32 /P nomefile.ps
+P
+  gvpm /P nomefile.ps
+E
+ Per avviare GSview e stampare nomefile.ps in un file usando Ghostscript
+ (`File` | `Stampa`) con `Stampa su File` attivato usare:
+W
+  gsview32 /F nomefile.ps
+P
+  gvpm /F nomefile.ps
+E
+W
+ Per avviare GSview e inviare nomefile.ps per la stampa direttamente alla
+ stampante (`File` | `Stampa File`) usare:
+  gsview32 /S nomefile.ps
+ Per avviare GSview e inviare nomefile.ps per la stampa direttamente alla
+ porta della stampante LPT3: usare:
+  gsview32 /SLPT3: nomefile.ps
+ Per avviare GSview e inviare nomefile.ps per la stampa direttamente alla
+ coda di stampa della stampante "HP DeskJet Portable" usare:
+  gsview32 "/SHP DeskJet Portable" nomefile.ps
+ GSview si chiuderà dopo che il file sarà accodato allo spooler di stampa.
+E
+
+ Per avviare GSview in modalità di debug usare:
+W
+  gsview32 /D
+P
+  gvpm /D
+E
+ In modalità debug GSview `non` rimuoverà i suoi files temporanei.
+ Questo per permetterne la verifica dopo che GSview è stato chiuso.
+ La modalità di Debug produce anche un output più dettagliato per `File `| `Mostra Messaggi`.
+
+ GSview in modo predefinito è avviato come
+W
+ multi-processo sotto Windows 95 e  Windows NT, 'processo singolo' sotto
+ Windows 3.1 / Win32s.
+P
+ multi-processo.
+E
+ Per cambiarlo, usare `/T` per rafforzare la modalità del processo, `/T0` per selezionare
+ la modalità 'processo singolo' e `/T1` per selezionare la modalità multi-processo.
+
+W
+ Al posto di aprire un file in una seconda copia di GSview, è possibile
+ aprirlo nel GSview esistente oppure, se GSview
+ non è già in esecuzione, in una nuova istanza di GSview usando:
+  gsview32 /E nomefile
+ Per far in modo che GSview si chiuda:
+  gsview32 /X
+
+E
+ Nelle opzioni GSview non distingue tra maiuscole e minuscole:
+ /p è lo stesso di /P.
+W
+3Scambio Dinamico dei Dati
+?Scambio Dinamico dei Dati
+?DDE
+ GSview implementa un server DDE, servizio="GSview" e argomento="GSview".
+ I comandi XTYP_EXECUTE che sono ammessi sono:
+  [FileOpen("nomefile")]
+  [FileExit()]
+  [NextPage()]
+  [PrevPage()]
+  [GoBack()]
+  [GotoPage(5)]
+  [ShowWindow(nCmdShow)]
+  [Command("linea di comando")]
+ Il comando [Command()] riconosce solo "nomefile" oppure "/P nomefile".
+
+ Non inviare più comandi assieme.  GSview non si rifiuterà di eseguirli,
+ ma l'esecuzione asincrona multi-processo interna a GSview
+ potrà fare in modo che il secondo processo inizi prima che il primo
+ sia terminato.  Se c'è bisogno di inviare più comandi,
+ spedirli separatamente e con delle pause tra di loro.
+
+ Ci sono due opzioni della linea di comando che causano l'invio di un comando DDE
+ da parte di GSview ad un'altra copia di GSview.
+ L'opzione della linea di comando /E usa [Command("linea di comando")][ShowWindow(1)].
+ L'opzione della linea di comando /X usa [FileExit()]
+E
+2World Wide Web
+?World Wide Web
+?WWW
+?HTML
+ La home page WWW per Ghostscript, Ghostview e GSview
+ è presso
+  http://www.cs.wisc.edu/~ghost/
+
+ GSview può essere registrato on-line presso
+  http://www.ghostgum.com.au/
+                               
+ GSview può essere usato come visualizzatore di file PostScript per molti browsers Web,
+ sia sotto  OS/2 che sotto MS-Windows.  Per maggiori dettagli vedere la home page di GSview.
+
+ Thomas Merz ha scritto un manuale di Ghostscript che è disponibile in
+ formato `PDF` dal sito WWW sopraccitato.  Questo manuale è un estratto del
+ libro scritto dallo stesso Thomas Merz intitolato `PostScript and Acrobat/PDF`,
+ disponibile in Inglese e Tedesco.
+2Copyright
+?Copyright
+ La voce del menu `?` `Informazioni su GSview` fa vedere il messaggio di copyright e il numero di
+ versione di GSview
+
+W
+  GSVIEW.EXE - Una interfaccia grafica a Ghostscript
+P
+  GVPM.EXE - Una interfaccia grafica a Ghostscript
+E
+  Copyright (C) 1993-2005, Ghostgum Software Pty Ltd.  Tutti i diritti riservati.
+
+ Questo file è parte integrante di GSview.
+
+ Questo programma è distribuito SENZA ALCUNA GARANZIA.
+ L'Autore e il Distributore non si assumono alcuna responsabilità per le
+ conseguenze risultanti dal suo uso e non assicurano che che esso sia
+ rispondente ad una particolare funzione o che semplicemente funzioni, a
+ meno che esse non siano precisate per iscritto. Vedere la GSview Free
+ Public Licence (la 'Licenza') per ulteriori dettagli.
+
+ Ogni copia di GSview deve includere una copia della Licenza, normalmente sotto forma di file
+ ASCII dal nome di LICENCE. La Licenza da diritto a copiare, modificare e
+ redistribuire GSview, ma solo sotto certe condizioni descritte nella
+ Licenza. Tra le altre cose, la Licenza richiede che l'avviso di copyright
+ e questo avviso siano mantenuti in tutte le copie..
+
+     Autore: Russell Lang, Ghostgum Software Pty Ltd
+   Internet: gsview@ghostgum.com.au
+ Si prega di leggere l'argomento `Problemi Comuni`, il file di GSview Readme.htm e vedere
+ la pagina `WWW` prima di inviare un messaggio all'autore.
+
+ GSview usa pstotext in una DLL esterna. pstotext è stato scritto da
+ Andrew Birrell e Paul McJones.  Esso è sotto
+   Copyright (C) 1995-1996, Digital Equipment Corporation.
+ Per ulteriori dettagli vedere la licenza in pstotext.txt oppure pstotext.zip.
+ Se non si è d'accordo con la licenza di pstotext, cancellare pstotext.zip,
+ pstotxt2.dll e pstotxt3.dll.
+2Problemi Comuni
+?Problemi Comuni
+?Problemi
+ `Problema:` Non posso caricare la DLL di Ghostscript ...
+
+ GSview richiede la DLL di Ghostscript
+ (gsdll2.dll di OS/2, gsdll32.dll di Win32).
+ Questo messaggio di errore avviene normalmente se Ghostscript non è installato
+ oppure se GSview non trova Ghostscript.
+
+ Dal menu di GSview selezionare `Opzioni` | `Configurazione Avanzata `
+ e inserire il corretto percorso della `DLL di Ghostscript`. Per esempio
+P
+  c:\ghostgum\gsN.NN\bin\gsdll2.dll
+W
+  c:\ghostgum\gsN.NN\bin\gsdll32.dll
+E
+
+ Il messaggio viene reso anche se Ghostscript non può trovare il suo
+ file di inizializzazione (es. gs_init.ps).  Impostare
+ `Includi Path di Ghostscript` correttamente.
+
+W
+ Usando Win32s, fare attenzione di non avere già una copia della
+ DLL Ghostscript caricata da un'altra copia di GSview.
+ Win32s può caricare solo una copia della DLL di Ghostscript alla volta.
+
+E
+ Se non è possibile avere GSview per avviare la DLL di Ghostscript correttamente, assicurarsi
+ di poter configurare e avviare Ghostscript da solo.
+
+ `Problema:` La finestra Messaggi Ghostscript dice
+ `Can't find initialization file gs_init.ps`.
+
+ Impostare `Includi Path di Ghostscript` in modo che punti ad una cartella contenente
+ il corretto gs_init.ps.
+
+ `Problema:` La finestra Messaggi Ghostscript dice
+ `gs: Interpreter revision (XXX) does not match gs_init.ps revision (YYY)`.
+
+ Impostare `Includi Path di Ghostscript` in modo che punti ad una cartella contenente
+ il corretto gs_init.ps.
+ Non provare a visualizzare il file PostScript in una cartella di una vecchia versione
+ di Ghostscript (ciò farà si che il vecchio gs_init.ps venga
+ caricato non considerando `Includi Path di Ghostscript`).
+
+ `Problema:` la finestra Messaggi Ghostscript dice
+ `Wrong version of DLL found.  Found version XXX  Need version YYY`.
+
+ GSview ha trovato una versione errata della DLL di Ghostscript.  Installare la versione
+ della DLL richiesta.  Fare attenzione di avere una sola copia della
+ DLL di Ghostscript installata sul proprio sistema.
+
+ `Problema:` GSview comunica che un file multipagina PostScript prodotto
+ da MS-Windows contiene 0 pagine e sarà mostrata solo la prima pagina.
+
+ Questo avviene perché il documento non ha i commenti DSC corretti.
+ Dal Pannello di Controllo, selezionare `Stampanti`, `Opzioni...`, quindi nella
+ casella di gruppo `Stampa su` cliccare sul pulsante `Stampante`.  Non si deve
+ usare `Stampa Su` `File Encapsulated PostScript` per stampare
+ files con più di una pagina.  Il metodo corretto è di connettere la stampante
+ a `FILE:`.
+ In aggiunta,
+ dal Pannello di Controllo selezionare `Stampanti`, `Opzioni...`, `Avanzate`
+ e attivare `Conforme ad Adobe Document Structuring Convention`.
+
+ Il commento DSC `%%Pages: 0` sta a significare che il documento non può produrre
+ nessuna pagina.  Questo perché l'operatore PostScript `showpage` non è usato.
+ Se si cerca un documento PostScript che ha più di una pagina e contiene
+ il commento `%%Pages: 0`, cambiare la prima linea da `%!PS-Adobe-` un `%!`.
+ GSview ignorerà quindi i commenti DSC e permetterà di vedere tutte le
+ pagine, ma solo nell'ordine originale.  Effettuare un reclamo all'autore del
+ programma che ha prodotto il file PostScript.
+
+ Alcuni driver di stampanti PostScript includono del codice che è specifico di
+ una particolare stampante.  L'output PostScript da questi drivers può
+ essere non portabile e può non essere visualizzabile da GSview.  Se si sta riscontrando
+ questo problema, provare ad usare un driver PostScript generico come
+ `Apple LaserWriter II NT` per stampanti PostScript di livello 2, oppure
+ `Apple LaserWriter Plus` per stampanti PostScript di livello 1.
+
+ Per Windows 95, aprire le proprietà della stampante e selezionare
+ la cartella PostScript Selezionare quindi Formato PostScript di Output =
+ `PostScript (massima portabilità - ADSC)`.
+
+ `Problema:` GSview comunica che "L'ordinamento di pagina è Speciale..."
+
+ Il documento usa il commento DSC `%%PageOrder: Special` che sta a significare
+ che le pagine non possono essere riordinate in modo affidabile.  Ciò può impedire a GSview
+ la visualizzazione delle pagine in un ordine diverso dall'originale.
+ Se si continua e si riordinano le pagine, si può incorrere in errori di PostScript.
+ Il solo modo per impedire questo è di rigenerare il PostScript senza
+ l'ordinamento di pagina speciale.
+
+ In modo predefinito Windows 95 crea i files PostScript che usano l'ordinamento
+ di pagina speciale.  Per disabilitarlo, aprire le proprietà della stampante e
+ selezionare la cartella PostScript. Selezionare quindi Formato PostScript di Output =
+ `PostScript (massima portabilità - ADSC)`.
+
+ `Problema:` I files PostScript files prodotti da MS-Windows iniziano con un Control-D.
+
+ Per Windows 3.1:
+
+ Dato che questo avviene quando la casella di controllo
+ `Conform to Document Structuring Convention`
+ della stampante PostScript è attivata, questo deve essere considerato un
+ errore del driver di stampa PostScript di MS-Windows.
+ La sistemazione dell'errore è documentata nel file di MS-Windows PRINTERS.WRI.
+ Modificare il file win.ini cercando le sezioni delle stampanti PostScript
+ installate.  In ognuna delle sezioni aggiungere
+ `CTRLD=0` come mostrato sotto.
+
+  [Apple LaserWriter II NT,FILE]
+  CTRLD=0
+
+ Per Windows 95:
+
+ Le impostazioni del driver della stampante PostScript ha una opzione
+ (Proprietà, PostScript, Advanced) per eliminare
+ il ^D all'inizio del documento.
+ Fortunatamente l'impostazione predefinita è di non inviare il ^D prima della stampa.
+
+ `Problema:` i files PostScript prodotti da Word per Windows 6.0
+ causano un messaggio di errore "Missing %%Pages comment".
+
+ Congratulazioni.  E' stato appena trovato un errore nei commenti DSC
+ quando Word include un file EPS.  Word avrebbe dovuto includere il file EPS
+ all'interno delle linee
+  %%BeginDocument: filename.eps
+  %%EndDocument
+ Poiché Word non lo fa, GSview non può capire quante pagine
+ ci sono nel documento e dove sono localizzate.
+
+ Si prega di effettuare una protesta alla Microsoft.  Il problema è nel filtro EPSIMP.FLT
+ versione 2.01 che ha bisogno di essere sistemato dalla Microsoft stessa.
+
+ Nel frattempo ci sono due soluzioni:
+
+ 1. Selezionare `Opzioni` | `Ignora DSC`
+
+ 2. Modificare il file PostScript per correggere i commenti DSC.
+ Cercare nel file PostScript file altre linee contenenti
+   %MSEPS Preamble
+ Per ognuna di queste linee, cercare successivamente l'inizio del file
+ EPS incluso. Esso dovrebbe iniziare con una linea come
+  %!PS-Adobe-3.0 EPSF-3.0
+ Al di sopra di queste linee aggiungere la linea
+  %%BeginDocument: AddedByHand
+
+ Cercare quindi tutte le linee contenenti
+  %MSEPS Trailer
+ Al di sopra di queste linee aggiungere la linea
+  %%EndDocument
+
+ GSview dovrebbe essere quindi in grado di visualizzare il file correttamente.
+
+ `Problema:` GSview non riconosce i commenti DSC in files
+ prodotti usando il driver  Adobe PostScript 4.10 per Windows a 32-bit.
+
+ Non usare il protocollo di comunicazione 'Pure binary data.
+ Cambiarlo nelle proprietà della stampante " PostScript | Advanced |
+ Data format | ASCII data "
+
+ `Problema:` Cercando di aprire qualsiasi file viene reso:
+  'Unrecoverable error: configuration error in setpagedevice'
+  Failed to open device or install ViewerPreProcess hook: returns -26
+  Page size may have been too large or resolution too high.
+  Resetting page size and resolution
+
+ Si è verificato uno o più dei problemi descritti,
+ nel qual caso si deve ridurre la dimensione della pagina, la risoluzione,
+ la profondità oppure una combinazione delle tre.
+ In alternativa è possibile usare `-dFIXEDMEDIA` nella variabile di ambiente
+ di Ghostscript GS_OPTIONS.  Quando si usa GSview, è più sicuro
+ non usare affatto GS_OPTIONS e usare al suo posto `Opzioni` |
+ `Configurazione Avanzata` | `Opzioni di Ghostscript`.
+W
+2Altri Programmi Utili
+?Altri Programmi Utili
+?RedMon
+?PrintFile
+ `RedMon` è un controllo delle porte per Windows 95 e NT, che permette
+ di reindirizzare la porta di una stampante a un programma.
+ RedMon può essere usato con Ghostscript e una stampante non PostScript
+ per emulare una stampante PostScript.  Questa Stampante PostScript emulata
+ può essere condivisa in una rete di computer network e apparirà come una stampante PostScript
+ ai clienti della rete.   Maggiori dettagli presso:
+  http://www.cs.wisc.edu/~ghost/redmon/
+ RedMon include anche una linea di comando per scrivere un file
+ nella coda di stampa di una Stampante Windows.
+
+ `PrintFile` di Peter Lerup è un'applicazione Windows ad interfaccia grafica che permette di
+ inviare files ad una stampante e fornisce una elaborazione veloce per file di
+ testo, PostScript ed altri.  E' disponibile presso:
+   http://hem1.passagen.se/ptlerup/
+
+ Vedere la pagina `WWW` di Ghostscript per altri utili programmi.
+E
+2Altri Argomenti della Guida
+?Altri Argomenti della Guida
+ A questi argomenti si accede normalmente premendo il pulsante `?`
+ nelle finestre di dialogo.
+3Mostra Messaggi
+-Show_Messages
+?Mostra Messaggi
+ GSview usa Ghostscript per visualizzare o stampare i files PostScript.
+ `Mostra Messaggi` visualizza l'output di console da Ghostscript,
+ ed è molto utile quando si presentano degli errori PostScript.
+ Può essere necessario effettuare lo scorrimento indietro per vedere l'inizio del messaggio di errore.
+
+ Il testo nella finestra `Mostra Messaggi` può essere copiato sugli Appunti.
+ Se nessun testo è selezionato, l'intero testo sarà copiato sugli Appunti.
+ Se del testo è evidenziato, solo esso sarà copiato sugli Appunti
+
+ Le spiegazioni di alcuni dei messaggi di errore che possono apparire in
+ `Mostra Messaggi` possono essere trovate all'argomento `Problemi Comuni`.
+W
+3bzip2
+-bzip2
+?bzip2
+ Se si tenta di caricare un file che è stato compresso da bzip2,
+ GSview tenterà di caricare la DLL bzip2 e quindi di decomprimerlo
+ in un file temporaneo.
+
+ Se si riceve un messaggio di errore `Errore nel caricamento di bzip2 DLL...`
+ probabilmente non c'è la DLL bzip2 disponibile.
+ E' possibile ottenerla dallo stesso sito da cui si è ottenuto GSview oppure da
+  ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/
+ Mettere la DLL di bzip2 nella stessa cartella dell'EXE di GSview.
+ libbz2.dll è per Win32.  Per questo aspetto non c'è la DLL bzip2
+ per Win16 o OS/2.
+
+ bzip2 è sotto Copyright 1996-2000 di Julian Seward
+ Il codice sorgente può essere ottenuto da
+  http://sourceware.cygnus.com/bzip2/index.html
+E
+3zlib
+-zlib
+?zlib
+?gzip
+ Se si tenta di caricare un file che è stato compresso da gzip,
+ GSview tenterà di caricare la DLL zlib, quindi lo decomprimerà
+ in un file temporaneo.
+
+ Se si riceve un messaggio `Errore nel caricamento della DLL zlib...`
+ probabilmente non c'è la DLL zlib disponibile.
+ E' possibile ottenerla dallo stesso sito dove è stato ottenuto GSview oppure da
+  ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/
+ Mettere la DLL zlib nella stessa cartella dell'EXE di GSview.
+ zlib16.dll è per Win16.  zlib32.dll è per Win32.
+ zlib2.dll è per OS/2.
+
+ zlib è sotto Copyright 1995-1996 di Jean-loup Gailly e Mark Adler.
+ Il codice sorgente può essere ottenuto da
+  http://www.info-zip.org/pub/infozip/zlib/
+3All'interno di GsView
+-Internals
+?All'interno di GsView
+ GSview usa le DLL di Aladdin Ghostscript per produrre l'immagine
+ dei files PostScript.
+
+ Sotto Win32s, le DLL di GS possono essere usate solo un'applicazione
+ alla volta.  Sotto Windows 95, Windows NT e OS/2, le DLL di GS possono essere usate
+ da molte applicazioni alla volta (purché ci sia abbastanza memoria).
+ Usato sotto Win32s, GSview deve scaricare le DLL di GS mentre stanno per
+ essere usate da gvwgs.exe per la stampa.
+
+ gsv16spl.exe è una applicazione a 16 bit di Windows usata da GSview per effettuare
+ lo spool dei files da GSview di Win32s.  gsv16spl non può essere usato da solo ma
+ deve essere avviato da GSview.  Questo programma non è usato da Windows 95 o NT.
+
+ gvwgs32.exe (Windows) e gvpgs.exe (OS/2) sono dei programmi che caricano
+ le DLL di GS per la stampa.  Sarebbe possibile usarli dalla linea di comando,
+ ma dato che cancellano i files elencati da maggiore sicurezza usare
+ gswin32.exe (Win32), gswin32c.exe (Win32 console) oppure gsos2.exe (OS/2).
+
+
+

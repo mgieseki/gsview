@@ -1,0 +1,267 @@
+/* Copyright (C) 1993-1998, Ghostgum Software Pty Ltd.  All rights reserved.
+
+  This file is part of GSview.
+  
+  This program is distributed with NO WARRANTY OF ANY KIND.  No author
+  or distributor accepts any responsibility for the consequences of using it,
+  or for whether it serves any particular purpose or works at all, unless he
+  or she says so in writing.  Refer to the GSview Free Public Licence 
+  (the "Licence") for full details.
+  
+  Every copy of GSview must include a copy of the Licence, normally in a 
+  plain ASCII text file named LICENCE.  The Licence grants you the right 
+  to copy, modify and redistribute GSview, but only under certain conditions 
+  described in the Licence.  Among other things, the Licence requires that 
+  the copyright notice and this notice be preserved on all copies.
+*/
+
+/* en\gvwlang.rc */
+
+/* Windows English language resources */
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+
+ID_LANG BITMAP "binary/russian.bmp"
+
+gsview_menu MENU
+BEGIN
+    POPUP "&Файл"
+	BEGIN
+#ifndef MEMORYFILE
+        MENUITEM "&Открыть...\tO", IDM_OPEN
+        MENUITEM "&Выбрать файл...\tS", IDM_SELECT
+#ifndef VIEWONLY
+        MENUITEM "&Сохранить как...\tA", IDM_SAVEAS
+#endif
+        MENUITEM "&Закрыть\tC", IDM_CLOSE
+        MENUITEM "&Информация...\tI", IDM_INFO
+		MENUITEM SEPARATOR
+#ifndef VIEWONLY
+        MENUITEM "&Конвертировать...\tF", IDM_CONVERTFILE
+        MENUITEM "И&звлечь...\tE", IDM_EXTRACT
+        MENUITEM "&PS в EPS", IDM_PSTOEPS
+		MENUITEM SEPARATOR
+        MENUITEM "&Печать...\tP", IDM_PRINT
+        MENUITEM "Печатать &файл...", IDM_SPOOL
+		MENUITEM SEPARATOR
+#endif
+        MENUITEM "Соо&бщения Ghostscript...\tM", IDM_GSMESS 
+		MENUITEM SEPARATOR
+		MENUITEM SEPARATOR
+#endif /* !MEMORYFILE */
+        MENUITEM "&Выход", IDM_EXIT
+	END
+#ifndef VIEWONLY
+    POPUP "&Правка"
+	BEGIN
+        MENUITEM "&Копировать\tCtrl+C", IDM_COPYCLIP
+		MENUITEM SEPARATOR
+        MENUITEM "&Вставить в...", IDM_PASTETO
+        MENUITEM "Конвертировать &битовый образ", IDM_CONVERT
+		MENUITEM SEPARATOR
+        POPUP "&Добавить EPS превью"
+		BEGIN
+		    MENUITEM "&Interchange", IDM_MAKEEPSI
+		    MENUITEM "TIFF 4", IDM_MAKEEPST4
+            MENUITEM "&TIFF 6 без сжатия", IDM_MAKEEPST6U
+		    MENUITEM "TIFF 6 &packbits", IDM_MAKEEPST6P
+            MENUITEM "Метафайл &Windows", IDM_MAKEEPSW
+            MENUITEM "&Пользовательское превью", IDM_MAKEEPSU
+		END
+        POPUP "&Извлечь из EPS"
+		BEGIN
+		    MENUITEM "&PostScript", IDM_EXTRACTPS
+            MENUITEM "&Превью", IDM_EXTRACTPRE
+		END
+		MENUITEM SEPARATOR
+        MENUITEM "И&змерения", IDM_MEASURE
+        MENUITEM "К&онвертировать в векторный формат...", IDM_PSTOEDIT
+        MENUITEM "Извлечь &текст...", IDM_TEXTEXTRACT
+        MENUITEM "&Найти...\tCtrl+F", IDM_TEXTFIND
+        MENUITEM "Найти &далее\tF3", IDM_TEXTFINDNEXT
+	END
+#endif
+    POPUP "&Настройка"
+	BEGIN
+        MENUITEM "&Простая настройка...", IDM_CFG
+        MENUITEM "&Расширенная настройка...", IDM_GSCOMMAND
+        MENUITEM "&Звуки...", IDM_SOUNDS
+        POPUP "&Единицы измерения"
+		BEGIN
+            MENUITEM "&поинты", IDM_UNITPT
+            MENUITEM "&мм", IDM_UNITMM
+            MENUITEM "&дюймы", IDM_UNITINCH
+			MENUITEM SEPARATOR
+            MENUITEM "&С высокой точностью", IDM_UNITFINE
+		END
+        POPUP "&Язык"
+		BEGIN
+			MENUITEM "&English", IDM_LANGEN
+			/* Remaining languages are added at run time */
+		END
+#ifndef VIEWONLY
+		POPUP "PStoText"
+		BEGIN
+            MENUITEM "&Отключен", IDM_PSTOTEXTDIS
+            MENUITEM "&Нормальный", IDM_PSTOTEXTNORM
+			MENUITEM "Dvips Cork Encoding", IDM_PSTOTEXTCORK
+		END
+#endif
+        POPUP "&Предупреждения DSC"
+		BEGIN
+            MENUITEM "&Отключить", IDM_DSC_OFF
+            MENUITEM "О&шибки", IDM_DSC_ERROR
+            MENUITEM "&Предупреждения", IDM_DSC_WARN
+            MENUITEM "&Всё", IDM_DSC_INFO
+		END
+        MENUITEM "Сохранить &настройки", IDM_SETTINGS
+		MENUITEM SEPARATOR
+        MENUITEM "Сохранять настройки при &выходе", IDM_SAVESETTINGS
+        MENUITEM "&Безопасный режим", IDM_SAFER
+        MENUITEM "Запоминать последний &каталог", IDM_SAVEDIR
+        MENUITEM "П&анель кнопок", IDM_BUTTONSHOW
+        MENUITEM "О&кно по размеру страницы", IDM_FITPAGE
+        MENUITEM "&Автоматическое обновление", IDM_AUTOREDISPLAY
+        MENUITEM "Обр&езка EPS", IDM_EPSFCLIP
+        MENUITEM "Предупреждения &EPS", IDM_EPSFWARN
+        MENUITEM "Игнорировать комментарии &DSC", IDM_IGNOREDSC
+        MENUITEM "Показывать габаритный пря&моугольник", IDM_SHOWBBOX
+	END
+    POPUP "П&росмотр"
+	BEGIN
+        MENUITEM "&Следующая страница\t+", IDM_NEXT
+        MENUITEM "&Предыдущая страница\t-", IDM_PREV
+        MENUITEM "П&ерейти к странице...\tG", IDM_GOTO
+        MENUITEM "&Назад\tB", IDM_GOBACK
+        MENUITEM "&Вперёд", IDM_GOFWD
+        MENUITEM "&Обновить\tR", IDM_REDISPLAY
+		MENUITEM SEPARATOR
+        MENUITEM "С&ледующая страница и вверх\tПробел", IDM_NEXTHOME
+        MENUITEM "П&редыдущая страница и вверх\tBkSp", IDM_PREVHOME
+		MENUITEM SEPARATOR
+        MENUITEM "Полноэкранный &режим\tF4", IDM_FULLSCREEN
+        MENUITEM "По р&азмеру окна\tF6", IDM_FITWIN
+	END
+    POPUP "&Ориентация"
+	BEGIN
+        MENUITEM "&Авто", IDM_AUTOORIENT
+		MENUITEM SEPARATOR
+        MENUITEM "&Книжная", IDM_PORTRAIT
+        MENUITEM "А&льбомная", IDM_LANDSCAPE
+        MENUITEM "П&еревернутая книжная", IDM_UPSIDEDOWN
+        MENUITEM "&Обратная альбомная", IDM_SEASCAPE
+		MENUITEM SEPARATOR
+        MENUITEM "&Поменять альбомные", IDM_SWAPLANDSCAPE
+	END
+    POPUP "&Бумага"
+	BEGIN
+        MENUITEM "&Настройка экрана...", IDM_DISPLAYSETTINGS
+		MENUITEM SEPARATOR
+        MENUITEM "&Повернуть лист", IDM_MEDIAROTATE
+		MENUITEM SEPARATOR
+        MENUITEM "11x17", IDM_11x17
+        MENUITEM "A3", IDM_A3
+        MENUITEM "A4", IDM_A4
+        MENUITEM "A5", IDM_A5
+        MENUITEM "B4", IDM_B4
+        MENUITEM "B5", IDM_B5
+		MENUITEM "Ledger", IDM_LEDGER
+		MENUITEM "Legal", IDM_LEGAL
+		MENUITEM "Letter", IDM_LETTER
+		MENUITEM "Note", IDM_NOTE
+        MENUITEM "Другая...", IDM_USERSIZE
+	END
+    POPUP "&Справка"
+	BEGIN
+        MENUITEM "&Содержание", IDM_HELPCONTENT
+        MENUITEM "&Указатель...", IDM_HELPSEARCH
+        MENUITEM "&Клавиатура", IDM_HELPKEYS
+		MENUITEM SEPARATOR
+        MENUITEM "&Регистрация...", IDM_REGISTER
+        MENUITEM "&О программе...", IDM_ABOUT
+	END
+END
+
+gsview_accel ACCELERATORS
+BEGIN
+	"O", IDM_OPEN
+	"o", IDM_OPEN
+	"C", IDM_CLOSE
+	"c", IDM_CLOSE
+	"N", IDM_NEXT
+	"n", IDM_NEXT
+	"+", IDM_NEXT
+	" ", IDM_NEXTHOME
+	VK_SPACE, IDM_NEXTHOME, VIRTKEY
+	"V", IDM_PREV
+	"v", IDM_PREV
+	"-", IDM_PREV
+	VK_BACK, IDM_PREVHOME, VIRTKEY
+	VK_BACK, IDM_PREVHOME, VIRTKEY, SHIFT
+	"G", IDM_GOTO
+	"g", IDM_GOTO
+	"B", IDM_GOBACK
+	"b", IDM_GOBACK
+	"I", IDM_INFO
+	"i", IDM_INFO
+	"R", IDM_REDISPLAY
+	"r", IDM_REDISPLAY
+	"S", IDM_SELECT
+	"s", IDM_SELECT
+	"A", IDM_SAVEAS
+	"a", IDM_SAVEAS
+	"P", IDM_PRINT
+	"p", IDM_PRINT
+	"F", IDM_CONVERTFILE
+	"f", IDM_CONVERTFILE
+#ifdef OLD
+	VK_F, IDM_TEXTFIND, VIRTKEY, CONTROL
+#else
+	"^F", IDM_TEXTFIND
+#endif
+	VK_F3, IDM_TEXTFINDNEXT, VIRTKEY
+	"E", IDM_EXTRACT
+	"e", IDM_EXTRACT
+	"M", IDM_GSMESS
+	"m", IDM_GSMESS
+	"<", IDM_MAGMINUS
+	">", IDM_MAGPLUS
+	",", IDM_MAGMINUS
+	".", IDM_MAGPLUS
+	VK_F1, IDM_HELPCONTENT, VIRTKEY
+	"^C", IDM_COPYCLIP
+	VK_INSERT, IDM_COPYCLIP, VIRTKEY, CONTROL
+	VK_F4, IDM_FULLSCREEN, VIRTKEY
+	VK_F5, IDM_REDISPLAY, VIRTKEY
+	VK_F6, IDM_FITWIN, VIRTKEY
+END
+
+
+
+STRINGTABLE
+BEGIN
+	/* general strings */
+	IDS_SLANGUAGE, "EN,2"
+    IDS_CODEPAGE, "1251"    /* ISO-Latin-1 */
+	IDS_HELPFILE, WINHELPFILE
+    IDS_SOUNDNOMM, "Не могу загрузить WINMM.DLL\nЗвуки будут недоступны"
+END
+
+STRINGTABLE
+BEGIN
+	/* filter strings */
+#ifdef __WIN32__
+    IDS_FILTER_PSALL, "По умолчанию (*.ps;*.eps;*.epi;*.pdf;*.prn)|*.ps;*.eps;*.epi;*.pdf;*.prn;*.ps.gz;*.eps.gz;*.epi.gz;*.pdf.gz;*.ps.bz2;*.eps.bz2;*.pdf.bz2|PS-файлы (*.ps)|*.ps;*.ps.gz;*.ps.bz2;*.psz|EPS-файлы (*.eps)|*.eps;*.eps.gz;*.eps.bz2|EPI-файлы (*.epi)|*.epi;*.epi.gz;*.epi.bz2|PDF-файлы (*.pdf)|*.pdf;*.pdf.gz;*.pdf.bz2|PRN-файлы (*.prn)|*.prn|Все файлы (*.*)|*.*|"
+#else
+    IDS_FILTER_PSALL, "По умолчанию (*.ps;*.eps;*.epi;*.pdf;*.prn)|*.ps;*.eps;*.epi;*.pdf;*.prn;*.psz|PS-файлы (*.ps)|*.ps|EPS-файлы (*.eps)|*.eps|EPI-файлы (*.epi)|*.epi|PDF-файлы (*.pdf)|*.pdf|PRN-файлы (*.prn)|*.prn|Все файлы (*.*)|*.*|"
+#endif
+    IDS_FILTER_PS, "По умолчанию (*.ps)|*.ps|EPS-файлы (*.eps)|*.eps|EPI-файлы (*.epi)|*.epi|Все файлы (*.*)|*.*|"
+    IDS_FILTER_EPS, "EPS-файлы (*.eps)|*.eps|EPI-файлы (*.epi)|*.epi|PS-файлы (*.ps)|*.ps|Все файлы (*.*)|*.*|"
+    IDS_FILTER_EPI, "EPI-файлы (*.epi)|*.epi|EPS-файлы (*.eps)|*.eps|PS-файлы (*.ps)|*.ps|Все файлы (*.*)|*.*|"
+    IDS_FILTER_PDF, "PDF-файлы (*.pdf)|*.pdf|Все файлы (*.*)|*.*|"
+    IDS_FILTER_ALL, "Все файлы (*.*)|*.*|"
+    IDS_FILTER_BMP, "BMP-файлы (*.bmp)|*.bmp|Все файлы (*.*)|*.*|"
+    IDS_FILTER_TIFF, "TIFF-файлы (*.tif)|*.tif|Все файлы (*.*)|*.*|"
+    IDS_FILTER_WMF, "Метафайлы Windows (*.wmf)|*.wmf|Все файлы (*.*)|*.*|"
+    IDS_FILTER_TXT, "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*|"
+END
+

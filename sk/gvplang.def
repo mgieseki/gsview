@@ -1,0 +1,4 @@
+LIBRARY GVPMSK
+DESCRIPTION	'GSview Slovak Language Resources'
+DATA SINGLE SHARED
+EXPORTS  main

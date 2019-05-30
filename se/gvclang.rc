@@ -1,0 +1,351 @@
+/* Copyright (C) 1993-2005, Ghostgum Software Pty Ltd.  All rights reserved.
+
+  This file is part of GSview.
+
+  This program is distributed with NO WARRANTY OF ANY KIND.  No author
+  or distributor accepts any responsibility for the consequences of using it,
+  or for whether it serves any particular purpose or works at all, unless he
+  or she says so in writing.  Refer to the GSview Free Public Licence
+  (the "Licence") for full details.
+
+  Every copy of GSview must include a copy of the Licence, normally in a
+  plain ASCII text file named LICENCE.  The Licence grants you the right
+  to copy, modify and redistribute GSview, but only under certain conditions
+  described in the Licence.  Among other things, the Licence requires that
+  the copyright notice and this notice be preserved on all copies.
+*/
+
+/* se\gvclang.rc */
+/* Common Swedish language resources */
+
+#ifndef GSVS
+#define GSVS(x,y) x,y
+#endif
+
+/* button help */
+STRINGTABLE
+BEGIN
+	/* these must be in ascending ID order */
+	GSVS(IDM_OPEN, "Öppna...")
+	GSVS(IDM_INFO, "Info...")
+	GSVS(IDM_PRINT, "Skriv ut...")
+	GSVS(IDM_TEXTFIND, "Finn...")
+	GSVS(IDM_TEXTFINDNEXT, "Finn nästa")
+	GSVS(IDM_NEXT, "Nästa sida")
+	GSVS(IDM_NEXTSKIP, "Hoppa över 5 sidor framåt")
+	GSVS(IDM_PREV, "Föregående sida")
+	GSVS(IDM_PREVSKIP, "Hoppa över 5 sidor bakåt")
+	GSVS(IDM_GOTO, "Gå till sida...")
+	GSVS(IDM_GOBACK, "Gå bakåt")
+	GSVS(IDM_GOFWD, "Gå framåt")
+	GSVS(IDM_MAGPLUS, "Öka upplösning")
+	GSVS(IDM_MAGMINUS, "Minska upplösning")
+	GSVS(IDM_HELPCONTENT, "Hjälp")
+END
+
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_LANGUAGE, AASVENSKA)
+	GSVS(IDS_ELANGUAGE, "Swedish")
+	GSVS(IDS_FILE, "Fil: ")
+	GSVS(IDS_NOFILE, "Ingen fil")
+	GSVS(IDS_PAGE, "Sida: ")
+	GSVS(IDS_NOPAGE, "Ingen sidnumrering tillgänglig")
+	GSVS(IDS_PAGESPECIAL, "Sidonumreringen är special.  Sidorna kan inte ordnas om tillförlitligt.  Se hjälp 'Vanliga problem'.  Fortsätt?")
+	GSVS(IDS_LANDSCAPE, "Landskap")
+	GSVS(IDS_PORTRAIT, "Porträtt")
+	GSVS(IDS_ASCEND, "Stigande")
+	GSVS(IDS_DESCEND, "Sjunkande")
+	GSVS(IDS_SPECIAL, "Special")
+	GSVS(IDS_PAGEINFO, "Sida: \042%s\042  %d av %d")
+	GSVS(IDS_LINKPAGE, "Länka till sida %d")
+	GSVS(IDS_DEFAULT, "Standard")
+	GSVS(IDS_NOTDEFTAG, "[Inte definierad]")
+	GSVS(IDS_EPSF, "EPS")
+	GSVS(IDS_EPSI, "EPS med Interchange förhandsvisning")
+	GSVS(IDS_EPST, "EPS med TIFF förhandsvisning")
+	GSVS(IDS_EPSW, "EPS med Metafil förhandsvisning")
+	GSVS(IDS_DSC, "DSC")
+	GSVS(IDS_NOTDSC, "Inga DSC kommentarer")
+	GSVS(IDS_PDF, "Portabelt dokument format")
+	GSVS(IDS_IGNOREDSC, "Ignorera DSC kommentarer")
+	GSVS(IDS_CTRLD, "Ctrl-D följt av ")
+	GSVS(IDS_PJL, "PJL följt av ")
+	GSVS(IDS_ZOOMED, " Zoomad")
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_OUTPUTFILE, "Utfilnamn")
+	GSVS(IDS_PRINTINGALL, "Inga DSC kommentarer\nSkriv ut all sidor")
+	GSVS(IDS_PRINTFILE, "Skriv ut fil")
+	GSVS(IDS_SELECTPAGE, "Välj sida")
+	GSVS(IDS_SELECTPAGES, "Välj sidor")
+	GSVS(IDS_NOTOPEN, "Inga dokument öppna")
+	GSVS(IDS_CANNOTRUN, "Kan inte köras ")
+	GSVS(IDS_TOOLONG, "Kommandoraden för lång: ")
+	GSVS(IDS_NOMORE, "Inga fler sidor")
+/* OLD
+	GSVS(IDS_GSCOMMAND, "Ghostscript command ?")
+*/
+	GSVS(IDS_NOZOOM, "Måste visa sida före zoomning")
+	GSVS(IDS_USERWIDTH, "Bredd i 1/72 inch enhet ?")
+	GSVS(IDS_USERHEIGHT, "Höjd i 1/72 inch enhet ?")
+	GSVS(IDS_BADEPS, "Problem att tillverka EPS fil")
+	GSVS(IDS_NOPREVIEW, "Inte någon DOS EPS fil eller\nIngen binär förhandsvisning")
+	GSVS(IDS_NOTDFNAME, "Kan inte använda samma namn som ett öppet dokument")
+	GSVS(IDS_NOTEMP, "Kan inte öppna temporär fil.\nKatalogen kan vara skrivskyddad.\nTEMP miljövariabeln kanske inte är satt.")
+	GSVS(IDS_CANCELDONE, "%d%% klart")
+	GSVS(IDS_BADCLI, "Felaktigt kommandoradsargument: ")
+	GSVS(IDS_DUPOPT, "Kan endast specificera en av /F /P /S optioner.  Fel vid: %s")
+	GSVS(IDS_TEXTFIND, "Finn text ?")
+	GSVS(IDS_TEXTNOTFIND, "Texten hittades inte")
+	GSVS(IDS_PRINTPDFPS, "Kan inte skriva ut PDF till en PostScript skrivare.  Använd fil | Extrahera")
+	GSVS(IDS_NOPDFQUICKTEXT, "Kan inte göra snabb textextrahering eller finn på PDF fil.  Använd alternativen | PStillText")
+	GSVS(IDS_BAD_DOSEPS_HEADER, "DOS EPS header är felaktig.  Ignorerar DSC kommentarer.")
+	GSVS(IDS_PROBABLY_PCL, "Detta verkar vara PCL, avsett för HP LaserJet eller DeskJet skrivare.  Är du säker på att detta är PostScript?")
+	GSVS(IDS_BUSYPRINTING, "GSview är upptagen med att skriva ut.  Tryck ångra eller vänta tills GSview är klar.")
+END
+
+STRINGTABLE
+BEGIN
+	/* sound type types*/
+	GSVS(IDS_SOUNDNAME, "Ljudfil")
+	GSVS(IDS_SNDPAGE, "Ut sida")
+	GSVS(IDS_SNDNOPAGE, "Ingen sida")
+	GSVS(IDS_SNDNONUMBER, "Ingen numrering")
+	GSVS(IDS_SNDNOTOPEN, "Inte öppen")
+	GSVS(IDS_SNDERROR, "Fel")
+	GSVS(IDS_SNDTIMEOUT, "Timeout")
+	GSVS(IDS_SNDSTART, "Start")
+	GSVS(IDS_SNDEXIT, "Avsluta")
+	GSVS(IDS_SNDBUSY, "Upptagen")
+	GSVS(IDS_NONE, "<Ingen>")
+	GSVS(IDS_SPKR, "<Högtalarljud>")
+END
+
+STRINGTABLE
+BEGIN
+	/* help topics - these need to match keywords in XX\gvclang.txt */
+	GSVS(IDS_TOPICROOT,  "Översikt")
+	GSVS(IDS_TOPICOPEN,  "Öppen")
+	GSVS(IDS_TOPICPRINT, "Skriv ut")
+	GSVS(IDS_TOPICPROP, "Egenskaper")
+	GSVS(IDS_TOPICEDITPROP, "Redigera egenskaper")
+	GSVS(IDS_TOPICCONVERT, "Konvertera")
+	GSVS(IDS_TOPICCLIP, "Klippbord")
+	GSVS(IDS_TOPICPREVIEW, "EPS förhandsvisning")
+	GSVS(IDS_TOPICSOUND, "Ljud")
+	GSVS(IDS_TOPICDSET, "Display inställningar")
+	GSVS(IDS_TOPICMEDIA, "Media")
+	GSVS(IDS_TOPICPSTOEPS, "PS till EPS")
+	GSVS(IDS_TOPICGOTO, "Sidoval")
+	GSVS(IDS_TOPICINSTALL, "Installation")
+	GSVS(IDS_TOPICTEXT, "Text extrahering och finn")
+	GSVS(IDS_TOPICKEYS, "Tangenter")
+	GSVS(IDS_TOPICMESS, "Visa meddelanden")
+	GSVS(IDS_TOPICSPOOL, "Spooler")
+	GSVS(IDS_TOPICZLIB, "zlib")
+	GSVS(IDS_TOPICBZIP2, "bzip2")
+	GSVS(IDS_TOPICPSTOEDIT, "PStillEdit")
+	GSVS(IDS_TOPICMEASURE, "Mät")
+	GSVS(IDS_TOPICEASYCFG, "Enkel konfiguration")
+	GSVS(IDS_TOPICADVANCEDCFG, "Avancerad konfiguration")
+	GSVS(IDS_TOPICDOWNLOAD, "Hämta Ghostscript")
+	GSVS(IDS_TOPICDSCWARN, "DSC varningar")
+	GSVS(IDS_TOPICREG, "Registrering")
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_BBPROMPT,  "Klicka på vänster sida")
+	GSVS(IDS_BBPROMPT1, "Klicka i botten")
+	GSVS(IDS_BBPROMPT2, "Klicka på höger sida")
+	GSVS(IDS_BBPROMPT3, "Klicka i toppen")
+	GSVS(IDS_EPSONEPAGE, "En EPS fil måste vara ett enkelsidigt dokument. \nSe hjälp för 'PS till EPS'")
+	GSVS(IDS_EPSQPAGES, "Är detta ett enkelsidigt dokument ?")
+	GSVS(IDS_EPSNOBBOX, "Kunde inte hämta Bounding Box")
+	GSVS(IDS_EPSUSERINVALID, "Förhandsvisad fil är inte TIFF eller Windows Metafil")
+	GSVS(IDS_EPSUSERTITLE, "Öppen förhandsvisad fil")
+	GSVS(IDS_EPS_OFF_PAGE, "EPS Bounding Box är helt utanför sidan.  Föreslår att du använder 'Alternativ | EPS klipp'")
+	GSVS(IDS_MUSTUSEPORTRAIT, "Du måste använda porträttorientering.")
+END
+
+STRINGTABLE
+BEGIN
+	/* wait messages */
+	GSVS(IDS_WAIT, "Vänta")
+	GSVS(IDS_WAITREAD,  "Läser...")
+	GSVS(IDS_WAITWRITE,  "Skriver...")
+	GSVS(IDS_WAITDRAW, "Ritar...")
+	GSVS(IDS_WAITDRAW_PC, "Ritar %d%%")
+	GSVS(IDS_WAITGSOPEN, "Öppnar Ghostscript...")
+	GSVS(IDS_WAITGSCLOSE,  "Stänger Ghostscript...")
+	GSVS(IDS_WAITPRINT,  "Skriver ut...")
+	GSVS(IDS_WAITSEARCH,  "Söker...")
+	GSVS(IDS_WAITTEXT, "Extraherar text %d%%")
+END
+
+
+STRINGTABLE
+BEGIN
+	/* debug messages */
+	GSVS(IDS_DEBUG_DFISLOCKED, "dfreopen: filen är låst")
+	GSVS(IDS_DEBUG_DFISOPEN, "dfreopen: filen är redan öppen")
+	GSVS(IDS_DEBUG_DFISMISSING, "dfreopen: filen saknas")
+	GSVS(IDS_DEBUG_DFCHANGED, "dfreopen: filen har ändrats")
+	GSVS(IDS_DEBUG_DFISCLOSED, "dfclose: filen är redan stängd")
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_PROCESS_GSLOAD_FAIL, "Kan inte ladda Ghostscript's DLL")
+	GSVS(IDS_PROCESS_INIT_FAIL, "gs_process: gsdll.init misslyckades")
+	GSVS(IDS_PROCESS_VIEWER_FAIL, "gs_process: '(viewer.ps) körning' misslyckades")
+	GSVS(IDS_PROCESS_EXECUTE_FAIL, "gs_process: gsdll.execute_cont misslyckades")
+END
+
+STRINGTABLE
+BEGIN
+	/* PDF messages */
+	GSVS(IDS_PDFNOPAGE, "Okänt antal sidor i PDF filen\nDu måste visa filen först" )
+	GSVS(IDS_PDFEXTRACTALL, "Okänt antal sidor i PDF filen\nExtraherar eller skriver ut alla sidor")
+	GSVS(IDS_USEPDFWRITE, "För att extrahera sidor från en PDF fil, använd Arkiv | Konvertera med pdfwrite eller pswrite device.")
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_LARGEMEDIA, "Varning: mediastorleken är bredare än 2 meter eller högre än 2 meter.  Var vänlig kontrollera 'Media | Användardefinierad'")
+	GSVS(IDS_NOTIMPLEMENTED, "Inte implementerad")
+	GSVS(IDS_NOLINKTARGET, "Okänt mål för länk")
+	GSVS(IDS_PARSEERROR, "Fel parsing kommandorad")
+	GSVS(IDS_ZLIB_FAIL, "Misslyckades med att ladda zlib DLL.  Tryck OK knappen för hjälp.")
+	GSVS(IDS_BZIP2_FAIL, "Misslyckades med att ladda bzip2 DLL.  Tryck OK knappen för hjälp.")
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_BETAEXPIRED, "Denna BETA testkopia av GSview har upphört.  Se http://www.cs.wisc.edu/~ghost/ för detaljer om hämtning av en aktuell version av GSview")
+	GSVS(IDS_BETAWARN, AABETAWARN)
+	GSVS(IDS_NOPRINTERINI, "Kan inte öppna printer.ini")
+	GSVS(IDS_NOINI, "Kan inte öppna INI fil")
+	GSVS(IDS_NEEDTEMP, "Du måste sätta miljövariabeln TEMP till en skrivbar katalog.  Utan den, kommer GSview inte att kunna skriva ut")
+	GSVS(IDS_GSNOTINSTALLED, "Du har inte installerat Ghostscript.  Var vänlig läs filen GSview Readme.htm.")
+	GSVS(IDS_GSLIBNOTINSTALLED, "Du har inte installerat Ghostscript katalogfiler.  Var vänlig läs filen GSview Readme.htm.")
+	GSVS(IDS_NOPROGMAN, AANODDEPROGMAN)
+	GSVS(IDS_PROGRAMOBJECTFAILED, AAPROGRAMOBJECTFAILED)
+	GSVS(IDS_INVALIDREG, "Ogiltigt registreringsnamn eller nummer")
+	GSVS(IDS_UNREGISTERED, "Oregistrerad")
+	GSVS(IDS_WRONGEMX, "Du har emx %s.\rDu behöver emx %s eller senare.\rPM GSview kommer inte att köras korrekt.")
+	GSVS(IDS_GSVIEWVERSION, GSVIEW_DOT_VERSION)
+	GSVS(IDS_PROGMANGROUP4, AAPROGMANGROUP4)
+	GSVS(IDS_CFG73, AACFG73)
+	GSVS(IDS_CFG74, AACFG74)
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_PRN_PRINTMETHOD, "Utskriftsmetod")
+	GSVS(IDS_PRN_WINDOWSGDI, "Windows GDI skrivare")
+	GSVS(IDS_PRN_GSDEVICE, "Ghostscript device")
+	GSVS(IDS_PRN_PSPRINTER, AAPSPRINTER)		// "PostScript Printer"
+	GSVS(IDS_PRN_SETTINGS, "Inställningar")
+	GSVS(IDS_PRN_HELP, AAHELP)			// "Help"
+	GSVS(IDS_PRN_SELECTPAGES, "Välj sidor")
+	GSVS(IDS_ALL, AAALL)
+	// PageSize policies
+	GSVS(IDS_PAGESIZE_VARIABLE, "Variabel sidstorlek")
+	GSVS(IDS_PAGESIZE_FIXED, "Fast sidstorlek")
+	GSVS(IDS_PAGESIZE_SHRINK, "Krymp för att passa sidstorlek")
+END
+
+STRINGTABLE
+BEGIN
+ 	GSVS(IDS_INVALIDNUMBER, "Ogiltigt nummer")
+ 	GSVS(IDS_CANTINVERT, "Kan inte invertera matrix")
+	GSVS(IDS_UNITPT, AAPT)
+	GSVS(IDS_UNITMM, AAMM)
+	GSVS(IDS_UNITINCH, AAINCH)
+	GSVS(IDS_UNITCUSTOM, AACUSTOM)
+END
+
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_DSC_INFO, "DSC information")
+	GSVS(IDS_DSC_WARN, "DSC varning")
+	GSVS(IDS_DSC_ERROR, "DSC fel")
+        GSVS(IDS_DSC_LINEFMT, "%.40s vid rad %d:")
+END
+
+
+/* Split strings if longer than 256 bytes */
+
+STRINGTABLE
+BEGIN
+	GSVS(CDSC_RESOURCE_BBOX, "Denna rad är felaktig.\012Bounding box måste vara inom heltals koordinater,\012inte flyttal. En flyttal bounding box skall\012specificeras med användning av %%HiResBoundingBox:\012A %%BoundingBox: skall fortfarande förses med heltals värden.\012")
+	GSVS(CDSC_RESOURCE_BBOX2, "\012'OK' kommer att konvertera koordinater till heltal,\012avrundade utåtgående.\012'Ångra' kommer att ignorera denna rad.\012")
+	GSVS(CDSC_RESOURCE_BBOX3, "")
+
+	GSVS(CDSC_RESOURCE_EARLY_TRAILER, "Trailern är normalt i slutet av ett dokument.\012Denna rad hittades mer än 32k bytes från slutet\012av filen.  Trailers är vanligtvis inte så långa.\012Det är mera troligt att ytterligare en PostScript fil har inkluderats,")
+	GSVS(CDSC_RESOURCE_EARLY_TRAILER2, "\012utan avslutning av den i %%BeginDocument / %%EndDocument.\012\012'OK' kommer att anta att det är en del av en inkluderad fil.\012'Ångra' kommer att anta att det är trailern.\012")
+	GSVS(CDSC_RESOURCE_EARLY_TRAILER3, "")
+
+	GSVS(CDSC_RESOURCE_EARLY_EOF, "Denna rad uppträder normalt i slutet av ett dokument.\012Denna rad hittades mer än 100 bytes från slutet\012på filen.\012Det är mera troligt att ytterligare en PostScript fil har blivit inkluderad,")
+	GSVS(CDSC_RESOURCE_EARLY_EOF2, "\012utan avslutning av den i %%BeginDocument / %%EndDocument.\012\012'OK' kommer att anta att det är en del av en inkluderad fil.\012'Ångra' kommer att anta att den är del av trailern.\012")
+	GSVS(CDSC_RESOURCE_EARLY_EOF3, "")
+
+	GSVS(CDSC_RESOURCE_PAGE_IN_TRAILER, "Denna %%Page: raden förekom i traliern, vilket inte är tillåtet.\012EPS filer skall vara inkapslade i %%BeginDocument / %%EndDocument.\012Det är möjligt att en EPS fil var felaktigt inkapslad,")
+	GSVS(CDSC_RESOURCE_PAGE_IN_TRAILER2, "\012och att vi har blivit lurade av %%trailer i en EPS fil.\012\012'OK' kommer att processa fler sidor.\012'Ångra' kommer att ignorera denna sidas kommentar.\012")
+	GSVS(CDSC_RESOURCE_PAGE_IN_TRAILER3, "")
+
+	GSVS(CDSC_RESOURCE_PAGE_ORDINAL, "Denna rad är inte korrekt.\012De två argumenten skall var en etikett och en ordinal.\012Ordinalen skall vara 1 för den första raden och skall\012öka med 1 för varje följande sida.\012Sid ordinal saknas eller är inte i sekvens.\012\012Det är troligt att ")
+	GSVS(CDSC_RESOURCE_PAGE_ORDINAL2, "raden är den del av en inkluderad fil som\012inte var bifogad i %%BeginDocument / %%EndDocument.\012\012'OK' kommer att ignorera denna sida, antagande att det är en del av en\012felaktigt inkapslad EPS fil.\012'Ångra' kommer att behandla detta som en giltig sida\012")
+	GSVS(CDSC_RESOURCE_PAGE_ORDINAL3, "")
+
+	GSVS(CDSC_RESOURCE_PAGES_WRONG, "%%Pages: matchar inte antalet %%Page:\012\012'OK' kommer att justera sidoräkningen så att den matchar antalet %%Page:\012kommentar hittades.\012'Ångra' kommer att börja sidoräkningen från %%Pages:\012")
+	GSVS(CDSC_RESOURCE_PAGES_WRONG2,"")
+	GSVS(CDSC_RESOURCE_PAGES_WRONG3,"")
+
+	GSVS(CDSC_RESOURCE_EPS_NO_BBOX, "Denna EPS fil saknar den nödvändiga %%BoundingBox:\012Se GSview hjälpen för detaljer över hur lägga till/justera\012bounding box.\012\012'OK' kommer att anta att det är en EPS fil.\012'Ångra' kommer att anta att det INTE är någon EPS fil.\012")
+	GSVS(CDSC_RESOURCE_EPS_NO_BBOX2, "")
+	GSVS(CDSC_RESOURCE_EPS_NO_BBOX3, "")
+
+	GSVS(CDSC_RESOURCE_EPS_PAGES, "EPS filer kan ha 0 eller 1 sida.  Denna 'EPS' fil har\012mer än det så där är ingen EPS fil.\012Du kan inte använda `Skriv ut Till` `Encapsulated PostScript Fil` för\012utskrift av flersidors filer.  Den korrekta metoden är att använda")
+	GSVS(CDSC_RESOURCE_EPS_PAGES2, "\012utskrift till FIL: eller att välja 'Skriv ut till Fil'.\012\012'OK' kommer att anta att detta är en EPS fil.\012'Ångra' kommer att anta att detta INTE är en EPS fil.\012")
+	GSVS(CDSC_RESOURCE_EPS_PAGES3, "")
+
+	GSVS(CDSC_RESOURCE_NO_MEDIA, "Media specificerades med %%DocumentMedia:, men är ingen standard.\012media specificerades med %%PageMedia:.\012\012'OK' kommer att sätta standard media till första listade media.\012'Ångra' kommer inte att sätta något standard media.\012")
+	GSVS(CDSC_RESOURCE_NO_MEDIA2, "")
+	GSVS(CDSC_RESOURCE_NO_MEDIA3, "")
+
+	GSVS(CDSC_RESOURCE_ATEND, "Raden är inte korrekt.\012För att minska ett värde, måste du använda '(atend)', inte 'atend'\012\012'OK' kommer att anta att (atend) avsågs.\012'Ångra' kommer att ignorera raden.\012")
+	GSVS(CDSC_RESOURCE_ATEND2, "")
+	GSVS(CDSC_RESOURCE_ATEND3, "")
+
+	GSVS(CDSC_RESOURCE_DUP_COMMENT, "Denna kommentar är duplicerad i headern, vilket inte är nödvändigt.\012Den första förekomsten av en headerrad har företräde.\012\012'OK' eller 'Ångra' kommer att ignorera den duplicerade rade.\012")
+	GSVS(CDSC_RESOURCE_DUP_COMMENT2, "")
+	GSVS(CDSC_RESOURCE_DUP_COMMENT3, "")
+
+	GSVS(CDSC_RESOURCE_DUP_TRAILER, "Denna kommentar är duplicerad i trailern, vilket inte är nödvändigt.\012Den sista förekomsten av en trailerrad har företräde.\012\012'OK' eller 'Ångra' kommer att använda den duplicerade raden.\012")
+	GSVS(CDSC_RESOURCE_DUP_TRAILER2, "")
+	GSVS(CDSC_RESOURCE_DUP_TRAILER3, "")
+
+	GSVS(CDSC_RESOURCE_BEGIN_END, "Antalet Börja och Sluta kommentarer överensstämmer inte.\012\012'OK' eller 'Ångra' kommer att ignorera felaktigheten.\012")
+	GSVS(CDSC_RESOURCE_BEGIN_END2, "")
+	GSVS(CDSC_RESOURCE_BEGIN_END3, "")
+
+	GSVS(CDSC_RESOURCE_BAD_SECTION, "Raden är inte korrekt eftersom den inte skall förekomma\012inom en sida.  Den indikerar troligtvis att en EPS fil\012var inte korrekt inkapslad.  Raden kommer att ignoreras.\012\012'OK' eller 'Ångra' kommer att ignorera raden.\012")
+	GSVS(CDSC_RESOURCE_BAD_SECTION2, "")
+	GSVS(CDSC_RESOURCE_BAD_SECTION3, "")
+
+	GSVS(CDSC_RESOURCE_LONG_LINE, "\012\012Rader i DSC dokument måste vara kortare än 255 tecken.\012")
+	GSVS(CDSC_RESOURCE_LONG_LINE2, "")
+	GSVS(CDSC_RESOURCE_LONG_LINE3, "")
+
+	GSVS(CDSC_RESOURCE_INCORRECT_USAGE, "Denna DSC kommentarsrad är inte korrekt.\012Var vänlig referera till DSC specificationen.\012\012'OK' eller 'Ångra' kommer att ignorera felaktigheten.\012")
+	GSVS(CDSC_RESOURCE_INCORRECT_USAGE2, "")
+	GSVS(CDSC_RESOURCE_INCORRECT_USAGE3, "")
+
+END

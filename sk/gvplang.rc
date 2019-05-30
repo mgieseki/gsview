@@ -1,0 +1,295 @@
+/* Copyright (C) 1993-2002, Ghostgum Software Pty Ltd.  All rights reserved.
+  
+  This file is part of GSview.
+  
+  This program is distributed with NO WARRANTY OF ANY KIND.  No author
+  or distributor accepts any responsibility for the consequences of using it,
+  or for whether it serves any particular purpose or works at all, unless he
+  or she says so in writing.  Refer to the GSview Free Public Licence 
+  (the "Licence") for full details.
+  
+  Every copy of GSview must include a copy of the Licence, normally in a 
+  plain ASCII text file named LICENCE.  The Licence grants you the right 
+  to copy, modify and redistribute GSview, but only under certain conditions 
+  described in the Licence.  Among other things, the Licence requires that 
+  the copyright notice and this notice be preserved on all copies.
+*/
+
+/* sk\gvplang.rc */
+/* OS/2 PM Slovak language resources */
+
+CODEPAGE 852
+
+MENU ID_GSVIEW 
+BEGIN
+/*
+        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+*/
+	SUBMENU "~S˙bor", IDM_FILEMENU
+	BEGIN
+		MENUITEM "~Otvoriù...\tO", IDM_OPEN
+		MENUITEM "~Vybraù s˙bor...\tS", IDM_SELECT
+		MENUITEM "Uloûiù ~ako...\tA", IDM_SAVEAS
+		MENUITEM "~Zavrieù\tC", IDM_CLOSE
+		MENUITEM "~Inform·cie...\tI", IDM_INFO
+		MENUITEM SEPARATOR
+		MENUITEM "Konvertovaù...\tF", IDM_CONVERTFILE
+		MENUITEM "~Extrahovaù...\tE", IDM_EXTRACT
+		MENUITEM "PS do EPS", IDM_PSTOEPS 
+		MENUITEM SEPARATOR
+		MENUITEM "~TlaËiù...\tP", IDM_PRINT
+		MENUITEM "TlaËiù s˙bor...", IDM_SPOOL
+		MENUITEM SEPARATOR
+		MENUITEM "Zobraziù spr·vy\tM", IDM_GSMESS 
+		MENUITEM SEPARATOR
+		MENUITEM SEPARATOR
+		MENUITEM "~SkonËiù", IDM_EXIT
+	END
+
+	SUBMENU "⁄pr~avy", IDM_EDITMENU
+	BEGIN
+		MENUITEM "~KopÌrovaù\tCtrl+C", IDM_COPYCLIP
+		MENUITEM SEPARATOR
+		MENUITEM "~Proliepiù do...", IDM_PASTETO
+/*
+		MENUITEM "Konvertovaù bitov˙ mapu", IDM_CONVERT
+*/
+		MENUITEM SEPARATOR
+		SUBMENU "Prodaù EPS ~n·hæad", IDM_ADDEPSMENU
+		BEGIN
+			MENUITEM "~Interchange", IDM_MAKEEPSI
+			MENUITEM "TIFF 4", IDM_MAKEEPST4
+			MENUITEM "~TIFF 6 bez kompresie", IDM_MAKEEPST6U
+			MENUITEM "TIFF 6 ~packbits", IDM_MAKEEPST6P
+			MENUITEM "~Windows Meta s˙bor", IDM_MAKEEPSW
+			MENUITEM "~PouûÌvateæsk˝ n·hæad", IDM_MAKEEPSU
+		END
+
+		SUBMENU "~Extrahovaù EPS", IDM_EXTEPSMENU
+		BEGIN
+			MENUITEM "~PostScript", IDM_EXTRACTPS
+			MENUITEM "N·~hæad", IDM_EXTRACTPRE
+		END
+		MENUITEM SEPARATOR
+		MENUITEM "Konvertovaù na ~vektor form·t...", IDM_PSTOEDIT
+		MENUITEM "Measure", IDM_MEASURE
+		MENUITEM "~Extrahovaù text...", IDM_TEXTEXTRACT
+		MENUITEM "~Hæadaù...\tCtrl+F", IDM_TEXTFIND
+		MENUITEM "Hæadaù Ô~alej\tF3", IDM_TEXTFINDNEXT
+	END
+
+	SUBMENU "~Moûnosti", IDM_OPTIONMENU
+	BEGIN
+		MENUITEM "JendoduchÈ nastavenie...", IDM_CFG
+		MENUITEM "RozöÌrenÈ nastavenie...", IDM_GSCOMMAND
+		MENUITEM "Zvuky...", IDM_SOUNDS
+		SUBMENU "~Jednotky", IDM_UNITMENU
+		BEGIN
+			MENUITEM "~pt", IDM_UNITPT
+			MENUITEM "~mm", IDM_UNITMM
+			MENUITEM "~inch", IDM_UNITINCH
+			MENUITEM SEPARATOR
+			MENUITEM "~Fine Resolution", IDM_UNITFINE
+		END
+		SUBMENU "~Jazyk", IDM_LANGMENU
+		BEGIN
+			MENUITEM "~English", IDM_LANGEN
+			/* Remaining languages are added at run time */
+		END
+		SUBMENU "PStoText", IDM_PSTOTEXTMENU
+		BEGIN
+			MENUITEM "Vypnut˝", IDM_PSTOTEXTDIS
+			MENUITEM "Norm·lny", IDM_PSTOTEXTNORM
+			MENUITEM "Dvips Cork Encoding", IDM_PSTOTEXTCORK
+		END
+		SUBMENU "DSC upozornenia", IDM_DSCMENU
+		BEGIN
+			MENUITEM "VypnutÈ", IDM_DSC_OFF
+			MENUITEM "Chyby", IDM_DSC_ERROR
+			MENUITEM "Upozornenia", IDM_DSC_WARN
+			MENUITEM "Vöetko", IDM_DSC_INFO
+		END
+		MENUITEM "Uloûiù nastavenia ~teraz", IDM_SETTINGS
+		MENUITEM SEPARATOR
+		MENUITEM "~Uloûiù nastavenia pri skonËenÌ", IDM_SAVESETTINGS
+		MENUITEM "Sa~fer", IDM_SAFER
+		MENUITEM "Save Last ~Directory", IDM_SAVEDIR
+		MENUITEM "~Button Bar", IDM_BUTTONSHOW
+		MENUITEM "~Fit Window to Page", IDM_FITPAGE
+		MENUITEM "Auto ~Redisplay", IDM_AUTOREDISPLAY
+		MENUITEM "EPS ~Clip", IDM_EPSFCLIP
+		MENUITEM "EPS ~Warn", IDM_EPSFWARN
+		MENUITEM "~Ignorovaù DSC", IDM_IGNOREDSC
+		MENUITEM "Show Bounding Bo~x", IDM_SHOWBBOX
+	END
+
+	SUBMENU "~View", IDM_VIEWMENU
+	BEGIN
+		MENUITEM "œ~alöia strana\t+", IDM_NEXT
+		MENUITEM "~Predch·dzaj˙ca strana\t-", IDM_PREV
+		MENUITEM "~Prejsù na stranu...\tG", IDM_GOTO
+		MENUITEM "Prejsù d~ozadu\tB", IDM_GOBACK
+		MENUITEM "Prejsù ~dopredu", IDM_GOFWD
+		MENUITEM "~Redisplay\tR", IDM_REDISPLAY
+		MENUITEM SEPARATOR
+		MENUITEM "Next Page and Home\tSpace", IDM_NEXTHOME
+		MENUITEM "Previous Page and Home\tBkSp", IDM_PREVHOME
+		MENUITEM SEPARATOR
+		MENUITEM "Cel· o~btrazovka\tF4", IDM_FULLSCREEN
+		MENUITEM "Fit ~okno\tF6", IDM_FITWIN
+	END
+
+	SUBMENU "~Orient·cia", IDM_ORIENTMENU
+	BEGIN
+		MENUITEM "~Automatick·", IDM_AUTOORIENT
+		MENUITEM SEPARATOR
+		MENUITEM "~Portrait", IDM_PORTRAIT
+		MENUITEM "~Landscape", IDM_LANDSCAPE
+		MENUITEM "~Upside-down", IDM_UPSIDEDOWN
+		MENUITEM "~Seascape", IDM_SEASCAPE
+		MENUITEM SEPARATOR
+		MENUITEM "S~wap Landscape", IDM_SWAPLANDSCAPE
+	END
+
+	SUBMENU "~Media", IDM_MEDIAMENU
+	BEGIN
+		MENUITEM "~Nastavenia zobrazenia...", IDM_DISPLAYSETTINGS
+		MENUITEM SEPARATOR
+		MENUITEM "~Rotovaù mÈdium", IDM_MEDIAROTATE
+		MENUITEM SEPARATOR
+		MENUITEM "11x17", IDM_11x17
+		MENUITEM "A3", IDM_A3
+		MENUITEM "A4", IDM_A4
+		MENUITEM "A5", IDM_A5
+		MENUITEM "B4", IDM_B4
+		MENUITEM "B5", IDM_B5
+		MENUITEM "Letter", IDM_LETTER
+		MENUITEM "Ledger", IDM_LEDGER
+		MENUITEM "Legal", IDM_LEGAL
+		MENUITEM "Note", IDM_LETTER
+		MENUITEM "PouûÌvateæom definovan˝...", IDM_USERSIZE
+	END
+
+	SUBMENU "~PomocnÌk", IDM_HELPMENU
+	BEGIN
+		MENUITEM "~Obsah", IDM_HELPCONTENT
+		MENUITEM "~Register", IDM_HELPSEARCH
+		MENUITEM "~Kl·vesovÈ skratky", IDM_HELPKEYS
+		MENUITEM SEPARATOR
+		MENUITEM "R~egistr·cia...", IDM_REGISTER
+		MENUITEM "~»o je...", IDM_ABOUT
+	END
+
+END
+
+ACCELTABLE ID_GSVIEW
+BEGIN
+	"O", IDM_OPEN
+	"O", IDM_OPEN, SHIFT
+	"o", IDM_OPEN
+	"o", IDM_OPEN, SHIFT
+	"C", IDM_CLOSE
+	"C", IDM_CLOSE, SHIFT
+	"c", IDM_CLOSE
+	"c", IDM_CLOSE, SHIFT
+	"N", IDM_NEXT
+	"N", IDM_NEXT, SHIFT
+	"n", IDM_NEXT
+	"n", IDM_NEXT, SHIFT
+	" ", IDM_NEXTHOME
+	" ", IDM_NEXTHOME, SHIFT
+	VK_SPACE, IDM_NEXTHOME, VIRTUALKEY
+	"+", IDM_NEXT
+	"+", IDM_NEXT, SHIFT
+	"V", IDM_PREV
+	"V", IDM_PREV, SHIFT
+	"v", IDM_PREV
+	"v", IDM_PREV, SHIFT
+	"-", IDM_PREV
+	VK_BACKSPACE, IDM_PREVHOME, VIRTUALKEY
+	VK_BACKSPACE, IDM_PREVHOME, VIRTUALKEY, SHIFT
+	"G", IDM_GOTO
+	"G", IDM_GOTO, SHIFT
+	"g", IDM_GOTO
+	"g", IDM_GOTO, SHIFT
+	"B", IDM_GOBACK
+	"B", IDM_GOBACK, SHIFT
+	"b", IDM_GOBACK
+	"b", IDM_GOBACK, SHIFT
+	"I", IDM_INFO
+	"I", IDM_INFO, SHIFT
+	"i", IDM_INFO
+	"i", IDM_INFO, SHIFT
+	"R", IDM_REDISPLAY
+	"R", IDM_REDISPLAY, SHIFT
+	"r", IDM_REDISPLAY
+	"r", IDM_REDISPLAY, SHIFT
+	"S", IDM_SELECT
+	"S", IDM_SELECT, SHIFT
+	"s", IDM_SELECT
+	"s", IDM_SELECT, SHIFT
+	"A", IDM_SAVEAS
+	"A", IDM_SAVEAS, SHIFT
+	"a", IDM_SAVEAS
+	"a", IDM_SAVEAS, SHIFT
+	"P", IDM_PRINT
+	"P", IDM_PRINT, SHIFT
+	"p", IDM_PRINT
+	"p", IDM_PRINT, SHIFT
+	"F", IDM_CONVERTFILE
+	"F", IDM_CONVERTFILE, SHIFT
+	"f", IDM_CONVERTFILE
+	"f", IDM_CONVERTFILE, SHIFT
+	"E", IDM_EXTRACT
+	"E", IDM_EXTRACT, SHIFT
+	"e", IDM_EXTRACT
+	"e", IDM_EXTRACT, SHIFT
+	"M", IDM_GSMESS
+	"M", IDM_GSMESS, SHIFT
+	"m", IDM_GSMESS
+	"m", IDM_GSMESS, SHIFT
+	VK_F1, IDM_HELPCONTENT, VIRTUALKEY
+	"C", IDM_COPYCLIP, CONTROL
+	VK_INSERT, IDM_COPYCLIP, VIRTUALKEY, CONTROL
+	"F", IDM_TEXTFIND, CONTROL
+	"f", IDM_TEXTFIND, CONTROL
+	VK_F3, IDM_TEXTFINDNEXT, VIRTUALKEY
+	"<", IDM_MAGMINUS
+	"<", IDM_MAGMINUS, SHIFT
+	",", IDM_MAGMINUS
+	",", IDM_MAGMINUS, SHIFT
+	">", IDM_MAGPLUS
+	">", IDM_MAGPLUS, SHIFT
+	".", IDM_MAGPLUS
+	".", IDM_MAGPLUS, SHIFT
+	VK_F4, IDM_FULLSCREEN, VIRTUALKEY
+	VK_F5, IDM_REDISPLAY, VIRTUALKEY
+	VK_F6, IDM_FITWIN, VIRTUALKEY
+END
+
+STRINGTABLE
+BEGIN
+	/* general strings */
+	IDS_SLANGUAGE, "42" /* Slovak language countries */
+	IDS_CODEPAGE, "852"	/* IBM Eastern Europe */
+	IDS_HELPFILE, "gvpmsk.hlp"
+	IDS_HELPTITLE, "GSview Help"
+	IDS_SIGSEGV "Segmentation violation or Floating Point Exception in Ghostscript or second GSview thread\015Please exit GSview"
+	IDS_FILENOTFOUND, "File not found"
+END
+
+STRINGTABLE
+BEGIN
+	/* default is first */
+	IDS_FILTER_PSALL "*.ps;*.eps;*.epi;*.pdf;*.prn;*.ps.gz;*.psz;*.eps.gz;*.epi.gz;*.pdf.gz|*.eps|*.epi|*.pdf|*.prn|*.ps|*.ps;*.eps;*.epi;*.pdf;*.prn;*.ps.gz;*.eps.gz;*.epi.gz;*.pdf.gz"
+	IDS_FILTER_PS	"*.ps|*.eps|*.epi|*.pdf|*.ps|*.ps;*.eps;*.epi;*.pdf"
+	IDS_FILTER_EPS	"*.eps|*.eps|*.epi|*.pdf|*.ps|*.ps;*.eps;*.epi;*.pdf"
+	IDS_FILTER_EPI	"*.epi|*.eps|*.epi|*.pdf|*.ps|*.ps;*.eps;*.epi;*.pdf"
+	IDS_FILTER_PDF  "*.pdf|*.eps|*.epi|*.pdf|*.ps|*.ps;*.eps;*.epi;*.pdf"
+	IDS_FILTER_ALL	"*"
+	IDS_FILTER_BMP	"*.bmp"
+	IDS_FILTER_TIFF	"*.tif"
+	IDS_FILTER_WMF	"*.wmf"
+	IDS_FILTER_TXT	"*.txt"
+END
+

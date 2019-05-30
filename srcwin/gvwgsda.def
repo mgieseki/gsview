@@ -1,0 +1,4 @@
+NAME		GVWGSDA
+DESCRIPTION	'Ghostscript DLL interface for GSview, (C) Ghostgum Software Pty Ltd 1998 -- DEC Alpha NT'
+HEAPSIZE	256
+STACKSIZE	65536

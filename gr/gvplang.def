@@ -1,0 +1,4 @@
+LIBRARY GVPMGR
+DESCRIPTION	'GSview Greek Language Resources'
+DATA SINGLE SHARED
+EXPORTS  main

@@ -1,0 +1,365 @@
+/* Copyright (C) 1993-2001, Ghostgum Software Pty Ltd.  All rights reserved.
+  
+  This file is part of GSview.
+  
+  This program is distributed with NO WARRANTY OF ANY KIND.  No author
+  or distributor accepts any responsibility for the consequences of using it,
+  or for whether it serves any particular purpose or works at all, unless he
+  or she says so in writing.  Refer to the GSview Free Public Licence 
+  (the "Licence") for full details.
+ 
+  Every copy of GSview must include a copy of the Licence, normally in a 
+  plain ASCII text file named LICENCE.  The Licence grants you the right 
+  to copy, modify and redistribute GSview, but only under certain conditions 
+  described in the Licence.  Among other things, the Licence requires that 
+  the copyright notice and this notice be preserved on all copies.
+*/
+
+/* gr\gvclang.rc */
+/* Common Greek language resources */
+
+#ifndef GSVS
+#define GSVS(x,y) x,y
+#endif
+
+/* button help */
+STRINGTABLE
+BEGIN
+	/* these must be in ascending ID order */
+	GSVS(IDM_OPEN, "’νοιγμα...")                   
+	GSVS(IDM_INFO, "Πληροφορίες...")               
+	GSVS(IDM_PRINT, "Εκτύπωση...")                 
+	GSVS(IDM_TEXTFIND, "Εύρεση...")                
+	GSVS(IDM_TEXTFINDNEXT, "Εύρεση επόμενου")      
+	GSVS(IDM_NEXT, "Επόμενη σελίδα")               
+	GSVS(IDM_NEXTSKIP, "Μετάβαση 5 σελίδες εμπρός")
+	GSVS(IDM_PREV, "Προηγούμενη σελίδα")           
+	GSVS(IDM_PREVSKIP, "Μετάβαση 5 σελίδες πίσω")  
+	GSVS(IDM_GOTO, "Μετάβαση στη σελίδα...")       
+	GSVS(IDM_GOBACK, "Μετάβαση πίσω")              
+	GSVS(IDM_GOFWD, "Μετάβαση εμπρός")             
+	GSVS(IDM_MAGPLUS, "Αύξηση ανάλυσης")           
+	GSVS(IDM_MAGMINUS, "Μείωση ανάλυσης")          
+	GSVS(IDM_HELPCONTENT, "Βοήθεια")               
+END
+
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_LANGUAGE, AAGREEK)
+	GSVS(IDS_ELANGUAGE, "Greek")
+	GSVS(IDS_FILE, "Αρχείο: ")
+	GSVS(IDS_NOFILE, "Κανένα αρχείο")
+	GSVS(IDS_PAGE, "Σελίδα: ")
+	GSVS(IDS_NOPAGE, "Αρίθμηση σελίδων μη διαθέσιμη")
+	GSVS(IDS_PAGESPECIAL, "Η σειρά των σελίδων είναι ειδική. Η σωστή επαναταξινόμηση των σελίδων δεν μπορεί να εξασφαλιστεί. Βλέπε 'Συχνά εμφανιζόμενα προβλήματα' στη βοήθεια. Θέλετε να συνεχίσετε;")
+	GSVS(IDS_LANDSCAPE, "Οριζόντιος")
+	GSVS(IDS_PORTRAIT, "Κατακόρυφος")
+	GSVS(IDS_ASCEND, "Αύξουσα")
+	GSVS(IDS_DESCEND, "Φθίνουσα")
+	GSVS(IDS_SPECIAL, "Ειδική")
+	GSVS(IDS_PAGEINFO, "Σελίδα: \042%s\042  %d από %d")
+	GSVS(IDS_LINKPAGE, "Σύνδεση με τη σελίδα %d")
+	GSVS(IDS_DEFAULT, "Προεπιλεγμένη")
+	GSVS(IDS_NOTDEFTAG, "[Μη καθορισμένη]")
+	GSVS(IDS_EPSF, "EPS")
+	GSVS(IDS_EPSI, "EPS με προεπισκόπηση Interchange")
+	GSVS(IDS_EPST, "EPS με προεπισκόπηση TIFF")
+	GSVS(IDS_EPSW, "EPS με προεπισκόπηση Μετα-αρχείο")
+	GSVS(IDS_DSC, "Δομή εγγράφου DSC")
+	GSVS(IDS_NOTDSC, "Χωρίς σχόλια δομής DSC")
+	GSVS(IDS_PDF, "Μορφή pdf (Portable Document Format)")
+	GSVS(IDS_IGNOREDSC, "Παράβλεψη σχολίων δομής DSC")
+	GSVS(IDS_CTRLD, "Ctrl-D ακολουθούμενο από ")
+	GSVS(IDS_PJL, "PJL ακολουθούμενο από ")
+	GSVS(IDS_ZOOMED, " ζουμ")
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_OUTPUTFILE, "Όνομα αρχείου εξόδου")
+	GSVS(IDS_PRINTINGALL, "Χωρίς σχόλια δομής DSC\nΕκτύπωση όλων των σελίδων")
+	GSVS(IDS_PRINTFILE, "Εκτύπωση αρχείου")
+	GSVS(IDS_SELECTPAGE, "Επιλογή σελίδας")
+	GSVS(IDS_SELECTPAGES, "Επιλογή σελίδων")
+	GSVS(IDS_NOTOPEN, "Δεν υπάρχει ανοιχτό έγγραφο")
+	GSVS(IDS_CANNOTRUN, "Αδύνατη η εκτέλεση του ")
+	GSVS(IDS_TOOLONG, "Πολύ μεγάλο το μήκος της εντολής: ")
+	GSVS(IDS_NOMORE, "Τελευταία σελίδα")
+/* OLD
+	GSVS(IDS_GSCOMMAND, "Εντολή Ghostscript;")
+*/
+	GSVS(IDS_NOZOOM, "Για να μεγεθυνθεί θα πρέπει πρώτα να απεικονιστεί")
+	GSVS(IDS_USERWIDTH, "Πλάτος:")
+	GSVS(IDS_USERHEIGHT, "Ύψος:")
+	GSVS(IDS_BADEPS, "Πρόβλημα κατά τη δημιουργία του αρχείου EPS")
+	GSVS(IDS_NOPREVIEW, "Δεν είναι ένα αρχείο EPS για DOS ή\nΔεν υπάρχει δυαδική προεπισκόπηση")
+	GSVS(IDS_NOTDFNAME, "Αδύνατη η χρησιμοποίηση ονόματος το οποίο συμπίπτει με όνομα ανοιχτού αρχείου")
+	GSVS(IDS_NOTEMP, "Αδύνατο το άνοιγμα του προσωρινού αρχείου.\nΟ κατάλογος μπορεί να είναι μόνον προς ανάγνωση.\nΜπορεί να μην έχει καθοριστεί η μεταβλητή περιβάλλοντος TEMP.")
+	GSVS(IDS_CANCELDONE, "%d%% ολοκληρώθηκε")
+	GSVS(IDS_BADCLI, "’κυρη επιλογή γραμμής εντολών: ")
+	GSVS(IDS_DUPOPT, "Έγκυρες επιλογές είναι μόνον οι /F /P /S. Σφάλμα: %s")
+	GSVS(IDS_TEXTFIND, "Εύρεση κειμένου;")
+	GSVS(IDS_TEXTNOTFIND, "Το κείμενο δεν εντοπίστηκε")
+	GSVS(IDS_PRINTPDFPS, "Αδύνατη η εκτύπωση αρχείου PDF σε εκτυπωτή PostScript. Χρησιμοποιήστε την επιλογή Αρχείο | Εξαγωγή")
+	GSVS(IDS_NOPDFQUICKTEXT, "Αδύνατη η εκτέλεση γρήγορης αναζήτησης σε ή η εξαγωγή κειμένου από αρχείο PDF. Χρησιμοποιήστε την επιλογή Επιλογές | PS σε κείμενο")
+	GSVS(IDS_BAD_DOSEPS_HEADER, "’κυρη κεφαλίδα EPS για DOS. Τα σχόλια δομής εγγράφου DSC θα παραβλεφθούν.")
+	GSVS(IDS_PROBABLY_PCL, "Το έγγραφο μοιάζει με έγγραφο PCL το οποίο προορίζεται για εκτυπωτές LaserJet ή DeskJet της HP. Είστε βέβαιοι ότι αυτό είναι ένα αρχείο PostScript;")
+	GSVS(IDS_BUSYPRINTING, "Το πρόγραμμα GSview εκτυπώνει. Πατήστε Ακύρωση για να περιμένετε μέχρις ότου η εργασία εκτύπωσης ολοκληρωθεί.")
+END
+
+STRINGTABLE
+BEGIN
+	/* sound type types*/
+	GSVS(IDS_SOUNDNAME, "Αρχείο ήχου")
+	GSVS(IDS_SNDPAGE, "Σελίδα εξόδου")
+	GSVS(IDS_SNDNOPAGE, "Καμία σελίδα")
+	GSVS(IDS_SNDNONUMBER, "Χωρίς αρίθμηση")
+	GSVS(IDS_SNDNOTOPEN, "Δεν έχει ανοιχτεί")
+	GSVS(IDS_SNDERROR, "Σφάλμα")
+	GSVS(IDS_SNDTIMEOUT,	"Τέλος χρονικού ορίου")
+	GSVS(IDS_SNDSTART, "Έναρξη")
+	GSVS(IDS_SNDEXIT, "Έξοδος")
+	GSVS(IDS_SNDBUSY, "Απασχολημένο")
+	GSVS(IDS_NONE, "<Κανένας>")
+	GSVS(IDS_SPKR, "<Ηχητικό σήμα>")
+END
+
+STRINGTABLE
+BEGIN
+	/* help topics - these need to match keywords in XX\gvclang.txt */
+	GSVS(IDS_TOPICROOT,  "Επισκόπηση")
+	GSVS(IDS_TOPICOPEN,  "’νοιγμα")
+	GSVS(IDS_TOPICPRINT, "Εκτύπωση")
+	GSVS(IDS_TOPICPROP, "Ιδιότητες")
+	GSVS(IDS_TOPICEDITPROP, "Τροποποίηση ιδιοτήτων")
+	GSVS(IDS_TOPICCONVERT, "Μετατροπή")
+	GSVS(IDS_TOPICCLIP, "Πρόχειρο")
+	GSVS(IDS_TOPICPREVIEW, "Προεπισκόπηση EPS")
+	GSVS(IDS_TOPICSOUND, "Ήχοι")
+	GSVS(IDS_TOPICDSET, "Ρυθμίσεις οθόνης")
+	GSVS(IDS_TOPICMEDIA, "Μέσα")
+	GSVS(IDS_TOPICPSTOEPS, "Από PS σε EPS")
+	GSVS(IDS_TOPICGOTO, "Επιλογή σελίδων")
+	GSVS(IDS_TOPICINSTALL, "Εγκατάσταση")
+	GSVS(IDS_TOPICTEXT, "Εξαγωγή και εντοπισμός κειμένου")
+	GSVS(IDS_TOPICKEYS, "Πλήκτρα")
+	GSVS(IDS_TOPICMESS, "Παρουσίαση μηνυμάτων")
+	GSVS(IDS_TOPICSPOOL, "Εκτύπωση σε ουρά")
+	GSVS(IDS_TOPICZLIB, "zlib")
+	GSVS(IDS_TOPICBZIP2, "bzip2")
+	GSVS(IDS_TOPICPSTOEDIT, "Μετατροπή σε γράφημα διανυσματικής μορφής")
+	GSVS(IDS_TOPICMEASURE, "Μέτρηση")
+	GSVS(IDS_TOPICEASYCFG, "Τυπική διαμόρφωση")
+	GSVS(IDS_TOPICADVANCEDCFG, "Διαμόρφωση για προχωρημένους")
+	GSVS(IDS_TOPICDOWNLOAD, "GhostScript, τρόπος προμήθειας")
+	GSVS(IDS_TOPICDSCWARN, "Προειδοποιητικά μηνύματα δομής DSC")
+	GSVS(IDS_TOPICREG, "Δήλωση")
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_BBPROMPT,  "Κάντε κλικ αριστερά")
+	GSVS(IDS_BBPROMPT1, "Κάντε κλικ κάτω")
+	GSVS(IDS_BBPROMPT2, "Κάντε κλικ δεξιά")
+	GSVS(IDS_BBPROMPT3, "Κάντε κλικ πάνω")
+	GSVS(IDS_EPSONEPAGE, "Ένα αρχείο EPS πρέπει να είναι ένα μονοσέλιδο έγγραφο. \nΑνατρέξτε στη βοήθεια για 'Από PS σε EPS'")
+	GSVS(IDS_EPSQPAGES, "Είναι αυτό ένα μονοσέλιδο έγγραφο;")
+	GSVS(IDS_EPSNOBBOX, "Αδύνατη η λήψη των ορίων πλαισίου")
+	GSVS(IDS_EPSUSERINVALID, "Το αρχείο προεπισκόπησης δεν είναι της μορφής TIFF ή Μετα-αρχείο των Windows")
+	GSVS(IDS_EPSUSERTITLE, "’νοιγμα αρχείου προεπισκόπησης")
+	GSVS(IDS_EPS_OFF_PAGE, "Τα όρια πλαισίου του EPS βρίσκονται εξολοκλήρου εκτός της σελίδας. Προτείνεται η χρήση της επιλογής 'Επιλογές | Περικοπή EPS'")
+	GSVS(IDS_MUSTUSEPORTRAIT, "Πρέπει να χρησιμοποιήσετε κατακόρυφο προσανατολισμό.")
+END
+
+STRINGTABLE
+BEGIN
+	/* wait messages */
+	GSVS(IDS_WAIT, "Παρακαλώ περιμένετε")
+	GSVS(IDS_WAITREAD,  "Ανάγνωση...")
+	GSVS(IDS_WAITWRITE,  "Εγγραφή...")
+	GSVS(IDS_WAITDRAW, "Σχεδίαση...")
+	GSVS(IDS_WAITDRAW_PC, "Ποσοστό σχεδίασης %d%%")
+	GSVS(IDS_WAITGSOPEN, "’νοιγμα Ghostscript...")
+	GSVS(IDS_WAITGSCLOSE,  "Κλείσιμο Ghostscript...")
+	GSVS(IDS_WAITPRINT,  "Εκτύπωση...")
+	GSVS(IDS_WAITSEARCH,  "Εύρεση...")
+	GSVS(IDS_WAITTEXT, "Εξαγωγή κειμένου %d%%")
+END
+
+
+STRINGTABLE
+BEGIN
+	/* debug messages */
+	GSVS(IDS_DEBUG_DFISLOCKED, "dfreopen: Το αρχείο είναι κλειδωμένο")
+	GSVS(IDS_DEBUG_DFISOPEN, "dfreopen: Το αρχείο είναι ήδη ανοιχτό")
+	GSVS(IDS_DEBUG_DFISMISSING, "dfreopen: Το αρχείο δεν βρέθηκε")
+	GSVS(IDS_DEBUG_DFCHANGED, "dfreopen: Το αρχείο έχει τροποποιηθεί")
+	GSVS(IDS_DEBUG_DFISCLOSED, "dfclose: Το αρχείο είναι ήδη κλειστό")
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_PROCESS_GSLOAD_FAIL, "Αδύνατη η φόρτωση των βιβλιοθηκών Ghostscript")
+	GSVS(IDS_PROCESS_INIT_FAIL, "gs_process: gsdll.init, απέτυχε")
+	GSVS(IDS_PROCESS_VIEWER_FAIL, "gs_process: '(viewer.ps) run' απέτυχε")
+	GSVS(IDS_PROCESS_EXECUTE_FAIL, "gs_process: gsdll.execute_cont απέτυχε")
+END
+
+STRINGTABLE
+BEGIN
+	/* PDF messages */
+	GSVS(IDS_PDFNOPAGE, "’γνωστος αριθμός σελίδων στο αρχείο PDF\nΤο αρχείο πρέπει πρώτα να απεικονιστεί στην οθόνη" )
+	GSVS(IDS_PDFEXTRACTALL, "’γνωστος αριθμός σελίδων στο αρχείο PDF\nΕξαγωγή ή εκτύπωση όλων των σελίδων")
+	GSVS(IDS_USEPDFWRITE, "Για την εξαγωγή σελίδων από ένα αρχείο PDF χρησιμοποιήστε τις επιλογές Αρχείο | Μετατροπή και επιλέξτε ως συσκευή pdfwrite ή pswrite.")
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_LARGEMEDIA, "Προειδοποίηση: Το μέγεθος του μέσου πολύ μεγάλο. Παρακαλώ ελέγξτε τις τιμές με την επιλογή 'Μέσα | Καθορισμένο από το χρήστη'")
+	GSVS(IDS_NOTIMPLEMENTED, "Δεν έχει υλοποιηθεί")
+	GSVS(IDS_NOLINKTARGET, "’γνωστος στόχος σύνδεσης")
+	GSVS(IDS_PARSEERROR, "Σφάλμα κατά την ανάλυση του περιεχόμενου της γραμμής εντολών")
+	GSVS(IDS_ZLIB_FAIL, "Αδύνατη η φόρτωση της βιβλιοθήκης zlib. Για βοήθεια πατήστε το πλήκτρο Ok.")
+	GSVS(IDS_BZIP2_FAIL, "Αδύνατη η φόρτωση της βιβλιοθήκης bzip2. Για βοήθεια πατήστε το πλήκτρο Ok.")
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_BETAEXPIRED, "Η συγκεκριμένη δοκιμαστική έκδοση του προγράμματος GSview έχει λήξει. Για λεπτομερείς σχετικά με τον τρόπο απόκτησης της πλέον πρόσφατης εκδοχής ανατρέξτε στη διεύθυνση http://www.cs.wisc.edu/~ghost/")
+	GSVS(IDS_BETAWARN, AABETAWARN)
+	GSVS(IDS_NOPRINTERINI, "Αδύνατο το άνοιγμα του αρχείου printer.ini")
+	GSVS(IDS_NOINI, "Αδύνατο το άνοιγμα του αρχείου INI")
+	GSVS(IDS_NEEDTEMP, "Πρέπει να καθορίστε μια έγκυρη τιμή, έναν κατάλογο με πλήρη δικαιώματα εγγραφής, για τη μεταβλητή περιβάλλοντος TEMP. Χωρίς έγκυρη τιμή για τη μεταβλητή, η εκτύπωση με το GSview θα είναι αδύνατη.")
+	GSVS(IDS_GSNOTINSTALLED, "Δεν εντοπίστηκε εγκατάσταση Ghostscript. Παρακαλώ διαβάστε προσεκτικά το αρχείο Readme.htm στον κατάλογο του προγράμματος GSview.")
+	GSVS(IDS_GSLIBNOTINSTALLED, "Δεν έχουν εγκατασταθεί όλες οι βιβλιοθήκες Ghostscript. Παρακαλώ διαβάστε το αρχείο Readme.htm στον κατάλογο του προγράμματος GSview.")
+	GSVS(IDS_NOPROGMAN, AANODDEPROGMAN)
+	GSVS(IDS_PROGRAMOBJECTFAILED, AAPROGRAMOBJECTFAILED)
+	GSVS(IDS_INVALIDREG, "’κυρο όνομα κατόχου ή αριθμός δήλωσης")
+	GSVS(IDS_UNREGISTERED, "Μη δηλωμένο")
+	GSVS(IDS_WRONGEMX, "Εντοπίστηκε emx %s. Απαιτείται emx %s ή μεταγενέστερης εκδοχής. Η λειτουργία του GSview δεν θα είναι κανονική.")
+	GSVS(IDS_GSVIEWVERSION, GSVIEW_DOT_VERSION)
+	GSVS(IDS_PROGMANGROUP4, AAPROGMANGROUP4)
+	GSVS(IDS_CFG73, AACFG73)
+	GSVS(IDS_CFG74, AACFG74)
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_PRN_PRINTMETHOD, "Μέθοδος εκτύπωσης")
+	GSVS(IDS_PRN_WINDOWSGDI, "Εκτυπωτής Windows GDI")
+	GSVS(IDS_PRN_GSDEVICE, "Συσκευή Ghostscript")
+	GSVS(IDS_PRN_PSPRINTER, AAPSPRINTER)		// "PostScript Printer" -> "Εκτυπωτής PostScript"
+	GSVS(IDS_PRN_SETTINGS, "Ρυθμίσεις")
+	GSVS(IDS_PRN_HELP, AAHELP)			// "Help" -> "Βοήθεια"
+	GSVS(IDS_PRN_SELECTPAGES, "Επιλογή σελίδων")
+	GSVS(IDS_ALL, AAALL)
+	// PageSize policies
+	GSVS(IDS_PAGESIZE_VARIABLE, "Μεταβλητό μέγεθος σελίδας")
+	GSVS(IDS_PAGESIZE_FIXED, "Σταθερό μέγεθος σελίδας")
+	GSVS(IDS_PAGESIZE_SHRINK, "Συρρίκνωση μέχρι προσαρμογής")
+END
+
+STRINGTABLE
+BEGIN
+ 	GSVS(IDS_INVALIDNUMBER, "’κυρος αριθμός")
+ 	GSVS(IDS_CANTINVERT, "Αδύνατη η αναστροφή του πίνακα")
+	GSVS(IDS_UNITPT, AAPT)
+	GSVS(IDS_UNITMM, AAMM)
+	GSVS(IDS_UNITINCH, AAINCH)
+	GSVS(IDS_UNITCUSTOM, AACUSTOM)
+END
+
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_DSC_INFO, "Πληροφορίες DSC")
+	GSVS(IDS_DSC_WARN, "Προειδοποίηση DSC")
+	GSVS(IDS_DSC_ERROR, "Σφάλμα DSC")
+        GSVS(IDS_DSC_LINEFMT, "%.40s στη γραμμή %d:")
+END
+
+
+/* Split strings if longer than 256 bytes */
+
+STRINGTABLE
+BEGIN
+	GSVS(CDSC_RESOURCE_BBOX, "Η γραμμή αυτή είναι λανθασμένη.\nΟι τιμές για τα όρια πλαισίου πρέπει να είναι ακέραιοι αριθμοί και όχι\nκινητής υποδιαστολής. Σε αντίθετη περίπτωση, τα όρια πλαισίου κινητής\nυποδιαστολής πρέπει να καθοριστούν αποκλειστικά με την παράμετρο\n")
+        GSVS(CDSC_RESOURCE_BBOX2, "%%HiResBoundingBox:.\nΕπίσης, πρέπει να καθοριστεί και η παράμετρος %%BoundingBox:\nκαι μάλιστα με ακέραιες τιμές.\n\nΠατώντας 'Ok' οι συντεταγμένες θα μετατραπούν σε ακέραιους\nμε στρογγυλοποίηση και μεγαλώνοντας τις διαστάσεις του πλαισίου.\n")
+        GSVS(CDSC_RESOURCE_BBOX3, "Πατώντας '’κυρο' η συγκεκριμένη παράμετρος δεν θα ληφθεί υπόψη.\n")
+
+
+	GSVS(CDSC_RESOURCE_EARLY_TRAILER, "Η παράμετρος %%Trailer συνήθως βρίσκεται στο τέλος του εγγράφου.\nΣτο συγκεκριμένο αρχείο, η παράμετρος εντοπίστηκε περισσότερα από 32k bytes\nαπό το τέλος του αρχείου.\n")
+        GSVS(CDSC_RESOURCE_EARLY_TRAILER2, "Τα δεδομένα για το τμήμα %%Trailer δεν μπορεί να έχουν τέτοιο μέγεθος.\nΗ πιο πιθανή εξήγηση είναι να έχει ενσωματωθεί και άλλο αρχείο PostScript\nστο συγκεκριμένο αρχείο, χωρίς όμως αυτό να περικλείεται από τις παραμέτρους\n")
+        GSVS(CDSC_RESOURCE_EARLY_TRAILER3, "%%BeginDocument / %%EndDocument.\n\nΠατώντας 'Ok' το τμήμα θα θεωρηθεί ότι ανήκει σε διαφορετικό αρχείο.\nΠατώντας '’κυρο' θα θεωρηθεί ότι αποτελεί τμήμα του %%Trailer.")
+
+
+	GSVS(CDSC_RESOURCE_EARLY_EOF, "Η γραμμή αυτή συνήθως εμφανίζεται στο τέλος ενός εγγράφου.\nΗ γραμμή αυτή όμως εντοπίστηκε σε απόσταση μεγαλύτερη από 100 bytes\nαπό το τέλος του αρχείου.\n\nΗ πιο πιθανή εξήγηση είναι να έχει ενσωματωθεί και άλλο αρχείο PostScript\n")
+	GSVS(CDSC_RESOURCE_EARLY_EOF2, "στο συγκεκριμένο αρχείο, χωρίς όμως αυτό να περικλείεται από τις παραμέτρους\n%%BeginDocument / %%EndDocument.\n\nΠατώντας 'Ok' το τμήμα θα θεωρηθεί ότι ανήκει σε διαφορετικό αρχείο.\n")
+	GSVS(CDSC_RESOURCE_EARLY_EOF3, "Πατώντας '’κυρο' θα θεωρηθεί ότι αποτελεί τμήμα του %%Trailer.")
+
+	GSVS(CDSC_RESOURCE_PAGE_IN_TRAILER, "Η συγκεκριμένη γραμμή %%Page: εμφανίζεται στο τμήμα %%Trailer,\nγεγονός που αποτελεί παραβίαση των κανόνων δομής.\nΤα αρχεία EPS πρέπει να περικλείονται μεταξύ των παραμέτρων\n%%BeginDocument / %%EndDocument.\n")
+	GSVS(CDSC_RESOURCE_PAGE_IN_TRAILER2, "Πιθανόν η πλαισίωση του αρχείου EPS να μην έγινε σωστά και η σύγχυση να\nπροέρχεται από την ύπαρξη της παραμέτρου %%Trailer στο αρχείο EPS.\n\nΠατώντας 'Ok' θα συνεχιστεί η επεξεργασία των επόμενων σελίδων.\n")
+	GSVS(CDSC_RESOURCE_PAGE_IN_TRAILER3, "Πατώντας '’κυρο' το συγκεκριμένο μήνυμα θα αγνοηθεί.")
+
+
+	GSVS(CDSC_RESOURCE_PAGE_ORDINAL, "Η συγκεκριμένη γραμμή είναι λανθασμένη.\nΤα δύο ορίσματα πρέπει να είναι ένας τίτλος και ένα τακτικό αριθμητικό.\nΤο τακτικό αριθμητικό πρέπει να έχει την τιμή 1 για την πρώτη σελίδα\nκαι πρέπει να αυξάνεται κατά 1 για κάθε επόμενη σελίδα.\n")
+	GSVS(CDSC_RESOURCE_PAGE_ORDINAL2, "Η τιμή για το τακτικό αριθμητικό είτε δεν υπάρχει είτε δεν συμφωνεί με\nτη λογική ακολουθία.\nΠολύ πιθανόν η γραμμή αυτή να είναι τμήμα ενός ενσωματωμένου αρχείου\nτο οποίο δεν έχει συμπεριληφθεί σωστά ώστε να περικλείεται μεταξύ των\n")
+	GSVS(CDSC_RESOURCE_PAGE_ORDINAL3, "παραμέτρων %%BeginDocument / %%EndDocument.\n\nΠατώντας 'Ok' η σελίδα αυτή δεν θα ληφθεί υπόψη θεωρώντας ότι αποτελεί\nτμήμα ενός λανθασμένα ενσωματωμένου αρχείου EPS.\nΠατώντας '’κυρο' η συγκεκριμένη σελίδα θα θεωρηθεί ως έγκυρη.")
+
+
+	GSVS(CDSC_RESOURCE_PAGES_WRONG, "Η τιμή %%Pages: δεν συμφωνεί με τον αριθμό των σχολίων %%Page: που εντοπίστηκαν.\n\nΠατώντας 'Ok' ο αριθμός των σελίδων θα αναθεωρηθεί ώστε να συμφωνεί\nμε την τιμή των σχολίων %%Page: που θα εντοπιστούν.\n")
+	GSVS(CDSC_RESOURCE_PAGES_WRONG2, "Πατώντας '’κυρο' ο αριθμός των σελίδων θα ληφθεί από την τιμή %%Pages:\n")
+	GSVS(CDSC_RESOURCE_PAGES_WRONG3,"")
+
+
+	GSVS(CDSC_RESOURCE_EPS_NO_BBOX, "Από το συγκεκριμένο αρχείο EPS απουσιάζει η απαιτούμενη παράμετρος\n%%BoundingBox:.\nΑνατρέξτε στη βοήθεια του GSview για λεπτομέρειες σχετικά με την προσθήκη\nκαι την τροποποίηση των ορίων πλαισίου.\n\n")
+	GSVS(CDSC_RESOURCE_EPS_NO_BBOX2, "Πατώντας 'Ok' το αρχείο θα θεωρηθεί ότι είναι ένα αρχείο EPS.\nΠατώντας '’κυρο' το αρχείο θα θεωρηθεί ότι ΔΕΝ είναι ένα αρχείο EPS.\n")
+	GSVS(CDSC_RESOURCE_EPS_NO_BBOX3, "")
+
+
+	GSVS(CDSC_RESOURCE_EPS_PAGES, "Τα αρχεία EPS πρέπει να αποτελούνται από 1 ή 0 σελίδες.\nΤο συγκεκριμένο αρχείο 'EPS' έχει περισσότερες σελίδες και συνεπώς\nδεν είναι ένα αρχείο EPS.\n")
+	GSVS(CDSC_RESOURCE_EPS_PAGES2, "Δεν μπορείτε να χρησιμοποιήσετε την επιλογή 'Μετατροπή...' ή\nτη συσκευή 'epswrite' για την εκτύπωση πολλαπλών σελίδων.\nΗ σωστή μέθοδος είναι είτε να συνδέσετε τον εκτυπωτή στη θύρα FILE:\n")
+	GSVS(CDSC_RESOURCE_EPS_PAGES3, "ή να επιλέξετε 'Εκτύπωση σε αρχείο'.\n\nΠατώντας 'Ok' το αρχείο θα θεωρηθεί ότι είναι ένα αρχείο EPS.\nΠατώντας '’κυρο' το αρχείο θα θεωρηθεί ότι ΔΕΝ είναι ένα αρχείο EPS.\n")
+
+
+	GSVS(CDSC_RESOURCE_NO_MEDIA, "Η τιμή για το μέσο έχει καθοριστεί από την παράμετρο %%DocumentMedia:,\nαλλά δεν έχει προεπιλεγεί τύπος μέσου με την παράμετρο %%PageMedia:.\n\n")
+	GSVS(CDSC_RESOURCE_NO_MEDIA2, "Πατώντας 'Ok' ως προεπιλεγμένο είδος μέσου θα ληφθεί η πρώτη\nπαρουσιαζόμενη τιμή.\nΠατώντας '’κυρο' δεν θα καθοριστεί προεπιλεγμένη τιμή για το μέσο.\n") 
+	GSVS(CDSC_RESOURCE_NO_MEDIA3, "") 
+
+
+	GSVS(CDSC_RESOURCE_ATEND, "Η συγκεκριμένη γραμμή είναι λανθασμένη.\nΓια να αναβληθεί η απόδοση τιμής πρέπει να χρησιμοποιηθεί η τιμή\n'(atend)' και όχι 'atend'.\n\n")
+	GSVS(CDSC_RESOURCE_ATEND2, "Πατώντας 'Ok' θα θεωρηθεί ότι η τιμή (atend) είναι η πραγματική τιμή.\nΠατώντας '’κυρο' η γραμμή αυτή δεν θα ληφθεί υπόψη.\n")
+	GSVS(CDSC_RESOURCE_ATEND3, "")
+
+
+	GSVS(CDSC_RESOURCE_DUP_COMMENT, "Το συγκεκριμένο σχόλιο εμφανίζεται δύο φορές στην κεφαλίδα, πράγμα όχι απαραίτητο.\nΩς ορθή τιμή λαμβάνεται η πρώτη τιμή που θα εντοπιστεί στην κεφαλίδα.\n\n")
+	GSVS(CDSC_RESOURCE_DUP_COMMENT2, "Πατώντας 'Ok' ή '’κυρο' η δεύτερη εμφανιζόμενη τιμή δεν θα ληφθεί υπόψη.\n")
+	GSVS(CDSC_RESOURCE_DUP_COMMENT3, "")
+
+
+	GSVS(CDSC_RESOURCE_DUP_TRAILER, "Το συγκεκριμένο σχόλιο εμφανίζεται δύο φορές στο τμήμα %%Trailer, πράγμα όχι απαραίτητο.\nΩς ορθή τιμή λαμβάνεται η τελευταία τιμή που θα εντοπιστεί.\n\n")
+	GSVS(CDSC_RESOURCE_DUP_TRAILER2, "Πατώντας 'Ok' ή '’κυρο' θα ληφθεί υπόψη η δεύτερη εμφανιζόμενη τιμή.\n")
+	GSVS(CDSC_RESOURCE_DUP_TRAILER3, "")
+
+
+	GSVS(CDSC_RESOURCE_BEGIN_END, "Οι τιμές για το πλήθος των ενδείξεων αρχής και τέλους των σχολίων δεν συμφωνούν.\n\n")
+	GSVS(CDSC_RESOURCE_BEGIN_END2, "Πατήστε 'Ok' ή '’κυρο' για να μην ληφθεί υπόψη η συγκεκριμένη ασυμφωνία.")
+	GSVS(CDSC_RESOURCE_BEGIN_END3, "")
+
+
+	GSVS(CDSC_RESOURCE_BAD_SECTION, "Η συγκεκριμένη γραμμή είναι λανθασμένη γιατί δεν πρέπει να εμφανίζεται\nστα περιεχόμενα μιας σελίδας.\n")
+	GSVS(CDSC_RESOURCE_BAD_SECTION2, "Αυτό πιθανότατα σημαίνει ότι τα όρια πλαισίου του αρχείου EPS υπολογίστηκαν\nμε λανθασμένο τρόπο.\nΗ γραμμή αυτή δεν θα ληφθεί υπόψη.\n\n")
+ 	GSVS(CDSC_RESOURCE_BAD_SECTION3, "Πατήστε 'Ok' ή '’κυρο' για να μην ληφθεί υπόψη η συγκεκριμένη γραμμή.")
+
+
+	GSVS(CDSC_RESOURCE_LONG_LINE, "\n\nΤο μήκος των γραμμών σε έγγραφα τα οποία ακολουθούν τους κανόνες δομής DSC\n")
+	GSVS(CDSC_RESOURCE_LONG_LINE2, "δεν πρέπει να ξεπερνούν τους 255 χαρακτήρες.\n") 
+	GSVS(CDSC_RESOURCE_LONG_LINE3, "") 
+
+
+	GSVS(CDSC_RESOURCE_INCORRECT_USAGE, "Η συγκεκριμένη γραμμή σχολίων δομής DSC είναι λανθασμένη.\nΠαρακαλώ ανατρέξτε στις προδιαγραφές των σχολίων δομής εγγράφου DSC.\n\n")
+	GSVS(CDSC_RESOURCE_INCORRECT_USAGE2, "Πατήστε 'Ok' ή '’κυρο' για να μην ληφθεί υπόψη η συγκεκριμένη ασυμφωνία.\n")
+	GSVS(CDSC_RESOURCE_INCORRECT_USAGE3, "")
+
+END

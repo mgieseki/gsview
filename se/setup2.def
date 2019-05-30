@@ -1,0 +1,4 @@
+LIBRARY SETUP2SE
+DESCRIPTION	'GSview Setup Swedish Language Resources'
+DATA SINGLE SHARED
+EXPORTS  main

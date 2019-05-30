@@ -1,0 +1,291 @@
+/* Copyright (C) 1993-2003, Ghostgum Software Pty Ltd.  All rights reserved.
+  
+  This file is part of GSview.
+  
+  This program is distributed with NO WARRANTY OF ANY KIND.  No author
+  or distributor accepts any responsibility for the consequences of using it,
+  or for whether it serves any particular purpose or works at all, unless he
+  or she says so in writing.  Refer to the GSview Free Public Licence 
+  (the "Licence") for full details.
+  
+  Every copy of GSview must include a copy of the Licence, normally in a 
+  plain ASCII text file named LICENCE.  The Licence grants you the right 
+  to copy, modify and redistribute GSview, but only under certain conditions 
+  described in the Licence.  Among other things, the Licence requires that 
+  the copyright notice and this notice be preserved on all copies.
+*/
+
+/* gvpm1.rc */
+/* Resources for PM GSview */
+
+#include <os2.h>
+#include "gvcrc.h"
+#define GSVIEW_RCDATA(x) RCDATA x
+#include "gvclang.h"
+
+#define GVPM1
+
+#ifndef ES_ANY	/* emx08g doesn't define this */
+#define ES_ANY 0x00000000L
+#endif
+
+ICON ID_GSVIEW "binary/gvpm1.ico"	/* ID_GSVIEW must be 1 for WPS */
+POINTER IDP_CROSSHAIR  "binary/gvpcross.ptr"
+POINTER IDP_HAND  "binary/gvphand.ptr"
+
+/* This section gives the default entries for the [Devices] section of */
+/* gsview.ini, used to specify available printer drivers. */
+/* Each line contains a device name and available resolutions, separated  */
+/* by commas.  Don't use spaces.  Each line must end with a '\0' */
+/* The last line of this section must be "\0" */
+/* Maximum line length is 128 */
+/* THIS INFORMATION HAS BEEN MOVED TO PRINTER.INI */
+RCDATA IDR_DEVICES
+BEGIN
+	"os2prn,\0"   /* can't set resolution in device dialog box */
+	"djet500,300x300,150x150,100x100,75x75\0"
+	"\0\0"
+END
+
+/* header to warn of operators incompatible with EPS */
+RCDATA IDR_EPSFWARN
+BEGIN
+	"/eps_warn {(Warning: EPS file must not use ) print dup == flush systemdict exch get exec} def\015\012"
+	"/banddevice {/banddevice eps_warn} def\015\012"
+	"/clear {/clear eps_warn} def\015\012"
+	"/cleardictstack {/cleardictstack eps_warn} def\015\012"
+	"/copypage {/copypage eps_warn} def\015\012"
+	"/erasepage {/erasepage eps_warn} def\015\012"
+	"/exitserver {/exitserver eps_warn} def\015\012"  /* this won't work - exitserver is in serverdict */
+	"/serverdict {/serverdict eps_warn} def\015\012"  /* so use this to provide warnings instead */
+	"/statusdict {/statusdict eps_warn} def\015\012"
+	"/framedevice {/framedevice eps_warn} def\015\012"
+	"/grestoreall {/grestoreall eps_warn} def\015\012"
+	"/initclip {/initclip eps_warn} def\015\012"
+	"/initgraphics {/initgraphics eps_warn} def\015\012"
+	"/initmatrix {/initmatrix eps_warn} def\015\012"
+	"/quit {/quit eps_warn} def\015\012"
+	"/renderbands {/renderbands eps_warn} def\015\012"
+	"/setglobal {/setglobal eps_warn} def\015\012"
+	"/setpagedevice {/setpagedevice eps_warn} def\015\012"
+	"/setpageparams {/setpageparams eps_warn} def\015\012"
+	"/setshared {/setshared eps_warn} def\015\012"
+	"/startjob {/startjob eps_warn} def\015\012"
+	"/eps_pagesize_warn {(Warning: EPS file must not set page size: ) print dup == flush pop} def\015\012"
+	"/11x17 {/11x17 eps_pagesize_warn} def\015\012"
+	"/a3 {/a3 eps_pagesize_warn} def\015\012"
+	"/a4 {/a4 eps_pagesize_warn} def\015\012"
+	"/a4small {/a4small eps_pagesize_warn} def\015\012"
+	"/a5 {/a5 eps_pagesize_warn} def\015\012"
+	"/ledger {/ledger eps_pagesize_warn} def\015\012"
+	"/legal {/legal eps_pagesize_warn} def\015\012"
+	"/letter {/letter eps_pagesize_warn} def\015\012"
+	"/lettersmall {/lettersmall eps_pagesize_warn} def\015\012"
+	"/note {/note eps_pagesize_warn} def\015\012"
+	"/eps_warntwo {(Warning: EPS file should be careful using ) print dup == flush systemdict exch get exec} def\015\012"
+	"/nulldevice {/nulldevice eps_warntwo} def\015\012"
+	"/setgstate {/setgstate eps_warntwo} def\015\012"
+	"/sethalftone {/sethalftone eps_warntwo} def\015\012"
+	"/setmatrix {/setmatrix eps_warntwo} def\015\012"
+	"/setscreen {/setscreen eps_warntwo} def\015\012"
+	"/settransfer {/settransfer eps_warntwo} def\015\012"
+	"/setcolortransfer {/setcolortransfer eps_warntwo} def\015\012"
+	"count /eps_count exch def\015\012"
+	"countdictstack /eps_countdictstack exch def\015\012"
+	"/gsview_eps_countcheck {count eps_count\015\012"
+	"  ne {(Warning: EPS file altered operand stack count\\n) print pstack flush} if\015\012"
+	"  countdictstack eps_countdictstack\015\012"
+	"  ne {(Warning: EPS file altered dictionary stack count\\n) print flush} if\015\012"
+	"} def\015\012"
+	"\0\0"
+END
+
+/* ViewerPreProcess hook */
+/* This is installed with setpagedevice and used by setpagedevice */
+RCDATA IDR_VIEWER
+BEGIN
+"/ViewerPreProcess { systemdict begin\015\012"
+/* %  copy dictionary so we can change the entries */
+"  dup length dict copy  \015\012"
+"currentglobal true setglobal exch\015\012" /* KLUDGE to dodge GS bug */
+/* % remove entries that will upset viewer */
+"  dup /HWResolution undef\015\012"
+"  dup /HWMargins undef\015\012"
+"  dup /Margins undef\015\012"
+"  dup /Orientation undef\015\012"
+"  dup /InputAttributes undef\015\012"
+"  dup /TextAlphaBits undef\015\012"
+"  dup /GraphicsAlphaBits undef\015\012"
+"  dup /PageSize undef\015\012"
+/* % Calculate width and height of imageable area */
+/* % Use ImagingBBox if set, otherwise use PageSize */
+"  GSview /ImagingBBox get null eq \015\012"
+"  { GSview dup /PageSize get\015\012"
+"    /Size exch put\015\012"
+"    GSview /PageOffset [0 0] put\015\012"
+"  }\015\012"
+"  { GSview dup /ImagingBBox get\015\012"
+"    [ exch\015\012"
+"    dup 0 get exch dup 2 get 3 -1 roll sub exch\015\012"
+"    dup 1 get exch 3 get exch sub \015\012"
+"    ]\015\012"
+"    /Size exch put\015\012"
+"    GSview /Orientation get\015\012"
+"    dup 0 eq\015\012"
+"    { % portrait\015\012"
+"      GSview dup /ImagingBBox get\015\012"
+"      [ exch dup 0 get neg exch 1 get neg ]\015\012"
+"      /PageOffset exch put\015\012"
+"    }\015\012"
+"    if\015\012"
+"    dup 1 eq\015\012"
+"    { % landscape\015\012"
+"      GSview dup /ImagingBBox get\015\012"
+"      [\015\012"
+"        exch dup 1 get neg exch 2 get\015\012"
+"	GSview /Size get\015\012"
+"        0 get\015\012"
+"	sub\015\012"
+"        exch neg exch neg\015\012"
+"      ]\015\012"
+"      /PageOffset exch put\015\012"
+"    }\015\012"
+"    if\015\012"
+"    dup 2 eq\015\012"
+"    { % upside-down\015\012"
+"      GSview dup /ImagingBBox get\015\012"
+"      [ exch dup 2 get exch 3 get\015\012"
+"	GSview /Size get\015\012"
+"        dup 0 get exch 1 get\015\012"
+"        exch 3 1 roll\015\012"
+"	 sub 3 1 roll\015\012"
+"        sub exch\015\012"
+"      ]\015\012"
+"      /PageOffset exch put\015\012"
+"    }\015\012"
+"    if\015\012"
+"    dup 3 eq\015\012"
+"    { % seascape\015\012"
+"      GSview dup /ImagingBBox get\015\012"
+"      [ exch dup 0 get exch 3 get\015\012"
+"	GSview /Size get\015\012"
+"        1 get sub\015\012"
+"	exch neg\015\012"
+"        exch neg exch neg\015\012"
+"      ]\015\012"
+"      /PageOffset exch put\015\012"
+"    }\015\012"
+"    if\015\012"
+"    pop\015\012"
+"  }\015\012"
+"  ifelse\015\012"
+/* % PageOffset uses pts, but the direction of device coordinates */
+"  dup /DisplayFormat known\015\012"
+"  { dup /DisplayFormat get 131072 and 0 eq }\015\012"
+"  { matrix defaultmatrix 3 get 0 lt }\015\012"
+"  ifelse\015\012"
+"  {flush GSview /PageOffset get dup 1 get neg 1 exch put} if\015\012"
+/* % insert alpha values */
+"  dup /TextAlphaBits GSview /TextAlphaBits get put\015\012"
+"  dup /GraphicsAlphaBits GSview /GraphicsAlphaBits get put\015\012"
+/* % insert our page size */
+"  dup /PageSize GSview /Size get put\015\012"
+/* % insert display resolution */
+"  dup /HWResolution GSview /HWResolution get put\015\012"
+/* % insert offset */
+"  dup /PageOffset GSview /PageOffset get put\015\012"
+/* % Insert orientation */
+"  dup /Orientation GSview /Orientation get put\015\012"
+/* % Insert ImagingBBox - this speeds up rendering if ImagingBBox < PageSize */
+"  GSview /ImagingBBox get null eq \015\012"
+"  { % create an ImagingBBox from PageSize\015\012"
+"    dup /ImagingBBox [ 0 0\015\012"
+"    GSview /PageSize get\015\012"
+"    dup 0 get exch 1 get ]\015\012"
+"    put\015\012"
+"  }\015\012"
+"  { % use supplied ImagingBBox\015\012"
+"    dup /ImagingBBox GSview /ImagingBBox get put\015\012"
+"  }\015\012"
+"  ifelse\015\012"
+/* % Insert Policies = use page size in InputAttributes */
+"  dup /Policies << /PageSize 5 >> put\015\012"
+/* % Insert InputAttributes */
+/* % Use this to specify media size */
+"  dup /InputAttributes <<\015\012"
+"    0 << /PageSize [\015\012"
+"      GSview /Orientation get\015\012"
+"      dup 0 eq\015\012"
+"      exch 2 eq \015\012"
+"      or\015\012"
+"      { % portrait or upside down\015\012"
+"        GSview /Size get\015\012"
+"        dup 0 get exch 1 get\015\012"
+"      }\015\012"
+"      { % landscape or seascape\015\012"
+"        GSview /Size get\015\012"
+"        dup 1 get exch 0 get\015\012"
+"      }\015\012"
+"      ifelse\015\012"
+"    ]\015\012"
+"    >>\015\012"
+"  >> put\015\012"
+"exch setglobal\015\012" /* KLUDGE to dodge GS bug */
+"  end % pop systemdict \015\012"
+"}\015\012"
+"\0\0"
+END
+
+
+/* Each button is specified by a menu item identifier */
+/* The button contents is given by a BITMAP with the same identifier */
+/* or a STRINGTABLE entry with the same identifier */
+/* The table ends with a NULL */
+RCDATA IDR_BUTTON
+BEGIN
+	IDM_OPEN,
+	IDM_PRINT,
+	IDM_INFO,
+	IDM_HELPCONTENT,
+	IDM_GOTO,
+	IDM_NEXT,
+	IDM_PREV,
+	IDM_NEXTSKIP,
+	IDM_PREVSKIP,
+	IDM_MAGPLUS,
+	IDM_MAGMINUS,
+	IDM_TEXTFIND,
+	IDM_TEXTFINDNEXT,
+	0
+END
+
+
+BITMAP IDM_OPEN  "binary/gvpopen.bmp"
+BITMAP IDM_PRINT "binary/gvpprint.bmp"
+BITMAP IDM_INFO  "binary/gvpinfo.bmp"
+BITMAP IDM_HELPCONTENT "binary/gvphelp.bmp"
+BITMAP IDM_GOTO  "binary/gvpgoto.bmp"
+BITMAP IDM_NEXT  "binary/gvpnext.bmp"
+BITMAP IDM_PREV  "binary/gvpprev.bmp"
+BITMAP IDM_NEXTSKIP  "binary/gvpnexts.bmp"
+BITMAP IDM_PREVSKIP  "binary/gvpprevs.bmp"
+BITMAP IDM_MAGPLUS   "binary/gvpmagp.bmp"
+BITMAP IDM_MAGMINUS  "binary/gvpmagm.bmp"
+BITMAP IDM_TEXTFIND  "binary/gvpfind.bmp"
+BITMAP IDM_TEXTFINDNEXT  "binary/gvpfindn.bmp"
+BITMAP IDM_MISC  "binary/gvpmisc.bmp"
+
+
+RCDATA IDR_PORTS
+BEGIN
+	"LPT1:=\0"
+	"LPT2:=\0"
+	"LPT3:=\0"
+	"COM1:=\0"
+	"COM2:=\0"
+	"COM3:=\0"
+	"COM4:=\0"
+	"FILE:=\0"
+	"\0"
+END
+

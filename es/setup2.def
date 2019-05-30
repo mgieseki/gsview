@@ -1,0 +1,4 @@
+LIBRARY SETUP2ES
+DESCRIPTION	'GSview Setup Spanish Language Resources'
+DATA SINGLE SHARED
+EXPORTS  main

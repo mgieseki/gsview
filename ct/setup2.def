@@ -1,0 +1,4 @@
+LIBRARY SETUP2CT
+DESCRIPTION	'GSview Setup Catalan Language Resources'
+DATA SINGLE SHARED
+EXPORTS  main

@@ -1,0 +1,4 @@
+LIBRARY SETUP2DE
+DESCRIPTION	'GSview Setup German Language Resources'
+DATA SINGLE SHARED
+EXPORTS  main

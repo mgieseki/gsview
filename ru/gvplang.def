@@ -1,0 +1,4 @@
+LIBRARY GVPMRU
+DESCRIPTION	'GSview Russian Language Resources'
+DATA SINGLE SHARED
+EXPORTS  main

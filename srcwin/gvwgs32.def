@@ -1,0 +1,4 @@
+NAME		GVWGS32
+DESCRIPTION	'Ghostscript DLL interface for GSview, (C) Ghostgum Software Pty Ltd 2000'
+HEAPSIZE	4096
+STACKSIZE	262144

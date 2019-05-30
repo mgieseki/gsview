@@ -1,0 +1,10 @@
+[OPTIONS]
+COMPRESS=12 Hall Zeck
+TITLE=Βοήθεια για το GSview
+BMROOT=../binary
+LCID=0x408 0x0 0x0 ;Greek
+CHARSET=161
+[FILES]
+gsview.rtf
+[CONFIG]
+BrowseButtons()

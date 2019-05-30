@@ -1,0 +1,352 @@
+/* Copyright (C) 1993-2002, Ghostgum Software Pty Ltd.  All rights reserved.
+  
+  This file is part of GSview.
+  
+  This program is distributed with NO WARRANTY OF ANY KIND.  No author
+  or distributor accepts any responsibility for the consequences of using it,
+  or for whether it serves any particular purpose or works at all, unless he
+  or she says so in writing.  Refer to the GSview Free Public Licence 
+  (the "Licence") for full details.
+  
+  Every copy of GSview must include a copy of the Licence, normally in a 
+  plain ASCII text file named LICENCE.  The Licence grants you the right 
+  to copy, modify and redistribute GSview, but only under certain conditions 
+  described in the Licence.  Among other things, the Licence requires that 
+  the copyright notice and this notice be preserved on all copies.
+*/
+
+/* ct\gvclang.rc */
+/* Common Catalan language resources */
+
+#ifndef GSVS
+#define GSVS(x,y) x,y
+#endif
+
+/* button help */
+STRINGTABLE
+BEGIN
+	/* these must be in ascending ID order */
+	GSVS(IDM_OPEN, "Obre...")
+	GSVS(IDM_INFO, "Informació...")
+	GSVS(IDM_PRINT, "Imprimeix...")
+	GSVS(IDM_TEXTFIND, "Busca...")
+	GSVS(IDM_TEXTFINDNEXT, "Busca el següent")
+	GSVS(IDM_NEXT, "Pàgina següent")
+	GSVS(IDM_NEXTSKIP, "Salta 5 pàgines endavant")
+	GSVS(IDM_PREV, "Pàgina anterior")
+	GSVS(IDM_PREVSKIP, "Salta 5 pàgines endarrera")
+	GSVS(IDM_GOTO, "Vés a la pàgina...")
+	GSVS(IDM_GOBACK, "Vés endarrera")
+	GSVS(IDM_GOFWD, "Vés endavant")
+	GSVS(IDM_MAGPLUS, "Augmenta la resolució")
+	GSVS(IDM_MAGMINUS, "Redueix la resolució")
+	GSVS(IDM_HELPCONTENT, "Ajuda")
+END
+
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_LANGUAGE, AACATALA)
+	GSVS(IDS_ELANGUAGE, "Catalan")
+	GSVS(IDS_FILE, "Fitxer: ")
+	GSVS(IDS_NOFILE, "Cap fitxer")
+	GSVS(IDS_PAGE, "Pàgina: ")
+	GSVS(IDS_NOPAGE, "La númeració de les pàgines no està disponible")
+	GSVS(IDS_PAGESPECIAL, "L'ordenació de les pàgines és Especial. No es poden tornar a ordenar les pàgines de manera fidedigna.  Vegeu 'Problemes comuns' a l'ajuda.  Voleu continuar?")
+	GSVS(IDS_LANDSCAPE, "Horitzontal")
+	GSVS(IDS_PORTRAIT, "Vertical")
+	GSVS(IDS_ASCEND, "Ascendent")
+	GSVS(IDS_DESCEND, "Descendent")
+	GSVS(IDS_SPECIAL, "Especial")
+	GSVS(IDS_PAGEINFO, "Pàgina \042%s\042  %d de %d")
+	GSVS(IDS_LINKPAGE, "Enllaça a la pàgina %d")
+	GSVS(IDS_DEFAULT, "Per defecte")
+	GSVS(IDS_NOTDEFTAG, "[Sense definir]")
+	GSVS(IDS_EPSF, "EPS")
+	GSVS(IDS_EPSI, "EPS amb visualització prèvia Interchange")
+	GSVS(IDS_EPST, "EPS amb visualització prèvia TIFF")
+	GSVS(IDS_EPSW, "EPS amb visualització prèvia Metafile")
+	GSVS(IDS_DSC, "DSC")
+	GSVS(IDS_NOTDSC, "No hi ha comentaris DSC")
+	GSVS(IDS_PDF, "Format de document portàtil (PDF)")
+	GSVS(IDS_IGNOREDSC, "S'estan ignorant els comentaris DSC")
+	GSVS(IDS_CTRLD, "Ctrl-D seguit de ")
+	GSVS(IDS_PJL, "PJL seguit de ")
+	GSVS(IDS_ZOOMED, " Apropat")
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_OUTPUTFILE, "Nom del fitxer de sortida")
+	GSVS(IDS_PRINTINGALL, "No hi ha comentaris DSC\nS'estan imprimint totes les pàgines")
+	GSVS(IDS_PRINTFILE, "Imprimeix un fitxer")
+	GSVS(IDS_SELECTPAGE, "Selecciona la pàgina")
+	GSVS(IDS_SELECTPAGES, "Selecciona les pàgines")
+	GSVS(IDS_NOTOPEN, "No hi ha cap document obert")
+	GSVS(IDS_CANNOTRUN, "No es pot executar ")
+	GSVS(IDS_TOOLONG, "La línia d'ordres és massa llarga: ")
+	GSVS(IDS_NOMORE, "No més pàgines")
+/* OLD
+	GSVS(IDS_GSCOMMAND, "Ordre del Ghostscript?")
+*/
+	GSVS(IDS_NOZOOM, "S'ha de visualitzar la pàgina abans d'apropar-se")
+	GSVS(IDS_USERWIDTH, "Quina és l'amplada en unitats d'1/72 de polzada?")
+	GSVS(IDS_USERHEIGHT, "Quina és l'alçada en unitats d'1/72 de polzada?")
+	GSVS(IDS_BADEPS, "Hi ha un problema en fer el fitxer EPS")
+	GSVS(IDS_NOPREVIEW, "No és un fitxer DOS EPS o bé\nNo hi ha visualització prèvia binària")
+	GSVS(IDS_NOTDFNAME, "No es pot utilitzar el mateix nom que té el document obert")
+	GSVS(IDS_NOTEMP, "No s'ha pogut obrir el fitxer temporal.\nPotser el directori és només de lectura.\nPotser no s'ha definit la variable d'entorn TEMP.")
+	GSVS(IDS_CANCELDONE, "%d%% fet")
+	GSVS(IDS_BADCLI, "L'opció de la línia d'ordre és incorrecte: ")
+	GSVS(IDS_DUPOPT, "Només podeu indicar una de les opcions /F /P /S.  S'ha produït un error a: %s")
+	GSVS(IDS_TEXTFIND, "Quin text voleu buscar?")
+	GSVS(IDS_TEXTNOTFIND, "No s'ha trobat el text")
+	GSVS(IDS_PRINTPDFPS, "No es pot imprimir un PDF a una impressora PostScript.  Utilitzeu l'opció Fitxer | Extreu")
+	GSVS(IDS_NOPDFQUICKTEXT, "No es pot fer la recerca o extracció ràpida de text en un fitxer PDF.  Utilitzeu l'opció Opcions | PS a Text")
+	GSVS(IDS_BAD_DOSEPS_HEADER, "La capçalera DOS EPS és incorrecta. S'estan ignorant els comentaris DSC.")
+	GSVS(IDS_PROBABLY_PCL, "Sembla PCL, pensat per a impressores HP LaserJet o DeskJet.  Esteu segur que és PostScript?")
+	GSVS(IDS_BUSYPRINTING, "El GSview està ocupat tot imprimint.  Premeu Cancel·la per esperar fins que el GSview hagi acabat.")
+END
+
+STRINGTABLE
+BEGIN
+	/* sound type types*/
+	GSVS(IDS_SOUNDNAME, "Fitxer de so")
+	GSVS(IDS_SNDPAGE, "Pàgina de sortida")
+	GSVS(IDS_SNDNOPAGE, "Sense pàgina")
+	GSVS(IDS_SNDNONUMBER, "Sense númeració")
+	GSVS(IDS_SNDNOTOPEN, "No s'ha obert")
+	GSVS(IDS_SNDERROR, "Error")
+	GSVS(IDS_SNDTIMEOUT,	"Temps excedit")
+	GSVS(IDS_SNDSTART, "Inici")
+	GSVS(IDS_SNDEXIT, "Sortida")
+	GSVS(IDS_SNDBUSY, "Ocupat")
+	GSVS(IDS_NONE, "<Cap>")
+	GSVS(IDS_SPKR, "<Bip de l'altaveu>")
+END
+
+STRINGTABLE
+BEGIN
+	/* help topics - these need to match keywords in XX\gvclang.txt */
+	GSVS(IDS_TOPICROOT,  "Introducció")
+	GSVS(IDS_TOPICOPEN,  "Obre")
+	GSVS(IDS_TOPICPRINT, "Imprimeix")
+	GSVS(IDS_TOPICPROP, "Propietats")
+	GSVS(IDS_TOPICEDITPROP, "Propietats de l'edició")
+	GSVS(IDS_TOPICCONVERT, "Converteix")
+	GSVS(IDS_TOPICCLIP, "Porta-retalls")
+	GSVS(IDS_TOPICPREVIEW, "Visualització prèvia de l'EPS")
+	GSVS(IDS_TOPICSOUND, "Sons")
+	GSVS(IDS_TOPICDSET, "Paràmetres de la visualització")
+	GSVS(IDS_TOPICMEDIA, "Suport")
+	GSVS(IDS_TOPICPSTOEPS, "De PS a EPS")
+	GSVS(IDS_TOPICGOTO, "Selecció de pàgina")
+	GSVS(IDS_TOPICINSTALL, "Instal·lació")
+	GSVS(IDS_TOPICTEXT, "Extracció i Recerca de Text")
+	GSVS(IDS_TOPICKEYS, "Tecles")
+	GSVS(IDS_TOPICMESS, "Mostra els missatges")
+	GSVS(IDS_TOPICSPOOL, "Gestor de cues")
+	GSVS(IDS_TOPICZLIB, "zlib")
+	GSVS(IDS_TOPICBZIP2, "bzip2")
+	GSVS(IDS_TOPICPSTOEDIT, "PS a Edit")
+	GSVS(IDS_TOPICMEASURE, "Mida")
+	GSVS(IDS_TOPICEASYCFG, "Configuració fàcil")
+	GSVS(IDS_TOPICADVANCEDCFG, "Configuració avançada")
+	GSVS(IDS_TOPICDOWNLOAD, "Obtenció del Ghostscript")
+	GSVS(IDS_TOPICDSCWARN, "Avisos DSC")
+	GSVS(IDS_TOPICREG, "Registre")
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_BBPROMPT,  "Feu clic a l'esquerra")
+	GSVS(IDS_BBPROMPT1, "Feu clic a la part inferior")
+	GSVS(IDS_BBPROMPT2, "Feu clic a la dreta")
+	GSVS(IDS_BBPROMPT3, "Feu clic a la part superior")
+	GSVS(IDS_EPSONEPAGE, "Un fitxer EPS ha de ser un document d'una sola pàgina. \nVegeu l'ajuda de 'PS a EPS'.")
+	GSVS(IDS_EPSQPAGES, "És un document d'una sola pàgina?")
+	GSVS(IDS_EPSNOBBOX, "No es pot obtenir el requadre del límit")
+	GSVS(IDS_EPSUSERINVALID, "El fitxer de visualització prèvia no és un TIFF o un Windows Metafile")
+	GSVS(IDS_EPSUSERTITLE, "Obre el fitxer de visualització prèvia")
+	GSVS(IDS_EPS_OFF_PAGE, "El requadre del límit de l'EPS està completament fora de la pàgina. Us suggerim utilitzar l'opció 'Opcions | Retalla l'EPS'")
+	GSVS(IDS_MUSTUSEPORTRAIT, "Heu d'utilitzar la orientació vertical.")
+END
+
+STRINGTABLE
+BEGIN
+	/* wait messages */
+	GSVS(IDS_WAIT, "Espereu")
+	GSVS(IDS_WAITREAD,  "S'està llegint...")
+	GSVS(IDS_WAITWRITE,  "S'està escrivint...")
+	GSVS(IDS_WAITDRAW, "S'està dibuixant...")
+	GSVS(IDS_WAITDRAW_PC, "S'està dibuixant %d%%")
+	GSVS(IDS_WAITGSOPEN, "S'està obrint el Ghostscript...")
+	GSVS(IDS_WAITGSCLOSE,  "S'està tancant el Ghostscript...")
+	GSVS(IDS_WAITPRINT,  "S'està imprimint...")
+	GSVS(IDS_WAITSEARCH,  "S'està cercant...")
+	GSVS(IDS_WAITTEXT, "S'està extreient el text %d%%")
+END
+
+
+STRINGTABLE
+BEGIN
+	/* debug messages */
+	GSVS(IDS_DEBUG_DFISLOCKED, "dfreopen: el fitxer està blocat")
+	GSVS(IDS_DEBUG_DFISOPEN, "dfreopen: el fitxer ja està obert")
+	GSVS(IDS_DEBUG_DFISMISSING, "dfreopen: falta el fitxer")
+	GSVS(IDS_DEBUG_DFCHANGED, "dfreopen: el fitxer ha canviat")
+	GSVS(IDS_DEBUG_DFISCLOSED, "dfclose: el fitxer ja està tancat")
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_PROCESS_GSLOAD_FAIL, "No es pot obrir el DLL del Ghostscript")
+	GSVS(IDS_PROCESS_INIT_FAIL, "gs_process: ha fallat el gsdll.init")
+	GSVS(IDS_PROCESS_VIEWER_FAIL, "gs_process: ha fallat el '(viewer.ps) run'")
+	GSVS(IDS_PROCESS_EXECUTE_FAIL, "gs_process: ha fallat el gsdll.execute_cont")
+END
+
+STRINGTABLE
+BEGIN
+	/* PDF messages */
+	GSVS(IDS_PDFNOPAGE, "Hi ha un nombre desconegut de pàgines al fitxer PDF\nPrimer heu de visualitzar el fitxer" )
+	GSVS(IDS_PDFEXTRACTALL, "Hi ha un nombre desconegut de pàgines al fitxer PDF\nS'estan extreient o imprimint totes les pàgines")
+	GSVS(IDS_USEPDFWRITE, "Per extreure pàgines d'un fitxer PDF, utilitzeu l'opció Fitxer | Converteix amb el dispositiu pdfwrite o pswrite.")
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_LARGEMEDIA, "Avís: la mida del suport és més ampla o més alta de 2 metres. Si us plau, comproveu l'opció 'Suport | Definit per l'usuari")
+	GSVS(IDS_NOTIMPLEMENTED, "No s'ha implementat")
+	GSVS(IDS_NOLINKTARGET, "L'objectiu per enllaçar és desconegut")
+	GSVS(IDS_PARSEERROR, "S'ha produït un error en analitzar la línia d'ordre")
+	GSVS(IDS_ZLIB_FAIL, "La càrrega del DLL zlib ha fallat. Premeu el botó D'acord per a ajuda.")
+	GSVS(IDS_BZIP2_FAIL, "La càrrega del DLL bzip2 ha fallat.  Premeu el botó D'acord per a ajuda.")
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_BETAEXPIRED, "Aquesta versió de prova (BETA) del GSview ha caducat. Vegeu http://www.cs.wisc.edu/~ghost/ per als detalls sobre com obtenir una versió actual del GSview")
+	GSVS(IDS_BETAWARN, AABETAWARN)
+	GSVS(IDS_NOPRINTERINI, "No es pot obrir el printer.ini")
+	GSVS(IDS_NOINI, "No es pot obrir el fitxer INI")
+	GSVS(IDS_NEEDTEMP, "Heu de definir la variable d'entorn TEMP com un directori d'escriptura vàlid. Sense això, el GSview no podrà imprimir")
+	GSVS(IDS_GSNOTINSTALLED, "No heu instal·lat el Ghostscript. Si us plau, llegiu el fitxer readme.htm del GSview.")
+	GSVS(IDS_GSLIBNOTINSTALLED, "No heu instal·lat els fitxers de biblioteca del Ghostscript. Si us plau, llegiu el fitxer readme.htm del GSview.")
+	GSVS(IDS_NOPROGMAN, AANODDEPROGMAN)
+	GSVS(IDS_PROGRAMOBJECTFAILED, AAPROGRAMOBJECTFAILED)
+	GSVS(IDS_INVALIDREG, "El Nom o el Número de registre no són vàlids")
+	GSVS(IDS_UNREGISTERED, "No s'ha registrat")
+	GSVS(IDS_WRONGEMX, "Teniu l'emx %s.\rNecessiteu l'emx %s o superior.\rPM El GSview no funcionarà correctament.")
+	GSVS(IDS_GSVIEWVERSION, GSVIEW_DOT_VERSION)
+	GSVS(IDS_PROGMANGROUP4, AAPROGMANGROUP4)
+	GSVS(IDS_CFG73, AACFG73)
+	GSVS(IDS_CFG74, AACFG74)
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_PRN_PRINTMETHOD, "Mètode d'impressió")
+	GSVS(IDS_PRN_WINDOWSGDI, "Impressora Windows GDI")
+	GSVS(IDS_PRN_GSDEVICE, "Dispositiu Ghostscript")
+	GSVS(IDS_PRN_PSPRINTER, AAPSPRINTER)		/* "Impressora PostScript" */
+	GSVS(IDS_PRN_SETTINGS, "Paràmetres")
+	GSVS(IDS_PRN_HELP, AAHELP)			/* "Ajuda" */
+	GSVS(IDS_PRN_SELECTPAGES, "Selecciona")
+	GSVS(IDS_ALL, AAALL)
+	/* PageSize policies */
+	GSVS(IDS_PAGESIZE_VARIABLE, "Mida de la pàgina variable")
+	GSVS(IDS_PAGESIZE_FIXED, "Mida de la pàgina fixa")
+	GSVS(IDS_PAGESIZE_SHRINK, "Encongeix i ajusta la mida de pàgina")
+END
+
+STRINGTABLE
+BEGIN
+ 	GSVS(IDS_INVALIDNUMBER, "El nombre no és vàlid")
+ 	GSVS(IDS_CANTINVERT, "No es pot invertir la matriu")
+	GSVS(IDS_UNITPT, AAPT)
+	GSVS(IDS_UNITMM, AAMM)
+	GSVS(IDS_UNITINCH, AAINCH)
+	GSVS(IDS_UNITCUSTOM, AACUSTOM)
+END
+
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_DSC_INFO, "Informació DSC")
+	GSVS(IDS_DSC_WARN, "Avisos DSC")
+	GSVS(IDS_DSC_ERROR, "Error DSC")
+        GSVS(IDS_DSC_LINEFMT, "%.40s a la línia %d:")
+END
+
+
+/* Split strings if longer than 256 bytes */
+
+STRINGTABLE
+BEGIN
+	GSVS(CDSC_RESOURCE_BBOX, "Aquesta línia és incorrecta.\012El requadre del límit ha de tenir coordenades enteres,\012no de punt flotant. Un requadre del límit amb punt flotant\012s'ha d'indicar utilitzant %%HiResBoundingBox:\012A Amb %%BoundingBox: s'haurien de donar valors enters.\012")
+	GSVS(CDSC_RESOURCE_BBOX2, "\012'D'acord' convertirà les coordenades a enters i\012les arrodonirà a l'alça.\012'Cancel·la' ignorarà la línia.\012")
+	GSVS(CDSC_RESOURCE_BBOX3, "")
+
+
+	GSVS(CDSC_RESOURCE_EARLY_TRAILER, "El tràiler normalment és al final del document.\012Aquesta línia s'ha trobat a més de 32 kbytes del final\012del fitxer.  Els tràilers normalment no són d'aquesta mida.\012Més aviat sembla que s'hagi inclòs un altre fitxer PostScript,")
+	GSVS(CDSC_RESOURCE_EARLY_TRAILER2, "\012i que no s'hagi adjuntat entre %%BeginDocument / %%EndDocument.\012\012'D'acord' assumirà que això forma part d'un fitxer inclòs.\012'Cancel·la' assumirà que és un tràiler.\012")
+	GSVS(CDSC_RESOURCE_EARLY_TRAILER3, "")
+
+	GSVS(CDSC_RESOURCE_EARLY_EOF, "Aquesta línia normalment apareix al final d'un document.\012Aquesta línia s'ha trobat a més de 100 bytes del final\012del fitxer.\012Més aviat sembla que s'hagi inclòs un altre fitxer PostScript,")
+	GSVS(CDSC_RESOURCE_EARLY_EOF2, "\012i que no s'hagi adjuntat entre %%BeginDocument / %%EndDocument.\012\012'D'acord' assumirà que això forma part d'un fitxer inclòs.\012'Cancel·la' assumirà que forma part d'un tràiler.\012")
+	GSVS(CDSC_RESOURCE_EARLY_EOF3, "")
+
+	GSVS(CDSC_RESOURCE_PAGE_IN_TRAILER, "Ha aparegut aquesta línia de %%Page: en un tràiler, la qual cosa no és legal.\012Els fitxer EPS s'han d'encapsular entre %%BeginDocument / %%EndDocument.\012És possible que el fitxer EPS fós encapsulat incorrectament,")
+	GSVS(CDSC_RESOURCE_PAGE_IN_TRAILER2, "\012i que ens haguem confós pel %%Trailer en un fitxer EPS.\012\012'D'acord' processarà més pàgines.\012'Cancel·la' ignorarà aquest comentari de pàgina.\012")
+	GSVS(CDSC_RESOURCE_PAGE_IN_TRAILER3, "")
+
+	GSVS(CDSC_RESOURCE_PAGE_ORDINAL, "Aquesta línia és incorrecta.\012Els dos arguments haurien de ser una etiqueta i un ordinal.\012L'ordinal hauria de ser 1 per a la primera pàgina i s'hauria\012d'augmentar en 1 per a cada pàgina que seguís.\012Falta l'ordinal de la pàgina o no hi és a ")
+	GSVS(CDSC_RESOURCE_PAGE_ORDINAL2, "la seqüència.\012\012Sembla que aquesta línia formi part d'un fitxer inclòs que\012no s'ha adjuntat entre %%BeginDocument / %%EndDocument.\012\012'D'acord' ignorarà aquesta pàgina, tot assumint que és part d'un\012fitxer EPS encapsulat incorrectament.\012")
+	GSVS(CDSC_RESOURCE_PAGE_ORDINAL3, "'Cancel·la' ho tractarà com una pàgina vàlida\012")
+
+	GSVS(CDSC_RESOURCE_PAGES_WRONG, "%%Pages: no coincideix amb el número de %%Page:\012\012'D'acord' ajustarà el comptatge de pàgines per fer-lo coincidir amb el número de comentaris %%Page:\012que s'han trobat.\012'Cancel·la' definirà el comptatge de pàgines com %%Pages:\012")
+	GSVS(CDSC_RESOURCE_PAGES_WRONG2,"")
+	GSVS(CDSC_RESOURCE_PAGES_WRONG3,"")
+
+	GSVS(CDSC_RESOURCE_EPS_NO_BBOX, "Falta el %%BoundingBox: necessari al fitxer EPS.\012Vegeu l'ajuda del GSview per a detalls sobre com afegir/ajustar el\012requadre del límit.\012\012'D'acord' assumirà que és un fitxer EPS.\012'Cancel·la' assumirà que NO és un fitxer EPS.\012")
+	GSVS(CDSC_RESOURCE_EPS_NO_BBOX2, "")
+	GSVS(CDSC_RESOURCE_EPS_NO_BBOX3, "")
+
+	GSVS(CDSC_RESOURCE_EPS_PAGES, "Els fitxers EPS poden tenir 0 o 1 pàgines.  Aquest fitxer 'EPS' en té\012més i per tant no és un fitxer EPS.\012No podeu utilitzar `Imprimeix a` `Fitxer PostScript Encapsulat` per\012imprimir fitxers de múltiples pàgines. El mètode correcte és connectar")
+	GSVS(CDSC_RESOURCE_EPS_PAGES2, "\012la impressora a FILE: o seleccionar 'Imprimeix a un fitxer'.\012\012'D'acord' assumirà que és un fitxer EPS.\012'Cancel·la' assumirà que NO és un fitxer EPS.\012")
+	GSVS(CDSC_RESOURCE_EPS_PAGES3, "")
+
+	GSVS(CDSC_RESOURCE_NO_MEDIA, "El suport s'ha especificat amb %%DocumentMedia:, però no s'ha indicat\012un suport predeterminat amb %%PageMedia:.\012\012'D'acord' definirà el suport predeterminat com el primer de la llista.\012'Cancel·la' no definirà un suport predeterminat.\012") 
+	GSVS(CDSC_RESOURCE_NO_MEDIA2, "") 
+	GSVS(CDSC_RESOURCE_NO_MEDIA3, "") 
+
+	GSVS(CDSC_RESOURCE_ATEND, "La línia és incorrecta.\012Per ajornar un valor, heu d'utilitzar '(atend)', no 'atend'\012\012'D'acord' assumirà que es volia dir (atend).\012'Cancel·la' ignorarà aquesta línia.\012")
+	GSVS(CDSC_RESOURCE_ATEND2, "")
+	GSVS(CDSC_RESOURCE_ATEND3, "")
+
+	GSVS(CDSC_RESOURCE_DUP_COMMENT, "Aquest comentari està duplicat a l'encapçalament, la qual cosa no és necessària.\012La primera aparició d'una línia de capçalera té prioritat.\012\012'D'acord' o 'Cancel·la' ignoraran la línia duplicada.\012")
+	GSVS(CDSC_RESOURCE_DUP_COMMENT2, "")
+	GSVS(CDSC_RESOURCE_DUP_COMMENT3, "")
+
+	GSVS(CDSC_RESOURCE_DUP_TRAILER, "Aquest comentari està duplicat al tràiler, la qual cosa no és necessària.\012La última aparició d'una línia del tràiler té prioritat.\012\012'D'acord' o 'Cancel·la' utilitzaran la línia duplicada.\012")
+	GSVS(CDSC_RESOURCE_DUP_TRAILER2, "")
+	GSVS(CDSC_RESOURCE_DUP_TRAILER3, "")
+
+	GSVS(CDSC_RESOURCE_BEGIN_END, "El nombre de comentaris del començament i del final no coincideixen.\012\012'D'acord' o 'Cancel·la' ignoraran aquest error.\012")
+	GSVS(CDSC_RESOURCE_BEGIN_END2, "")
+	GSVS(CDSC_RESOURCE_BEGIN_END3, "")
+
+	GSVS(CDSC_RESOURCE_BAD_SECTION, "Aquesta línia és incorrecta perquè no hauria d'aparèixer\012en una pàgina. Això possiblement indiqui que es va encapsular\012incorrectament un fitxer EPS. S'ignorarà la línia.\012\012'D'acord' o 'Cancel·la' ignoraran la línia.\012")
+	GSVS(CDSC_RESOURCE_BAD_SECTION2, "")
+	GSVS(CDSC_RESOURCE_BAD_SECTION3, "")
+
+	GSVS(CDSC_RESOURCE_LONG_LINE, "\012\012Les línies en els documents DSC han de ser més petites que 255 caràcters.\012") 
+	GSVS(CDSC_RESOURCE_LONG_LINE2, "") 
+	GSVS(CDSC_RESOURCE_LONG_LINE3, "") 
+
+	GSVS(CDSC_RESOURCE_INCORRECT_USAGE, "Aquesta línia de comentari DSC és incorrecta.\012Si us plau, vegeu les especificacions dels DSC.\012\012'D'acord' o 'Cancel·la' ignoraran aquest error.\012")
+	GSVS(CDSC_RESOURCE_INCORRECT_USAGE2, "")
+	GSVS(CDSC_RESOURCE_INCORRECT_USAGE3, "")
+
+END

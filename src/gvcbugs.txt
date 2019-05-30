@@ -1,0 +1,81 @@
+/* gvcbugs.txt */
+Known problems with GSview  1996-08-11
+
+See the 'tasks' file.
+
+ALL
+===
+
+
+MS-WINDOWS
+==========
+If a space is used in the Ghostscript path, the Program Manager
+Ghostscript icon won't work.
+
+
+MS-WINDOWS Win32s
+=================
+
+
+MS-WINDOWS NT
+=============
+
+
+MS-WINDOWS 95
+=============
+Spaces in GSview path confuse Borland C++ 4.5 and PROGMAN DDE.
+
+
+OS/2
+====
+
+For palette manager displays, mouse scrolling causes a
+WM_REALIZEPALETTE, which in turn causes a complete repaint.
+The observed sequence is:
+  Window is scrolled.
+  Exposed area is painted
+  WM_REALIZEPALETTE
+  Complete window is repainted.
+
+List of known or suspected display driver bugs for PM.
+Russell Lang  1994-05-19
+
+Drawing from a BMP to an internal bitmap or the display appears to
+be the responsibility of the display driver.  It has been extremely
+frustrating trying to write code that will work on all displays.
+
+Known display driver bugs are:
+
+- GpiDrawBits won't draw to a standard VGA display (OS/2 2.1 and 2.11)
+
+- WinDrawBitmap won't draw to an ATI GUP with 8514 drivers (OS/2 2.1).
+  Consequently GSview uses a different method for writing to a 4 bit/pixel 
+  display than for an 8 bit/pixel color display.  The 4bit/pixel method
+  involves double handling (use GpiDrawBits to draw into a memory bitmap
+  then WinDrawBitmap to copy it to the display).  This is very slow.
+
+- On the STB X24, 1 bit/pixel displays incorrectly if the bitmap 
+  is > 64kbytes.  Looks like buggy 16 bit code. (rjl)
+  This card is an absolute dog.  The display drivers wouldn't install
+  on anything but a newly installed OS/2.  The MS-Windows drivers
+  for this card had files in different directories to those listed 
+  in the setup.inf file, and even if the correct paths were used, 
+  the drivers wouldn't install at all.
+
+- On ATI GU in 8514, OS/2 2.11, GpiDrawBits stretches bitmaps vertically
+  when drawing from a 1bit/pixel bitmap to the 8bit/pixel display.
+  This occurrs when painting into a presentation space obtained using
+  WinGetPS immediately after WinScrollWindow.  Also incorrect when
+  region invalidated by WinScrollWindow and redrawn with later WM_PAINT.
+  8bit/pixel bitmap works fine.
+  Same occurred on Diamond Stealth Pro VESA with 2Mbytes.
+  Works correctly on standard VGA.  (Rommel).
+  Same occurred on Diamond Stealth VL24.  (rjl)
+  This is due to an OS/2 (or driver) bug since the correct arguments
+  *are* being passed to the GpiDrawBits() function.
+  The workaround is to double buffer the bitmap as for 4bit/pixel displays.
+  Double buffering doesn't work for 8bit/pixel bitmaps so GSview code
+  only double buffers when OS/2 2.11, 8bit/pixel display with 1bit/pixel
+  bitmap,  or any version of OS/2 and 4bit/pixel display.
+
+

@@ -1,0 +1,2656 @@
+ GSview Hulp
+1Overzicht
+-Overview
+?Overzicht
+ `GSview` is een grafische schil om Ghostscript te gebruiken onder MS-Windows,
+ OS/2 en GNU/Linux.
+ Ghostscript interpreteert het "PostScript page description language"
+ dat door laserprinters wordt gebruikt.
+ Bij documenten opgemaakt volgens de "Adobe PostScript Document Structuring"
+ laat GSview toe geselecteerde bladzijden te bekijken en af te drukken.
+ Voor GSview 4.8 is vereist 7.04 - 9.19.
+2Installatie
+-Installation
+?Installatie
+W
+ Om GSview te installeren dient u het installatieprogramma `setup.exe` te gebruiken.
+P
+ Om GSview te installeren dient u het installatieprogramma `os2setup.exe` te gebruiken
+X
+ Om GSview te installeren dient u het RPM pakket te gebruiken.
+E
+ U dient Ghostscript afzonderlijk te installeren.
+
+ Indien u GSview zelf manueel wilt installeren, gelieve dan eerst het onderwerp
+  `Manueel Installeren` te raadplegen.
+
+ Alle opties worden automatisch ingesteld bij het eerste opstarten van GSview.
+ Indien u later om een of andere reden de instellingen wilt aanpassen, ga dan naar
+WP
+ `Opties` | `Eenvoudige configuratie` of
+E
+ `Opties` | `Aangepaste Configuratie`.
+
+ Zie ook `Opties` | `Taal`.
+3Hoe zich Ghostscript aanschaffen?
+-Obtaining_Ghostscript
+?Hoe zich Ghostscript aanschaffen?
+ GSview moet samengaan met AFPL Ghostscript.  GSview en Ghostscript
+ zijn afzonderlijk af te halen van
+  http://www.cs.wisc.edu/~ghost/
+ Om GSview in te stellen en/of aan te passen, dient u eerst zowel Ghostscript
+ als GSview te installeren, en daarna GSview op te starten.
+3Het installeren van Ghostscript.
+?Het installeren van Ghostscript.
+W
+ AFPL Ghostscript voor Win32 wordt geleverd als zelfuitpakkend bestand dat ook
+ automatisch wordt geïnstalleerd.
+P
+ AFPL Ghostscript voor OS/2 komt als *.zip bestand en dient manueel te worden
+ geïnstalleerd.
+X
+ AFPL Ghostscript wordt geleverd als RPM pakket of louter in broncodes die u dan
+ zelf moet compileren.
+E
+ Meer details nopens het installeren van Ghostscript kan u aantreffen in de bestanden
+ Install.htm en Use.htm .
+3GSview verwijderen.
+?GSview verwijderen.
+W
+ Om onder Windows 95/98/ME of NT 4.0/2000 GSview te verwijderen,
+ gebruik `Add/Remove Programs` from the Windows `Control Panel`.
+E
+4Manueel verwijderen.
+?Manueel verwijderen.
+P
+ Om GSview te verwijderen dient u alle bestanden in de `gsview ` directory te wissen.
+ Alsook
+  x:\os2\gvpm.ini
+ waarbij x: de opstartpartitie is van OS/2.
+
+ Verwijder ook het `GSviewobject ` van de Werkplek.
+
+ Evenzeer, om Ghostscript manueel te verwijderen, dient u alle bestanden en
+ directory's te verwijderen waar Ghostscript werd geïnstalleerd.
+W
+ Om GSview te verwijderen dient u de directory `gsview ` en alle bestanden daarin
+ te verwijderen, alsook het bestand `gsview32.ini ` in de
+  c:\windows
+ directory.
+
+ Onder Windows NT/2000 dient u ook het bestand gsview32.ini in de gebruikers
+ directories te verwijderen.
+
+ Verwijder de `Ghostgum` groep uit de Program Manager en/of het Start menu
+
+ Indien u weet hoe registry.dat te bewerken, wis dan de volgende verwijzingen:
+  HKEY_CLASSES_ROOT\psfile
+  HKEY_CLASSES_ROOT\.eps
+  HKEY_CLASSES_ROOT\.ps
+  HKEY_CLASSES_ROOT\MIME\Database\Content Type\application/postscript
+ Indien PDF bestanden aan GSview werden gekoppeld dient u ook te verwijderen:
+  HKEY_CLASSES_ROOT\pdffile
+  HKEY_CLASSES_ROOT\.pdf
+  HKEY_CLASSES_ROOT\MIME\Database\Content Type\application/pdf
+
+ De voorkeur methode om Ghostscript te de-installeren  is
+ gebruik maken van `Toevoegen/Verwijderen Programma's` vanuit het `WINDOWS Bedieningspaneel`.
+
+ Om Ghostscript manueel te de-installeren, verwijder de bestanden in de `gsN.NN`
+ directory waarbij N.NN het versienummer is van Ghostscript.
+X
+ Indien GSview werd geïnstalleerd door middel van het RPM pakket, maak dan gebruik
+ van `rpm` om te de-installeren.
+
+ Of anders, verwijder `gsview`, `gsview-hulp`, `pstotext` en `epstool`
+ uit de /usr/bin directory,
+ de documentatie `IN/usr/share/doc/gsview-N.N` en
+ `EN/usr/etc/gsview/printer.ini`.
+ De juist paden zijn afhankelijk van de manier waarop GSview werd gecompileerd.
+E
+3Manuele Installatie
+?Manuele Installatie
+X
+ Kopier `gsview`, `gsview-help`, `epstool` en `pstotext`
+ naar een directory in uw zoekpad.
+ Kopieer `gvx*.htm` to the `DIRECTORY/usr/share/doc/gsview-N.NN`.
+ Kopieer `printer.ini` naar de `DIRECTORY/usr/etc/gsview/printer.ini`.
+WP
+ Aanbevolen is gebruik te maken van het installatie programma om GSview te
+ installeren. Volgende instructies beschrijven op welke manier GSview kan
+ geïnstalleerd worden gebruik maken van het installatie programma.
+
+ Stel de omgevingsvariabele TEMP voor tijdelijk bestanden
+ in naar een directory TEMP.  bijvoorbeeld:
+   SET TEMP=c:\temp
+ De directory moet bestaan en moet beschikbaar zijn voor lezen/schrijven.
+
+ Om te beginnen u dient u  Ghostscript te installeren inclusief de bibliotheek
+ bestanden en fonts. U dient de Ghostscript versie te gebruiken zoals staat
+ aangegeven in het Overzicht. Deze versie van GSview zal niet werken met andere
+ versies van Ghostscript. Installeer Ghostscript in een directory
+ c:\gs\gsN.NN (Vervang N.NN door het Ghostscript versie nummer.)
+
+ Creëer een directory c:\ghostgum\gsview
+
+ Installeer vervolgens
+P
+ Installeer vervolgens PM GSview (OS/2) door gvpm.exe, gvpgs.exe, gvpmde.dll,
+ gvpmes.dll, gvpmfr.dll, gvpmit.dll, gvpmen.hlp, gvpmde.hlp, gvpmes.hlp,
+ gvpmfr.hlp, gvpmit.hlp en printer.ini te kopiëren naar de c:\ghostgum\gsview directory.
+W
+ GSview voor Windows door gsview32.exe, gsv16spl.exe, gvwgs32.exe,
+ gsvw32de.dll, gsvw32es.dll, gsvw32fr.dll, gsvw32it.dll, gsviewen.hlp, gsviewde.hlp,
+ gsviewes.hlp, gsviewfr.hlp, gsviewit.hlp and printer.ini
+WP
+ naar de `c:\ghostgum\gsview` directory te kopiëren.
+
+P
+ Start dan GSview volgens de instructies aangegeven in de configuratie gids.
+ Zodoende zal automatisch worden geactiveerd `Opties` | `Geavanceerde Configuratie` ,
+ wordt een lijst van een aantal courante printers naar het INI bestand gekopiëerd,
+ wordt een GSview programmaobject op de werkplek gecreëerd. Indien u later
+ opnieuw wenst gebruik te maken van de configuratiegids, maak gebruik van
+ `Opties` | `Eenvoudige Configatie`.
+
+W
+ Start GSview en selecteer de gepaste versie van Ghostscript (normaal gezien
+ de jongste). Wilt u later een en ander wijzigen, ga dan naar `Opties` | `Eenvoudige Configatie`.
+E
+
+ Voor meer over de  configuratie, zie `Geavanceerde  manuele installatie`.
+
+3Geavanceerde  manuele installatie
+?Geavanceerde  manuele installatie
+WP
+ In plaats van `Opties` | `Eenvoudige Configuratie`, gebruik `Opties`|`Geavanceerde  configuratie`.
+
+P
+ Sluit dan GSview af, en koppel dan GSview INI aan printer.ini (c:\os2\gvpm.ini).
+ [COPY gvpm.ini + printer.ini /A gvpm.ini].
+ Creëer op de werkplek een programmaobject object voor GSview, en koppel het
+ met de bestanden met als extensie .ps, .eps en .pdf.  Indien u beschikt over
+ Type 1 fonts, dan kan u  Ghostscript daar gebruik van laten maken. Voor meer
+ hierover en voorbeelden zie Fontmap.os2 en Fontmap.atm meegeleverd met Ghostscript.
+W
+ Kies een van volgende twee procedures in het dialoogkader `Geavanceerde configuratie`.
+ Ofwel:
+ `Kopieëer printer eigenschappen` + `Koppel *.ps bestanden met GSview` en
+ `Creëer Start Menu items`, .
+ Ofwel - voer volgende drie stappen uit:
+
+ 1. Sluit GSview af, en koppel dan printer.ini aan GSview32.INI
+ (c:\windows\gsview32.ini) - [COPY GSview32.ini + printer.ini /A  GSview32.ini]
+
+ 2. Voeg de  *.ps en *.eps (en eventueel *.pdf) toe aan het registerbestand `Registry.dat`.
+
+ 3. Creëer een programmaobject of snelkoppeling voor GSview.
+
+X
+ Nadat GSview werd opgestart, ga naar `Opties` | `Geavanceerde configuratie`.
+ Pas het Ghostscript versie nummmer aan aan dat van Ghostscript.
+ Bijvoorbeeld, wanneer `gs -h` retourneert 5.50, tik dan in 550.
+ Stel eerst de drie tekstvelden in (zie `Geavanceerde configuratie`].
+E
+ Indien u beschikt over Type 1 fonts, dan kan u  Ghostscript daar gebruik van
+ laten maken. Voor meer hierover en voorbeelden zie Fontmap.os2 en Fontmap.atm
+ meegeleverd met Ghostscript. Zie ook het onderwerp `Fonts`.
+ Indien u problemen ondervindt, zie het  hulp onderwerp `Veel gestelde vragen`.
+WP
+3Netwerk Installatie
+?Netwerk Installatie
+?Gebruikers profielen
+ GSview installeren naar een netwerk directory.
+
+ Wanneer GSview voor het eerst wordt opgestart, of wanneer GSview wordt
+ opgestart nadat het versienumer werd gewijzigd, zal GSview zichzelf
+ automatisch  configureren.
+ Een UNC pad gebruiken bij het installeren werkt niet met Windows 3.1
+ maar wel met Windows 95/98/Me.
+
+W
+ GSview stelt principieel èèn comfiguratiebestand in per gebruiker.
+ Onder Windows 95/98/Me of NT/2000/XP, wordt dit
+ bestand bewaard in de directory gespecifieerd in het bestand
+ registry.dat.  Is dat laatste bestand niet beschikbaar,
+ dan wordt het configuratiebestand opgeslagen in de directory
+ zoals aangegeven in de omgevingsvariable USERPROFILE.
+ Indien ook dit niet kan wordt het configuratiebestand opgeslagen
+ in de directory C:\Windows.
+ Als de directory met het configuratiebestand bestaat maar
+ schrijfbeveiligd werd, dan zullen er problemen ontstaan tijdens
+ de installatie.
+WP
+ Wil u niet dat GSview de Eenvoudige configuratie toont bij
+ een eerste opstart of bij een upgrade, plaats dan een INI bestand
+ in de GSview directory. Vergeet dan niet dit bestand te verwijderen
+ bij een eventuele volgende bijwerking van GSview. Dat ini bestand
+ mag dan enkel de instructies bevatten die MOETEN OVERSCHREVEN
+ worden! U gaat dus best tewerk als hierna beschreven:
+ Kopiëer gsview32.ini (Windows) of gvpm.ini (OS/2) van de
+ systeem- of gebruikersdirectory naar de GSview directory, en
+ verwijder alle instructies UITGENOMEN:
+  [GSview-4.8]
+  Version=4.8
+  GSversion=853
+  Configured=1
+  GhostscriptDLL=e:\gs\gs8.53\bin\gsdll32.dll
+  GhostscriptInclude=e:\gs\gs8.53\lib;e:\gs\fonts
+  GhostscriptOther=-dNOPLATFONTS -sFONTPATH="c:\psfonts"
+  Wanneer een gebruiker GSview opstart wordt normaliter zijn INI bestand
+  ingelezen. Wanneer GSview voor het allereerst wordt opgestart, of
+  wanneer het GSview versienummer niet overeenstemt met datgene
+  in het INI bestand, dan verlopen de zaken zich als volgt:
+
+ 1. Het INI bestand in de GSview directory wordt ingelezen.
+
+ 2. De printerslijst wordt bijgewerkt aan de hand van printer.ini in
+    de GSview directory.
+
+ 3. Koppelingen worden NIET ingesteld noch aangepast (.ps, .eps, .pdf).
+   Wilt u dit toch aanpassen dan moet u gaan naar
+   `Opties| Geavanceerde configuratie`.
+
+ 4. De Programma Manager / Start menu onderdelen / Programmaobjecten
+    worden niet gewijzigd. Wilt u dit toch aanpassen, dan moet u gaan
+    naar `Opties` | `Geavanceerde configuratie`.
+ W
+ Wordt op een Windows NT4/2000, geïnstalleerd, dan wordt bij het selecteren
+ van "Alle Gebruikers" gsview32.ini in de GSview directory opgeslagen.
+
+
+ Wanneer GSview wordt verwijderd aan de hand van het GSview
+ de-installatieprigramma, zullen ook alle GSview en Ghostscript
+ bestanden op het netwerk worden verwijderd.
+ Waak er dus over dat de GSview enGhostscript directory's niet
+ door de gebruikers kunnen worden gewijzigd.
+ Als extra voorzorgsmaatregel kan u eventueel het bestand
+ `uninstal.txt` uit de GSview directory verwijderen.
+
+ Wanneer u GSview wil installeren zonder enige tussenkomst
+ van de gebruiker, voer het zelf-uitpakkend bestand uit
+ en start dan de installatie als volgt:
+ setup -naam "Uw naam" -number XXXXX-XXXXX "c:\ghostgum"
+E
+W
+3GSview met het Windows bestandsbeheer of de Verkenner
+?Over registry.dat
+?Bestandsbeheer
+?Windows Verkenner
+?Registry
+ Indien `ja` werd geantwoordt op alle vragen tijdens de installatie,
+ dan werd de alles reeds ingesteld zoals het hoort.
+ Indien dit niet hetgeval was, lees dan volgende uitleg
+ over de manuele aanpassing van registry.dat.
+
+ Om GSview te starten als een PostScript bestand werd aangeklikt
+ in het bestandsbeheer, moet de volgende procedure worden gevolgd.
+
+ Vanuit het `Bestandsbeheer`, start de Registry Editor middels
+ `Bestand `| `Start...` en tik dan in `regedit`.
+ Vanuit de `Registry Editor` selecteer `Bewerken `| `Bestandstype toevoegen...`
+ en vul dan het volgende in:
+  Identifier = psfile
+  Filetype = PostScript
+  Action = Open
+  Command = c:\ghostgum\gsview\gsview32 %1
+  Uses DDE = unchecked
+  Action = Print
+  Command = c:\ghostgum\gsview\gsview32 /p %1
+  Uses DDE = unchecked
+ Klik daarna op `OK`.
+
+ Vanuit het `Bestandsbeheer`, selecteer `Bestand `| `Koppelen` en vul
+ vervolgens deze velden aan:
+  Bestanden met extensie = ps
+  Koppelen met = PostScript (gsview)
+ Klik daarna op `OK`.
+
+ En dat is het dan!  Wanneer u nu dubbelklikt op een  PostScript bestand
+ zal het `Bestandsbeheer` GSview opstarten.  Wanneer u een PostScript
+ bestand op het afdrukobject neerzet, zal GSview het bestand afdrukken.
+ U heeft hier wel niets aan indien u niet over een  PostScript printer,
+ beschikt. In dit laatste geval moet u de koppeling uit registry.dat
+ verwijderen.
+
+ In Windows 95/98/Me wordt alles ingesteld aan de hand van de verkenner.
+
+ Start de `Verkenner`.  Selecteer `Beeld `| `Opties `.  Selecteer dan
+ `Bestandstypes` tab.  Selecteer dan `Niew Typ`.
+ Vul dan de velden in:
+  Type= PostScript
+  Extensie = PS EPS
+ Klik op de `Niew` knop, en tik dan in:
+  Actie = open
+  Toepassing = c:\ghostgum\gsview\gsview32.exe
+ Klik dan op `OK`.
+
+ Klik op de  `Niew` knop, en tik dan in:
+  Actie = afdrukken
+  Toepsassing = c:\ghostgum\gsview\gsview32.exe /p
+ Klik dan op `OK`.
+
+ Klik dan op `Sluiten`.
+
+ Klik dan op `Sluiten`.
+E
+2Registratie
+-Registration
+?Registratie
+ Indien u de ontwikkeling van GSview of wilt steunen en
+ het  GSview pestschermpje wilt uigeschakeld hebben,  overweeg dan
+ GSView te registreren.  Registratie is echter niet vereist.
+ GSview werd beschikbaar gesteld via  het Aladdin Free Public Licence,
+ inbegrepen in het bestand `LICENCE`.
+ Dit laat vrij gebruik toe, maar sluit commerciële distributie uit.
+
+ Momenteel bedraagt de registratievergoeding AUD$40.
+ GSview registreren kan online op de locatie:
+  http://www.ghostgum.com.au/
+ ofwel door het registratieformilier dat u in het bestand
+ `regorder.txt` kan vinden door te faxen of per email
+ te verzenden.
+ Online registratie geniet de voorkeur.
+2DSC: Afspraken over de structuur
+-DSC
+?DSC: Afspraken over de structuuDocument
+?DSC
+?Ingekapselde PostScript Bestanden (EPSF: Encapsulated Postscript Files)
+?EPSF
+?EPS
+ Adobe heeft een aantal regels vastgelegd en toelichtingen verstrekt
+ over de paginaopbouw van een Postscript bestand .
+ Indien een bestand DSC gegevens bevat, kunnen pagina's in
+ willekeurige volgorde worden getoond en afgedrukt aan de hand van
+ `Ga naar` of `Terug`. Geselecteerde pagina's kunnen worden
+ afgedrukt of weggeschreven naar een nieuw bestand.
+
+ Indien het bestand geen DSC gegevens bevat kan GSview enkel maar
+ de pagina's in de originele volgorde tonenr.
+
+ DSC compatible bestanden beginnen met het commentaar:
+  %!PS-Adobe-3.0
+ waarbij het nummer 3.0 variabel is en het DSC versie nummer voorstelt.
+ Sommige programma's slaan PS bestanden op met een control-D als
+ eerste teken, en laten pas dan de boven vermelde commentaar volgen.
+ GSview zal deze bestanden niet als DSC conform beschouwen, maar zal
+ ze desalniettemin met tonen (inclusief keuze opties).
+ Stuur eventueel een klacht over aan de auteur van het bestand,
+ en maak het bestand DCS conform door de control-D uit het bestand
+ te wissen.
+
+ DSC conforme bestanden bevatten gegvens als:
+  %%Pages: 24
+  %%Page: 1 1
+ Aan de hand van deze gegevens kanl GSview uitmaken hoeveel bladzijden
+ een bestand bevat, waar te beginnen en hoe indivuduele bladzijden te
+ selecteren.
+
+ EPSF-bestanden [Encapsulated PostScript Files] bestaan uit
+ afzonderlijke bladzijden bevattende met elk `DSC` commentaar en
+ PostScript opdrachten.
+ EPS bestanden beginnen met het commentaar:
+  %!PS-Adobe-3.0 EPSF-3.0
+ EPS bestanden worden meestal gebruikt als invoeging in andere
+ documenten en bevatten derhalve het "inbinden" commentaar:
+   %%BoundingBox: llx lly urx ury
+ waarbij llx, lly, urx and ury de  x en y coördinaten weergeven
+ beneden links en boven rechts van de "bindmerktekens" op de bladzijde.
+
+ Sommige EPS bestanden bevatten een afdrukvoorbeeld van het PostScript.
+ bestand. Dit voorbeeld kan in *.met, *.tiff of EPSI formaat zijn.
+ Voor *.met en *.tiff bestanden onder Dos bevat het EPS bestand bevat
+ een binaire kop met de gegevens over het afdrukvoorbeeld.
+ Om algemene conmpabliteit te verzekeren wordt het afdrukvoorbeeld
+ ingekapseld in DSC commnentaar die begint met:
+  %%BeginPreview: width height depth lines
+ Een afdrukvoorbeeld kan aan een EPS bestand zonder worden toegevoegd
+ middels de menu-opdracht `EPS afdrukvoorbeeld toevoegen`.
+
+ GSview kan er u opmerkzaam op maken dat een bestand  onjuiste DSC
+ commentaar bevat. Dit kan worden ingesleld, zie hiervoor:
+ `Opties` | `DSC-waarschuwingen`.
+2Portable Document Format
+-PDF
+?Portable Document Format
+?PDF
+?pdf2ps
+?ps2pdf
+ GSview toont en drukt PDF bestanden af. Er zijn echter wel een
+ aantal beperkingen.
+
+ GSview maakt geen gebruik paginainstellingen, en gebruikt in de plaats
+ de /MediaBox instructie van het PDF bestand.
+ Wanneer `Opties` | `EPS Knipsel` werd geactiveerd zal GSview gebruik
+ maken van de /CropBox instructie in het PDF bestand.
+
+ Om de bladzijden te kunnen tellen, moet GSview eerst het PDF bestand
+ openen. Bij het enkel maar selecteren van het bestand zullen geen
+ opdrachten zoals `Zoeken`, `Ga naar` etc... kunnen uitgevoerd worden.
+
+ Er is slechts een beperkte ondersteuning van het omzetten van PDF
+ naar PostScript en vice versa.
+
+ Wilt u een PostScript bestand naar PDF om te zetten, gebruik dan
+ `Bestand` | `Omzetten`, selecteer eerst een bestand en daarna
+ `pdfwrite`.
+
+ Wilt u een PDF bestand naar PostScript om te zetten, gebruik dan
+ `Bestand` | `Omzetten`, selecteer eerst een bestand en daarna
+ `pswrite`.
+
+ De menu optie `Bestand` | `Uitpakken` is niet mogelijk voor PDF
+ bestanden, aangezien uit PDF enkel PostScript kan worden uitgepakt.
+
+ Wilt u meerdere bestanden via een batchprocedure omzetten, raadpleeg dan
+X
+ ps2pdf.
+WP
+ ps2pdf.bat en pdf2ps.bat
+ in de Ghostscript directory.
+ U moet dan
+P
+ gvpm.exe
+W
+ gswin32c.exe
+WP
+ gebruiken i. p.v. gs.exe.  U kan dan eventueel ook de Ghostscript
+ parameter "pad incalculeren": `-I` of de omgevingsvariabele `GS_LIB`.
+E
+2Een document openen.
+-Open
+?File
+?Openen
+?Select File
+?Opslaan als
+?Close
+ `Openen` uit het menu `Bestand` laadt en toont de eerste bladzijde.
+
+ Indien het bestand `DSC` commenaar bevat, dan kunnen bladzijden
+ worden geselecteerd aan de hand van `´Volgende bladzijde`,
+ `Vorige bladzijde` en `Ga naar`.
+
+ Wanneer geen `DSC` gegevens beschikbaar zijn, dan werken `Ga naar`,
+ `´Volgende bladzijde` en `´Vorige bladzijde` niet.
+ U kan dan geen ander bestand selecteren dan nadat de laatste
+ bladzijde van het huidige document op het scherm werd getoond.
+
+ Wanneer een bestand open staat, toont GSview de bestandsnaam,
+ het paginanummer (indien beschikbaar) en, als de aanwijzer op een
+ afbeelding staat, de coördinaten ervan zoals aangegeven in
+ `Opties` | `Eenheden`.  Coördinaten kunnen gesteld worden in
+ PostScript eenheden (1/72"), millimeters of Engelse duim.
+ Aan de hand van de positie van de aanwijzer kan de "boekbinden"
+ functie worden gehanteerd.
+
+ `Bestand selecteren` komt overeen met `Openen` maar toont het
+ document niet op het scherm.
+ Deze optie is handig voor wanneer men het document enkel wil
+ afdrukken.
+
+ `Opslaan als` bewaard het bestand onder een andere naam terwijl
+ het origineel onveranderd op de schijf blijft.
+ Handig indien GSview door een ander programma wordt aangewend
+ om PostScript bestanden te bekijken en u het bestand dat op scherm
+ afzonderlijk wil bewaren.
+
+ `Sluiten` haalt een geopend document uit het geheugen.
+ Een document dient steeds afgesloten te worden vooraleer het kan
+ worden gewijzigd door een ander programma.
+ Doet u dit niet, en als GSview dan merkt dat het bestand werd
+ gewijzigd, zal GSview Ghostscript afsluiten en het document
+ opnieyw inlezen.
+
+ Zie ook `Afdrukken`.
+2Bladzijde kiezen
+-Page_SElection
+?Bladzijde kiezen
+?Volgende bladzijde
+?Vorige bladzijde
+?Opnieuw tonen
+?Ga naar
+?Bekijken
+?Inpassen in venster
+?Volledig scherm
+ `Bekijken` | `Volgende bladzijde` of de `+` toets brengt u naar de
+ volgende bladzijde van het document.
+ Deze optie werkt ook indien geen `DSC` gegevens beschikbaar zijn.
+
+ `Bekijken` | `Vorige bladzijde` of het `-` teken brengt het vorige
+ blad in beeld.
+
+ `Bekijken` | `Opnieuw tonen` of `F5` toont opnieuw de huidige
+ bladzijde.
+
+ `Bekijken` | `Ga naar bladzijde` of de `wijsvinger` knop toont het
+ dialoogkader waarbij u devolgende bladzijde kan kiezen die moet
+ worden getoond. Het `Bladzijde kiezen` dialoogkader toont  geen
+ opeenvolgende paginanummers maar wel benamingen aan due aan de
+ bladzijden werden toegekend.
+
+ `Bekijken` | `Volgende bladzijde bovenaan` of tikken op de spatiebalk
+ toont de volgende bladzijde bovenaan.
+
+ `Bekijken` | `Vorige bladzijde bovenaan` of tikken op de
+ "spatie terug" toets toont de vorige bladzijde bovenaan.
+
+ `Vorige bladzijde`, `Opnieuw tonen` en `Ga naar` werken enkel indien
+ het document `DSC` gegevens bevat.
+
+ `Bekijken` | `In venster aanpassen` of `F6` past de resolutie zodanig
+ aan dat de volledige bladzijde in het huidig venster past.
+ Bij herhaling wordt of de hoogte of de breedte aan het venster
+ aangepast.
+
+ `Bekijken` | `Volledig scherm` of `F4` vult het scherm volledig met
+ het document (geen titelbalk, menu etc... zichtbaar).
+ Tik op escape om dit op te heffen.
+2Over het document.
+-Document_Information
+?Info
+ In een smalle balk net onder het menum toont GSview de bestandsnaam,
+ het huidige paginanummer en, indien beschikbaar, de benaming (label).
+ Ook worden getoond de coördinaten van de aanwijzer op de plaats waar
+ hij zich bevindt. De coördinaten worden getoond zoals ingesteld bij
+ `Opties` | `Eenheden`. Dit kan handig zijn wanneer de "boekbindfunctie"
+ wordt aangewend.
+
+ Het `Info` onderdeel uit het "Bestand" menu toont een inlichtingenveld
+ over de `DSC` ggevens van het document.
+
+ `Bestand` geeft de naam en het volledige pad weer.
+
+ `Type` kan zijn` DSC`,` EPS`, `Geen DSC gegevens` of `DSC gegevens
+ niet beschikbaar`.
+ `EPS` is een Encapsulated PostScript bestand - een bestand bestaande
+ uit een enkele bladzijde met daarin onderverdeeld de `DSC` gegevens
+ en PostScript opdrachten. `EPS` bestanden worden veelal in andere
+ documenten ingevoegd.
+ `DSC gegevens negeren` wordt getoond wanneer `Opties` | `DSC negeren`
+ werd geselecteerd.
+ Kunnen worden voorafgegaan door `Ctrl-D gevolgd door` of `PJL gevolgd door`.
+ Beide mededelingen geven aan dat het document niet DSC conform is
+ omdat het begin van het document onjuiste gegevens bevat.
+ Om hieraan te verhelpen, zie `Vaak voorkomende problemen`.
+ Maar gebruik dan geen HP LaserJet drijver om  PostScript documenen
+ naar anderen te versturen.
+
+ `Opschrift` is een tekstreeks die kan worden gebruikt bij het afdrukken
+ van van krantenkoppen en voor het herkennen van documenten.
+
+ `Datum` is het tijdstip waarop het document werd gecreëerd.
+
+ `BindKader` definiëert een kader waarin alle markeringens
+ van een bepaalde bladzijde zijn vervat.  Vier gehele waarden
+ specifiërenr de coördinaten van de linker benedenhoek en de
+ rechter bovenhoek in de meeteenheden ingesteld door de gebruiker.
+
+ `Orientatie `is de oriëntatie van de pagina, `Staand` of` Liggend`.
+ Zie hiervoor het menu `Orientatie`.
+
+ De `Pagina volgorde` kan `Dalend`, `Stijgend` of `Aangepast` zijn.
+ Wanneer de `Pagina volgorde`  `Dalend` is, zal GSview automatisch de
+ volgorde omdraaien zodat ze in stijgende volgorde voorkomen.
+ Bij het uitpakken of afdrukken kan GSView eventueel de de bladzijden
+ in dalende [omgekeerde] volgorde weergeven of afdrukken.
+ `Aangepast` betekent dat GSView niets aan de bestaande volgorde
+ wijzigt.
+reordered.
+
+ `Standaard papierformaat` geeft het paierformaat weer gevolgd door de
+ afmetingen in de eenheden ingesteld door de gebruiker.
+
+ `Bladzijden` geeft het totaal aantal bladzijden van het document weer.
+
+ `Bladzijde` geeft de benaming en het nummer van de pagina weer.
+
+ Aan de hand van `Bitmap ` kan u berekenen of een prentje al dan niet
+ naar het prikbord kan worden gekopieerd.
+
+W
+2Afdrukken
+-Print
+?Afdrukken
+ Met `Afdrukken` uit het menu `Bestand ` kan een document worden
+ afgedrukt via Ghostscript.  GSview gebruikt hier 3 methodes voor:
+ `Windows GDI printer`, `Ghostscript apparaat` of `PostScript printer`.
+
+ `Windows GDI printer` creëert van elke bladzijde een bitmap via
+ Ghostscript , en drukt deze bitmaps dan af via de Windows printer
+ drijver.  Uiterst traag, maar werkt met de meeste printers.
+
+ `Ghostscript device` maakt gevruik van de Ghostscript printer drijvers.
+ Werkt vlugger, maar Ghostscript heeft de specifieke drijver voor uw
+ printer nodig, en u moet derhalve de naam van de drijver kennen.
+ Bijvoorbeeld, voorde HP LaserJet 4 is dat ljet4.
+ Meer hierover in de Ghostscript documentatie bestanden.
+
+ `PostScript printer` maakt geen gebruik van Ghostscript, maar de
+ af te drukken bestanden worden rechtstreeks naar de printer gestuurd.
+
+ De opties in het menu en dialoogkader `Afdrukken` hebben onderling een
+ grote invloed op elkaar.  Bijvoorbeeld, kiezen van `Ghostscript device`
+ schakely de `Instellingen `knop uit aangezien deze niets ter zake
+ doet. Meer hierover in de volgende onderwerpen.
+
+ Zie ook `Omzettingen` en `Omzetten`.
+3Bladzijden selecteren
+?Bladzijden selecteren
+ Voor het afdrukken kan een serie bladzijden worden geselecteerd.
+ Binnen deze reeks kan u kiezen voor alle, even of oneven bladzijden.
+ Kiest u "oneven" uit de reeks 10 tot 20, dan is bladzijde 11 het
+ eerste dat zal worden afgedrukt.
+
+ `Bladzijden selecteren` is niet beschikbaar wanneer de afdrukmethode
+ zulks niet ondersteund.
+
+ Wanneer `Achterste-voren` werd aangevinkt wordt afgedrukt
+ in omgekeerde volgorde. Dit kan enkel wanneer het document `DSC`
+ gegevens bevat.
+
+ Wily u geselecteerde bladzijden uit een `DSC` document met een
+ specifieke paginanummering (dat wil zeggen, de bladzijden kunnen niet
+ gehergroepeerd worden), dan moet u kiezen voor `Windows GDI printer`
+ en `DSC negeren`.
+3Windows GDI printer
+?Windows GDI printer
+ Hierbij wordt van elke bladzijde een bitmap  gecreëerd via
+ Ghostscript, en deze bitmaps worden dan afgedrukt via de Windows
+ printer drijver. Dit wordt verondersteld te werken met alle printers
+ die de rastermethode ondersteunen.
+
+ In verband met de snelheid wordt standaard een monochrome bitmap
+ aangemaakt. Wenst u ook kleur, dan moet u dit activeren via de
+ `Instellingen `knop.
+
+ Om de afmetingen van PostScript of PDF documenten in te stellen zie
+ hiervoor het onderwerp `Door de gebruiker ingesteld...`.
+
+ `Opties ` is meestal leeg, maar kan Ghostscript opdrachten
+ bevatten.  Voorzichtig hiermee!
+
+ Aan de hand van deze methode kunnen geselecteerde bladzijden worden
+ afgedrukt, ook al bevat het PostScript document geen `DSC` gegevens.
+ Hierbij worden eerst alle bladzijden aangemaakt, maar worden enkel de
+ geselecteerde naar de printer gezonden. Reken er dus op dat het zeer
+ traag kan.
+3Ghostscript apparaat
+?Ghostscript apparaat
+?uniprint
+ Met het `Selecteer Ghostscript apparaat`
+ dialoogkader kan u de Ghostscript printer en resolutie selectersn.
+ De lijst met beschikbare apparaten en beschikbare resoluties bevindt
+ zich in het bestand gsview32.ini onder [Devices]. U kan eventueel zelf
+ meer apparaten en resoluties toeveoegen.
+
+ Om meer te vernemen over de manier waarop GSview de PostScript of
+ PDF documenten behandelt in verband met de paginagrootte, zie het
+ onderwerp `Paginagrootte aanpassen`.
+
+ Bepaalde Ghostscript opties kunnen worden toegevoegd aan de hand van
+ zowel het ` Opties` menu als de `Instellingen` knop.
+
+ De `uniprint` knop selecteert het uniprint apparaat en toont een lijst
+ van beschikbare configuratie bestanden (*.upp) voor dit apparaat.
+ Wanneer u een van deze *.upp bestanden kiest, wordt het gekozen
+ bestand in het veld `Opties ` van de printerinstellinegn geplaatst.
+ Voor meer hierover, zie het bestand `Devices.htm`.
+3PostScript printer
+?PostScript printer
+ Wordt `PostScript Printer` geselecteerd, dan worden de geselecteerde
+ bladzijden direct naar het printerspoolprogramma gestuurd, zonder
+ tussenkomst van Ghostscript.
+ Dit komt ongeveer overeen met `Bestand `| `Van de schijf afdrukken`,
+ buiten het feit dat u ook geselecteerde bladzijden kan afdrukken.
+
+ Wanneer een PostScript printer werd aangesloten op een seriële poort,
+ moet er soms een Ctrl+D teken VOOR en/of NA het PostScript bestand
+ meegestuurd worden (afhankelijk van de werking van het actieve
+ programma).
+ Dit is een onderdeel van het protocol gebruikt door seriële printers
+ - en maakt geen deel uit van PostScript.
+ Het `Instellingen `blok laat u toe een Ctrl+D te zenden voor en/of
+ na het PostScript bestand.
+
+ Sommige PostScript printers kunnen overweg met meerdere
+ afdrukprotocollen, en hebben derhalve een initiatie (proloogbestand)
+ nodig om in PostScript modus over te kunnen overgaan.
+ Bijvoorbeeld, HP LaserJet printers (met PostScript ingebouwd)
+ hebben volgende initiatie nodig:
+  ^[%-12345X@PJL JOB
+  @PJL ENTER LANGUAGE = POSTSCRIPT
+ and the following epilog
+  ^[%-12345X@PJL EOJ
+  ^[%12345X
+ Met Proloog- en/of epiloogbestanden kan u dus een initiatiebestand
+ naar de printer zenden voor en/of na het eigenlijke PostScriptbestand.
+
+ Met een proloogbestand kan u ook bijvoorbeeld dubbelzijdig afdrukken
+ initiëren:
+  << /Duplex true /Tumble false >> setpagedevice
+
+ Is het document een `PDF`bestand, dan zal Ghostscript het omzetten
+ naar PostScript en daarna afdrukken.
+
+3Van de schijf afdrukken
+?Van de schijf afdrukken
+ `Bestand | Van de schijf afdrukken` stuurt een bestand rechtstreeks
+ naar de printer zonder eigenlijke tussenkomst van het stuursysteem.
+
+PX
+2Afdrukken
+?Afdrukken
+?Naar een bestand afdrukken
+?Van de schijf afdrukken
+?uniprint
+ Met het onderdeel `Afdrukken` uit het menu `Bestand ` kan u documenten
+ afdrukken aan de hand van Ghostscript.
+ `Afdrukken` wordt ook gebruilt om bitmap- en `PDF`bestanden aan te
+ maken.
+ Via het `Printerinstelligen` dialoogkader kan u kiezen voor:
+ de Ghostscript printerdrijver en resolutie, het paginabereik
+ en de
+P
+ uitvoer van de `Spooler`.
+X
+ programma om afdruktaken in een wachtreeks te plaatsen.
+E
+
+ Alle bladzijden, individuele bladzijden of eender welke combinatie
+ kan worden afgedrukt. Aan de hand van de knoppen `Alle`, `Onpare`
+ en `Pare` kan u snel een en ander selecteren.
+ Wordt een aaneengesloten blok geselecteerd, dan zullen al naargelang
+ van de selectie de `Onpare` of de `Pare` bladzijden binnen de
+ geselecteerde reeks worden afgedrukt.
+ Met de knop `Achterste-voren` kan u het afdrukken in omgekeerde
+ volgorde laten verlopen.
+
+P
+ De `os2prn` printer drijver maakt gebruik van het OS/2 printsysteem
+ en moet derhalve kunnen werken met rastertype printers.
+ De afdrukresolutie kan echter niet binnen GSview worden geselecteerd;
+ gebruik in de plaats het printer programmaobject. De instellingen hier-	
+ van dienen wel overeen te komen met de instellingen van Ghostscript;
+ de orienstatie moet "staand" zijn, de pagina-afmetingen moeten ook
+ dezelfde zijn. Met de instelling -dBitsPerPixel=1 kan het afdrukken
+ eventueel ietsje sneller gaan.
+
+ Met niet-rasterprinters worden de gegevens rechtstreeks naar de
+ afdrukrij gezonden.
+ Hebt u onoverkomelijke problemen, dan kan u eventueel `naar een bestand`
+ afdrukken, en dit laatste dan afdrukken middels de Dos of OS/2 op-
+ dracht `COPY /B BESTANDSNAAM PRN`, of `copy bestandsnaam lpt1 /b`.
+PX
+
+ Wanneer `PostScript Printer` werd aangevinkt zullen de geselecteerde
+ bladzijden echtstreeks naar de afdrukrij worden verstuurd, onafhanke-
+ lijk van Ghostscript.
+ Dit is obgeveer hetzelfde als `Bestand | Naar bestand afdrukken`, met
+ dit verschil dat u precies kan aangeven welke bladzijden moeten worden
+ afgedrukt. U kan u proloog- en epiloogbestanden meesturen middels de
+ knop `Geavanceerd`.
+
+ Een lijst met beschikbare apparaten bevindt zich in de sectie
+ [Devices] van
+P
+ gvpm.ini.
+X
+ ~/.gsviewrc.
+PX
+
+ Deze lijst werd gegenereerd aan de hand van de standaard versie
+ van Ghostscript 6.0 en is waarschijnlijk niet compleet.
+
+ Wilt u afdrukken zonder te lijst te moeten zien, dan moet u het
+ bestand openen via het menu `Bestand | Openen`.
+
+ Wilt u bitmaps afdrukken, kijk dan uit naar volgende drijvers:
+ `bmpmono`, `bmp16`, `bmp16m` and `bmp256`.
+
+ ` Bestand | Van de schijf afdrukken` zend de uitvoer naar LPT(x).
+P
+ , zonder van het afdruksysteem gebruik te maken.
+X
+ .
+PX
+ Handig voor wanneer naar een PostScript printer moet worden afgedrukt,
+ of om een Ghostscriptbestand uitvoer naar de printer te zenden.
+
+ Om te weten hoe GSview het papierformaat aanpast voor PostScript en/of
+ PDF documenten, zie
+ `Papierformaat aanpassen`.
+
+ In het `Opties ` kader bevindt zich een optie om GhostScript in-
+ structies via de opdrachtregel naar het  geselecteerde apparaat te
+ zenden.
+
+ Met de `uniprint` knop selecteert u een uniprint apparaat en tevens
+ wordt een lijst met beschikbare configuratiebestanden (*.upp) getoond.
+ Kiest u voor een van deze *.upp bestanden, dan wordt dit bestand in
+ het veld `Opties ` van de printerinstellingen getoond.
+ Voor meer hierover, zie het bestand `Devices.htm`.
+
+ `Printerinstellingen` vraagt u naar de naam van de printer waar de
+ uitvoer dient te worden heen gezonden.
+ Deze instelling zal worden opgeslagen en is de standaard voor
+ sessies.
+
+ Voor meer inlichtingen over printerinstellingen, zie:
+  http://www.cs.wisc.edu/~ghost/doc/printer.htm
+3PostScript Printer
+?PostScript Printer
+?Geavanceerd
+ Wordt een PostScript printer aangesloten op een seriële poort, dan
+ moet soms een [Ctrl+D] NA het bestand naar de printer worden gestuurd;
+ en in sommige gevallen VOOR het bestand (afhankelijk van het
+ programma).
+ Dit is een onderdeel van het protocol voor seriële poorten en heeft
+ als zodanig niets met PostScript te maken.
+ Met de `PostScript Printer `optie kan u bepalen of de [Ctrl+D] voor
+ of na het PostScript bestand moet worden meegestuurd.
+
+ Sommige PostScript printers hebben meerdere protocols ingebouwd, en
+ moeten eerst een initiatie (=proloogbestand) krijgen alvorens in
+ PostScript modus te kunnen overgaan.
+ Bijvoorbeeld, HP LaserJet printers (met PostScript optie)
+ dienen het volgende initiatie te krijgen:
+  ^[%-12345X@PJL JOB
+  @PJL ENTER LANGUAGE = POSTSCRIPT
+ EN het volgende epiloogbestand:
+  ^[%-12345X@PJL EOJ
+  ^[%12345X
+ Aan de hand van proloog(initiatie)-en epiloogbestanden kan u dus
+ andere bestanden voor en na het PostScript bestand naar de printer
+ zenden.
+E
+3Instellingen
+-Properties
+?Instellingen
+ Met de knop `Instellingen` kan u extra aanpassingen doen
+ aan sommige  Ghostcript apparaten.
+
+ Voor elke printer kan de paginaplaatsing herschikt worden.
+ Herschikken is handig in het geval dat er een verschil is tussen de
+ manier waarop Ghostscript en de printer de pagina's behandelen.
+ De X waarde opvoeren heeft als resultaat een verschuiving naar rechts.
+ De Y waarde opvoeren heeft als resultaat een verschuiving naar
+ onderen.
+
+ Met `Instellingen` kunnen BitsPerPixel voor een bepaalde kleur
+ worden ingesteld en ook andere vormen van kleurdensiteit.
+
+ `Instellingen` is gebonden aan een bepaald type printer.
+ `BitsPerPixel` aanpassen voor een bepaalde printer heeft geen enkele
+ invloed op andere printers al dan niet ingezet op het systeem.
+
+ Nadat op `OK` werd geklikt in het `Instellingen` dialoogkader worden
+ de instellingen weggeschreven naar het bestand
+W
+ gsview32.ini.
+P
+ gvpm.ini.
+X
+ ~/.gsviewrc.
+E
+
+ Sommige `Instellingen` staan voorgedefiniëerd in GSview, maar het kan
+ voorkomen dat deze niet kloppen met deze in Ghostscript. Via de knoppen
+ `Bewerken `en `Nieuw` kan u dit eventueel aanpassen.
+ Voor meer hierover zie `Instellingen bewerken`.
+4Instellingen bewerken
+-Edit_Properties
+?Instellingen bewerken
+ Dit wordt niet door elke printer ondersteund.  U kan hier meer over
+ vernemen in het bestand Devices.htm . U kan ook eventueel de Ghostscript
+ broncodes bekijken.
+
+ U kan `Instellingen` op twee verschillende manieren bewerken.
+
+ Eerste methode is via de knoppen `Bewerken `of `Nieuw` uit het
+ `Instellingen` dialoogkader.
+
+ Elke eigenschap moet een nummer zijn of een reeks.  Nummmers komen
+ overeen met de Ghostscript `-d` opdracht.  Reeksen komen overeen met
+ met de Ghostscript `-s` opdracht.
+ Elke eigenschap bestaat uit een `Name`(naam) en `Value`(waarde):
+ `-dNAME=VALUE` of `-sNAME=VALUE`.
+ `Value` komt uit een "comma separated" reeks van waarden (`Values`)
+ die moet worden ingevoerd in het `Instellingen bewerken` dialoogkader.
+ Er mogen geen spaties voorkomen in `Name` of `Values`.
+
+ Wilt u een eigenschap wissen, selecteer deze dan in de `Instellingen`,
+ klik op `Bewerken`, en daarna op `Wissen`.
+
+ De tweede methode bestaat er in het GSview INI-bestand te bewerken.
+
+ Voor elke printer moeten twee secties worden toegevoegd aan het
+W
+ gsview32.ini
+P
+ gvpm.ini
+X
+ ~/.gsviewrc
+E
+ bestand.
+ Volgend voorbeeld toont aan hoe een cdjcolor drijver moet worden
+ gewijzigd.
+ Voeg eerst een afdeling [ ] toe met de huidige waarden en gegevens.
+ Nadat het eerste teken werd verwijderd zullen de opties uit deze
+ afdeling in het `Instellingen`blok worden getoond.
+ Het eerste teken is `s` voor een reeks of `d` voor een getal.
+  [cdjcolor]
+  dBitsPerPixel=24
+  dDepletion=1
+  dShingling=2
+  dBlackCorrect=4
+
+ Vervolgens, voeg een afdeling toe met daarin de waarden die moeten
+ voorkomen onder de optie `Waarde`.
+  [cdjcolor values]
+  dBitsPerPixel=1,3,8,16,24
+  dDepletion=1,2,3
+  dShingling=0,1,2
+  dBlackCorrect=0,1,2,3,4,5,6,7,8,9
+ GSview voegt ook een `[Not defined]` afdeling toe.
+
+ Wanneer GSview een bestand afdrukt, stuurt het naar Ghostscript de
+ gegevens uit de [cdjcolor] afdeling van
+W
+ gsview32.ini
+P
+ gvpm.ini
+X
+ ~/.gsviewrc
+E
+ op volgende manier:
+  -dBitsPerPixel=24 -dDepletion=1 -dShingling=2 -dBlackCorrect=4
+ Id de eigenschap `[Not defined]` , dan worden er geen gegevens
+ naar Ghostscript gezonden.
+3Paginagrootte aanpassen
+-Page_Size_Matching
+?Paginagrootte aanpassen
+?Bepaald papierformaat
+?Bepaalde paginagrootte
+?Veranderlijke paginagrootte
+?Aanpassen tot juiste paginagrootte
+ Wanneer `Vaste paginagrootte` werd geselecteerd (standaardinstelling),
+ zal GSView de instellingen van het menu aannemen en elke poging
+ van PostScript of PDF documenten om de grootte te wijzigen negeren.
+ Handig wanneer PDF-bestanden een mengelmoes bevatten van bladzijden
+ in staand en liggend formaat.
+
+ Wanneer `Verkleinen tot Paginagrootte` werd geselecteerd, zal elke
+ bladzijde die groter is dan het ingestelde formaat worden verkleind
+ tot dat ingestelde formaat.
+ Handig bijvoorbeel wanneer u een document in A4 formaat op
+ Amerikaans letter formaat wil afdrukken (zich A4 papier aanschaffen
+ is natuurlijk nog handiger).
+
+ Wanneer `Veranderlijke paginagrootte` werd geselecteerd wordt eerst
+ de standaardgrootte ingesteld, die dan vrij kan worden aangepast.
+2Bestand Omzetten
+-Conversions
+?Bestand Omzetten
+ PostScript en PDF kunnen op meerdere verschillende manieren worden
+ omgezet.
+
+ `Bestand `| `Omzetten` laat toe PostScript en/of PDF bestanden
+ om te zetten van en naar PostScript-, or PDF- en bitmapbestanden.
+
+ Met `Bestand `| `Exporteren` kunnen een aantal PostScriptbestanden
+ worden gekopiëerd.
+
+ Met `Bestand `| `PS naar EPS` wordt het "inbinden" aangepast
+ en wordt de kop van PS veranderd naar EPS.
+ Gelieve eerst de documentatie te lezen vooraler er aan te beginnen.
+
+ Met `Bewerken `| `EPS afdrukvoorbeeld toevoegen` kan u een afdrukvoorbeeld toe-
+ voegen.
+
+ `Bewerken `| `EPS exporteren` neemt PostScript of een afdrukvoorbeeld
+ uit een DOS EPS bestand.
+
+ Met `Bewerken `| `Omzetten naar vectoriëel formaat` wordt middels
+ pstoedit PostScript en/of PDF naar vectoriëel formaat omgezet.
+
+ `Bewerken `| `Tekst exporteren` neemt middels pstotext tekst uit
+ PostScript- en/of PDFdocument .
+WP
+
+ `Bewerken `| `Kopiëren ` kopieert de bitmap naar het prikbord.
+ `Bewerken `| `Plakken`  kopieert de bitmap uit het prikbord naar
+  een bestand.
+ `Bewerken `| `Naar bitmap omzetten` zet een DIB bitmap uit het
+ prikbordt om in en naar een secundair prikbord.
+E
+3Bestanden omzetten en trucjes hierbij.
+-File_conversions_and_tricks
+?Bestanden omzetten
+?Trucjes
+ Voorbeelden van omzetten naar een ander formaat aan de hand van
+ GSview en Ghostscript:
+
+ PostScript naar PDF omzetten.
+ Bestand | `Omzetten`, --> kies pdfwrite, 300dpi,
+ Met Ghostscript 5.50 zullen niet-standaardfonts ingelezen worden
+ als bitmaps.  Kiest u voor 72dpi, dan zullen de fonts er eerder
+ raar uitzien. Ghostscript 6.0 zal de fonts als fonts inlezen.
+
+ PDF naar PostScript omzetten.
+ Bestand | `Omzetten`, --> kies pswrite, 300dpi.
+
+ PostScript 2 naar  PostScript 1 omzetten.
+ Bestand | `Omztten`, kies psmono, 300dpi,
+ Maar u stelt bij voorkeur de resolutie van uw printer in indien
+ deze laatste geen 300 dpi bedraagt.
+
+ Naar bitmap omzetten.
+ Bestand | `Omzetten`, kies bmp16m, 72dpi.
+
+WP
+ Naar een te bewerken vectoriëel formaat omzetten (pstoedit).
+ Bewerken | `Omzetten naar vectorieel formaat` OF zet gewoon om naar
+ PDF.
+
+E
+ Tekst exporteren (pstotext).
+ Bewerken | `Tekst exporteren`
+
+ Een afdrukvoorbeeld aan een EPS bestand toevoegen.
+ Bewerken | `EPS afdrukvoorbeeld toevoegen`. Zie `EPS afdrukvoorbeeld toevoegen`.
+
+ Afdrukvoorbeeld uit een EPS bestand verwijderen.
+ Bewerken | `EPS exporteren` | PostScript
+
+ Met afgeronde hoeken tonen.
+ Papierformaat | `Schermresolutie wijzigen`.  Stel `Tekst Alpha` and
+ `Grafisch Alpha` in op  4. Kan enkel op een scherm met 8 bits per pixel
+ minimum.
+WP
+
+ De bitmap op het scherm getoond bewaren.
+ Bewerken | `Kopiëren` om naar naar het prikbord te kopiëren.
+ Om dan naar een bestand te bewaren, eerst Bewerken | `Kopiëren`
+ en dan `Plakken`...
+E
+
+ Een bitmap aanmaken met afgeronde hoeken (anti-aliasing).
+WP
+ 1. Met afgeronde hoeken op het scherm brengen en dan bewaren.
+ OF
+ 2.
+E
+ `Omzetten` naar bitmap met de volgende instellingen:
+    -dTextAlphaBits=4 -dGraphicsAlphaBits=4
+3Omzetten
+-Convert
+?Omzetten
+ `Bestand `| `Omzetten` maakt gebruik van Ghostscript om PostScript- of
+  PDFbestanden om te zetten naar bitmap-, PostScript- of PDFformaat.
+
+ U moet wel kiezen voor een Ghostscript apparaat en resolutie.
+ De lijst met beschikbare apparaten en resoluties bevindt zich
+ in de sectiee [Omzetten] van
+W
+ gsview32.ini
+P
+ gvpm.ini
+X
+ .gsviewrc
+E
+ er werd gehaald uit de 6.01 distributie van Ghostscript.
+ U kan zelf andere apparaten en resoluties toevoegen.
+
+ Bepaalde Ghostscript opties kunnen worden toegevoegs aan de hand van
+ `Opties ` of de `Instellingen` knop.
+
+ Alle, individuele of eender welke combinatie van bladzijden kan worden
+ omgezet. De knoppen `Alle`, `Onpare` en `Pare` laten toe snel te
+ selecteren. Wordt een aaneengesloten blok geselecteerd, dan kan u met
+ de knoppen `Onpaar ` en `Paar` de pare of onpare bladzijdenbinnen deze
+ reeks uitkiezen. De knop `Achterste-voren` laat toe in dalende
+ volgorde om te zetten.
+
+ Om te bepalen hoe GSview instructies van PostScript of PDF documenten
+ moet behandelen i. v. m . paginagrootte, zie het onderwerp
+ `Paginagrootte aanpassen`.
+
+ Zie ook `Omzetten`.
+3Exporteren
+-Extract
+?Exporteren
+ Met `Exporteren` wordt een reeks bladzijden van het huidige document
+ naar een nieuw document gekopieerd. Bijvoorbeeld, tien bladzijden
+ uit het midden van het huidige document naar een nieuw bestand, en
+ van daaruit op een later tijdstip naar een printer.
+ Met `Achterste-voren` wordt in omgekeerde volgorde afgescheiden.
+
+ Zie ook `Omzetten`.
+3PS naar EPS
+-PS_to_EPS
+?PS naar EPS
+?Inbinden
+ Normaliter kunnen PostScript bestanden niet naar `EPS` worden omgezet.
+ Nochtans is het mogelijk een PostScript bestand bestaande uit een
+ enkele bladzijde om te zetten naar `EPS`, dit door de eerste regel
+ van het bestand te wijzigen in
+  %!PS-Adobe-3.0 EPSF-3.0
+ en dan `%%BoundingBox` eraan toe te voegen.
+
+ EPS bestanden worden over het algemeen in andere documenten ingebed en	
+ dienen derhalve volgende the inbinden commentaar te bevatten:
+   %%BoundingBox: llx lly urx ury
+ waarbij llx, lly, urx en ury de x and y coördinaten voorstellen van
+ beneden-links en boven-rechts van de desbetreffende bladzijde.
+
+ `Indien ongepast aangewend kunnen de PS naar EPS opdrachten PostScript
+ bstanden genereren met foute DSC gegevens. Een dergelijk fout document
+ zal problemen opleveren wanneer wordt geprobeerd het in een ander
+ document in te voegen.`
+
+ Wil u een PostScript bestand omzetten naar `EPS`, dan mag het
+ originele bestand uit maar een enkele bladzijde bestaan. Bevat het
+ document `DSC` gegevens en bestaat het uit meerdere bladzijden, dan
+ dient u de gewenste bladzijde via `Bestand` | `Exporteren` te
+ genereren. Bevat het document geen `DSC` gegevens, dan zit er niets
+ anders op dan het bestand manueel te bewerken.
+
+ `EPS` mogen volgende operatoren NIET bevatten:
+  banddevice   clear         cleardictstack  copypage
+  erasepage    exitserver    framedevice     grestoreall
+  initclip     initgraphics  initmatrix      quit
+  renderbands  setglobal     setpagedevice   setpageparams
+  setshared    startjob      letter          note
+  legal        a3            a4              a5
+
+ Volgende operatoren mogen slechts met omzichtigheid worden
+ aangewend:
+  nulldevice   setgstate     sethalftone    setmatrix
+  setscreen    settransfer   setcolortransfer
+
+ U diens er zelf op toe te zien dat aan deze voorwaarde wordt voldaan.
+
+ Om na te gaan of een document een of meerdere van bovenstaande
+ operatoren bevat, kiest u voor `Opties` | `EPS Waarschuwingen` en
+ opent u daarna het kwestieuze document. Kies dan voor `Sluiten` NADAT
+ de bladzijde op het scherm werd getoond; hierna kan u de GhostScript
+ berichten bekijken middels `Bestand` | `Berichten tonen`.
+ Wanneer een of meerdere van de bovenstaande operatoren werden gebruikt
+ krijgt u iets te zien als: Warning: EPS files must not use... . Treft
+ u dus zulke berichten aan, dan mag u `PS naar EPS` niet gebruiken.
+ Vergeet ook niet achteraf `EPS Waarscuwing` weer uit te schakelen.
+
+ Het document MOET eerst op het scherm worden getoond vooraleer
+ `PS naar EPS` wordt aangewend.
+
+ Bij documenten zonder `DSC`, laat `PS naar EPS` toe inbinden
+ te specifiÙren, om daarna een `EPS` bestand aan te maken
+ gegenereerd omheen het originele document.
+
+ Bij bestanden zonder `DSC` zal `PS naar EPS` de eerste regel omzetten
+ naar:
+  %!PS-Adobe-3.0 EPSF-3.0
+ waarna de `%%BoundingBox` commentaar kan worden gewijzigd en/of
+ toegevoegd.
+
+ Bij `EPS` documenten laat `PS naar EPS` toe de `%%BoundingBox`
+ te wijzigen.
+
+ `PS naar EPS` plakt het document niet in de `%%BoundingBox`.
+ Dat zou immers een wijziging van de PostScriptcode inhouden.
+ `PS naar EPS` wijzigt enkel de `DSC` commentaar/gegevens.
+
+ Wanneer `Automatisch inbinden berekenen` werd aangekruist, zal
+ GSview het inbinden berekenen aan de hand van de niet-witte pixels.
+ Wanneer niet aangekruist, kan u voor inbinden kiezen door te klikken
+ links, rechts, bovenaan en onderaan.
+
+ `PS naar EPS` voegt geen afdrukvoorbeeld toe aan het document. Wilt u
+ er een, gebruik dan `Bewerken `| `EPS afdrukvoorbeeld toevoegen`
+ na vooraf een `EPS` bestand met de juiste `%%BoundingBox` te hebben
+ gecreëerd.
+
+ Zie ook `EPS afdrukvoorbeeld toevoegen`, `Exporteren`,
+ `EPS Waarschuwingen` en `Omzetten`.
+3EPS afdrukvoorbeeld toevoegen
+-EPS_Preview
+?EPS afdrukvoorbeeld toevoegen
+?EPS afdrukvoorbeeld toevoegen
+?EPS exporteren
+?Afdrukvoorbeeld toevoegen
+ `EPS afdrukvoorbeeld toevoegen` genereert een bitmapbestand vanuit het
+ scherm en voegt deze bitmap toe aan het EPS bestand.
+ `EPS Afdrukvoorbeeld toevoegen` kan een DOS EPS bestand aanmaken met
+ een Windows *.met of *.TIF afdrukvoorbeeld, of een EPSI bestand met
+ een uitwisselbaar afdrukvoorbeeld [*.met = Windows metafile].
+ Om `EPS afdrukvoorbeeld toevoegen` te kunnen gebruiken dienen volgende
+ stappen te worden gevolgd.
+
+ 1. Schakel uit `Opties | DSC negeren`
+
+ 2. Ga na of het inbindene correct werd ge´nitialiseerd.
+ Zie hiervoor `Opties` | `Bounding Box tonen`
+ U kan inbinden toevoegen middels `Bestand` | `PS naar EPS`.
+
+ 3. Kies `Orientatie` | `Staand`.
+
+ 4. Kies `Papierformaat `| `Schermresolutie wijzigen` en stel de gewenste
+ resolutie in voor het afdrukvoorbeeld. Een te grote resolutie zal
+ het bestand aanzienlijk doen aanzwellen.
+
+ 5. `Open` een EPS bestand dat geen afdrukvoorbeeld bevat.
+
+ 6.  Kies `Bewerken `| `EPS afdrukvoorbeeld toevoegen`, dan het formaat,
+ dan de nieuwe bestandsnaam. GSview zal dan een nieuw bestand aanmaken
+ bevattende het originele PS EPS bestand en het afdrukvoorbeeld.
+ Beschikbare bestandsformaten zijn `Omwisselbaar`, `TIFF 4`,
+ `TIFF 6 uncompressed`, `TIFF 6 packbits` en `Windows Metafile`.
+ Bij een `Omwisselbaar` formaat moet het document de regel `%%EndComments`
+ bevatten, zoniet kan het afdrukvoorbeeld op de verkeerde plaats worden
+ ingekapseld.
+ Het `Omwisselbaar` formaat is steeds in zwart-wit.
+ Een TIFF 4 afdrukvoorbeeld is steeds ongecomprimeerd en mag zeker
+ geen ongeldige kenmerken bevatten.
+ WordPerfect 5.1 afdrukvoorbeelden moeten in TIFF 4 formaat zijn.
+ A TIFF 6 afdrukvoorbeeld kan zowel in zwart-wit als in kleur zijn en
+ beantwoordt aan de TIFF 6.0 specificaties.
+ TIFF 6 formaat kan zowel gecomprimeerd als ongecomprimeerd
+ worden. Windows *.Met afdrukvoorbeelden zijn steeds ongecomprimeerd.
+
+ 7.
+ Herschik `Orientatie` | `Staand`, en
+ `Papierformaat `| `Schermresolutie wijzigen` naar de vorige waarden.
+
+ Om uit een DOS EPS bestand de PS of de afdrukvoorbeeld sectie te halen
+ dient u `Bestand` | `Selecteren` te kiezen en vervolgens
+ `Bewerken `| `EPS exporteren` en daarna dan `PostScript` of
+  `afdrukvoorbeeld`.
+
+ Zie ook `PS naar EPS`.
+3Afdrukvoorbeeld door de gebruiker verstrekt
+?Afdrukvoorbeeld door de gebruiker verstrekt
+ De menuopdracht `Bewerken `| `EPS afdrukvoorbeeld toevoegen`
+ | `Afdrukvoorbeeld door de gebruiker verstrekt`
+ laat toe een reeds bestaand TIFF or WMF bestand aan EPS bestand toe te
+ voegen en zodoende een DOS EPS bestand aan te maken.
+ Dit is bedoeld voor wanneer een toepassing een EPS en WMF bestanden
+ kan behandelen, maar geen DOS EPS bestanden met WMF afdrukvoorbeeld
+ kan genereren. Het EPS bestand moet zodanig ingebonden zijn dat het
+ overeenstemt met het TIFF of WMF afdrukvoorbeeld.
+ Het is niet nodig het EPS bestand op scherm te brengen. U kan voor
+ `Afdrukvoorbeeld door de gebruiker verstrekt` kiezen nadat een EPS
+ bestand werd geopend via `Selecteren`.
+
+ U kan eventueel een afdrukvoorbeeld inbrengen dat niet beantwoord aan
+ de PostScript normen, maar dit is beslist af te raden.
+WP
+3Omzetten naar vectorieel formaat
+-PStoEdit
+?Omzetten naar vectorieel formaat
+?PStoEdit
+ U kan een PostScript- en/of PDF-bestand omzetten naar een te bewerken
+ vectoriel formaat door middel van `pstoedit`, een programma van
+ Wolfgang Glunz. `pstoedit` valt onder het "GNU Public Licence".
+ Met de toestemming van Wolfgang Glunz werden de uitvoerbare bestanden
+ inbegrepen in GSview. `pstoedit.exe` en de handleiding `pstoedit.htm`
+ werden toegevoegd in de
+W
+ pstoedit
+P
+ pstoedt2
+WP
+ directory.
+ De thuispagina van pstoedit is
+  http://www.geocities.com/SiliconValley/Network/1958/pstoedit/
+ Voor bijwerkingen, zie de locatie van pstoedit, of ook
+  http://www.cs.wisc.edu/~ghost/gsview/pstoedit.htm
+
+ Om `pstoedit` vanuit GSview te in the schakelen, gebruik de menuoptie
+ `Bewerken | Omzetten naar vectorieel formaat`.
+ U krijgt dan drie dialoogkaders te zien.
+
+ Het eerste is dat van de pstoedit instellingen.
+
+ Selecteer hier een het gewenste doel `Formaat`.
+
+ `Tekst als veelhoeken tekenen` moet worden geselecteerd wanneer het
+ PostScript bestand tekst bevat en het doel dit niet ondersteunt,
+ bijvoorbeeld gnuplot. Verwacht u dan wel aan een reuzegroot bestand.
+
+ Wanneer `Overzetten naar ISO-Latin1` werd geselecteerd, worden alle
+ tekens omgezet naar ISO-Latin1, zoals dat wordt gebruikt in HTML en
+ Winblows. Dit is ook de standaardinstelling. Wordt dit laatste item
+ niet aangekruist, dan vindt er helemaal geen omzetting plaats.
+
+ Wanneer het doelformaat geen booglijnen ondersteunt zoals die door
+ PostScript worden getekend, worden alle bogen door middel van
+ lijnstukken en bij benadering gegenereerd. Hierbij wordt gebruik
+ gemaakt van de parameter `Flatness`. Deze parameter wordt automatisch
+ omgezet naar een PostScript setflat opdracht. Kleinere waarden geven
+ een betere benadering, maar met meer lijnstukken als gevolg.
+
+ Hetkan gebeuren dat bepaalde fonts in een document geen fontnaam
+ hebben. Bijvoorbeeld wanneer PostScript bestanden door dvips werden
+ aangemaakt. pstoedit zet dan een ander font in de plaats. Standaard
+ is dit Courier. U kan een ander font hiervoor aanwijzen door middel
+ van de optie `Standaard font`.
+ Mogelijke alternatieven zijn Courier, Helvetica en Times-Roman.
+
+ Sommige van de mogelijke doelformaten hebben nog extra mogelijkheden.
+ Voor meer hierover zie de pstoedit handleiding. Bijvoorbeeld, java
+ maakt gebruik van `Driver Options` om de "java class" te specifiëren.
+
+ Het tweede dialoogkader (uitgeschakeld indien geen paginanummering
+ voorhanden) geeft de on te zetten pagina aan, of zo dit wordt
+ ondersteund reeks van om te zetten bladzijden.
+
+ Het derde dialoogkader specifieert de naam van het doelbestand.
+
+ `pstoedit` ondersteunt niet alle bitmapformaten. Wilt u een
+ bitmapbestand als doel, zie eerst `Formaten omzetten`.
+
+ Voor nog meer zie de pstoedit handleiding.
+
+ Zie ook `Omzetten`.
+E
+3Tekst zoeken en exporteren
+-Text_Extract_and_Find
+?Tekst zoeken en exporteren
+?Tekst
+?Tekst exporteren
+?Opzoeken
+?Zoeken
+?Volgende zoeken
+ Tekst exporteren uit een PostScript document kan een hachelijke
+ onderneming zijn. Woorden kunnen worden afgebroken. Tekst kan enkel
+ als gecodeerd te voorschijn komen. Ligaturen mogen worden gebruikt
+ (Bijvoorbeeld de symbolen voor Pi en Fi). Er bestaat een kans dat er
+ helemaal geen relatie is tussen de plaats van een woord in het
+ PS-bestand en zijn plaats op de pagina. Met goed gevolg tekst uit
+ een PS-bestand exporteren is dus in grote mate afhankelijk van de
+ structuur van het document zelf.
+
+ GSview heeft twee mogelijkheden om tekst uit een PS-bestand af te
+ scheiden.
+
+ De snelle methode bestaat erin alle tekst in een keer af te scheiden.
+
+ De tweede methode maakt gebruik van pstotext en Ghostscript en is
+ aanzienlijk nauwkeuriger.
+
+ De tweede methode kiest u middels `Opties` | `PStoText`.
+ Zie hieronder voor meer over dit onderwerp:
+
+ Zie ook `Omzetten`.
+4Vlug een tekst zoeken en exporteren
+?Vlug een tekst zoeken en exporteren
+ Normaliter heedt de tekst in PostScriptdocumenten dezelfde volgorde
+ als de bladzijden, en is deze tekst geplaatst tussen haakjes in
+ PostScript reeksen. Volledige regels kunnen in een reeks worden weer-
+ gegeven of in een woord per reeks. Bij dit type documenten kan worden
+ gerekend op goed resultaat.
+
+ Middels `Bewerken `| `Tekst exporteren` wordt tekst bevat in reeksen
+ afgescheid uit bepaalde bladzijden en weggeschreven naar een tekst-
+ bestand. Teruglopen in het tekstbestand komen overeen met teruglopen
+ in het oorspronkelijk document. Spaties in het tekstbestand komen
+ overeen met de spaties binnen de reeksen, of met afzonderlijke reeksen
+ zelf. Het is echter beter tekst af te scheiden door ps2ascii.ps te
+ gebruiken, ofwel het `PStoText` programma.  `PStoText` wordt inge-
+ schakeld middels `Opties` | `PStoText`.
+
+ `Bewerken `| `Zoeken` zoekt naar een bepaald tekst en plaatst de
+ eerste bladzijde waar die tekst voorkomt op het scherm. Bij `Zoeken`
+ moet u dus een bepaalde tekst intikken alsook de reeks bladzijden waar
+ moet worden gezocht.
+ Voorgaande uitleg aangaande `Exporteren` is mutatis mutandis van
+ toepassing op `Zoeken`. Eerst wordt tekst afgescheiden van het
+ document, daarna wordt in deze tekst gezocht zonder rekening te
+ houden met se spaties. Er wordt geen onderscheid gemaakt tussen
+ hoofd- en kleine letters. Bijvoorbeeld, zoeken naar `deze` zal dus als
+ resultaat opleveren: `deze`, `Deze` en `de zeilboot`. Waar de
+ zoekreeks zich precies op de bladzijde bevindt wordt evenmin
+ aangegeven. `Zoeken ` is niet bruikbaar voor niet-DSC documenten of
+ voor DSC documentens waar de bladzijden op een speciale manier werden
+ ingebouwd.
+
+ `Zoeken `| `Volgende zoeken` zoekt verder vanaf de volgende bladzijde.
+4PStoText Tekst exporteren en zoeken
+?PStoText Tekst exporteren en zoeken
+ Hierbij worden pstotext en Ghostscript aangewend om tekst af te
+ scheiden uit een PostScript document. Hierbij wordt vooraf het ganse
+ document door Ghostscript en pstotext omgezet naar een geïndexeerd
+ tekstbestand. Dat kan een tijdje duren, maar eens zover kan zoeken
+ en/of exporteren vrij snel gaan.
+
+ pstotext maakt gebruik van de ISO-Latin1 tekentabel. Voor meer
+ hierover, zie
+  http://www.research.digital.com/SRC/virtualpaper/pstotext.html
+
+ `Orientatie` moet overeenstemmen met de orientatie in het document.
+
+ `Bewerken `| `Tekst exporteren` kopieert tekst uit bepaalde
+ bladzijden en schrijft dit vervolgens weg naar een tekstbestand.
+
+ Naar het prikbord kopiëren doet u middels `Bewerken` | `Kopiëren`.
+
+ `Bewerken `| `Zoeken` zoekt naar een tekst en toont de eerstvolgende
+ bladzijde op het scherm waarin zich deze tekst bevindt. `Zoeken`
+ behoeft dus een teksteeks en een reeks van bladzijden waarin moet
+ worden gezocht. Er wordt naar een overeenkomdt gezocht ongeacht of
+ een woord deel uitmaakt van een langer woord. Bijvoorbeeld zoeken naar
+ `koe` levert als resultaat `koe`,`koeien`, `zeekoe` enz... .
+ De jokers '*' en '?' worden ondersteund, maar het is vrijwel zinloos
+ die aan het begin of het eind van een woord in te zetten.
+ Meerdere woorden kunnen worden gespecificeerd, bijvoorbeels `GSview is een`.
+ Wordt de zoektekst gevonden, dan wordt DE BLADZIJDEIf waarin zich deze
+ tekst bevindt op het scherm getoond.
+ `Zoeken` werkt niet bij niet-DSC documenten of DSC-documenten met
+ bijzondere indeling.
+
+ `Bewerken `| `Volgende zoeken` zet de zoekopdracht verder.
+
+ Voor PostScript bestanden volstaat over het algemeen
+ `Opties` | `PStoText` | `Normaal`.
+
+ `Options` | `PStoText` | `Dvips Cork codering`
+ is enkel relevant bij met PostScript bestanden aangemaakt door dvips
+ uit TeX of LaTeX documenten; het is wel zo dat bestanden aangemaakt
+ door dvips geen onderscheid kunnen maken tussen de verschillende
+ fontcoderingen.
+3Prikbord
+-Clipboard
+?Prikbord
+?Kopiëren
+?Plakken
+?Bitmap omzetten
+?Bitmap
+WP
+ De scherminhoud kan naar het Prikbord gekopieerd worden onder de vorm
+ van een bitmap. Deze bitmap is dan van het DIB/BMP formaat.
+
+ Een andere manier om bitmaps te produceren bestaat erin een van de
+ BMP drijvers te gebruiken. Voor meer hierover zie `Afdrukken`.
+
+W
+ `Plakken` kopieert een Bitmap vanuit het prikbord naar een BMP bestand.
+
+ `Bitmap omzetten` is omzetten tussen de verscheidene types Bitmapbe-
+ standen.
+ In het prikbord worden de verschillende soorten Bitmapbestanden
+ zodanig bewerkt dat ze naar een besatnd kunnen worden weggeschreven.
+ Eventueel wordt een kleurenpalet ingeschakeld en als zodanig toegvoegd
+ aan het prikbord. Deze optie is dienstig voor sommige programma's
+ Windows Paintbrush.
+P
+ `Plakken` kopieert de scherminhoud naar een Bitmapbestand.
+X
+ In X11 GSview werkt het prikbord niet.
+
+ `Opslaan als BMP` schrijft de scherminhoud weh naar een bitmapbestand.
+E
+
+ In een `PStoText` document wordt een index aangemaakt van de woorden
+ indien `Tekst exporteren` of `Zoeken` wordt ingezet. Indien dan een
+ (reeks) woorden met de muis wordtgeselecteerd, dan zal
+WP
+ `Kopiëren` enkel deze woorden naar het prikbord kopiëren in plaats van
+  een bitmap.
+X
+ worden deze woorden de huidige X selectie.
+E
+ Tekst kan enkel worden geselecteerd viard  `Tekst exporteren` of
+ `Zoeken` NADAT `Opties` | `PStoText` werd geactiveerd.
+2Meeteenheden
+-Measure
+?Meeteenheden
+?Omzettingen berekenen
+ Lengte kan berekend worden middels de cursor op de statusbalk, of
+ middels `Bewerken` | `Meeteenheden`.
+
+ Hierbij wordt het begin en  einde getoond, alsook het verschil tussen
+ beide en de hoek die wordt gevormd.
+ Het begin wordt aangemerkt door op de linker muisknop te klikken.
+ Standaard is dat de linker benedenhoek. Eenheden kunnen worden
+ uitgedrukt in pt, mm, inch, of aangepast.
+
+ Met aangepaste eenheden kan ude coördinaten laten zien zoals deze zich
+ in een Postscriptbestand bevinden.
+ Aangepaste eenheden worden meestal gebruikt om bij een matrix gegeven
+ een reeks omzettingen te doen.
+ Bijvoorbeeld met een PostScript bestand liggend georiënteerd
+  90 rotate
+  0 -595 translate
+ dient u hetvolgende in te tikken om de gebruikerscoördinaten
+ te bekomen:
+  Custom
+  initmatrix
+  90 rotate
+  0 -595 translate
+  invertmatrix
+  Ok
+ De omzetting [The Current Transformation Matrix - CTM) word getoond
+ in het bovenste deel van het dialoogkader. Als u van rekenen houdt kan
+ u eventueel rechtstreeks een CTM intikken. Maar het is wel eenvoudiger
+ de waarden in te tikken in de invulvelden onderaan.
+
+ Zie ook `Meeteenheden`.
+2Opties
+-Options
+?Opties
+ Het menu `Opties` heeft de volgende indeling:
+3Eenvoudige configuratie
+-Easy_Configure
+?Eenvoudige configuratie
+W
+ Via "eenvoudige configuratie kan u de gewenste versie van Ghostscript
+ kiezen. Voreondersteld hierbij is dat AFPL Ghostscript 7.04 of een
+ jongere versie reeds voordien werd geïnstalleerd.
+ Hebt u Ghostscript niet aan boord, zie dan eerst het onderwerp
+ `Hoe Ghostscript verkrijgen`.
+ Indien u zelf een en ander wil installeren en instellen, kies dan voor
+ `Aangepaste configuratie`.
+
+ Eenvoudige configuratie stelt de juiste paden in en voegt de nodige
+ opdrachten toe aan het printer-ini bestand.
+ Het bestand registry.dat en/of het opstartmenu worden niet gewijzigd.
+P
+ Via "Eenvoudige configuratie" wordt de juiste Ghostscriptversie
+ gekozen en worden de bestandskoppelingen ingesteld.
+E
+3Aangepaste configuratie	
+-Advanced_Configure
+?Aangepaste configuratie
+?Ghostscript DLL
+?Ghostscript  Pad
+?Ghostscript Opties
+X
+ `Ghostscript Versie` duidt aan welke Ghostscriptversie miet worden
+ aangewend.  Tik 550 in voor 5.50, 650 voor 6.5 etc... .
+
+ `Ghostscript EXE` verwijst naar de GSview Ghostscript directory.
+ Standaard is dat `gs`.
+WP
+ `Ghostscript DLL` duidt aan waar Ghostscript zich moet bevinden.
+W
+ Standaard voor Win32 is dat
+  c:\gs\gsN.NN\bin\gsdll32.dll
+P
+ Standaard voor OS/2 is dat
+  c:\gs\gsN.NN\bin\gsdll2.dll
+E
+
+ Tik het pad naar Ghostscript in in het veld `Ghostscript pad`.
+ Inbegrepen moeten zijn de paden naar de gs_*.ps en Fontmap bestanden
+ en de  Ghostscript fontbestanden (*.pfb). Bijvoorbeeld:
+P
+   c:\gs\gsN.NN\lib;c:\gs\fonts;c:\psfonts
+W
+   c:\gs\gsN.NN\lib;c:\gs\fonts
+X
+   /usr/share/ghostscript/6.0;/usr/share/ghostscript/fonts
+ Standaard staat er niets ingevuld.
+E
+ Plaats niet `-I` in het pad.
+
+ Eventueel kan het veld `Ghostscript Opties` geen inhoud hebben (leeg).
+ Wilt u geen `Platform Fonts` onder M$-Windows, tik dan in `-dNOPLATFONTS`
+ in dit veld. Wilt u extra fonts installeren, tik dan in `-sFONTPATH`.
+ Bijvoorbeeld  -dNOPLATFONTS -sFONTPATH="c:\psfonts"
+
+ Indien `Ghostscript DLL` niet juist werd ingevuld, dan zal GSview niet
+ in staat zijn Ghostscript in te laden.
+ Idem dito wanneer `Ghostscript Pad` niet juist werd ingevuld.
+W
+
+ Wanneer `Printer standaardwaarden kopiëren` wordt aangeklikt wordt
+ gsview32.ini middels hetbestand printer.ini automatisch aangepast.
+
+ `.ps bestanden koppelen met GSview` past het bestand registry.dat
+ automatisch aan.
+
+ `.pdf bestanden koppelen met GSview` past evenzeer het bestand
+ registry.dat automatisch aan.
+
+ `Opstartmenu aanpassen` voegt GSview toe aan het start menu.
+
+ Bovenstaande handelingen kunnen niet ongedaan worden gemaakt.
+ Koppelen van bestandsformaten en toevoegen aan het "Start" menu worden
+ normaliter uitgevoerd door het GSview setup programma, waarbij wel een
+ mogelijkheid aanwezig is om ongedaan te maken.
+E
+
+ Zie `Installeren`.
+WP
+3Geluiden
+-Sounds
+?Geluiden
+ Met `Geluiden` kan een geluidje worden toegewezen aan een bepaalde
+ handeling. U kan kiezen tussen `Geen`, a `Luidspreker biep` of een
+ *.wav bestand.
+
+ Om *.wav bestanden in te kunnen schakelen moet uw geluidskaart
+ operationeel zijn. M$-Windows 3.0 laat het gebruik van *.wav bestanden
+ niet toe.
+
+ The events are:
+
+ `Uitgaande bladzijde`: Tonen van een bladzijde.
+
+ `Geen pagina beschikbaar`: Keuze bestaat niet.
+
+
+ `Geen nummering beschikbaar`: Geen paginanummering beschikbaar in het
+ document.
+
+ `"Niet geopend`: Het gevraagde document werd nog niet geopend.
+
+ `Fout`: Voor eender welk soort fout.
+
+ `Start`: GSview openen.
+
+ `Afsluiten`: GSview afsluiten.
+
+ `Aan het werk`: Gevraagde functie wordt door een ander proces
+ geblokkeerd.
+
+ Standaard werden `Geen pagina beschikbaar`, `Fout` en `Aan het werk`
+ ingesteld op `Luidspreker biep` en alle andere op `Geen`.
+E
+3Eenheden
+-Units
+?Eenheden
+ `Eenheden` stelt de meeteenheden in aan de hand waarvan de positie van
+ de aanwijzer op het scherm wordtgetoond.  Keuze uit PostScript punten
+ (`pt` = 1/72"), millimeters (`mm`) of duim (`in`).
+ Standaardinstelling is `pt`.
+
+ De resolutie kan worden verbeterd aan de hand van
+ `Eenheden `| `Beste resolutie`.
+
+ Zie ook `Eenheden`.
+3Taal
+-Language
+?Taal
+?Internationaal
+ GSview is beschikbaar in het Engels, Nederlands, Frans, Duits,
+ Italiaans en Spaans.
+ In te stellen aan de hand van `Opties` | `Taal`.
+3PStoText
+-PStoText
+?PStoText
+ GSview heeft twee manieren beschikbaar om tekst af te scheiden en te
+ zoeken.
+
+ De `Snelle methode` zoekt enkel PostScript reeksen. Maar deze methode
+ brengt vaak verwarring. `PStoText` | `Uitgeschakeld`.
+
+ `PStoText tekst zoeken en exporteren` maakt gebruik van pstotext en
+ Ghostscript om de positie van de woorden in een document te bepalen.
+ Deze laatste methode geeft betere resultaten maar neemt veel meer tijd
+ in beslag (afhankelijk van de kracht van de processor).
+ U hebt de keus uit twee manieren: `Normaal` voor de meeste gevallen;
+ `Dvips Cork Encoding` indien een PS-bestands middels dvips (Cork
+ Encoding) werd aangemaakt.
+
+ `Normal` is de standaardinstelling.
+3DSC Waarschuwingen
+-DSC_Warnings
+?DSC Waarschuwingen
+ Sommige documenten bevatten fouten in hun opmaakstructuur.
+ U kan instellen hoe de waarschuwingen worden weergegeven middels
+  `Opties` | `DSC Waarschuwingen`.
+ Bij `Uit`, wordt voorhands verondersteld dat alle DSC commentaren
+ juist zijn.
+ `Fouten` zal u de fouten in de DSC commentaren laten zien.
+ `Waarschuwingen` toont de fouten en waarschuwingen.
+ `Alle` zal u alle mogelijke fouten en ongeregeldheden laten zien.
+  Standaardinstelling is  `Waarschuwingen`.
+
+ Indien u `Alle` hebt aangemerkt zal u hetvolgende te zien krijgen
+ wanneer zich een probleem voordoet:
+ Bij `OK` zal GSview proberen de fout te herstellen. `Annuleren` doet
+ GSview DSC als goed interpreteren. `DSC negeren` zal alle verdere
+ DSC commentaren doen negeren.
+
+ Bij `DSC Waaschuwingen` op` Uit` wordt alle controle voorhands uitge-
+ schakeld. Documenten met DSC fouten zullen derhalve naar alle
+ waarschijnlijkheid problemen opleveren.
+3Instellingen bewaren bij het afsluiten
+?Instellingen bewaren bij het afsluiten
+?Instellingen nu bewaren
+?Instellingen bewaren bij het afsluiten
+?Instellingen
+?INI bestand
+ Met `Instellingen nu bewaren` worden bewaard: vensterplaatsing,
+ venstergrootte, jongst gebruikte printer, jongst benaderde directory
+ en alle items uit de menu's `Opties` en  `Papierformaat`. Dit wordt
+ opgeslagen in
+W
+ gsview32.ini
+P
+ gvpm.ini in the \OS2 directory.
+X
+ .gsviewrc in de basisdirectory .
+E
+ GSview leest dit bestand in bij het opstarten.
+
+ Wanneer werd aangemerkt `Instellingen bewaren bij het afsluiten`
+ worden al deze instellingen automatisch bewaard bij het afsluiten van
+ GSview.
+3Veilig
+?Veilig
+ Wanneer de optie `Veilig` werd aangevinkt, zal het `-dSAFER` kenmerk
+ worden ingeschakeld, zodat wissen en hernoemen van bestanden
+ onmogelijk wordt, en aldus bestanden in een "alleen lezen" toestand
+ kunnen worden geopend. Dit is ook de standaardinstelling.
+
+
+ Werd `Veilig` niet aangevinkt, dan kan Ghostscript bestanden wijzigen.
+
+3Jongste directory bewaren
+?Jongste directory bewaren
+ Wanneer `Jongste directory bewaren` werd `aangevinkt`, wordt de huidige
+ directory bewaard bij het afsluiten en bij de volgende opstart als
+ huidige directory ingesteld. Dit is de standaardinstelling. Werd
+ `Jongste directory bewaren` niet aangevinkt, dan wordt de huidige
+ directory de directory van het geopende bestand.
+
+3Knoppenbalk
+?Knoppenbalk
+?Vergroten
+ Met `Knoppenbalk` aangemerkt wordt de knoppenbalk getoond
+WX
+ bovenaan
+P
+ benedenlinks
+E
+ van het venster. Dit is ook de standaardinstelling.
+ De knoppenbalk bevat de volgende items in de volgorde
+WX
+ van links naar rechts:
+P
+ van boven naar beneden:
+E
+W
+ {bmlwd gvwopen.bmp}
+E
+ `Bestand` | `Openen`
+
+W
+ {bmlwd gvwprint.bmp}
+E
+ `Bestand` | `Afdrukken`
+
+W
+ {bmlwd gvwinfo.bmp}
+E
+ `Bestand` | `Info`
+
+W
+ {bmlwd gvwhelp.bmp}
+E
+ `Help` | `Inhoud`
+
+W
+ {bmlwd gvwgoto.bmp}
+E
+ `Bekijken` | `Ga naar`
+
+W
+ {bmlwd gvwprevs.bmp}
+E
+ `5 bladzijden terug`
+
+W
+ {bmlwd gvwprev.bmp}
+E
+ `Bekijken` | `Vorige bladzijde`
+
+W
+ {bmlwd gvwnext.bmp}
+E
+ `Bekijken` | `Volgende bladzijde`
+
+W
+ {bmlwd gvwnexts.bmp}
+E
+ `5 bladzijden verder`
+
+W
+ {bmlwd gvwback.bmp}
+E
+ `Bekijken` | `Terug`
+
+W
+ {bmlwd gvwfwd.bmp}
+E
+ `Bekijken` | `Verder`
+
+W
+ {bmlwd gvwmagp.bmp}
+E
+ `Resolutie + 1.2`
+
+W
+ {bmlwd gvwmagm.bmp}
+E
+ `Resolutie - 1.2`
+
+W
+ {bmlwd gvwfind.bmp}
+E
+ `Bewerken `| `Zoeken`
+
+W
+ {bmlwd gvwfindn.bmp}
+E
+ `Bewerken `| `Volgende zoeken`
+
+ Bij het wijzigen van de resolutie dient `Verversen` te worden
+ aangemerkt; i. p. v. de knoppenbalk kan ook worden aangewend
+ `Papierformaat `| `Schermresolutie wijzigen`.
+
+WP
+3In venster aanpassen
+?In venster aanpassen
+ Met `In venster aanpassen` wordt het venster vergroot of verkleind
+ al naargelang de afmetingen van de bladzijde.
+ Het venster zal NOOIT groter worden dan het de bladzijde die wordt
+ getoond.
+
+ Het venster wordt enkel aangepast bij wijziging van het venster en/of
+ pagina afmetingen.
+ `In venster aanpassen` werkt niet bij een volledig scherm.
+
+ Is `In venster aanpassen` niet actief, dan wordt het venster niet
+ aangepast en wordt de ruimte buiten de bladzijde in lichtgrijs
+ getoond. Vooral nuttig bij het bekijken van documenten opgesteld
+ in een lage resolutie (beletten dat het venster wordt verkleind).
+ This is the default.
+
+ Zie ook `Bekijken` | `In venster aanpassen`.
+E
+3Verversen
+?Verversen
+ Met `Auto Verversen` actief wordt bij `DSC` documenten het scherm ververst
+ wanneer de `Orientatie`, de `Resolutie`, of het `Papierformaat`
+ worden gewijzigd. Dit is de standaardinstelling.
+
+ Bij `niet-DSC documenten`, wordt met `Auto Verversen` actief de eerste
+ bladzijde opnieuw getoond.
+
+ Is `Auto Verversen` niet actief, dan moet via `Bekijken` | `Verversen`
+ het document worden hertoond bij elke wijziging van de `Orientatie`,
+ `Resolutie` etc...
+
+3EPS Knipsel
+?EPS Knipsel
+?PDF Knipsel
+ Met `EPS Knipsel` actief wordt de bitmap op het scherm ingebonden
+ naar een EPS bestand gestuurd i. p. v. dat het
+ `Papierformaat` wordt gebruikt. Nuttig voor wanneer een afdruk-
+ voorbeeld bij het EPS bestand moet worden toegevoegd.
+
+ Is `EPS Knipsel` niet actief, dan worden de instellingen uit het menu
+ `Papierformaat` gebruikt. Dit is de standaardinstelling.
+
+ `EPS Knipsel` wijzigt niets aan het originele document, deze optie
+ heeft enkel invloed op de manier waarop het document wordt getoond.
+ Ook het afdrukken wordt hierdoor niet beinvloed .
+
+ Zie ook `Bewerken `| `EPS voorbeeld toevoegen `
+3EPS Waarschuwingen
+?EPS Waarschuwingen
+ Wanneer `EPS Waarschuwingen` actief is, wordt door  GSview een
+ voorvoegsel naar Ghostscript gestuurd bij het openen van een bestand.
+ Dit voorvoegsel genereert waarschuwingen naar het kader
+ `Bestand `| `Berichten tonen` bij oneigenlijk gebruik van PostScript
+ parameters.  Enige voorbeelden hiervan:
+  Warning: EPS files must not use /initgraphics
+ `EPS Warn` is not infallible.  It is possible to access restricted
+ operators without `EPS Warn` producing a warning.
+ Krijgt u zo'n waarschuwing, maak dan GEEN GEBRUIK van `PS naar EPS`.
+
+ Standaard is de optie `EPS Waarschuwingen` niet actief.
+
+ Zie ook `PS naar EPS`.
+3DSC negeren
+?DSC negeren
+ Het kan zijn dat een bestand ten onrechte aangeeft overeen te stemmen
+ met de PDF structuur. Wordt geprobeerd een dergelijk bestand te openen
+ dan zal GSview dat waarschijnlijk niet aankunnen. Is `DSC negeren`
+ actief dan veronderstelt GSview dat het document geen DSC commentaar
+ bevat en worden de bladzijden in de originele volgorde getoond.
+
+ Standaard is `DSC negeren` niet actief.
+
+3Inbinden tonen
+?Inbinden tonen
+ Hiermede wordt een gestippelde rechthoek over het beeld getrokken om
+ de plaatsing en omschrijving van het "inbinden" te tonen.
+ Dit wordt dus enkel over het beeld getrokken, en heeft geen invloed op
+ het afdrukken.
+ Het "inbinden" wordt enkel getoond bij `DSC` documenten (niet DSC
+ documenten worden niet ingebonden).
+
+ Standaard is `Inbinden tonen` niet actief.
+2Orientatie
+-Page_Orientation
+?Auto Orientatie
+?Orientatie
+?Staand
+?Liggend
+?Onderste boven
+?90 graden naar rechts
+?Liggende positie omdraaien
+ `Staand`, `Liggend`, `Onderste boven` en `90 graden naar links`
+ uit het menu `Orientatie` hebben enkel invloed op de manier waarop
+ het document op het scherm wordt getoond, en deze opties hebben geen
+ enkele invloed op het afdrukken.
+ `Liggend` draait het document 90 graden in wijzerzin.
+ `90 graden naar links` draait het document 90 graden in tegenwijzerzin.
+
+
+ Werd `Automatisch` aangevinkt, dan wordt de orientatie automatisch
+ ingesteld aan de hand van `DSC` commentaar zo deze beschikbaar is.
+
+ Met `Liggende positie omdraaien` wordt gewisseld tussen `Liggend` en
+ `90 graden naar links`.
+ De meeste documenten doen het met `Liggend`, maar het kan gebeuren dat
+ sommige documenten in tegenwijzerzin werden moeten worden gedraaid.
+
+
+ Zie ook `Papierformaat` en `Schermresolutie wijzigen`.
+
+2Schermresolutie
+-Display_Settings
+?Schermresolutie
+?Schermresolutie
+?Zoomfactor
+?Diepte
+?Alpha
+?Anti-aliasing
+?Tekst Alpha
+?Grafisch Alpha
+?Tekenmethode
+ Sommige beeldinstellingen kunnen worden aangepast via
+ `Papierformaat` | `Schermresolutie`.
+
+ Het veld `Resolutie` stelt de resolutie in in dpi. Dat is standaard
+ 96 dpi voor VGA.
+
+ Bij DSC conforme bestanden zal een klik op de rechtermuisknop in- of
+ uitzoomen naar de exacte printerresolutie. Een tweede klik op de
+ rechtermuisknop stelt opnieuw de schermresolutie in.
+
+ `Zoom Resolutie` stelt de zoomresolutie in per dpi.
+
+ `Diepte` stelt de bitmapresolutie diepte in bits per pixels
+ in op het scherm.
+ "Standaard" stelt in op de beste diepte overeenstemmend met de video
+ drijvers in het geheugen. Het is sterk aangeraden het bij deze
+ standaardinstelling te houden.
+
+ `Tekst Alpha` stelt anti-aliasing in voor fonts.  Standaard is dat
+ is 4 bits.  Om anti-aliasing uit te schakelen, stel in op 1 bit.
+W
+
+ `BELANGRIJK`: Met `Text Alpha` wordt `Platform Fonts` uitgeschakeld.
+
+E
+
+ `Graphics Alpha` stelt anti-aliasing in voor prentjes en ook voor
+ tekst die te groot is m in de fontcache te passen.
+
+ Anti-aliasing vertraagt wel sterk het systeem.
+ U kan Tekst en Graphics Alpha enkel aanwenden wanneer de schermdiepte
+ ingesteld werd op 8bits/pixel of beter.
+P
+
+ Vaak zijn de OS2/eCS video drijvers van de fabrikanten onstabiel.
+ Hebt u problemen met de video, dan is het aangeraden over te schakelen
+ op het video pakket van SDD (Scitech Display Doctor)
+
+
+E
+3Zoom
+-Zoom
+?Zoom
+ Om in te zoemen dient u de muisaanwijzer op de gewenste plaats te
+ zetten en op de rechtermuisknop te duwen.
+ Om het zoomen te annuleren, opnieuw op de rechtermuisknop duwen.
+ Standaard is de zoomresolutie 300 dpi maar dit kan worden aangepast
+ via `Papierformaat` | `Schermresolutie`.
+
+ `Zoom` werkt enkel met  `DSC` conforme documenten.
+
+ Om de hele bladzijde te vergroten of te verkleinen, gebruik
+ `Resolutie` uit de menuoptie `Papierformaat` | `Schermresolutie`.
+
+2Paginagrootte
+-Media
+?Paginagrootte
+?Papierformaat
+?Door de gebruiker ingesteld
+?Papier omdraaien
+ Middels `Papierformaat` kan u de paginagrootte instellen.
+ Beschikbaar zijn:
+  11x17          11   x 17   duim (inch)
+  A3              297 x 420  mm
+  A4              210 x 297  mm
+  A5              148 x 210  mm
+  B4              257 x 364  mm
+  B5              182 x 257  mm
+  Ledger         17   x 11   duim (inch)
+  Letter          8.5 x 11   duim (inch)
+  Legal           8.5 x 14   duim (inch)
+  Note            8.5 x 11   duim (inch)
+
+ Middels `Door de gebruiker ingesteld` kan een eigen grootte in
+ PostScript punten (1/72 duim) worden gecreeerd. 480x360 punten bij
+ een resolutie van 96 dpi geeft een beeldgrootte 640x480 pixels.
+
+ Is `DSC` commentaar beschikbaar, zoals bijvoorbeeld
+  %%DocumentPaperSizes: a4
+  %%DocumentMedia: a4 595 842 80 white ( )
+ dan wordt het papierformaat automatisch ingesteld.
+ Zijn er geen gegevens in het document beschikbaar, dan wordt het for-
+ maat aangenomen dat werd gecreeerd in `Door de gebruiker ingesteld`.
+
+
+ Is `Papier omdraaien` aangevinkt, dan worden hoogte en breedte omge-
+ wisseld. Dit geldt zowel voor het beeld op scherm als voor het
+ afdrukken.
+ `A4` met `Papier omdraaien` komt gelijk overeen met
+ `Door de gebruiker ingesteld` op 842 x 595 pt.
+ Het is meer aangewezen om van de mogelijkheden `Orientatie` gebruik te
+ maken dan van `Papier omdraaien`.
+2Toetsen
+-Keys
+?Toetsen
+ Sneltoetsen.
+X
+
+ `Opgelet! - niet alle toewijzingen werken met X11`
+E
+
+ `O`, `o`  Bestand openen.  (`Bestand` | `Openen`)
+
+ `S`, `s`  Bestand sluiten.  (`Bestand` | `sluiten`)
+
+ `V`, `v`, `+`  Volgende bladzijde.  (`Bekijken` | `Volgende bladzijde`)
+
+ Spatiebalk     Volgende bladzijde bovenaan.  (`Bekijken` | `Volgende bladzijde bovenaan`)
+
+ `Z`, `z`, `-`  Vorige bladzijde.  (`Bekijken` | `Vorige bladzijde`)
+
+ BackSpace  Vorige blz en bovenaan.
+ 		(`Bekijken` | `Vorige bladzijde en bovenaan`)
+
+ `G`, `g`  Ga naar bladzijde.  (`Bekijken` | `Ga naar bladzijde`)
+
+ `I`, `i`  Gegevens over het bestand.  (`Bestand` | `Info`)
+
+ `R`, `r`, `F5`  Opnieuw tonen.  (`Bestand` | `Opnieuw tonen`)
+
+ `B`, `b`  Bestand kiezen: openen maar niet tonen.  (`Bestand` | `Bestand selecteren`)
+
+ `A`, `a`  Opslaan als. (`Bestand` | `Opslaan als`)
+
+ `D`, `d`  Geheel of gedeeltelijk afdrukken.  (`Bestand` | `Afdrukken`)
+
+ `Z`, `z`  Geheel of gedeeltelijk naar PDF of bitmap omzetten.
+ (`Bestand` | `Omzetten`).
+
+ `X`, `x`  Bepaalde bladzijden naar een ander bestand exporteren.
+ 	  (`Bestand` | `Exporteren`)
+
+ `T`, `t`  Ghostscript berichten tonen.  (`Bestand` | `Berichten tonen`)
+
+ `<`  Resolutie verminderen met 1/1.2
+
+ `>` Resolutie vermeerderen met 1.2
+
+ `F1`  Hulp.  (`Hulp` | `Inhoud`)
+
+ `Ctrl+C`, `Ctrl+Insert`  Kopieer bitmap op het scherm naar het prikbord.
+ 	 (`Bewerken` | `kopiÙren`)
+
+ `Ctrl+F`, Zoeken naar. (`Bewerken` | `Zoeken`)
+
+ `F3`, Volgende zoeken. (`Bewerken` | `Volgende zoeken`)
+
+ `F4`  Volledig scherm.  (`Bekijken` | `Volledig scherm`)
+
+ `F6`  In venster aanpassen. (`Bekijken` | `In venster aanpassen`)
+
+ `Pijltoetsen`  Scrollen met 1/16 gedeelte van het scherm.
+
+ `Ctrl + pijltoetsen`  Per volledig scherm omhoog of omlaag.
+P
+
+ `Ctrl+Page Up`  Scrollen een scherm naar links.
+
+ `Ctrl+Page Down`  Scrollen een scherm naar rechts.
+E
+
+ `Page Up`  Scrollen een scherm naar boven.
+
+ `Page Down`  Scrollen een scherm naar beneden.
+
+ `Home` Scrollen naar bovenaan de bladzijde .
+
+ `End`  Scrollen naar onderaan de bladzijde.
+2Aan de opdrachtregel
+?Aan de opdrachtregel
+ Opdrachtregel en parameters:
+W
+  gsview32 [/D] [/Tn] bestandsnaam
+  gsview32 [/D] [/Tn] /F bestandsnaam
+  gsview32 [/D] [/Tn] /P bestandsnaam
+  gsview32 [/D] [/Tn] /S[port] bestandsnaam
+  gsview32 [/D] [/Tn] /S["queue"] bestandsnaam
+P
+  gvpm [/D] [/Tn] bestandsnaam
+  gvpm [/D] [/Tn] /F bestandsnaam
+  gvpm [/D] [/Tn] /P bestandsnaam
+X
+  gsview [-d] filename
+  gsview32 [-d] -P bestandsnaam (nog niet functioneel)
+  gsview32 [-d] -F bestandsnaam (nog niet functioneel)
+
+ Meer opties:
+  -hulp
+  -versie
+  -afmetingen BREEDTExHOOGTE
+E
+
+  GSview opstarten met een bepaald bestand (vb: test.ps):
+W
+  gsview32 test.ps
+P
+  gvpm test.ps
+X
+  gsview test.ps
+E
+ GSview opstarten en test.ps (bijvoorbeeld) afdrukken -
+ (Dit komt vrijwel overeen met `Bestand` | `Afdrukken`, met dit
+ verschil dat u niet wordt gevraagd welke printer moet worden
+ aangewend. De jongst geselecteerde printer zal worden aangesproken
+ en na deze taak zal GSview zichzelf uit het geheugen laden).
+W
+  gsview32 /P test.ps
+P
+  gvpm /P test.ps
+X
+  gsview -P test.ps
+E
+ GSview starten en een bestand (vb: test.ps) omzetten naar PostScript
+ (niet PDF!) - evenwaardig met (`Bestand` | `Omzetten`):
+W
+  gsview32 /F test.ps
+P
+  gvpm /F test.ps
+X
+  gsview -F test.ps
+E
+W
+ Bestand (test.ps) rechtstreeks naar een printer sturen
+   gsview32 /S filename.ps
+  Bestand (test.ps) rechtstreeks naar een printer sturen op LPT3:
+   gsview32 /SLPT3: filename.ps
+ Bestand (test.ps) rechtstreeks naar een "HP DeskJet Portable" sturen:
+  gsview32 /S"HP DeskJet Portable" test.ps
+ Na de taal zal GSview zichzelf uit het geheugen laden.
+E
+
+  GSview opstarten in debug modus:
+W
+  gsview32 /D
+P
+  gvpm /D
+X
+  gsview -d
+E
+ In debug modus zal  GSview zijn tijdelijk aangemaakte bestanden niet
+ automatisch verwijderen.
+ De debug modus stuurt ook meer gegevens naar `Bestanden `| `Berichten tonen`.
+ De gegevens worden weggeschreven naar
+WP
+ c:\gsview.txt
+X
+ standard output
+E
+ use -d9
+
+WP
+ GSview is standaard
+W
+ multi-threaded onder Windows 95 en Windows NT, en single-threaded onder
+ Windows 3.1 / Win32s.
+P
+ multithreaded.
+WP
+ Om dit te veranderen, gebruik `/T` om van threading modus te wisselen,
+ of gebruik  `/T0` voor de single-thread modus en `/T1` voor de
+ multi-thread modus.
+E
+
+W
+ Om een bestand in een bestaand venster van GSview te openen (of GSview
+ openen in een nieuw venster):
+  gsview32 /E bestandsnaam
+ Eén instantie van GSview uit het geheugen halen:
+  gsview32 /X
+
+E
+ GSview maakt geen onderscheid tussen hoofd- en kleine letters:
+WP
+ /p is hetzelfde als /P.
+X
+ -p  is hetzelfde als -P.
+E
+W
+3Dynamische gegevensuitwisseling (DDE)
+?Dynamische gegevensuitwisseling
+?DDE
+ GSview heeft DDE geïmplementeerd, service="GSview" en onderwerp="GSview".
+ Volgende XTYP_EXECUTE opdrachten kunnen worden gebruikt:
+  [FileOpen("filename")]
+  [FileExit()]
+  [NextPage()]
+  [PrevPage()]
+  [GoBack()]
+  [GotoPage(5)]
+  [ShowWindow(nCmdShow)]
+  [Minimise()]
+  [Maximise()]
+  [Command("command line")]
+ De [Command()] opdracht aanvaard enkel "filename" of "/P filename".
+
+ Schakel geen meervoudige opdrachten aan elkaar. Er zijn niet direct
+ problemen te verwachten, maar het is vrij zinloos daar GSview reeds
+ volgende opdrachten uitvoert vooraleer een vorige werd beÙindigd.
+ Heeft u meervoudige opdrachtenreeksen nodig, schakel dan een pause
+ in tussendoor .
+
+ Middels volgende twee opdrachten kan een DDE instructie van een
+ GSview *.exe bestand naar een ander GSview *.exe bestand worden
+ gezonden:
+ De /E opdracht gebruikt [Command("command line")][ShowWindow(1)].
+ D /X opdracht gebruikt [FileExit()].
+E
+2World Wide Web
+?World Wide Web
+?WWW
+?HTML
+ De WWW thuislocatie van Ghostscript, Ghostview en GSview is:
+
+  http://www.cs.wisc.edu/~ghost/
+
+ GSview kan online worden geregistreerd op de onderstaande locatie:
+  http://www.ghostgum.com.au/
+
+ GSview kan ook worden aangewend om *.htm* bronbestanden te bekijken.
+ Meer hierover op de GSview thuishaven (home page).
+
+ U kan van de GSview WWW locatie een Ghostscript handleiding afhalen
+ die werd samengesteld door Thomas Merz. Deze handleiding bevat
+ uittreksels uit het boek `PostScript and Acrobat/PDF` van dezelfde
+ autheur (verkrijgbaar in het Duits en Engels).
+2Copyright
+?Copyright
+ Onder de menuoptie `Hulp --> Over GSview` bevindt zich het GSview
+ versienummer en het copyright bericht.
+
+W
+  GSVIEW.EXE - Grafische schil voor Ghostscript
+P
+  GVPM.EXE - Grafische schil voor Ghostscript
+X
+  gsview - Grafische schil voor Ghostscripts
+E
+  Copyright (C) 1993-2001, Ghostgum Software Pty Ltd.  Alle rechten
+  voorbehouden.
+
+ Dit bestand is een onderdeel van het GSview programma.
+
+ This program is distributed with NO WARRANTY OF ANY KIND.  No author
+ or distributor accepts any responsibility for the consequences of using it,
+ or for whether it serves any particular purpose or works at all, unless he
+ or she says so in writing.  Refer to the GSview Free Public Licence
+ (the "Licence") for full details.
+
+ Every copy of GSview must include a copy of the Licence, normally in a
+ plain ASCII text file named LICENCE.  The Licence grants you the right
+ to copy, modify and redistribute GSview, but only under certain conditions
+ described in the Licence.  Among other things, the Licence requires that
+ the copyright notice and this notice be preserved on all copies.
+
+     Autheur: Russell Lang, Ghostgum Software Pty Ltd
+   Internet: gsview@ghostgum.com.au
+ Lees a. u. b. eerst `Algemene problemen` , en de GSview Readme.htm
+ alvorens een bericht naar de autheur te sturen.
+
+ GSview maakt gebruik van pstotext binnen een toegevoegde DLL. pstotext
+ werd geprogrammeerd door Andrew Birrell en Paul McJones. het is een
+ Copyright (C) 1995-1996 vande firma Digital Equipment Corporation.
+ Voo meer details zie de bestanden pstotext.txt of pstotext.zip.
+ Bent u het niet eens met de voorwaarden, wis dan de bestanden
+ pstotext.zip, pstotxt2.dll en pstotxt3.dll.
+
+2Vaak voorkomende problemen
+?Vaak voorkomende problemen
+?Problemen
+WP
+ `Probleem:` Can't load Ghostscript DLL ...
+
+ GSview heeft de Ghostscript DLL nodig
+ (gsdll2.dll voor OS/2, gsdll32.dll voor Win32).
+ Dit komt voor wanneer Ghostscript niet werd geïnstalleerd,
+ of wanneer GSview Ghostscript niet ip uw systeem kan vinden.
+
+ Selecteer `Opties` | `Aangepaste configuratie`
+ en verwijs naar het pad waar de `Ghostscript DLL` zich bevindt,
+ bijvoorbeeld
+P
+  c:\gs\gsN.NN\bin\gsdll2.dll
+W
+  c:\gs\gsN.NN\bin\gsdll32.dll
+WP
+
+ U krijgt deze foutmelding ook te zien wanneer Ghostscript het
+ initialiebestand niet kan vinden (vb.: gs_init.ps). Stel dan
+ `Ghostscript Include Path` juist in.
+
+W
+ In een Win32s omgeving, zie er op toe dat er zich niet reeds een
+ andere kopie van de Ghostscript DLL in het geheugen bevindt. Er kan
+ zich namelijk slechts een kopie tegelijkertijd van deze DLL in het
+ geheugen bevinden.
+
+WP
+ Lukt u er niet in GSview met de Ghostscript DLL te laten werken,
+ probeer dan eerst Ghostscript zonder GSview aan het werk te krijgen.
+
+ `Probleem:` Ghostscript foutmelding:
+ `Can't find initialization file gs_init.ps`.
+
+ Verwijs naar het juiste directory (`Ghostscript Include Path`) waar
+ het bestand gs_init.ps zich bevindt.
+
+ `Probleem:` Ghostscript foutmelding:
+ `gs: Interpreter revision (XXX) does not match gs_init.ps revision (YYY)`.
+
+ Verwijs naar het juiste directory (`Ghostscript Include Path`) waar
+ het bestand gs_init.ps zich bevindt.
+ Plaats geen PostScript bestand in de directory van een oudere versie
+ van Ghostscript (dan zal het oudere bestand gs_init.ps in het geheugen
+ worden geladen, hoeook het `Ghostscript Include Path` moge luiden).
+ `Probleem:` Ghostscript foutmelding:
+ `Wrong version of DLL found.  Found version XXX  Need version YYY`.
+
+ GSview trof een verkeerde Ghostscript DLL aan. Installeer de juiste
+ versie van de Ghostscript DLL. Waak erover slechts een exemplaar van
+ deze DLL opuw systeem te hebben.
+
+E
+ `Probleem:` GSview bericht dat een PostScript bestand 0 (nul)
+ bladzijden bevat en slects de "eerste" zal worden getoond.
+
+
+ Dit komt doordat het document foutieve DSC gegevens bevat.
+ Ga in het printersetup paneel, naar `Printers`, `Opties...`, en
+ selecteer in de `Printen naar` groep de `Printer` knop. `Printen naar`
+ `Ingekapseld PostScript bestand` kan niet worden aangewend om meerdere
+ bestanden af te drukken. De juiste methode bestaat erin de printer aan
+ te sluiten op `Bestand:`.
+ Bovendien, vanuit de Printse Setup, selecteer `Printers`, `Opties...`,
+ `Geavanceerd` en dan `Conform met de Adobe Document Structuring
+ Convention`.
+
+ De DSC mededeling `%%Pages: 0` betekent dat het bestand geen enkele
+ bladzijde kan genereren. Dat betekent dat de PostScript `showpage`
+ functie niet wordt aangesproken. Treft u een PostScript bestand aan
+ dat meerdere bladzijden bevat en de `%%Pages: 0` mededeling genereert,
+ wijzig dan de eerste lijn van `%!PS-Adobe-` naar `%!`.
+ DSC gegevens worden dan genegeerd, en u kan dan alle bladzijden
+ bekijken, maar enkel in de volgorde waarin ze voorkomen.
+
+ Sommige PostScript printerdrijvers bevatten codes specifiek voor een
+ bepaalde printer. Het kan zijn dat GSview niets met deze specifieke
+ printerdrijvers kan aanvangen. Treft u een dergelijk probleem aan,
+ probeer het dan via een meer algemende PS printerdrijver zoals
+ `Apple LaserWriter II NT` voor PostScript level 2 printers, of
+ `Apple LaserWriter Plus` voor PostScript level 1 printers.
+
+ In Windows 95, open de printerinstellingen,selecteer de PostScript
+ tab, en selecteer dan PostScript Output Formaat =
+ `PostScript (optimize for portability - ADSC)`.
+
+ `Probleem:` GSview mededeling: "Page ordering is Special..."
+
+ Uw document gebruikt het DSC gegeven `%%PageOrder: Special` wat
+ betekent dat de bladzijden gecodeerd werden volgens een niet gekend
+ systeem. Ook hier kan het dan voorkomen dat u wel bladzijden kan
+ bekijken, maar enkel in de volgorde waarin ze voorkomen.
+ Probeert u het toch anders, dan zal GSview waarschijnlijk een stel
+ foutmeldingen genereren. De enige weg eruit bestaat erin het
+ PostScript bestand opnieuw te genereren zonder de eigen speciale
+ bladzijde codering.
+
+
+ Standaard creÙert Windows 95 PostScriptbestanden met eigen codering.
+ Om dit uit te schakelen, ga naar de printereigenschappen,
+ selecteer de PostScript tab, en selecteer dan PostScript Output
+ Formaat = `PostScript (optimize for portability - ADSC)`.
+
+
+ `Probleem:` PostScriptbestanden gegenereerd door M$-Windows beginnen
+ met een code Control+D (^D).
+
+ Voor Windows 3.1:
+
+ Dit is een M$-Windows probleem en wordt als zodanig beschreven in het
+ bestand PRINTERS.WRI.
+ Open het bestand win.ini en zoek naar de PostScript printer sectie.
+ (er kunnen meerdere secties voorkomen). Voeg aan elke sectie toe
+ `CTRLD=0` zoals verder wordt beschreven:
+
+  [Apple LaserWriter II NT,FILE]
+  CTRLD=0
+
+ For Windows 95:
+
+ De PostScript printer drijver setup heeft een optie beschikbaar om
+ CTRL+D aan het begin van een document uit te schakelen. Overigens is
+ geen ^D toevoegen wel de standaardinsteeling in Win95/98.
+
+ `Probleem:` PostScript bestanden gegenereerd door Word for Windows 6.0
+ laten een foutmelding: "Missing %%Pages comment" zien.
+
+ Felecitaties! U bent weer een fout van MS-Windows op het spoor
+ gekomen. MS-Word moet aan het bestand de EPS gegevens:
+
+  %%BeginDocument: filename.eps
+  %%EndDocument
+
+ toevoegen. Doordat deze vereiste gegevens niet aan het bestand werden
+ toegevoegd is GSview niet in staat te bepalen hoeveelbladzijden een
+ document bevat en waar de bladzijden zich precies bevinden. De kern
+ van het probleem situeert zich in het bestand EPSIMP.FLT dat dus moet
+ worden aangepast.
+ Klachten hierover dus graag naar Bill Gates in Redmond (USA).
+
+ Voorlopig kan u op een van de twee wolgende manieren er onderuit:
+
+
+ - Selecteer `Opties` | `DSC negeren`
+
+ of
+
+ - Voeg aan het Postscriptbestand het juiste DSC gegeven toe.
+ Zoek in het PostScriptbestand naar ALLE regels die bevatten:
+   %MSEPS Preamble
+ Vanop deze regel, zoek naar voren naar het begin van het toegevoegde
+ EPS bestand, dat moet beginnen met iets als:
+
+  %!PS-Adobe-3.0 EPSF-3.0
+
+ En voeg toe boven deze regel:
+
+  %%BeginDocument: AddedByHand
+
+ Zoek vervolgens naar alle regels bevattend:
+
+  %MSEPS Trailer
+
+ En voeg toe boven deze regls:
+
+  %%EndDocument
+
+ Daarna moet GSview normaliter de bladzijden op een juiste manier
+ weergeven.
+
+ `Probleem:` GSview accepteert geen DSC gegevens uit bestanden die
+ werden gegenereerd door de Adobe PostScript drijver 4.10 voor Win32.
+
+ Maak geen gebruik van het Tagged binary communications protocol.
+ Verander als volgt "Printers | PostScript tab | Geavanceerd... |
+ Data formaat | ASCII data"
+
+ `Probleem:` Het openen van eender welk bestand heeft als resultaat
+ de foutmelding:
+  `Unrecoverable error: configurationerror in setpagedevice`
+  Failed to open device or install ViewerPreProcess hook: returns -26
+  Page size may have been too large or resolution too high.
+  Resetting page size and resolution
+
+ Mogelijk zijn het papierformaat en/of de resolutie te groot; u dient
+ dan het nodige te doen om dit aan te passen.
+ Het kan ook zijn dat u `-dFIXEDMEDIA` hebt ge´mplementeerd in de
+ Ghostscript GS_OPTIONS omgevingsvariable. Bij gebruik van GSview is het
+ het aangeraden GS_OPTIONS niet te gebruiken maar in de plaats
+ `Opties` | `Aangepaste Configuratie` | `Ghostscript Opties`.
+
+W
+2Aanvullende programma's
+?Aanvullende programma's
+?RedMon
+?PrintFile
+ `RedMon` is een Windows 95 en NT poort monitor, die toelaat een
+ poort naar een programma af te leiden.
+ RedMon kan worden aangewend samen met Ghostscript en een niet
+ PostScript printer om een PostScript printer te emuleren.
+ Zo'n emualatieh kan op een computer network worden gezet en wordt
+ door de aangesloten eenheden als PostScript prnter gezien.
+ Meer hierover op de locatie:
+  http://www.cs.wisc.edu/~ghost/redmon/
+ RedMon laat ook toe naar een Windows printerreeks te schrijven aan de
+ hand van enkele eenvoudige opdrachten.
+
+ `PrintFile` is een Windows GUI applicatie om bestanden naar een
+ printer te sturen. Het programma beheert op een intelligente wijze
+ tekst, PostScript en andere bestanden. Af te halen op de locatie:
+   http://hem1.passagen.se/ptlerup/
+
+ Voor nog meer interessante aanvullende programma's zie de GhostScript
+ `WWW` locatie.
+E
+2Meer hulp
+?Meer hulp
+ Hulp kan worden aangeroepen door in het menu op `Help` te klikken.
+
+3Berichten tonen
+-Show_Messages
+?Berichten tonen
+ GSview maakt gebruik van Ghostscript om bestanden te tonen of af te
+ drukken. `Berichten tonen` geeft weer wat door Ghostscript werd
+ gegenereerd, en is handig voor wanneer er zich PostScript problemen
+ voordoen. U dient eventueel terug te scrollen om het geheel van het
+ bericht te kunnen vernemen.
+
+ De tekst uit het `Berichten tonen` kader kan eventueel naar het
+ worden gekopieerd. Werd er geen tekst geselecteerd, dan wordt alles
+ naar het prikbord gekopieerd. Werd er wel tekst gemarkeerd, dan wordt
+ enkel het gemarkeerde gedeelte gekopieerd.
+
+ Meer over de foutmeldingen in uit het `Berichten tonen` kader in het
+ gedeelte `Algemene problemen` van dit hulpbestand.
+
+WX
+3bzip2
+-bzip2
+?bzip2
+ Wanneer u een bestand dat werd gecomprimeerd met bzip2 in het geheugen
+ laadt zal GSview ook bzip2.DLL in het geheugen laden en dan uw
+ bestand naar een (ander) tijdelijk bestand uitpakken.
+
+W
+ Krijgt u de foutmelding `Failed to load bzip2 DLL...` te zien dan
+ bevindt het bestand bzip2.DLL zich denkelijk niet op uw systeem.
+ U kan bzip2.dll afhalen op deze locatie:
+  ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/
+ Plaats dan bzip2 DLL in dezelfde directry als GSview EXE.
+ libbz2.dll is for Win32. Momenteel is er geen versie beschikbaar noch
+ voor Win16 noch voor OS/2.
+X
+ Krijgt u de foutmelding `Failed to load bzip2 DLL...` te zien dan
+ bevindt het bestand bzip2.DLL zich denkelijk niet op uw systeem.
+
+WX
+  bzip2 is een Copyright 1996-2000 van Julian Seward
+ De broncode kan u hier afhalen:
+  http://sourceware.cygnus.com/bzip2/index.html
+
+E
+3zlib
+-zlib
+?zlib
+?gzip
+ Wanneer een bestand wordt geladen dat werd ingepakt door gzip, dan
+ zal GSview proberen ZLIB.DLL te laden, en daarna het bestand uit te
+ pakken naar een tijdelijk bestand.
+
+WP
+ Krijgt u de foutmelding `Failed to load zlib DLL...` te zien, dan
+ beschikt uw systeem waarschijnlijk niet over het bestand ZLIB.DLL.
+ U kan dan dit bestand op deze locatie afhalen:
+  ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/
+ Plaats het bestand ZLIB.DLL in dezelfde directory als GSview.EXE.
+ zlib16.dll is   bestemd voor win16, zlib32.dll voor win32 en
+ zlib2.dll voor OS/2.
+X
+ Krijgt u de foutmelding `Failed to load zlib DLL...` te zien dan hebt
+ u waarschijnlijk het bestand libz.dll niet op uw systeem.
+E
+
+ zlib : Copyright 1995-1996 van Jean-loup Gailly en Mark Adler.
+ De bronbestanden zijn hier beschikbaar:
+  http://www.info-zip.org/pub/infozip/zlib/
+3Intern
+-Internals
+?Intern
+WP
+ GSview maakt gebruik van de AFPL Ghostscript DLL om PostScript
+ bestanden te genereren.
+
+ Onder Win32s kan de GS DLL slechts door een toepassing tegelijkertijd
+ worden gebruikt.  Onder Windows 95, Windows NT and OS/2, kan dit door
+ meerdere toepassingen tegelijkertijd, afhankelijk van het beschikbaar
+ geheugen. Onder Win32s moet de GS DLL worden vrijgemaakt vooraleer
+ gvwgs.exe tot afdrukken kan overgaan.
+
+ GSview gebruikt gsv16spl.exe (16 bits) om bestanden naar de GSview
+ Win32s printbuffer te zenden.  gsv16spl.exe kan niet afzonderlijk
+ worden gestart, het moet worden geactiveerd door GSview.
+
+
+ gvwgs32.exe (Windows) and gvpgs.exe (OS/2) zijn GS DLL loaders voor
+ het afdrukbeheer. Kunnen vanaf de opdrachtlijn worden aangewend, maar
+ aangezien dan automatisch bestanden worden gewist is het aangeraden
+ enkel gswin32.exe (Win32), gswin32c.exe (Win32 console) of
+ gsos2.exe (OS/2) te gebruiken.
+E
+

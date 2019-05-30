@@ -1,0 +1,7 @@
+[OPTIONS]
+TITLE=GSview Help
+BMROOT=../binary
+[FILES]
+gsview.rtf
+[CONFIG]
+BrowseButtons()

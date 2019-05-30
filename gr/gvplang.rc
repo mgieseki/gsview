@@ -1,0 +1,376 @@
+/* Copyright (C) 1993-2001, Ghostgum Software Pty Ltd.  All rights reserved.
+  
+  This file is part of GSview.
+  
+  This program is distributed with NO WARRANTY OF ANY KIND.  No author
+  or distributor accepts any responsibility for the consequences of using it,
+  or for whether it serves any particular purpose or works at all, unless he
+  or she says so in writing.  Refer to the GSview Free Public Licence 
+  (the "Licence") for full details.
+  
+  Every copy of GSview must include a copy of the Licence, normally in a 
+  plain ASCII text file named LICENCE.  The Licence grants you the right 
+  to copy, modify and redistribute GSview, but only under certain conditions 
+  described in the Licence.  Among other things, the Licence requires that 
+  the copyright notice and this notice be preserved on all copies.
+*/
+
+/* gr\gvplang.rc */
+/* OS/2 PM Greek language resources */
+
+CODEPAGE 869
+
+MENU ID_GSVIEW 
+BEGIN
+	SUBMENU "~Αρχείο", IDM_FILEMENU
+	BEGIN
+		MENUITEM "’ν~οιγμα...\tΟ", IDM_OPEN
+		MENUITEM "Επι~λογή αρχείου...\tΛ", IDM_SELECT
+		MENUITEM "Αποθήκευση ~ως...\tΩ", IDM_SAVEAS
+		MENUITEM "~Κλείσιμο...\tΚ",  IDM_CLOSE
+		MENUITEM "~Πληροφορίες...\tΠ",  IDM_INFO
+		MENUITEM SEPARATOR
+		MENUITEM "Μετατ~ροπή...\tΡ", IDM_CONVERTFILE
+		MENUITEM "Εξα~γωγή...\tΓ", IDM_EXTRACT
+		MENUITEM "PS ~σε EPS", IDM_PSTOEPS
+		MENUITEM SEPARATOR
+		MENUITEM "~Εκτύπωση...\tE", IDM_PRINT
+		MENUITEM  "Εκτύπωση ~του αρχείου...", IDM_SPOOL
+		MENUITEM  SEPARATOR
+		MENUITEM  "Παρουσίαση ~μηνυμάτων\tΜ", IDM_GSMESS 
+		MENUITEM  SEPARATOR
+		MENUITEM  SEPARATOR
+		MENUITEM  "Έξο~δος\tΔ", IDM_EXIT
+	END
+
+	SUBMENU "~Επεξεργασία", IDM_EDITMENU
+	BEGIN
+		MENUITEM "Αντι~γραφή\tCtrl+C", IDM_COPYCLIP
+		MENUITEM SEPARATOR
+		MENUITEM "~Επικόλληση σε...", IDM_PASTETO
+/*
+		MENUITEM "Μετατροπή ~Bitmap", IDM_CONVERT
+*/
+		MENUITEM SEPARATOR
+		SUBMENU "~Προσθήκη προεπισκόπησης EPS", IDM_ADDEPSMENU
+		BEGIN
+			MENUITEM "~Interchange", IDM_MAKEEPSI
+			MENUITEM "~TIFF 4", IDM_MAKEEPST4
+			MENUITEM "TIFF 6 ~χωρίς συμπίεση", IDM_MAKEEPST6U
+			MENUITEM "TIFF 6 ~με συμπίεση", IDM_MAKEEPST6P
+			MENUITEM "Μετα-αρχείο ~Windows", IDM_MAKEEPSW
+			MENUITEM "~Καθορισμένη από το χρήστη...", IDM_MAKEEPSU
+		END
+
+		SUBMENU "Ε~ξαγωγή EPS", IDM_EXTEPSMENU
+		BEGIN
+			MENUITEM "Τμήμα ~PostScript", IDM_EXTRACTPS
+			MENUITEM "Τμήμα προ~επισκόπησης", IDM_EXTRACTPRE
+		END
+		MENUITEM SEPARATOR
+		MENUITEM "Μετατροπή σε γράφημα διανυσματικής μορφής...", IDM_PSTOEDIT
+		MENUITEM "~Μέτρηση", IDM_MEASURE
+		MENUITEM "Εξαγωγή ~κειμένου...", IDM_TEXTEXTRACT
+		MENUITEM "Εύ~ρεση...\tCtrl+F", IDM_TEXTFIND
+		MENUITEM "Εύρε~ση επόμενου\tF3", IDM_TEXTFINDNEXT
+	END
+
+	SUBMENU "Επι~λογές", IDM_OPTIONMENU
+	BEGIN
+		MENUITEM "Τυπική διαμόρφωση...", IDM_CFG
+		MENUITEM "Διαμόρφωση για προχωρημένους...", IDM_GSCOMMAND
+		MENUITEM "Ή~χοι...", IDM_SOUNDS
+		SUBMENU "~Μονάδες", IDM_UNITMENU
+		BEGIN
+			MENUITEM "~στιγμές (pt)", IDM_UNITPT
+			MENUITEM "~χιλιοστά (mm)", IDM_UNITMM
+			MENUITEM "ί~ντσες (in)", IDM_UNITINCH
+			MENUITEM SEPARATOR
+			MENUITEM "Υ~ψηλή ευκρίνεια", IDM_UNITFINE
+		END
+		SUBMENU "~Γλώσσα", IDM_LANGMENU
+		BEGIN
+			MENUITEM "~English", IDM_LANGEN
+			/* Remaining languages are added at run time */
+		END
+		SUBMENU "PS σε ~κείμενο", IDM_PSTOTEXTMENU
+		BEGIN
+			MENUITEM "Απενεργοποιημένη", IDM_PSTOTEXTDIS
+			MENUITEM "Κανονική", IDM_PSTOTEXTNORM
+			MENUITEM "Κωδικοποίηση Dvips Cork", IDM_PSTOTEXTCORK
+		END
+		SUBMENU "Προειδοποιητικά μηνύματα δομής DSC", IDM_DSCMENU
+		BEGIN
+			MENUITEM "Απενεργοποιημένα", IDM_DSC_OFF
+			MENUITEM "Σφάλματα", IDM_DSC_ERROR
+			MENUITEM "Προειδοποιήσεις", IDM_DSC_WARN
+			MENUITEM "Όλα", IDM_DSC_INFO
+		END
+		MENUITEM "Αποθήκευση των επιλογών ~τώρα", IDM_SETTINGS
+		MENUITEM SEPARATOR
+		MENUITEM "Αποθήκευση των επιλογών κατά την έξο~δο", IDM_SAVESETTINGS
+		MENUITEM "Α~σφαλής λειτουργία", IDM_SAFER
+		MENUITEM "Απομνημόνευση τελευταίου ~καταλόγου", IDM_SAVEDIR
+		MENUITEM "Εμφάνιση της γραμμής ~εργαλείων", IDM_BUTTONSHOW
+		MENUITEM "Προσαρμογή του ~παράθυρου στη σελίδα", IDM_FITPAGE
+		MENUITEM "Α~υτόματη επανεμφάνιση", IDM_AUTOREDISPLAY
+		MENUITEM "Περικ~οπή EPS", IDM_EPSFCLIP
+		MENUITEM "Π~ροειδοποιήσεις EPS", IDM_EPSFWARN
+		MENUITEM "Παρά~βλεψη σχολίων δομής DSC", IDM_IGNOREDSC
+		MENUITEM "Εμ~φάνιση ορίων πλαισίου", IDM_SHOWBBOX
+	END
+
+	SUBMENU "Π~ροβολή", IDM_VIEWMENU
+	BEGIN
+		MENUITEM "~Επόμενη σελίδα\t+", IDM_NEXT
+		MENUITEM "~Προηγούμενη σελίδα\t-", IDM_PREV
+		MENUITEM "~Μετάβαση στη σελίδα...\tΜ", IDM_GOTO
+		MENUITEM "Πί~σω\tΣ", IDM_GOBACK
+		MENUITEM "Εμπ~ρός\tΡ", IDM_GOFWD
+		MENUITEM "~Ανανέωση οθόνης\tΑ", IDM_REDISPLAY
+		MENUITEM SEPARATOR
+		MENUITEM "Αρχή επόμενης σελίδας\tΔιάστημα", IDM_NEXTHOME
+		MENUITEM "Αρχή προηγούμενης σελίδας\tBksp", IDM_PREVHOME
+		MENUITEM SEPARATOR
+		MENUITEM "Προβολή πλήρους ~οθόνης\tF4", IDM_FULLSCREEN
+		MENUITEM "Προσαρμογή στο παρά~θυρο\tF6", IDM_FITWIN
+	END
+
+	SUBMENU "~Προσανατολισμός", IDM_ORIENTMENU
+	BEGIN
+		MENUITEM "~Αυτόματος", IDM_AUTOORIENT
+		MENUITEM SEPARATOR
+		MENUITEM "~Κατακόρυφος", IDM_PORTRAIT
+		MENUITEM "~Οριζόντιος", IDM_LANDSCAPE
+		MENUITEM "Ανε~στραμμένος", IDM_UPSIDEDOWN
+		MENUITEM "~Πανοραμικός", IDM_SEASCAPE
+		MENUITEM SEPARATOR
+		MENUITEM "Οριζόντια ~μετάθεση", IDM_SWAPLANDSCAPE
+	END
+
+	SUBMENU "~Μέσα", IDM_MEDIAMENU
+	BEGIN
+		MENUITEM "~Ρυθμίσεις οθόνης...", IDM_DISPLAYSETTINGS
+		MENUITEM SEPARATOR
+		MENUITEM "~Περιστροφή μέσου", IDM_MEDIAROTATE
+		MENUITEM SEPARATOR
+		MENUITEM "11x17 ίντσες", IDM_11x17
+		MENUITEM "A3", IDM_A3
+		MENUITEM "A4", IDM_A4
+		MENUITEM "A5", IDM_A5
+		MENUITEM "B4", IDM_B4
+		MENUITEM "B5", IDM_B5
+		MENUITEM "Letter", IDM_LETTER
+		MENUITEM "Ledger", IDM_LEDGER
+		MENUITEM "Legal", IDM_LEGAL
+		MENUITEM "Note", IDM_LETTER
+		MENUITEM "~Καθορισμένο από το χρήστη...", IDM_USERSIZE
+	END
+
+	SUBMENU "~Βοήθεια", IDM_HELPMENU
+	BEGIN
+		MENUITEM "Π~εριεχόμενα", IDM_HELPCONTENT
+		MENUITEM "~Ευρετήριο βοήθειας...", IDM_HELPSEARCH
+		MENUITEM "Βοήθεια για τα π~λήκτρα", IDM_HELPKEYS
+		MENUITEM SEPARATOR
+		MENUITEM "~Δήλωση...", IDM_REGISTER
+		MENUITEM "~Πληροφορίες...", IDM_ABOUT
+	END
+
+END
+
+/* The integer codes below are for greek characters and are probably
+ * wrong since they need to be code page 869 but are probably 1253
+ */
+/* The integer codes below correspond to Greek characters and, hopefully,
+ * they are correct.
+ * They are the ASCII (CHAR) codes that correspond to code page 869.
+ */
+
+ACCELTABLE ID_GSVIEW
+BEGIN
+	"O", IDM_OPEN
+	"O", IDM_OPEN, SHIFT
+	"o", IDM_OPEN
+	"o", IDM_OPEN, SHIFT
+	190, IDM_OPEN, CHAR
+	190, IDM_OPEN, CHAR, SHIFT
+	233, IDM_OPEN, CHAR
+	233, IDM_OPEN, CHAR, SHIFT
+	"K", IDM_CLOSE
+	"K", IDM_CLOSE, SHIFT
+	"k", IDM_CLOSE
+	"k", IDM_CLOSE, SHIFT
+	181, IDM_CLOSE, CHAR
+	181, IDM_CLOSE, CHAR, SHIFT
+	228, IDM_CLOSE, CHAR
+	228, IDM_CLOSE, CHAR, SHIFT
+	"E", IDM_NEXT
+	"E", IDM_NEXT, SHIFT
+	"e", IDM_NEXT
+	"e", IDM_NEXT, SHIFT
+	168, IDM_NEXT, CHAR
+	168, IDM_NEXT, CHAR, SHIFT
+	222, IDM_NEXT, CHAR
+	222, IDM_NEXT, CHAR, SHIFT
+	"+", IDM_NEXT
+	"+", IDM_NEXT, SHIFT
+	" ", IDM_NEXTHOME
+	" ", IDM_NEXTHOME, SHIFT
+	VK_SPACE, IDM_NEXTHOME, VIRTUALKEY
+	"P", IDM_PREV
+	"P", IDM_PREV, SHIFT
+	"p", IDM_PREV
+	"p", IDM_PREV,SHIFT
+	198, IDM_PREV, CHAR
+	198, IDM_PREV, CHAR, SHIFT
+	234, IDM_PREV, CHAR
+	234, IDM_PREV, CHAR, SHIFT
+	"-", IDM_PREV
+	"-", IDM_PREV, SHIFT
+	VK_BACKSPACE, IDM_PREVHOME, VIRTUALKEY
+	VK_BACKSPACE, IDM_PREVHOME, VIRTUALKEY, SHIFT
+	"M", IDM_GOTO
+	"M", IDM_GOTO, SHIFT
+	"m", IDM_GOTO
+	"m", IDM_GOTO, SHIFT
+	183, IDM_GOTO, CHAR
+	183, IDM_GOTO, CHAR, SHIFT
+	230, IDM_GOTO, CHAR
+	230, IDM_GOTO, CHAR, SHIFT
+	"W", IDM_GOBACK
+	"W", IDM_GOBACK, SHIFT
+	"w", IDM_GOBACK
+	"w", IDM_GOBACK, SHIFT
+	"S", IDM_GOBACK
+	"S", IDM_GOBACK, SHIFT
+	"s", IDM_GOBACK
+	"s", IDM_GOBACK, SHIFT
+	207, IDM_GOBACK, CHAR
+	207, IDM_GOBACK, CHAR, SHIFT
+	236, IDM_GOBACK, CHAR
+	236, IDM_GOBACK, CHAR,SHIFT
+	237, IDM_GOBACK, CHAR
+	237, IDM_GOBACK, CHAR, SHIFT
+	"P", IDM_INFO
+	"P", IDM_INFO, SHIFT
+	"p", IDM_INFO
+	"p", IDM_INFO, SHIFT
+	198, IDM_INFO, CHAR
+	198, IDM_INFO, CHAR, SHIFT
+	234, IDM_INFO, CHAR
+	234, IDM_INFO, CHAR, SHIFT
+	"A", IDM_REDISPLAY
+	"A", IDM_REDISPLAY, SHIFT
+	"a", IDM_REDISPLAY
+	"a", IDM_REDISPLAY, SHIFT
+	164, IDM_REDISPLAY, CHAR
+	164, IDM_REDISPLAY, CHAR, SHIFT
+	214, IDM_REDISPLAY, CHAR
+	214, IDM_REDISPLAY, CHAR, SHIFT
+	"L", IDM_SELECT
+	"L", IDM_SELECT, SHIFT
+	"l", IDM_SELECT
+	"l", IDM_SELECT, SHIFT
+	182, IDM_SELECT, CHAR
+	182, IDM_SELECT, CHAR, SHIFT
+	229, IDM_SELECT, CHAR
+	229, IDM_SELECT, CHAR, SHIFT
+	"V", IDM_SAVEAS
+	"V", IDM_SAVEAS, SHIFT
+	"v", IDM_SAVEAS
+	"v", IDM_SAVEAS, SHIFT
+	213, IDM_SAVEAS, CHAR
+	213, IDM_SAVEAS, CHAR, SHIFT
+	250, IDM_SAVEAS, CHAR
+	250, IDM_SAVEAS, CHAR, SHIFT
+	"E", IDM_PRINT
+	"E", IDM_PRINT, SHIFT
+	"e", IDM_PRINT
+	"e", IDM_PRINT, SHIFT
+	168, IDM_PRINT, CHAR
+	168, IDM_PRINT, CHAR, SHIFT
+	222, IDM_PRINT, CHAR
+	222, IDM_PRINT, CHAR, SHIFT
+	"R", IDM_CONVERTFILE
+	"R", IDM_CONVERTFILE, SHIFT
+	"r", IDM_CONVERTFILE
+	"r", IDM_CONVERTFILE, SHIFT
+	199, IDM_CONVERTFILE, CHAR
+	199, IDM_CONVERTFILE, CHAR, SHIFT
+	235, IDM_CONVERTFILE, CHAR
+	235, IDM_CONVERTFILE, CHAR, SHIFT
+	"F", IDM_TEXTFIND, CONTROL
+	"F", IDM_TEXTFIND, CONTROL, SHIFT
+	"f", IDM_TEXTFIND, CONTROL
+	"f", IDM_TEXTFIND, CONTROL, SHIFT
+	VK_F3, IDM_TEXTFINDNEXT, VIRTUALKEY
+	210, IDM_TEXTFIND, CHAR, CONTROL
+	210, IDM_TEXTFIND, CHAR, CONTROL, SHIFT
+	243, IDM_TEXTFIND, CHAR, CONTROL
+	243, IDM_TEXTFIND, CHAR, CONTROL, SHIFT
+	"G", IDM_EXTRACT
+	"G", IDM_EXTRACT, SHIFT
+	"g", IDM_EXTRACT
+	"g", IDM_EXTRACT, SHIFT
+	166, IDM_EXTRACT, CHAR
+	166, IDM_EXTRACT, CHAR, SHIFT
+	216, IDM_EXTRACT, CHAR
+	216, IDM_EXTRACT, CHAR, SHIFT
+	"M", IDM_GSMESS
+	"M", IDM_GSMESS, SHIFT
+	"m", IDM_GSMESS
+	"m", IDM_GSMESS, SHIFT
+	183, IDM_GSMESS, CHAR
+	183, IDM_GSMESS, CHAR, SHIFT
+	230, IDM_GSMESS, CHAR
+	230, IDM_GSMESS, CHAR, SHIFT
+	"<", IDM_MAGMINUS
+	"<", IDM_MAGMINUS, SHIFT
+	">", IDM_MAGPLUS
+	">", IDM_MAGPLUS, SHIFT
+	",", IDM_MAGMINUS
+	",", IDM_MAGMINUS, SHIFT
+	".", IDM_MAGPLUS
+	".", IDM_MAGPLUS, SHIFT
+	VK_F1, IDM_HELPCONTENT, VIRTUALKEY
+	"C", IDM_COPYCLIP, CONTROL
+	"C", IDM_COPYCLIP, CONTROL, SHIFT
+	"c", IDM_COPYCLIP, CONTROL
+	"c", IDM_COPYCLIP, CONTROL, SHIFT
+	212, IDM_COPYCLIP, CHAR, CONTROL
+	212, IDM_COPYCLIP, CHAR, CONTROL, SHIFT
+	246, IDM_COPYCLIP, CHAR, CONTROL
+	246, IDM_COPYCLIP, CHAR, CONTROL, SHIFT
+	VK_INSERT, IDM_COPYCLIP, VIRTUALKEY, CONTROL
+	VK_F4, IDM_FULLSCREEN, VIRTUALKEY
+	VK_F5, IDM_REDISPLAY, VIRTUALKEY
+	VK_F6, IDM_FITWIN, VIRTUALKEY
+END
+
+STRINGTABLE
+BEGIN
+	/* general strings */
+        IDS_SLANGUAGE, "30"
+	IDS_CODEPAGE, "869"	/* IBM Modern Greek */
+	IDS_HELPFILE, "gvpmgr.hlp"
+	IDS_HELPTITLE, "Βοήθεια για το GSview"
+	IDS_SIGSEGV "Παραβίαση κατάτμησης ή εξαίρεση κινητής υποδιαστολής στο μεταγλωττιστή Ghostscript ή δεύτερο νήμα GSview.\015Παρακαλώ διακόψτε την εκτέλεση του GSview."
+	IDS_FILENOTFOUND, "Το αρχείο δεν εντοπίστηκε"
+END
+
+STRINGTABLE
+BEGIN
+	/* default is first */
+	IDS_FILTER_PSALL "*.ps;*.eps;*.epi;*.pdf;*.prn;*.ps.gz;*.psz;*.eps.gz;*.epi.gz;*.pdf.gz|*.eps|*.epi|*.pdf|*.prn|*.ps|*.ps;*.eps;*.epi;*.pdf;*.prn;*.ps.gz;*.eps.gz;*.epi.gz;*.pdf.gz"
+	IDS_FILTER_PS	"*.ps|*.eps|*.epi|*.pdf|*.ps|*.ps;*.eps;*.epi;*.pdf"
+	IDS_FILTER_EPS	"*.eps|*.eps|*.epi|*.pdf|*.ps|*.ps;*.eps;*.epi;*.pdf"
+	IDS_FILTER_EPI	"*.epi|*.eps|*.epi|*.pdf|*.ps|*.ps;*.eps;*.epi;*.pdf"
+	IDS_FILTER_PDF  "*.pdf|*.eps|*.epi|*.pdf|*.ps|*.ps;*.eps;*.epi;*.pdf"
+	IDS_FILTER_ALL	"*"
+	IDS_FILTER_BMP	"*.bmp"
+	IDS_FILTER_TIFF	"*.tif"
+	IDS_FILTER_WMF	"*.wmf"
+	IDS_FILTER_TXT	"*.txt"
+END
+

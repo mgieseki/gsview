@@ -1,0 +1,4 @@
+LIBRARY GVPMDE
+DESCRIPTION	'GSview German Language Resources'
+DATA SINGLE SHARED
+EXPORTS  main

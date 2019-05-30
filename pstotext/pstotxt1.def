@@ -1,0 +1,8 @@
+LIBRARY		PSTOTXT1
+DESCRIPTION	'pstotext - Copyright (C) 1995, Digital Equipment Corporation'
+DATA		SINGLE SHARED 
+EXPORTS	
+		pstotextInit	@1
+		pstotextFilter	@2
+		pstotextExit	@3
+		pstotextSetCork	@4

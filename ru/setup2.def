@@ -1,0 +1,4 @@
+LIBRARY SETUP2RU
+DESCRIPTION	'GSview Setup Russian Language Resources'
+DATA SINGLE SHARED
+EXPORTS  main

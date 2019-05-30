@@ -1,0 +1,4 @@
+LIBRARY SETUP2IT
+DESCRIPTION	'GSview Setup Italian Language Resources'
+DATA SINGLE SHARED
+EXPORTS  main

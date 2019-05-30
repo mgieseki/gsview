@@ -1,0 +1,370 @@
+/* Copyright (C) 1993-2000, Ghostgum Software Pty Ltd.  All rights reserved.
+  
+  This file is part of GSview.
+  
+  This program is distributed with NO WARRANTY OF ANY KIND.  No author
+  or distributor accepts any responsibility for the consequences of using it,
+  or for whether it serves any particular purpose or works at all, unless he
+  or she says so in writing.  Refer to the GSview Free Public Licence 
+  (the "Licence") for full details.
+  
+  Every copy of GSview must include a copy of the Licence, normally in a 
+  plain ASCII text file named LICENCE.  The Licence grants you the right 
+  to copy, modify and redistribute GSview, but only under certain conditions 
+  described in the Licence.  Among other things, the Licence requires that 
+  the copyright notice and this notice be preserved on all copies.
+*/
+
+/* it\gvclang.rc */
+/* Common Italian language resources */
+
+#ifndef GSVS
+#define GSVS(x,y) x,y
+#endif
+
+
+/* button help */
+STRINGTABLE
+BEGIN
+	GSVS(IDM_OPEN, "Apri...")
+	GSVS(IDM_INFO, "Informazioni...")
+	GSVS(IDM_PRINT, "Stampa...")
+	GSVS(IDM_TEXTFIND, "Cerca...")
+	GSVS(IDM_TEXTFINDNEXT, "Cerca Successivo")
+	GSVS(IDM_NEXT, "Pagina Successiva")
+	GSVS(IDM_NEXTSKIP, "Salta avanti di 5 pagine")
+	GSVS(IDM_PREV, "Pagina Precedente")
+	GSVS(IDM_PREVSKIP, "Salta indietro di 5 pagine")
+	GSVS(IDM_GOTO, "Vai a Pagina...")
+	GSVS(IDM_GOBACK, "Vai Indietro")
+	GSVS(IDM_GOFWD, "Vai Avanti")
+	GSVS(IDM_MAGPLUS, "Aumenta Risoluzione")
+	GSVS(IDM_MAGMINUS, "Diminuisci Risoluzione")
+	GSVS(IDM_HELPCONTENT, "Guida di GSview")
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_LANGUAGE, AAITALIANO)
+	GSVS(IDS_ELANGUAGE, "Italian")
+	GSVS(IDS_FILE, "File: ")
+	GSVS(IDS_NOFILE, "Nessun File")
+	GSVS(IDS_PAGE, "Pagina: ")
+	GSVS(IDS_NOPAGE, "Nessuna numerazione di pagina disponibile")
+	GSVS(IDS_PAGESPECIAL, "L'ordinamento di pagina è Speciale. Le pagine non possono essere riordinate in modo preciso.  Vedere nella Guida l'argomento 'Problemi comuni'.  Continuare?")
+	GSVS(IDS_LANDSCAPE, "Orizzontale")
+	GSVS(IDS_PORTRAIT, "Verticale")
+	GSVS(IDS_ASCEND, "Ascendente")
+	GSVS(IDS_DESCEND, "Discendente")
+	GSVS(IDS_SPECIAL, "Speciale")
+	GSVS(IDS_PAGEINFO, "Pagina: \042%s\042  %d di %d")
+	GSVS(IDS_LINKPAGE, "Collegamento alla pagina %d")
+	GSVS(IDS_DEFAULT, "Predefinito")
+	GSVS(IDS_NOTDEFTAG, "[Non definito]")
+	GSVS(IDS_EPSF, "EPS")
+	GSVS(IDS_EPSI, "EPS con Anteprima Interchange")
+	GSVS(IDS_EPST, "EPS con Anteprima TIFF")
+	GSVS(IDS_EPSW, "EPS con Anteprima Metafile")
+	GSVS(IDS_DSC, "DSC")
+	GSVS(IDS_NOTDSC, "Nessun commento DSC")
+	GSVS(IDS_PDF, "Portable Document Format")
+	GSVS(IDS_IGNOREDSC, "Ignora commenti DSC")
+	GSVS(IDS_CTRLD, "Ctrl-D seguito da ")
+	GSVS(IDS_PJL, "PJL seguito da ")
+	GSVS(IDS_ZOOMED, " Zoomato")
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_OUTPUTFILE, "Nome del file di Output")
+	GSVS(IDS_PRINTINGALL, "Nessun commento DSC\nStampa tutte le pagine")
+	GSVS(IDS_PRINTFILE, "Stampa su File")
+	GSVS(IDS_SELECTPAGE, "Seleziona Pagina")
+	GSVS(IDS_SELECTPAGES, "Seleziona Pagine")
+	GSVS(IDS_NOTOPEN, "Nessun documento aperto")
+	GSVS(IDS_CANNOTRUN, "Non posso eseguire ")
+	GSVS(IDS_TOOLONG, "Linea di comando troppo lunga: ")
+	GSVS(IDS_NOMORE, "Non ci sono più pagine")
+/* OLD
+	GSVS(IDS_GSCOMMAND, "Comando Ghostscript ?")
+*/
+	GSVS(IDS_NOZOOM, "E' necessario visualizzare la pagina prima effettuare lo zoom")
+	GSVS(IDS_USERWIDTH, "Impostare le Unità di misura della larghezza a 1/72 di pollice ?")
+	GSVS(IDS_USERHEIGHT, "Impostare le Unità di misura dell'altezza a 1/72 di pollice ?")
+	GSVS(IDS_BADEPS, "Problema nella creazione del file EPS")
+	GSVS(IDS_NOPREVIEW, "Nessun DOS EPS file oppure\nNessuna anteprima binaria")
+	GSVS(IDS_NOTDFNAME, "Non è possibile usare il nome di un documento aperto")
+	GSVS(IDS_NOTEMP, "Non è possibile aprire files temporanei.\nLa cartella potrebbe essere di sola lettura.\nLa variabile di ambiente TEMP potrebbe non essere impostata.")
+	GSVS(IDS_CANCELDONE, "%d%% fatto")
+	GSVS(IDS_BADCLI, "Errata opzione della linea di comando: ")
+	GSVS(IDS_DUPOPT, "E' possibile specificare solo una delle opzioni /F /P /S .  Errore in: %s")
+	GSVS(IDS_TEXTFIND, "Trova testo ?")
+	GSVS(IDS_TEXTNOTFIND, "Testo non trovato")
+	GSVS(IDS_PRINTPDFPS, "Non è possibile stampare file PDF in una stampante PostScript.  Usare File | Estrai")
+	GSVS(IDS_NOPDFQUICKTEXT, "Non è possibile estrarre o trovare velocemente del testo in un file PDF.  Usare Opzioni | PStoText")
+	GSVS(IDS_BAD_DOSEPS_HEADER, "La testata DOS EPS è errata.  Ignora commenti DSC.")
+	GSVS(IDS_PROBABLY_PCL, "Questo somiglia di più al PCL, un linguaggio progettato per stampanti HP LaserJet o DeskJet.  Sei sicuro che si tratti di PostScript?")
+	GSVS(IDS_BUSYPRINTING, "GSview è occupato nella stampa.  Premere Cancella per attendere finchè GSview ha terminato.")
+END
+
+STRINGTABLE
+BEGIN
+	/* sound type types*/
+	GSVS(IDS_SOUNDNAME, "File di suono")
+	GSVS(IDS_SNDPAGE, "Pagina di Output")
+	GSVS(IDS_SNDNOPAGE, "Nessuna Pagina")
+	GSVS(IDS_SNDNONUMBER, "Nessuna Numerazione")
+	GSVS(IDS_SNDNOTOPEN, "Non Aperto")
+	GSVS(IDS_SNDERROR, "Errore")
+	GSVS(IDS_SNDTIMEOUT,	"Intervallo")
+	GSVS(IDS_SNDSTART, "Inizia")
+	GSVS(IDS_SNDEXIT, "Esci")
+	GSVS(IDS_SNDBUSY, "Occupato")
+	GSVS(IDS_NONE, "<Nessuno>")
+	GSVS(IDS_SPKR, "<Beep Altoparlante>")
+END
+
+STRINGTABLE
+BEGIN
+	/* help topics - these need to match keywords in XX\gvclang.txt */
+	GSVS(IDS_TOPICROOT,  "Veduta generale")
+	GSVS(IDS_TOPICOPEN,  "Apri")
+	GSVS(IDS_TOPICPRINT, "Stampa")
+	GSVS(IDS_TOPICPROP, "Proprietà")
+	GSVS(IDS_TOPICEDITPROP, "Modifica Proprietà")
+	GSVS(IDS_TOPICCONVERT, "Converti")
+	GSVS(IDS_TOPICCLIP, "Appunti")
+	GSVS(IDS_TOPICPREVIEW, "Anteprima EPS")
+	GSVS(IDS_TOPICSOUND, "Suoni")
+	GSVS(IDS_TOPICDSET, "Impostazioni di visualizzazione")
+	GSVS(IDS_TOPICMEDIA, "Carta")
+	GSVS(IDS_TOPICPSTOEPS, "Converti PS in EPS")
+	GSVS(IDS_TOPICGOTO, "Seleziona Pagina")
+	GSVS(IDS_TOPICINSTALL, "Installazione")
+	GSVS(IDS_TOPICTEXT, "Estrai e Cerca testo")
+	GSVS(IDS_TOPICKEYS, "Tasti")
+	GSVS(IDS_TOPICMESS, "Mostra messaggi")
+	GSVS(IDS_TOPICSPOOL, "Spooler")
+	GSVS(IDS_TOPICZLIB, "zlib")
+	GSVS(IDS_TOPICBZIP2, "bzip2")
+	GSVS(IDS_TOPICPSTOEDIT, "Converti in formato vettoriale")
+	GSVS(IDS_TOPICMEASURE, "Misure")
+	GSVS(IDS_TOPICEASYCFG, "Configurazione Facile")
+	GSVS(IDS_TOPICADVANCEDCFG, "Configurazione Avanzata")
+	GSVS(IDS_TOPICDOWNLOAD, "Download Ghostscript")
+	GSVS(IDS_TOPICDSCWARN, "Avvisi DSC")
+	GSVS(IDS_TOPICREG, "Registrazione")
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_BBPROMPT,  "Cliccare a sinistra")
+	GSVS(IDS_BBPROMPT1, "Cliccare sotto")
+	GSVS(IDS_BBPROMPT2, "Cliccare a destra")
+	GSVS(IDS_BBPROMPT3, "Cliccare sopra")
+	GSVS(IDS_EPSONEPAGE, "Un file EPS deve essere un documento formato da una singola pagina. \nVedere nella Guida l'argomento 'Converti PS in EPS'")
+	GSVS(IDS_EPSQPAGES, "E' un documento di una singola pagina ?")
+	GSVS(IDS_EPSNOBBOX, "Non posso ottenere i Limiti del Box")
+	GSVS(IDS_EPSUSERINVALID, "Il file di anteprima non è un file TIFF o Windows Metafile")
+	GSVS(IDS_EPSUSERTITLE, "Apri file di anteprima")
+	GSVS(IDS_EPS_OFF_PAGE, "I limiti del box EPS sono completamente fuori dalla pagina.  Suggeriamo di usare 'Opzioni | Ritaglia EPS'")
+	GSVS(IDS_MUSTUSEPORTRAIT, "Deve essere usato l'orientamento verticale.")
+END
+
+STRINGTABLE
+BEGIN
+	/* wait messages */
+	GSVS(IDS_WAIT, "Attendi")
+	GSVS(IDS_WAITREAD,  "Lettura in corso...")
+	GSVS(IDS_WAITWRITE,  "Scrittura in corso...")
+	GSVS(IDS_WAITDRAW, "Disegno in corso...")
+	GSVS(IDS_WAITDRAW_PC, "Disegno %d%% in corso")
+	GSVS(IDS_WAITGSOPEN, "Apertura Ghostscript in corso...")
+	GSVS(IDS_WAITGSCLOSE,  "Chiusura Ghostscript in corso...")
+	GSVS(IDS_WAITPRINT,  "Stampa in corso...")
+	GSVS(IDS_WAITSEARCH,  "Ricerca in corso...")
+	GSVS(IDS_WAITTEXT, "Estrazione testo %d%%")
+END
+
+STRINGTABLE
+BEGIN
+	/* debug messages */
+	GSVS(IDS_DEBUG_DFISLOCKED, "dfreopen: il file è bloccato")
+	GSVS(IDS_DEBUG_DFISOPEN, "dfreopen: il file è già aperto")
+	GSVS(IDS_DEBUG_DFISMISSING, "dfreopen: il file è mancante")
+	GSVS(IDS_DEBUG_DFCHANGED, "dfreopen: il file è cambiato")
+	GSVS(IDS_DEBUG_DFISCLOSED, "dfclose: il file è già chiuso")
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_PROCESS_GSLOAD_FAIL, "Non posso caricare la DLL di Ghostscript")
+	GSVS(IDS_PROCESS_INIT_FAIL, "gs_process: gsdll.init fallito")
+	GSVS(IDS_PROCESS_VIEWER_FAIL, "gs_process: '(viewer.ps) run' fallito")
+	GSVS(IDS_PROCESS_EXECUTE_FAIL, "gs_process: gsdll.execute_cont fallito")
+END
+
+STRINGTABLE
+BEGIN
+	/* PDF messages */
+	GSVS(IDS_PDFNOPAGE, "Numero di pagine sconosciuto nel file PDF\nDeve essere prima visualizzato il file" )
+	GSVS(IDS_PDFEXTRACTALL, "Numero di pagine sconosciuto nel file PDF\nEstrae o stampa tutte le pagine")
+	GSVS(IDS_USEPDFWRITE, "Per estrarre pagine da un file PFD, Stampa su File usando la periferica pdfwrite oppure pswrite.")
+END
+
+STRINGTABLE
+BEGIN
+GSVS(IDS_LARGEMEDIA, "Attenzione: la dimensione della carta è più ampia di 2 metri o più alta di 2 metri.  Per favore cerca 'Carta | Impostazioni dell'utente'")
+	GSVS(IDS_NOTIMPLEMENTED, "Non implementato")
+	GSVS(IDS_NOLINKTARGET, "Oggetto sconosciuto per il collegamento")
+	GSVS(IDS_PARSEERROR, "Errore nell'analisi della linea di comando")
+	GSVS(IDS_ZLIB_FAIL, "Errore nel caricamento della DLL zlib.  Premi il pulsante OK per avere un aiuto dalla Guida.")
+	GSVS(IDS_BZIP2_FAIL, "Errore nel caricamento della DLL bzip2.  Premi il pulsante OK per avere un aiuto dalla Guida.")
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_BETAEXPIRED, "Questa copia di test BETA di GSview è scaduta.  Vedi http://www.cs.wisc.edu/~ghost/ per dettagli su come ottenere la versione corrente di GSview")
+	GSVS(IDS_BETAWARN, AABETAWARN)
+	GSVS(IDS_NOPRINTERINI, "Non posso aprire printer.ini")
+	GSVS(IDS_NOINI, "Non posso aprire il file INI")
+	GSVS(IDS_NEEDTEMP, "Deve essere impostata la variabile di ambiente TEMP in una cartella con permesso di scrittura.  Senza questo, GSview e Aladdin Ghostscript non sono abilitati alla stampa")
+	GSVS(IDS_GSNOTINSTALLED, "Non è stato installato Ghostscript.  Per favore leggere il file GSview Readme.htm.")
+	GSVS(IDS_GSLIBNOTINSTALLED, "Non sono stati installati i files di libreria di Ghostscript.  Per favore leggere il file GSview Readme.htm.")
+	GSVS(IDS_PROGRAMOBJECTFAILED, AAPROGRAMOBJECTFAILED)
+	GSVS(IDS_NOPROGMAN, AANODDEPROGMAN)
+	GSVS(IDS_INVALIDREG, "Nome o Numero di Registration non valido")
+	GSVS(IDS_UNREGISTERED, "Non registrato")
+	GSVS(IDS_WRONGEMX, "E' presente emx %s.\rE' necessario emx %s o successivo.\rPM GSview non viene eseguito correttamente.")
+	GSVS(IDS_PROGMANGROUP4, AAPROGMANGROUP4)
+	GSVS(IDS_GSVIEWVERSION, GSVIEW_DOT_VERSION)
+	GSVS(IDS_CFG73, AACFG73)
+	GSVS(IDS_CFG74, AACFG74)
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_PRN_PRINTMETHOD, "Metodo di Stampa")
+	GSVS(IDS_PRN_WINDOWSGDI, "Stampante GDI di Windows")
+	GSVS(IDS_PRN_GSDEVICE, "Device di Ghostscript")
+	GSVS(IDS_PRN_PSPRINTER, AAPSPRINTER)		// "Stampante PostScript"
+	GSVS(IDS_PRN_SETTINGS, "Impostazioni")
+	GSVS(IDS_PRN_HELP, AAHELP)			// "Help in linea"
+	GSVS(IDS_PRN_SELECTPAGES, "Seleziona Pagine")
+	GSVS(IDS_ALL, AAALL)
+	// PageSize policies
+	GSVS(IDS_PAGESIZE_VARIABLE, "Variable Page Size") /* ENGLISH */
+	GSVS(IDS_PAGESIZE_FIXED, "Fixed Page Size") /* ENGLISH */
+	GSVS(IDS_PAGESIZE_SHRINK, "Shrink to fit Page Size") /* ENGLISH */
+END
+
+STRINGTABLE
+BEGIN
+ 	GSVS(IDS_INVALIDNUMBER, "Numero non valido")
+ 	GSVS(IDS_CANTINVERT, "Non posso invertire la matrice")
+	GSVS(IDS_UNITPT, AAPT)
+	GSVS(IDS_UNITMM, AAMM)
+	GSVS(IDS_UNITINCH, AAINCH)
+	GSVS(IDS_UNITCUSTOM, AACUSTOM)
+END
+
+STRINGTABLE
+BEGIN
+	GSVS(IDS_DSC_INFO, "Informazione DSC")
+	GSVS(IDS_DSC_WARN, "Avviso DSC")
+	GSVS(IDS_DSC_ERROR, "Errore DSC")
+        GSVS(IDS_DSC_LINEFMT, "%.40s alla linea %d:")
+END
+
+
+/* Split strings if longer than 256 bytes */
+
+STRINGTABLE
+BEGIN
+	GSVS(CDSC_RESOURCE_BBOX,
+"Questa linea non è corretta.\012I limiti del box devono avere le ccordinate espresse in numeri interi,\012non decimali. Un limite del box espresso in numeri decimali dovrebbe\012essere specificando usando %%HiResBoundingBox:\012Un %%BoundingBox: ")
+	GSVS(CDSC_RESOURCE_BBOX2,
+"dovrebbe essere impostato con un valore espresso in un numero intero.\012\012'OK' farà in modo che le coordinate siano convertite in numeri interi\012tramite un arrotondamento.\012'Cancella' farà in modo che questa linea sia ignorata.\012")
+	GSVS(CDSC_RESOURCE_BBOX3, "")
+
+	GSVS(CDSC_RESOURCE_EARLY_TRAILER,
+"Il 'trailer' è solitamente alla fine del documento,\012ma questa linea è stata trovata a più di 32k bytes dalla fine\012del file.  I 'Trailers' non hanno normalmente questa lunghezza.\012E' molto probabile che un altro file PostScript sia stato incluso")
+	GSVS(CDSC_RESOURCE_EARLY_TRAILER2,
+"\012senza essere stato racchiuso in %%BeginDocument / %%EndDocument.\012\012'OK' farà in modo che la riga sia ritenuta come parte di un file incluso.\012'Cancella' farà in modo che la riga sia ritenuta come il 'trailer'.\012")
+	GSVS(CDSC_RESOURCE_EARLY_TRAILER3, "")
+
+	GSVS(CDSC_RESOURCE_EARLY_EOF,
+"Questa linea si trova normalmente alla fine del documento,\012ma è stata trovata a più di 100 bytes dalla fine\012del file.\012E' molto probabile che un altro file PostScript sia stato incluso\012senza essere stato racchiuso in %%BeginDocument / %%EndDocument.\012\012")
+	GSVS(CDSC_RESOURCE_EARLY_EOF2,
+"'OK' farà in modo che la riga sia ritenuta come parte di un file incluso.\012'Cancella' farà in modo che la riga sia ritenuta come parte del 'trailer'.\012")
+	GSVS(CDSC_RESOURCE_EARLY_EOF3, "")
+
+	GSVS(CDSC_RESOURCE_PAGE_IN_TRAILER,
+"Questa linea %%Page: si trova nel 'trailer' e questo non è corretto.\012I file EPS dovrebbero essere incapsulati in %%BeginDocument / %%EndDocument.\012E' possibile che un file EPS sia stato incapsulato non correttamente,\012e quello sia stato ")
+	GSVS(CDSC_RESOURCE_PAGE_IN_TRAILER2,
+"confuso dal %%Trailer in un file EPS.\012\012'OK' per processare pagine ulteriori.\012'Cancella' per ignorare questo commento di pagina.\012")
+	GSVS(CDSC_RESOURCE_PAGE_IN_TRAILER3, "")
+
+	GSVS(CDSC_RESOURCE_PAGE_ORDINAL,
+"Questa linea non è corretta.\012I due argomenti dovrebbero essere una etichetta ed un numero ordinale.\012Il numero ordinale dovrebbe essere 1 per la prima pagina e dovrebbe\012incrementare di 1 per ogni pagina seguente.\012Il numero ordinale di pagina ")
+	GSVS(CDSC_RESOURCE_PAGE_ORDINAL2,
+"è mancante oppure non in sequenza.\012\012E' probabile che questa linea sia parte di un file incluso che\012non è stato incapsulato in %%BeginDocument / %%EndDocument.\012\012'OK' farà in modo che questa pagina sia ignorata, ritenendola parte di un")
+	GSVS(CDSC_RESOURCE_PAGE_ORDINAL3, "\012file EPS incapsulato scorrettamente.\012'Cancella' farà in modo che questa pagina sia considerata valida\012")
+
+	GSVS(CDSC_RESOURCE_PAGES_WRONG,
+"%%Pages: non corrisponde al numero di %%Page:\012\012'OK' farà in modo che il conteggio delle pagine venga fatto corrispondere\012al numero dei commenti %%Page: trovati.\012'Cancella' farà in modo che il conteggio delle pagine sia impostato in base ")
+	GSVS(CDSC_RESOURCE_PAGES_WRONG2, "al %%Pages:\012")
+	GSVS(CDSC_RESOURCE_PAGES_WRONG3,"")
+
+	GSVS(CDSC_RESOURCE_EPS_NO_BBOX,
+"Questo file EPS manca del %%BoundingBox: richiesto.\012Vedere l'help di GSview per informazioni su come aggiungere/modificare i\012limiti del box.\012\012'OK' farà in modo che questo file sia ritenuto un EPS.\012'Cancella' farà in modo che questo ")
+	GSVS(CDSC_RESOURCE_EPS_NO_BBOX2, "file non sia considerato un EPS.\012")
+	GSVS(CDSC_RESOURCE_EPS_NO_BBOX3, "")
+
+	GSVS(CDSC_RESOURCE_EPS_PAGES,
+"I files EPS devono avere 0 oppure 1 pagina.  Questo file 'EPS' ne ha\012di più e pertanto non è un file EPS.\012Non è possibile usare `Stampa Su` `Encapsulated PostScript File` per\012la stampa di file multipagina.  Il metodo corretto è di connettere")
+	GSVS(CDSC_RESOURCE_EPS_PAGES2,
+"\012la stampante a FILE: oppure selezionare 'Stampa su File'.\012\012'OK' farà in modo che questo file sia ritenuto un EPS.\012'Cancella' farà in modo che questo file non sia considerato un EPS.\012")
+	GSVS(CDSC_RESOURCE_EPS_PAGES3, "")
+
+	GSVS(CDSC_RESOURCE_NO_MEDIA,
+"La carta è stata impostata con %%DocumentMedia:, ma nessuna carta predefinita\012è stata impostata con %%PageMedia:.\012\012'OK' farà in modo che la carta predefinita sia impostata con la prima voce dell'elenco.\012'Cancella' non imposterà nessuna carta predefinita.\012")
+	GSVS(CDSC_RESOURCE_NO_MEDIA2, "")
+	GSVS(CDSC_RESOURCE_NO_MEDIA3, "") 
+
+	GSVS(CDSC_RESOURCE_ATEND,
+"Questa linea non è corretta.\012Per rimandare un valore, deve essere usato '(atend)' e non 'atend'\012\012'OK' sarà ritenuto che si intendesse usare un (atend).\012'Cancella' ignorerà questa linea.\012")
+	GSVS(CDSC_RESOURCE_ATEND2, "")
+	GSVS(CDSC_RESOURCE_ATEND3, "")
+
+	GSVS(CDSC_RESOURCE_DUP_COMMENT,
+"Questo commento è duplicato in testata e pertanto è superfluo.\012La prima occorrenza trovata della linea di testata prende la precedenza.\012\012'OK' oppure 'Cancella' ignoreranno in ogni caso la linea duplicata.\012")
+	GSVS(CDSC_RESOURCE_DUP_COMMENT2, "")
+	GSVS(CDSC_RESOURCE_DUP_COMMENT3, "")
+
+	GSVS(CDSC_RESOURCE_DUP_TRAILER,
+"Questo commento è duplicato nel 'trailer' e pertanto è superfluo.\012L'ultima occorrenza trovata della linea del 'trailer' prende la precedenza.\012\012'OK' oppure 'Cancella' ignoreranno in ogni caso la linea duplicata.\012")
+	GSVS(CDSC_RESOURCE_DUP_TRAILER2, "")
+	GSVS(CDSC_RESOURCE_DUP_TRAILER3, "")
+
+	GSVS(CDSC_RESOURCE_BEGIN_END,
+"Il numero dei commenti Begin e End non corrisponde.\012\012'OK' oppure 'Cancella' ignoreranno in ogni caso questo accoppiamento inadeguato.\012")
+	GSVS(CDSC_RESOURCE_BEGIN_END2, "")
+	GSVS(CDSC_RESOURCE_BEGIN_END3, "")
+
+	GSVS(CDSC_RESOURCE_BAD_SECTION,
+"Questa linea è scorretta perchè non dovrebbe comparire all'interno\012di una pagina.  Questo indica probabilmente che un file EPS\012è stato incapsulato scorrettamente.  Questa linea sarà ignorata.\012\012'OK' oppure 'Cancella' ignoreranno in ogni caso questa linea.\012")
+	GSVS(CDSC_RESOURCE_BAD_SECTION2, "")
+	GSVS(CDSC_RESOURCE_BAD_SECTION3, "")
+
+	GSVS(CDSC_RESOURCE_LONG_LINE,
+"\012\012Le linee nei documenti DSC devono essere più corte di 255 caratteri.\012")
+	GSVS(CDSC_RESOURCE_LONG_LINE2, "")
+	GSVS(CDSC_RESOURCE_LONG_LINE3, "") 
+
+	GSVS(CDSC_RESOURCE_INCORRECT_USAGE,
+"Questa linea di commento DSC non è corretta.\012Si prega di fare riferimento alle specifiche DSC.\012\012'OK' oppure 'Cancella' ignoreranno in ogni caso questo accoppiamento inadeguato.\012")
+	GSVS(CDSC_RESOURCE_INCORRECT_USAGE2, "")
+	GSVS(CDSC_RESOURCE_INCORRECT_USAGE3, "")
+END
+
