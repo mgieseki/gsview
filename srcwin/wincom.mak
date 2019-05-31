@@ -676,8 +676,8 @@ viewonlydist:
 	$(CP) NUL dist$(D)gsview$(D)gsview$(WINEXT).ini
 	$(CP) $(BD)uninstgs.exe dist$(D)gsview$(D)uninstgs.exe
 	$(CP) $(BD)setup.exe dist$(D)setup.exe
-	$(CP) gsview$(WINEXT)$(D)zlib$(WINEXT).dll dist$(D)gsview$(D)zlib$(WINEXT).dll
-	$(CP) gsview$(WINEXT)$(D)libbz2.dll dist$(D)gsview$(D)libbz2.dll
+#	$(CP) gsview$(WINEXT)$(D)zlib$(WINEXT).dll dist$(D)gsview$(D)zlib$(WINEXT).dll
+#	$(CP) gsview$(WINEXT)$(D)libbz2.dll dist$(D)gsview$(D)libbz2.dll
 	echo gsview$(D)gsview$(WINEXT).exe> $(OD)viewlist.txt
 	echo gsview$(D)$(WINEXT).ico>> $(OD)viewlist.txt
 	echo gsview$(D)uninstgs.exe>> $(OD)viewlist.txt
@@ -781,12 +781,12 @@ distcopy:
 	$(CP) $(BD)gsprint.exe dist$(D)gsview$(D)gsprint.exe
 	$(CP) epstool.htm dist$(D)gsview$(D)epstool.htm
 #	-$(CP) gsview$(WINEXT)$(D)gsv16spl.exe dist$(D)gsview$(D)gsv16spl.exe
-	$(CP) gsview$(WINEXT)$(D)zlib$(WINEXT).dll dist$(D)gsview$(D)zlib$(WINEXT).dll
-	$(CP) gsview$(WINEXT)$(D)libbz2.dll dist$(D)gsview$(D)libbz2.dll
-	$(CP) pstotext$(D)pstotext.1 dist$(D)pstotext$(D)pstotext.1
-	$(CP) pstotext$(D)pstotext.txt dist$(D)pstotext$(D)pstotext.txt
-	$(CP) gsview$(WINEXT)$(D)pstotxt3.dll dist$(D)pstotext$(D)pstotxt3.dll
-	$(CP) gsview$(WINEXT)$(D)pstotxt3.exe dist$(D)pstotext$(D)pstotxt3.exe
+#	$(CP) gsview$(WINEXT)$(D)zlib$(WINEXT).dll dist$(D)gsview$(D)zlib$(WINEXT).dll
+#	$(CP) gsview$(WINEXT)$(D)libbz2.dll dist$(D)gsview$(D)libbz2.dll
+#	$(CP) pstotext$(D)pstotext.1 dist$(D)pstotext$(D)pstotext.1
+#	$(CP) pstotext$(D)pstotext.txt dist$(D)pstotext$(D)pstotext.txt
+#	$(CP) gsview$(WINEXT)$(D)pstotxt3.dll dist$(D)pstotext$(D)pstotxt3.dll
+#	$(CP) gsview$(WINEXT)$(D)pstotxt3.exe dist$(D)pstotext$(D)pstotxt3.exe
 	echo GSview $(GSVIEW_DOT_VERSION)> $(OD)filelist.tmp
 	echo gsview>> $(OD)filelist.tmp
 	$(CP) $(OD)filelist.tmp+$(SRCWIN)dist$(WINEXT).txt dist$(D)filelist.txt
