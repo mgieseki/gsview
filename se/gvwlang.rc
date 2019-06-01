@@ -241,6 +241,7 @@ STRINGTABLE
 BEGIN
 	/* general strings */
 	IDS_SLANGUAGE, "SE,2"
+	IDS_LANG_NAME, L"Svenska"
 	IDS_CODEPAGE, "1252"	/* ISO-Latin-1 */
 	IDS_HELPFILE, WINHELPFILE
 	IDS_SOUNDNOMM, "Kan inte ladda WINMM.DLL\nLjud kommer inte att vara tillgängliga"

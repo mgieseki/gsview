@@ -229,6 +229,7 @@ STRINGTABLE
 BEGIN
 	/* general strings */
 	IDS_SLANGUAGE "ITA,3"
+	IDS_LANG_NAME, L"Italiano"
 	IDS_CODEPAGE, "1252"	/* ISO-Latin-1 */
 	IDS_HELPFILE, WINHELPFILE
 	IDS_SOUNDNOMM, "Non è possibile caricare WINMM.DLL\nI suoni non saranno disponibili"

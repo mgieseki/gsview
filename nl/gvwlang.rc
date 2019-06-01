@@ -231,6 +231,7 @@ STRINGTABLE
 BEGIN
         /* general strings */
         IDS_SLANGUAGE, "NLD,3"
+        IDS_LANG_NAME, L"Nederlands"
         IDS_CODEPAGE, "1252"    /* ISO-Latin-1 */
         IDS_HELPFILE, WINHELPFILE
         IDS_SOUNDNOMM, "WINMM.DLL niet beschikbaar\nGeen geluid mogelijk."

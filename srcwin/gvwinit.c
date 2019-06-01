@@ -128,11 +128,13 @@ const int lang_offset = 6;  /* offset to ?? */
  * The required ANSI codepage is in codepage.  If any code page is
  * acceptable (e.g. English) then this may be 0.
  */
+#define MAX_NAME_LENGTH 20
 typedef struct lang_s {
     int id;
     char twocc[3];
     TCHAR dllname[MAXSTR];
     HBITMAP bitmap;
+    WCHAR name[MAX_NAME_LENGTH];
     int codepage;
 } lang_t;
 
@@ -151,7 +153,6 @@ language_find(void)
     TCHAR pattern[1024];
     int twocc_index;
     HINSTANCE hInstance;
-
     for (i=0; i<MAXLANG; i++) {
 	lang[i].id = 0;
 	lang[i].twocc[0] = '\0';
@@ -167,6 +168,7 @@ language_find(void)
     lang[nlang].twocc[2] = '\0';
     lang[nlang].dllname[0] = '\0';
     lang[nlang].bitmap = LoadBitmap(phInstance, MAKEINTRESOURCE(ID_LANG));
+    LoadStringW(phInstance, IDS_LANG_NAME, lang[nlang].name, MAX_NAME_LENGTH);
     nlang++;
 
     /* Now search for language DLLs */
@@ -208,8 +210,8 @@ language_find(void)
 		lang[nlang].id = 0;
 	    else  {
 		/* Load bitmap of language name */
-		lang[nlang].bitmap = LoadBitmap(hInstance, 
-			MAKEINTRESOURCE(ID_LANG));
+		lang[nlang].bitmap = LoadBitmap(hInstance, MAKEINTRESOURCE(ID_LANG));
+		printf("%d\n", LoadStringW(hInstance, IDS_LANG_NAME, lang[nlang].name, MAX_NAME_LENGTH));
 		/* Get required code page */
 		LoadString(hInstance, IDS_CODEPAGE, vbuf, sizeof(vbuf));
 #ifdef UNICODE
@@ -229,7 +231,6 @@ language_find(void)
 	    hff = INVALID_HANDLE_VALUE;
 	}
     }
-
     return 0;
 }
 
@@ -353,7 +354,7 @@ int i;
 #endif
     hMenuLang = GetSubMenu(hMenuOptions, 4);
     for (i=1; i<nlang; i++) {
-	AppendMenu(hMenuLang, MF_BITMAP, lang[i].id, (LPTSTR)lang[i].bitmap);
+	AppendMenuW(hMenuLang, MF_STRING, lang[i].id, lang[i].name);
 	if (!is_winnt && (nCodePageSystem != lang[i].codepage))
 	    enable_menu_item(IDM_LANGMENU, lang[i].id, FALSE);
     }
